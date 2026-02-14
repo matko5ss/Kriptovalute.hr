@@ -1,22 +1,4 @@
-# Kriptovalute.hr - Apache konfiguracija
-
-# Default charset
+# Kriptovalute.hr - minimalna konfiguracija za cPanel
 AddDefaultCharset UTF-8
-
-# Isključi prikaz sadržaja direktorija
 Options -Indexes
-
-# Zaštita osjetljivih datoteka
-<FilesMatch "^\.">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
-
-# Default document - index.html je standard za cPanel
 DirectoryIndex index.html index.php
-
-# Omogući PHP
-<IfModule mod_php.c>
-    php_flag display_errors Off
-    php_value default_charset "UTF-8"
-</IfModule>
