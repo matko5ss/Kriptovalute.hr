@@ -768,9 +768,34 @@ margin-bottom: 20px;
 	.kripto-hero-lik {
 		max-width: 780px;
 		justify-content: center;
+		transform: translateX(30%);
 	}
 	.kripto-hero-lik img {
 		max-height: 832px;
+	}
+	.kripto-hero-dekor-wrapper .kripto-crypto-wheel {
+		transform: translate(-140px, 65px);
+	}
+	.kripto-crypto-wheel {
+		width: 224px;
+		height: 224px;
+	}
+	.kripto-crypto-coin {
+		width: 42px;
+		height: 42px;
+		margin-left: -21px;
+		margin-top: -21px;
+		transform: rotate(var(--angle)) translateY(-70px) rotate(calc(-1 * var(--angle)));
+	}
+	.kripto-crypto-coin-ethereum {
+		width: 46px !important;
+		height: 46px !important;
+		margin-left: -23px !important;
+		margin-top: -23px !important;
+	}
+	.kripto-crypto-wheel-center {
+		width: 56px;
+		height: 56px;
 	}
 }
 @media (max-width: 767px) {
@@ -784,6 +809,7 @@ margin-bottom: 20px;
 	.kripto-hero-dekor-wrapper {
 		min-height: 0;
 		padding: 1rem;
+		padding-bottom: 0;
 		margin-bottom: 2rem;
 	}
 	.kripto-hero-dekor,
@@ -817,12 +843,14 @@ margin-bottom: 20px;
 		align-items: flex-end;
 		width: 100%;
 		transform: translateX(10%);
+		padding-bottom: 0;
 	}
 	.kripto-hero-lik img {
-		max-height: 662px;
+		max-height: 728px;
 		object-position: center bottom;
-		transform: scale(0.98);
+		transform: scale(1.08);
 		transform-origin: center bottom;
+		padding-bottom: 0;
 	}
 	.kripto-hero-dekor-wrapper .kripto-crypto-wheel {
 		transform: translate(-40px, 87px) !important;
@@ -980,9 +1008,22 @@ margin-bottom: 20px;
 	max-width: 50%;
 	flex: 0 0 50%;
 }
+.kripto-contact-title-col {
+	display: none;
+}
+@media (min-width: 992px) {
+	.kripto-contact-title-desktop {
+		display: block;
+	}
+	.kripto-contact-kvhr-style .kripto-contact-image-col {
+		padding: 56px;
+	}
+}
 .kripto-contact-image-col {
 	display: flex;
 	align-items: stretch;
+	border-radius: 15px;
+	overflow: hidden;
 }
 .kripto-contact-image-wrap {
 	width: 100%;
@@ -995,6 +1036,8 @@ margin-bottom: 20px;
 	position: relative;
 	transform-origin: center center;
 	animation: kripto-contact-image-rasiri 0.7s ease-out forwards;
+	border-radius: 15px;
+	overflow: hidden;
 }
 @keyframes kripto-contact-image-rasiri {
 	from {
@@ -1012,6 +1055,7 @@ margin-bottom: 20px;
 	inset: 0;
 	background: rgba(5, 5, 48, 0.25);
 	pointer-events: none;
+	border-radius: 15px;
 }
 /* kriptovalute.hr cloned form styles */
 .kripto-contact-form-wrapper {
@@ -1099,18 +1143,46 @@ margin-bottom: 20px;
 		flex: 0 0 100%;
 		max-width: 100%;
 	}
+	.kripto-contact-title-col {
+		display: block;
+		order: 1;
+		width: 100%;
+		flex: 0 0 100%;
+		padding: 32px 24px 0 24px;
+	}
+	.kripto-contact-kvhr-style .kripto-contact-image-col {
+		order: 2;
+		padding: 0;
+	}
+	.kripto-contact-kvhr-style .kripto-contact-form-col {
+		order: 3;
+	}
+	.kripto-contact-title-desktop {
+		display: none;
+	}
+	.kripto-contact-image-col {
+		width: 100%;
+	}
 	.kripto-contact-image-wrap {
-		aspect-ratio: 16 / 9;
-		min-height: 180px;
+		width: 100%;
+		aspect-ratio: auto;
+		min-height: 60vh;
+		background-size: contain;
+		background-position: center;
 	}
 	.kripto-contact-form-wrapper {
 		padding: 32px 24px;
 	}
 }
 @media (max-width: 767px) {
+	.kripto-contact-title-col {
+		padding: 24px 20px 0 20px;
+	}
 	.kripto-contact-image-wrap {
-		aspect-ratio: 16 / 9;
-		min-height: 150px;
+		aspect-ratio: auto;
+		min-height: 55vh;
+		background-size: contain;
+		background-position: center;
 	}
 	.kripto-contact-form-wrapper {
 		padding: 24px 20px;
