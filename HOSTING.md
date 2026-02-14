@@ -1,5 +1,10 @@
 # Postavljanje na hosting (kriptovalute.hr)
 
+## cPanel – Git clone
+1. U File Manageru ili SSH kloniraj repo u **public_html** (ili kopiraj sadržaj u public_html)
+2. Struktura mora biti: public_html/index.html, public_html/assets/, public_html/send-contact.php
+3. Provjeri da je **.htaccess** uploadan (skrivene datoteke uključi)
+
 ## Zahtjevi
 - **PHP** 7.4 ili noviji (s `mail()` funkcijom)
 - **Apache** s mod_rewrite (za .htaccess)
@@ -7,8 +12,7 @@
 ## Struktura datoteka
 ```
 /
-├── index.html          # Preusmjerava na index-two.html
-├── index-two.html      # Glavna stranica
+├── index.html          # Glavna stranica (cPanel default)
 ├── send-contact.php    # Obrada kontakt forme
 ├── .htaccess           # Apache konfiguracija
 └── assets/

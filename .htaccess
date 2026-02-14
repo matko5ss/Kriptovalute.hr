@@ -12,8 +12,8 @@ Options -Indexes
     Deny from all
 </FilesMatch>
 
-# Default document - root otvara index-two.html
-DirectoryIndex index-two.html index.html index.php
+# Default document - index.html je standard za cPanel
+DirectoryIndex index.html index.php
 
 # Omogući PHP
 <IfModule mod_php.c>

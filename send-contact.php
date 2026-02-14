@@ -77,8 +77,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Redirect - relativna putanja radi u root i subdirektorijima
 $redirect_base = (dirname($_SERVER['SCRIPT_NAME']) === '/' || dirname($_SERVER['SCRIPT_NAME']) === '\\') 
-    ? 'index-two.html' 
-    : dirname($_SERVER['SCRIPT_NAME']) . '/index-two.html';
+    ? 'index.html' 
+    : dirname($_SERVER['SCRIPT_NAME']) . '/index.html';
 $redirect_url = $success 
     ? $redirect_base . '?sent=1#kontakt' 
     : ($error ? $redirect_base . '?error=' . urlencode($error) . '#kontakt' : $redirect_base . '#kontakt');
