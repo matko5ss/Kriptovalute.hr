@@ -123,7 +123,7 @@
 						</div>
 					</div>
 					<div class="kripto-hero-dekor">
-						<div class="kripto-crypto-wheel">
+						<div class="kripto-crypto-wheel" id="kripto-crypto-wheel">
 							<div class="kripto-crypto-wheel-orbit">
 								<div class="kripto-crypto-coin" style="--angle: 0deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/polkadot-transparent.png" alt="Polkadot"></span></div>
 								<div class="kripto-crypto-coin kripto-crypto-coin-ethereum" style="--angle: 60deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/ethereum-transparent.png" alt="Ethereum"></span></div>
@@ -132,7 +132,7 @@
 								<div class="kripto-crypto-coin" style="--angle: 240deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/binance-transparent.png" alt="Binance"></span></div>
 								<div class="kripto-crypto-coin" style="--angle: 300deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/usdc-transparent.png" alt="USD Coin"></span></div>
 							</div>
-							<div class="kripto-crypto-wheel-center">
+							<div class="kripto-crypto-wheel-center" id="kripto-bitcoin-center">
 								<img src="assets/img/icon/bitcoin.webp?v=2" alt="Bitcoin">
 							</div>
 						</div>
@@ -296,6 +296,16 @@
 		<script src="assets/js/wow.min.js"></script>
 		<script src="assets/js/scrolltopcontrol.js"></script>
 		<script src="assets/js/scripts.js"></script>
+		<script>
+		(function() {
+			var wheel = document.getElementById('kripto-crypto-wheel');
+			var bitcoin = document.getElementById('kripto-bitcoin-center');
+			if (wheel && bitcoin) {
+				bitcoin.addEventListener('mouseenter', function() { wheel.classList.add('bitcoin-hover'); });
+				bitcoin.addEventListener('mouseleave', function() { wheel.classList.remove('bitcoin-hover'); });
+			}
+		})();
+		</script>
 		<script>
 		(function() {
 			var params = new URLSearchParams(window.location.search);
