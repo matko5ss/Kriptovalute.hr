@@ -1,34 +1,4 @@
-/*
-Author       : themes_master
-Template Name: Crptiam - Cryptocurrency ICO Landing Page HTML Template 
-Version      : 1.0
-*/
-/*=============================================================
-    CSS INDEX
-    =============================
-    01. GENERAL STYLE (body, link color, section-title, preloader btn, overlay, section-padding etc)
-    02. START BOOTSTRAP NAVIGATION OVERRIDES
-    03. START HOME DESIGN
-    04. START ABOUT DESIGN
-    05. START BUY SELL DESIGN
-    06. START TOKEN SALE DESIGN
-    07. START ROADMAP DESIGN
-    08. START DOWNLOAD DESIGN
-    09. START TEAM DESIGN
-    10. START ADVISOR DESIGN
-    11. START PARTNER DESIGN
-    12. START FAQ DESIGN
-    13. START PROMOTION DESIGN
-    14. START CONTACT DESIGN
-    15. START BLOG DESIGN
-    16. START FOOTER DESIGN
-    17. START SECTION TOP DESIGN
-  =============================================================*/
-/*
-* ----------------------------------------------------------------------------------------
-* 01.GENERAL STYLE
-* ----------------------------------------------------------------------------------------
-*/
+/* Kriptovalute.hr - glavni stilovi */
 /* Cryptozet-inspired color palette */
 :root {
   --kripto-bg: #050530;
@@ -116,7 +86,6 @@ fieldset {
     margin: 0 auto;
     padding: 0;
 }
-/*START PRELOADER DESIGN*/
 .preloader {
 	background: var(--kripto-bg);
     bottom: 0;
@@ -182,7 +151,6 @@ letter-spacing: 1px;
 .no-padding { padding: 0 }
 /*END PRELOADER DESIGN*/
 .section-padding {padding:100px 0;}
-/*START SECTION TITLE DESIGN*/
 .section-title{margin-bottom:60px;}
 .section-title  h1 {
 font-size:40px;
@@ -228,7 +196,6 @@ margin: auto;
 }
 }
 /*END SECTION TITLE DESIGN*/
-/*START SCROLL TO TOP*/
 .topcontrol {
 background: var(--kripto-accent) none repeat scroll 0 0;
 border-radius: 30px;
@@ -257,7 +224,6 @@ width: 50px;
 }
 /*END SCROLL TO TOP*/
 
-/*START BUTTON DESING*/
 .btn_one {
 	background: var(--kripto-accent);
 	padding: 10px 36px;
@@ -310,13 +276,12 @@ border:2px solid #fff;
 }
 /*
 * ----------------------------------------------------------------------------------------
-* 01.END GENERAL STYLE
 * ----------------------------------------------------------------------------------------
 */
 
 /*
 * ----------------------------------------------------------------------------------------
-* 02.START BOOTSTRAP NAVIGATION OVERRIDES
+/* Navigacija */
 * ----------------------------------------------------------------------------------------
 */
 .navbar-brand img{
@@ -427,13 +392,11 @@ nav:has(.navbar-collapse.show) + section {
 }
 /*
 * ----------------------------------------------------------------------------------------
-* 02.END BOOTSTRAP NAVIGATION OVERRIDES
 * ----------------------------------------------------------------------------------------
 */
 
 /*
 * ----------------------------------------------------------------------------------------
-* 03.START HOME DESIGN
 * ----------------------------------------------------------------------------------------
 */
 .home_bg {
@@ -463,7 +426,6 @@ nav:has(.navbar-collapse.show) + section {
 	margin-right: 10px;
 }
 
-/*START COUNTDOWN*/
 .buy-icons {
 	overflow: hidden;
 	margin-top: 150px;
@@ -541,14 +503,12 @@ margin-right:10px;
 /*END COUNTDOWN*/
 /*
 * ----------------------------------------------------------------------------------------
-* 03.END HOME DESIGN
 * ----------------------------------------------------------------------------------------
 */
 
 
 /*
 * ----------------------------------------------------------------------------------------
-* 04.START ABOUT DESIGN
 * ----------------------------------------------------------------------------------------
 */
 .about_us {
@@ -615,13 +575,12 @@ margin-bottom: 20px;
 .kripto-hero-dekor-wrapper .section-title {
 	margin-bottom: 0;
 }
-.kripto-hero-dekor-wrapper > .kripto-hero-dekor,
-.kripto-hero-dekor-wrapper > .elementor-element-51443ab {
+.kripto-hero-dekor-wrapper > .kripto-hero-dekor {
 	flex: 1;
 	min-height: 0;
 	padding-top: 50px;
 }
-/* Hero dekorativna slika - kao na kriptovalute.hr */
+/* Hero sekcija */
 .kripto-hero-dekor-wrapper {
 	min-height: 600px;
 	padding: 34px 16px 0 16px;
@@ -638,9 +597,7 @@ margin-bottom: 20px;
 	border-radius: 15px;
 	margin-bottom: 4rem;
 }
-/* Hero sekcija - struktura kao na kriptovalute.hr */
-.kripto-hero-dekor,
-.elementor-element-51443ab {
+.kripto-hero-dekor {
 	display: flex;
 	flex-direction: row;
 	flex: 1;
@@ -651,7 +608,7 @@ margin-bottom: 20px;
 	gap: 0;
 	padding-top: 0;
 }
-.elementor-element-5eabe81 {
+.kripto-hero-content {
 	display: flex;
 	flex-direction: column;
 	flex: 0 0 58%;
@@ -756,13 +713,12 @@ margin-bottom: 20px;
 	box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 @media (max-width: 1024px) {
-	.kripto-hero-dekor,
-	.elementor-element-51443ab {
+	.kripto-hero-dekor {
 		margin: 0 2rem;
 		flex-direction: column;
 		align-items: center;
 	}
-	.elementor-element-5eabe81 {
+	.kripto-hero-content {
 		align-items: center;
 	}
 	.kripto-hero-lik {
@@ -812,23 +768,21 @@ margin-bottom: 20px;
 		padding-bottom: 0;
 		margin-bottom: 2rem;
 	}
-	.kripto-hero-dekor,
-	.elementor-element-51443ab {
+	.kripto-hero-dekor {
 		min-height: 0;
 		margin: 0;
 		padding: 0;
 		flex-direction: column;
 		align-items: center;
 	}
-	.elementor-element-5eabe81 {
+	.kripto-hero-content {
 		order: 2;
 		width: 100%;
 		flex: 0 0 auto;
 		justify-content: flex-end;
 		align-items: flex-end;
 	}
-	.kripto-hero-dekor-wrapper > .kripto-hero-dekor,
-	.kripto-hero-dekor-wrapper > .elementor-element-51443ab {
+	.kripto-hero-dekor-wrapper > .kripto-hero-dekor {
 		padding-top: 0 !important;
 	}
 	.kripto-hero-dekor > .kripto-crypto-wheel {
@@ -898,12 +852,18 @@ margin-bottom: 20px;
 @media (max-width: 767px) {
 	.kripto-services-row .col-sm-12 { width: 100%; }
 }
-/* Gutenverse-style hover-from-left effect - bar slides in from left */
-.guten-icon-box-wrapper.hover-from-left {
+.kripto-service-card {
 	position: relative;
 	overflow: hidden;
+	background: var(--kripto-bg-card);
+	padding: 30px;
+	border-radius: 5px;
+	margin-bottom: 0;
+	height: 100%;
+	-webkit-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
 }
-.guten-icon-box-wrapper.hover-from-left::before {
+.kripto-service-card::before {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -916,22 +876,13 @@ margin-bottom: 20px;
 	transition: transform 0.35s ease;
 	z-index: 1;
 }
-.guten-icon-box-wrapper.hover-from-left:hover::before {
-	transform: scaleX(1);
-}
-.kripto-service-card {
-	background: var(--kripto-bg-card);
-	padding: 30px;
-	border-radius: 5px;
-	margin-bottom: 0;
-	height: 100%;
-	-webkit-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
-}
 .kripto-service-card:hover {
 	background: var(--kripto-bg-card-hover);
 	-webkit-transform: translateY(-3px);
 	transform: translateY(-3px);
+}
+.kripto-service-card:hover::before {
+	transform: scaleX(1);
 }
 .kripto-service-card h3 {
 	font-size: 20px;
@@ -1057,7 +1008,7 @@ margin-bottom: 20px;
 	pointer-events: none;
 	border-radius: 15px;
 }
-/* kriptovalute.hr cloned form styles */
+/* Kontakt forma */
 .kripto-contact-form-wrapper {
 	padding: 56px;
 	display: flex;
@@ -1294,7 +1245,6 @@ margin-bottom: 20px;
 
 /*
 * ----------------------------------------------------------------------------------------
-* 05.START BUY SELL DESIGN
 * ----------------------------------------------------------------------------------------
 */
 .buy_sell_list {
@@ -1344,7 +1294,6 @@ font-size: 20px;
 
 /*
 * ----------------------------------------------------------------------------------------
-* 06.START TOKEN SALE DESIGN
 * ----------------------------------------------------------------------------------------
 */
 .token_sale_area{}
@@ -1427,7 +1376,6 @@ border-radius:5px;
 
 /*
  * ----------------------------------------------------------------------------------------
- * 07.START ROADMAP DESIGN
  * ----------------------------------------------------------------------------------------
 */
 .timeline {position: relative;}
@@ -1547,7 +1495,6 @@ border-radius:5px;
 
 /*
  * ----------------------------------------------------------------------------------------
- * 08.START DOWNLOAD DESIGN
  * ----------------------------------------------------------------------------------------
  */
 .download_area{}
@@ -1605,7 +1552,6 @@ text-align:center;
  */
 /*
 * ----------------------------------------------------------------------------------------
-* 09.START TEAM DESIGN
 * ----------------------------------------------------------------------------------------
 */
 .team_member {
@@ -1651,7 +1597,6 @@ display: inline-block;
 */
 /*
 * ----------------------------------------------------------------------------------------
-* 10.START BOARD ADVISOR DESIGN
 * ----------------------------------------------------------------------------------------
 */
 .board_member{padding-bottom:50px;}
@@ -1691,7 +1636,6 @@ display: inline-block;
 
 /*
 * ----------------------------------------------------------------------------------------
-* 11.START PARTNER DESIGN
 * ----------------------------------------------------------------------------------------
 */
 .partner_area{padding-bottom:50px;}
@@ -1707,7 +1651,6 @@ width:100px;
 */
 
 /* ----------------------------------------------------------------------------------------
-* 12.START FAQ DESIGN
 * ----------------------------------------------------------------------------------------
 */
 .faq1-area {}
@@ -1766,7 +1709,6 @@ text-align:center;
 */
 /*
  * ----------------------------------------------------------------------------------------
- * 13.START PROMOTION DESIGN
  * ----------------------------------------------------------------------------------------
  */
 .promotion_area{
@@ -1802,7 +1744,6 @@ padding:80px 0;
  */
 /*
 * ----------------------------------------------------------------------------------------
-* 14.START CONTACT DESIGN
 * ----------------------------------------------------------------------------------------
 */
 .contact_us{}
@@ -1925,7 +1866,6 @@ margin-bottom: -8px;
 
 /*
 * ----------------------------------------------------------------------------------------
-* 15.START BLOG DESIGN
 * ----------------------------------------------------------------------------------------
 */
 .blog_bg{background:#f4f5f7;}
@@ -2012,7 +1952,6 @@ padding: 40px;
 
 
 
-/*START PAGINATION*/
 ul.blog_pagination li a {
 	border: 1px solid var(--kripto-bg-card);
 	border-radius: 30px;
@@ -2034,7 +1973,6 @@ ul.blog_pagination li a:hover {
     border: 1px solid var(--kripto-accent);
 }
 /*END PAGINATION*/
-/*START BLOG SIDEBAR DESIGN*/
 .contact_form_blog{padding-top:0px!important;}
 .blog_sidebar_title {
 	border-bottom: 1px solid #303a4f;
@@ -2143,7 +2081,6 @@ ul.blog_pagination li a:hover {
     border: 2px solid var(--kripto-accent);
 }
 /*END BLOG SIDEBAR DESIGN*/
-/*START BLOG SINGLE PAGE DESIGN*/
 .bc_left {
 	padding-left: 30px;
 	font-style: italic;
@@ -2227,13 +2164,11 @@ text-transform: uppercase;}
 /*END BLOG SINGLE PAGE DESIGN*/
 /*
 * ----------------------------------------------------------------------------------------
-* 15.START BLOG DESIGN
 * ----------------------------------------------------------------------------------------
 */
 
 /*
 * ----------------------------------------------------------------------------------------
-* 16.START FOOTER DESIGN
 * ----------------------------------------------------------------------------------------
 */
 .footer {
@@ -2257,7 +2192,6 @@ text-transform: uppercase;}
 }
 .footer_menu ul li a:hover{color:var(--kripto-accent);text-decoration:underline;}
 
-/*START FOOTER SOCIAL DESIGN*/
 .footer_profile{margin-bottom:40px;}
 .footer_profile ul{
 list-style: outside none none;
@@ -2307,7 +2241,6 @@ margin-bottom: 20px;
 
 /*
 * ----------------------------------------------------------------------------------------
-* 15.START SECTION TOP DESIGN
 * ----------------------------------------------------------------------------------------
 */
 .section-top {

@@ -1,8 +1,4 @@
-/*
-Author       : theme_ocean
-Template Name: Bitchain - Cryptocurrency ICO Landing Page HTML Template 
-Version      : 1.0
-*/
+/* Kriptovalute.hr - glavne skripte */
 (function($) {
 	'use strict';
 	

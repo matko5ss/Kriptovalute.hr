@@ -1,11 +1,6 @@
 <?php
-/**
- * Kontakt forma - slanje emailova za kriptovalute.hr
- * 1. Šalje na info@kriptovalute.hr - svi podaci iz forme
- * 2. Šalje potvrdu korisniku na njegov email
- */
+// Kontakt forma - slanje emailova
 
-// Za produkciju - isključi prikaz grešaka
 error_reporting(0);
 ini_set('display_errors', 0);
 
