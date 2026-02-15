@@ -11,15 +11,20 @@ particlesJS.load('particles-js', 'particles.json', function() {
 
 /* Otherwise just put the config content (json): */
 
+(function() {
+  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  var particleCount = isMobile ? 40 : 80;
+  var particleArea = isMobile ? 1200 : 800;
+  
 particlesJS('particles-js',
   
   {
     "particles": {
       "number": {
-        "value": 80,
+        "value": particleCount,
         "density": {
           "enable": true,
-          "value_area": 800
+          "value_area": particleArea
         }
       },
       "color": {
@@ -119,7 +124,7 @@ particlesJS('particles-js',
         }
       }
     },
-    "retina_detect": true,
+    "retina_detect": !isMobile,
     "config_demo": {
       "hide_card": false,
       "background_color": "#b61924",
@@ -131,3 +136,4 @@ particlesJS('particles-js',
   }
 
 );
+})();

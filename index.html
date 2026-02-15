@@ -11,6 +11,9 @@
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 		<link rel="canonical" href="https://kriptovalute.hr/">
 		<link rel="icon" type="image/png" href="favicon.png">
+		<!-- Preconnect for faster font loading -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<!-- Open Graph -->
 		<meta property="og:locale" content="hr_HR">
 		<meta property="og:type" content="website">
@@ -19,7 +22,7 @@
 		<meta property="og:url" content="https://kriptovalute.hr/">
 		<meta property="og:site_name" content="Kriptovalute.hr">
 		<meta property="article:publisher" content="https://www.facebook.com/kriptovalute.hr">
-		<meta property="og:image" content="https://kriptovalute.hr/assets/img/kriptovalute-logo.png">
+		<meta property="og:image" content="https://kriptovalute.hr/assets/img/kriptovalute-logo-blue.png">
 		<meta property="og:image:width" content="741">
 		<meta property="og:image:height" content="204">
 		<meta property="og:image:type" content="image/png">
@@ -28,16 +31,12 @@
 		<meta name="twitter:title" content="Početna - Kriptovalute.hr">
 		<meta name="twitter:description" content="Kripto edukacija za početnike i napredne. Naučite sigurno koristiti kriptovalute, razumjeti blockchain i poboljšati financijsku pismenost.">
 		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">		
-		<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap&subset=latin-ext" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">  		
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">  		
 		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
 		<link rel="stylesheet" href="assets/fonts/themify-icons.css">
 		<link rel="stylesheet" href="assets/css/materialdesignicons-min.css">	
-		<link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.css">
-		<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">	
 		<link rel="stylesheet" href="assets/css/animate.css">					
-		<link rel="stylesheet" href="assets/css/magnific-popup.css">					
-		<link rel="stylesheet" href="assets/css/style-two.css?v=11">			
+		<link rel="stylesheet" href="assets/css/style-two.css?v=12">			
 		<!--[if lt IE 9]>
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -74,7 +73,7 @@
 					"@id": "https://kriptovalute.hr/#organization",
 					"name": "Kriptovalute.hr",
 					"url": "https://kriptovalute.hr/",
-					"logo": {"@type": "ImageObject", "url": "https://kriptovalute.hr/assets/img/kriptovalute-logo.png"},
+					"logo": {"@type": "ImageObject", "url": "https://kriptovalute.hr/assets/img/kriptovalute-logo-blue.png"},
 					"sameAs": [
 						"https://www.facebook.com/kriptovalute.hr",
 						"https://www.linkedin.com/company/kriptovalutehr",
@@ -100,7 +99,7 @@
 
         <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
     		<div class="container">
-			    <a class="navbar-brand" href="index.html"><img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="kripto-nav-logo"></a>
+			    <a class="navbar-brand" href="index.html"><img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="kripto-nav-logo" width="182" height="50" fetchpriority="high"></a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="mdi mdi-menu"></span>
 			    </button>
@@ -125,20 +124,20 @@
 					<div class="kripto-hero-dekor">
 						<div class="kripto-crypto-wheel" id="kripto-crypto-wheel">
 							<div class="kripto-crypto-wheel-orbit">
-								<div class="kripto-crypto-coin" style="--angle: 0deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/polkadot-transparent.png" alt="Polkadot"></span></div>
-								<div class="kripto-crypto-coin kripto-crypto-coin-ethereum" style="--angle: 60deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/ethereum-transparent.png" alt="Ethereum"></span></div>
-								<div class="kripto-crypto-coin" style="--angle: 120deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/tether-transparent.png" alt="Tether"></span></div>
-								<div class="kripto-crypto-coin" style="--angle: 180deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/solana-transparent.png" alt="Solana"></span></div>
-								<div class="kripto-crypto-coin" style="--angle: 240deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/binance-transparent.png" alt="Binance"></span></div>
-								<div class="kripto-crypto-coin" style="--angle: 300deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/usdc-transparent.png" alt="USD Coin"></span></div>
+								<div class="kripto-crypto-coin" style="--angle: 0deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/polkadot-transparent.png" alt="Polkadot" loading="lazy"></span></div>
+								<div class="kripto-crypto-coin kripto-crypto-coin-ethereum" style="--angle: 60deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/ethereum-transparent.png" alt="Ethereum" loading="lazy"></span></div>
+								<div class="kripto-crypto-coin" style="--angle: 120deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/tether-transparent.png" alt="Tether" loading="lazy"></span></div>
+								<div class="kripto-crypto-coin" style="--angle: 180deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/solana-transparent.png" alt="Solana" loading="lazy"></span></div>
+								<div class="kripto-crypto-coin" style="--angle: 240deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/binance-transparent.png" alt="Binance" loading="lazy"></span></div>
+								<div class="kripto-crypto-coin" style="--angle: 300deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/usdc-transparent.png" alt="USD Coin" loading="lazy"></span></div>
 							</div>
 							<div class="kripto-crypto-wheel-center" id="kripto-bitcoin-center">
-								<img src="assets/img/icon/bitcoin.webp?v=2" alt="Bitcoin">
+								<img src="assets/img/icon/bitcoin.webp?v=2" alt="Bitcoin" width="45" height="45" loading="lazy">
 							</div>
 						</div>
 						<div class="kripto-hero-content">
 							<div class="kripto-hero-lik">
-								<img src="assets/img/hero-lik.png?v=2" alt="">
+								<img src="assets/img/hero-lik.png?v=2" alt="" width="768" height="512" loading="lazy">
 							</div>
 						</div>
 					</div>
@@ -256,7 +255,7 @@
 				<div class="row align-items-start">
 					<div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
 						<a href="index.html" class="kripto-footer-logo">
-							<img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="img-fluid">
+							<img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="img-fluid" width="200" height="55" loading="lazy">
 						</a>
 						<p class="kripto-footer-desc">Edukacija i interaktive radionice o kriptovalutama i blockchainu. Naučite sigurno koristiti kriptovalute i sudjelujte u praktičnim radionicama.</p>
 						<div class="kripto-footer-social">
@@ -286,16 +285,11 @@
 
 		<script src="assets/js/jquery-1.12.4.min.js"></script>
 		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/js/modernizr-2.8.3.min.js"></script>
-		<script src="assets/owlcarousel/js/owl.carousel.min.js"></script>
-		<script src="assets/js/jquery.magnific-popup.min.js"></script>
-		<script src="assets/js/jquery.counterup.min.js"></script>
-		<script src="assets/js/countdown.js"></script>
 		<script src="assets/js/particles.min.js"></script>
 		<script src="assets/js/app.js"></script>
 		<script src="assets/js/wow.min.js"></script>
 		<script src="assets/js/scrolltopcontrol.js"></script>
-		<script src="assets/js/scripts.js"></script>
+		<script src="assets/js/scripts-index.js"></script>
 		<script>
 		(function() {
 			var wheel = document.getElementById('kripto-crypto-wheel');
