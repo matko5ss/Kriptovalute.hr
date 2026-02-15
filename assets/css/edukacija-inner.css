@@ -230,6 +230,16 @@ body:has(.kripto-edukacija-inner) a {
 	background: var(--kripto-accent);
 	z-index: 1;
 }
+.kviz-page .concept-box::before {
+	display: none;
+}
+.kviz-page .kviz-page-title {
+	color: var(--kripto-heading) !important;
+	font-family: 'Quicksand', sans-serif !important;
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+}
 .kripto-edukacija-inner .concept-box h5 {
 	color: var(--kripto-heading) !important;
 }
