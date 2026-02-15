@@ -344,6 +344,32 @@ border:2px solid #fff;
     margin-right: 0;
     padding-right: 0;
 }
+.navbar-custom .dropdown-toggle::after {
+    margin-left: 0.4em;
+}
+@media (min-width: 992px) {
+    .navbar-custom .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+.kripto-nav-dropdown {
+    background: rgba(10, 13, 66, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 8px 0;
+}
+.kripto-nav-dropdown .dropdown-item {
+    color: rgba(255, 255, 255, 0.9) !important;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+.kripto-nav-dropdown .dropdown-item:hover,
+.kripto-nav-dropdown .dropdown-item:focus {
+    background: rgba(96, 23, 255, 0.3) !important;
+    color: #fff !important;
+}
 .navbar-custom.nav-sticky {
     background-color: rgba(10, 13, 66, 0.35) !important;
     backdrop-filter: blur(6px);
@@ -579,6 +605,28 @@ margin-bottom: 20px;
 .kriptovalute-services .section-title h1 {
 	margin-bottom: var(--kripto-gap);
 	text-transform: none;
+}
+/* Stranice usluga - sadržaj bez okvira */
+.kripto-service-page-content {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0;
+}
+.kripto-service-page-content h1 {
+	font-size: 2.25rem;
+	margin-bottom: 1.5rem;
+	font-weight: 600;
+}
+.kripto-service-page-content .kripto-service-page-text {
+	font-size: 1.15rem;
+	line-height: 1.8;
+	color: rgba(255, 255, 255, 0.9);
+}
+.kripto-service-page-content .kripto-service-page-text p {
+	margin-bottom: 1.25rem;
+}
+.kripto-service-page-content .kripto-service-page-text p:last-child {
+	margin-bottom: 0;
 }
 .kripto-hero-title-wrap {
 	padding: 0 50px 100px 50px;
@@ -958,6 +1006,63 @@ margin-bottom: 20px;
 	font-size: 15px;
 	line-height: 26px;
 	margin: 0;
+}
+/* Learn More - visina se poveća tek kad se gumb pojavi */
+.kripto-service-learn-more-wrap {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.kripto-service-card:hover .kripto-service-learn-more-wrap {
+	max-height: 80px;
+}
+.kripto-service-learn-more {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 20px;
+	padding: 10px 24px;
+	background: var(--kripto-accent);
+	color: var(--kripto-btn-text);
+	font-weight: 600;
+	font-size: 14px;
+	border-radius: 30px;
+	text-decoration: none;
+	transform: translateX(-120%);
+	opacity: 0;
+	transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.kripto-service-learn-more i {
+	font-size: 12px;
+	transition: transform 0.3s ease;
+}
+.kripto-service-card:hover .kripto-service-learn-more {
+	transform: translateX(0);
+	opacity: 1;
+}
+.kripto-service-learn-more:hover {
+	background: var(--kripto-accent-hover);
+	color: var(--kripto-btn-text);
+}
+.kripto-service-learn-more:hover i {
+	transform: translateX(4px);
+}
+.kripto-quiz-row {
+	margin-top: 2rem;
+}
+.kripto-quiz-cta .kripto-service-learn-more-wrap {
+	max-height: 80px !important;
+}
+.kripto-quiz-cta .kripto-service-learn-more {
+	transform: translateX(0) !important;
+	opacity: 1 !important;
+}
+.kripto-quiz-cta::before {
+	display: none !important;
+}
+.kripto-quiz-cta:hover {
+	transform: none !important;
+	background: rgba(10, 13, 66, 0.35) !important;
 }
 .kripto-connect-row {
 	margin-top: var(--kripto-gap);

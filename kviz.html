@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Kviz - Provjeri znanje | Kriptovalute.hr</title>
+		<meta name="description" content="Provjerite svoje znanje o blockchain tehnologiji i kriptovalutama. Interaktivni kviz s pitanjima iz svih dijelova vodiča.">
+		<link rel="icon" type="image/png" href="favicon.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/materialdesignicons-min.css">
+		<link rel="stylesheet" href="assets/css/style-two.css?v=14">
+		<link rel="stylesheet" href="edukacija/styles.css">
+		<link rel="stylesheet" href="assets/css/edukacija-inner.css">
+		<script src="edukacija/js/quiz.js" defer></script>
+	</head>
+	<body>
+		<div id="particles-js"></div>
+		<nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+			<div class="container">
+				<a class="navbar-brand" href="index.html"><img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="kripto-nav-logo"></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation"><span class="mdi mdi-menu"></span></button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav ms-auto align-items-center">
+						<li class="nav-item"><a class="nav-link" href="index.html">Početna</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usluge</a>
+							<ul class="dropdown-menu dropdown-menu-end kripto-nav-dropdown">
+								<li><a class="dropdown-item" href="edukacija-i-radionice.html">Edukacija i radionice</a></li>
+								<li><a class="dropdown-item" href="kripto-rjesenja-za-poslovanje.html">Kripto rješenja za poslovanje</a></li>
+								<li><a class="dropdown-item" href="alati-i-platforme-za-trgovanje.html">Alati i platforme za trgovanje</a></li>
+								<li><a class="dropdown-item" href="pravni-i-porezni-savjeti.html">Pravni i porezni savjeti</a></li>
+								<li><a class="dropdown-item" href="blockchain-rjesenja.html">Blockchain rješenja</a></li>
+								<li><a class="dropdown-item" href="savjetovanje-i-podrska.html">Savjetovanje i podrška</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a class="nav-link active" href="kviz.html">Kviz</a></li>
+						<li class="nav-item"><a class="nav-link" href="index.html#kontakt">Kontakt</a></li>
+						<li class="nav-item ms-lg-3"><a href="index.html#kontakt" class="btn_one btn-nav">Kontaktirajte nas</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="about_us section-padding kriptovalute-services kripto-edukacija-inner" style="padding-top: 120px;">
+			<div class="container">
+				<div class="quiz-container">
+					<div id="quiz">
+						<div id="quiz-start-screen" class="quiz-step">
+							<div class="concept-box">
+								<h5>Upute za kviz</h5>
+								<p>
+									Kviz sadrži pitanja iz svih dijelova vodiča o blockchain tehnologiji i kriptovalutama. Za svako pitanje odaberite jedan odgovor koji smatrate točnim. Na kraju kviza dobit ćete rezultat s brojem točnih odgovora.
+								</p>
+							</div>
+							<button id="start-quiz-btn" class="btn">Započni kviz</button>
+						</div>
+						<div id="quiz-questions" class="quiz-step" style="display: none;">
+							<div id="question-container"></div>
+							<div class="quiz-navigation">
+								<span id="question-number">Pitanje 1 od 20</span>
+							</div>
+						</div>
+						<div id="quiz-results" class="quiz-step" style="display: none;">
+							<h3>Rezultati kviza</h3>
+							<div class="concept-box">
+								<h5>Vaš rezultat</h5>
+								<p id="quiz-score">Točnih odgovora: <span id="correct-answers">0</span> od <span id="total-questions">0</span></p>
+								<div id="score-percentage"></div>
+							</div>
+							<button id="restart-quiz-btn" class="btn">Ponovi kviz</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="kripto-footer">
+			<div class="container">
+				<div class="row align-items-start">
+					<div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+						<a href="index.html" class="kripto-footer-logo"><img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="img-fluid"></a>
+						<p class="kripto-footer-desc">Edukacija i interaktive radionice o kriptovalutama i blockchainu.</p>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h6 class="kripto-footer-heading">Linkovi</h6>
+						<ul class="kripto-footer-links">
+							<li><a href="index.html">Početna</a></li>
+							<li><a href="edukacija-i-radionice.html">Edukacija i radionice</a></li>
+							<li><a href="index.html#kontakt">Kontakt</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="assets/js/jquery-1.12.4.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<script src="assets/js/particles.min.js"></script>
+		<script src="assets/js/app.js"></script>
+		<script src="assets/js/scrolltopcontrol.js"></script>
+		<script src="assets/js/scripts-index.js"></script>
+	</body>
+</html>

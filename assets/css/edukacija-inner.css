@@ -1,0 +1,369 @@
+/* Edukacija podstranice - isti dizajn kao početna */
+/* Učitava se nakon styles.css - nadjačava sve za Kriptovalute.hr izgled */
+
+/* Reset styles.css nav - navbar mora koristiti Bootstrap fixed layout */
+nav.navbar,
+nav.navbar.navbar-custom,
+#navbar {
+	position: fixed !important;
+	left: 0 !important;
+	right: 0 !important;
+	top: 0 !important;
+	transform: none !important;
+	width: 100% !important;
+}
+nav.navbar .container {
+	display: block !important;
+}
+nav.navbar .navbar-nav {
+	display: flex !important;
+	margin-bottom: 0 !important;
+	padding-left: 0 !important;
+}
+/* Reset styles.css nav - container unutar nav mora biti Bootstrap layout */
+nav.navbar .container {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	width: 100% !important;
+	max-width: 1140px !important;
+	margin: 0 auto !important;
+	padding: 0 12px !important;
+}
+nav.navbar .navbar-collapse {
+	flex-basis: auto !important;
+}
+nav.navbar .navbar-nav .nav-item {
+	margin-left: 0 !important;
+}
+/* Reset styles.css dropdown-toggle::after - "▼" stvara bijelu liniju, koristi Bootstrap strelicu kao na početnoj */
+nav.navbar .dropdown-toggle::after {
+	content: "" !important;
+	display: inline-block !important;
+	margin-left: 0.255em !important;
+	vertical-align: 0.255em !important;
+	font-size: inherit !important;
+	border-top: 0.3em solid !important;
+	border-right: 0.3em solid transparent !important;
+	border-bottom: 0 !important;
+	border-left: 0.3em solid transparent !important;
+}
+
+/* Body, fontovi i boje - isto kao početna */
+body:has(.kripto-edukacija-inner) {
+	background: rgba(5, 5, 48, 0.4) !important;
+	color: var(--kripto-text) !important;
+	font-family: 'Quicksand', sans-serif !important;
+}
+body:has(.kripto-edukacija-inner) h1,
+body:has(.kripto-edukacija-inner) h2,
+body:has(.kripto-edukacija-inner) h3,
+body:has(.kripto-edukacija-inner) h4,
+body:has(.kripto-edukacija-inner) h5,
+body:has(.kripto-edukacija-inner) h6 {
+	color: var(--kripto-heading) !important;
+	font-family: 'Quicksand', sans-serif !important;
+}
+body:has(.kripto-edukacija-inner) a {
+	color: inherit;
+}
+.kripto-edukacija-inner {
+	padding-top: 120px;
+	min-height: 100vh;
+}
+.kripto-edukacija-inner .container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+.kripto-edukacija-inner .tutorial-content > h2,
+.kripto-edukacija-inner .about-content > h2 {
+	color: var(--kripto-heading) !important;
+	font-family: 'Quicksand', sans-serif !important;
+	font-size: 1.75rem;
+	margin-bottom: 1rem;
+}
+.kripto-edukacija-inner .breadcrumbs {
+	color: var(--kripto-text) !important;
+	opacity: 0.9;
+	margin-bottom: 1.5rem;
+	font-size: 0.95rem;
+}
+.kripto-edukacija-inner .breadcrumbs a {
+	color: var(--kripto-accent) !important;
+}
+.kripto-edukacija-inner .breadcrumbs a:hover {
+	color: var(--kripto-accent-hover) !important;
+}
+/* Sekcije u istom stilu kao kripto-service-card na početnoj */
+.kripto-edukacija-inner article,
+.kripto-edukacija-inner .platform-description {
+	position: relative;
+	overflow: hidden;
+	background: rgba(10, 13, 66, 0.35);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	border-radius: 5px;
+	padding: 30px;
+	margin-bottom: 2rem;
+}
+.kripto-edukacija-inner article::before,
+.kripto-edukacija-inner .platform-description::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 4px;
+	height: 100%;
+	background: var(--kripto-accent, #ffffff);
+	transform: scaleX(1);
+	transform-origin: left center;
+	z-index: 1;
+}
+.kripto-edukacija-inner article h3 {
+	color: var(--kripto-heading) !important;
+	font-family: 'Quicksand', sans-serif !important;
+	margin-top: 1.5rem;
+	margin-bottom: 0.75rem;
+}
+.kripto-edukacija-inner article h3:first-child {
+	margin-top: 0;
+}
+.kripto-edukacija-inner article p,
+.kripto-edukacija-inner .platform-description p {
+	color: var(--kripto-text) !important;
+	line-height: 26px;
+	font-size: 15px;
+	margin-bottom: 1rem;
+}
+.kripto-edukacija-inner .tutorial-navigation {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* Gumbi u istom stilu kao btn_one na početnoj */
+.kripto-edukacija-inner .prev-tutorial,
+.kripto-edukacija-inner .next-tutorial,
+.kripto-edukacija-inner .btn {
+	background: var(--kripto-accent, #ffffff);
+	color: var(--kripto-btn-text, #050530);
+	padding: 10px 36px;
+	border: 2px solid var(--kripto-accent, #ffffff);
+	border-radius: 30px;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 16px;
+	display: inline-block;
+	transition: all 0.3s;
+}
+.kripto-edukacija-inner .prev-tutorial:hover,
+.kripto-edukacija-inner .next-tutorial:hover,
+.kripto-edukacija-inner .btn:hover {
+	background: transparent;
+	border: 2px solid var(--kripto-accent, #ffffff);
+	color: var(--kripto-accent, #ffffff);
+}
+.kripto-edukacija-inner .platform-goals,
+.kripto-edukacija-inner .mission-statement,
+.kripto-edukacija-inner .join-community {
+	position: relative;
+	overflow: hidden;
+	background: rgba(10, 13, 66, 0.35);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	border-radius: 5px;
+	padding: 30px;
+	margin: 1rem 0;
+}
+.kripto-edukacija-inner .platform-goals::before,
+.kripto-edukacija-inner .mission-statement::before,
+.kripto-edukacija-inner .join-community::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 4px;
+	height: 100%;
+	background: var(--kripto-accent, #ffffff);
+	z-index: 1;
+}
+.kripto-edukacija-inner .goals-list {
+	list-style: none;
+	padding: 0;
+}
+.kripto-edukacija-inner .goals-list li {
+	color: var(--kripto-text) !important;
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+.kripto-edukacija-inner .goals-list li strong {
+	color: var(--kripto-accent) !important;
+}
+.kripto-edukacija-inner img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+.kripto-edukacija-inner .concept-box {
+	position: relative;
+	overflow: hidden;
+	background: rgba(10, 13, 66, 0.35);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	padding: 20px 24px;
+	margin: 1rem 0;
+	border-radius: 5px;
+}
+.kripto-edukacija-inner .concept-box::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 4px;
+	height: 100%;
+	background: var(--kripto-accent);
+	z-index: 1;
+}
+.kripto-edukacija-inner .concept-box h5 {
+	color: var(--kripto-heading) !important;
+}
+.kripto-edukacija-inner .concept-box p {
+	margin-bottom: 0.5rem;
+	color: var(--kripto-text) !important;
+}
+.kripto-edukacija-inner .disclaimer {
+	position: relative;
+	overflow: hidden;
+	background: rgba(10, 13, 66, 0.35);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	padding: 20px 24px;
+	margin: 1rem 0;
+	border-radius: 5px;
+}
+.kripto-edukacija-inner .disclaimer::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 4px;
+	height: 100%;
+	background: #ffc107;
+	z-index: 1;
+}
+.kripto-edukacija-inner .animation-container {
+	background: rgba(10, 13, 66, 0.35);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	border-radius: 5px;
+	overflow: hidden;
+}
+/* Nadjačavanje styles.css - container i sadržaj */
+.kripto-edukacija-inner .container {
+	background: transparent !important;
+}
+.kripto-edukacija-inner main {
+	background: transparent !important;
+}
+.kripto-edukacija-inner .tutorial-content,
+.kripto-edukacija-inner .about-content {
+	background: transparent !important;
+}
+/* Quiz i ostale sekcije u istom stilu */
+.kripto-edukacija-inner .quiz-container {
+	position: relative;
+	overflow: hidden;
+	background: rgba(10, 13, 66, 0.35) !important;
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	border-radius: 5px;
+	padding: 30px;
+}
+.kripto-edukacija-inner .quiz-container::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 4px;
+	height: 100%;
+	background: var(--kripto-accent, #ffffff);
+	z-index: 1;
+}
+.kripto-edukacija-inner .quiz-container .question h4 {
+	color: var(--kripto-heading) !important;
+}
+.kripto-edukacija-inner .option {
+	background: rgba(10, 13, 66, 0.35) !important;
+	border-color: rgba(255, 255, 255, 0.2) !important;
+	color: var(--kripto-text) !important;
+}
+.kripto-edukacija-inner .option:hover {
+	background: rgba(40, 50, 120, 0.55) !important;
+}
+/* Boje u pregledu odgovora kviza */
+.kripto-edukacija-inner .answers-review .correct-text {
+	color: #2ecc71 !important;
+}
+.kripto-edukacija-inner .answers-review .incorrect-text {
+	color: #e74c3c !important;
+}
+.kripto-edukacija-inner .quiz-navigation button,
+.kripto-edukacija-inner #start-quiz-btn {
+	background: var(--kripto-accent, #ffffff) !important;
+	color: var(--kripto-btn-text, #050530) !important;
+	border: 2px solid var(--kripto-accent, #ffffff) !important;
+	border-radius: 30px !important;
+	padding: 10px 36px !important;
+	font-weight: 500 !important;
+}
+.kripto-edukacija-inner .quiz-navigation button:hover,
+.kripto-edukacija-inner #start-quiz-btn:hover {
+	background: transparent !important;
+	color: var(--kripto-accent, #ffffff) !important;
+	border-color: var(--kripto-accent, #ffffff) !important;
+}
+.kripto-edukacija-inner .tutorial-intro {
+	position: relative;
+	overflow: hidden;
+	background: rgba(10, 13, 66, 0.35);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	border-radius: 5px;
+	padding: 30px;
+	margin-bottom: 2rem;
+}
+.kripto-edukacija-inner .tutorial-intro::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 4px;
+	height: 100%;
+	background: var(--kripto-accent, #ffffff);
+	z-index: 1;
+}
+.kripto-edukacija-inner .wallet-image {
+	background: rgba(10, 13, 66, 0.35);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	border-radius: 5px;
+	padding: 20px;
+	margin: 1rem 0;
+}
+.kripto-edukacija-inner .wallet-image img {
+	border-radius: 5px;
+}
+.kripto-edukacija-inner .image-container {
+	background: rgba(10, 13, 66, 0.35);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	border-radius: 5px;
+	padding: 20px;
+	margin: 1rem 0;
+}

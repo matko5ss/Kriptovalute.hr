@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="hr">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Osnovni pojmovi i tehnologija - Edukacija | Kriptovalute.hr</title>
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/materialdesignicons-min.css">
+    <link rel="stylesheet" href="../assets/css/style-two.css?v=14" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../assets/css/edukacija-inner.css" />
+    <script src="js/content-animations.js" defer></script>
+  </head>
+  <body>
+
+        <div id="particles-js"></div>
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html"><img src="../assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="kripto-nav-logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation"><span class="mdi mdi-menu"></span></button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Početna</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usluge</a>
+              <ul class="dropdown-menu dropdown-menu-end kripto-nav-dropdown">
+                <li><a class="dropdown-item" href="../edukacija-i-radionice.html">Edukacija i radionice</a></li>
+                <li><a class="dropdown-item" href="../kripto-rjesenja-za-poslovanje.html">Kripto rješenja za poslovanje</a></li>
+                <li><a class="dropdown-item" href="../alati-i-platforme-za-trgovanje.html">Alati i platforme za trgovanje</a></li>
+                <li><a class="dropdown-item" href="../pravni-i-porezni-savjeti.html">Pravni i porezni savjeti</a></li>
+                <li><a class="dropdown-item" href="../blockchain-rjesenja.html">Blockchain rješenja</a></li>
+                <li><a class="dropdown-item" href="../savjetovanje-i-podrska.html">Savjetovanje i podrška</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="../kviz.html">Kviz</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#kontakt">Kontakt</a></li>
+            <li class="nav-item ms-lg-3"><a href="../index.html#kontakt" class="btn_one btn-nav">Kontaktirajte nas</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="about_us section-padding kriptovalute-services kripto-edukacija-inner">
+
+
+    <main class="container">
+      <section class="tutorial-content">
+        <h2>3. Osnovni pojmovi i tehnologija</h2>
+
+        <div class="breadcrumbs">
+          <a href="../edukacija-i-radionice.html">Edukacija i radionice</a> &gt;
+          <span>Osnovni pojmovi i tehnologija</span>
+        </div>
+
+        <div class="tutorial-intro">
+          <p>
+            Dobrodošli u treći dio našeg vodiča gdje ćemo se detaljno upoznati s
+            osnovnim pojmovima i tehnologijama koje čine temelj blockchain
+            sustava. Razumijevanje ovih tehnoloških koncepata ključno je za
+            svladavanje kriptovaluta i blockchain tehnologije. U ovom vodiču
+            detaljno ćemo istražiti kako kriptografski algoritmi, konsenzusni
+            mehanizmi i distribuirana arhitektura zajedno čine blockchain
+            revolucionarnom tehnologijom.
+          </p>
+        </div>
+
+        <section class="tutorial-section">
+          <h3>Kriptografija: Temelj sigurnosti blockchain sustava</h3>
+
+          <p>
+            Kriptografija je digitalna sigurnosna tehnologija koja blockchain
+            čini pouzdanim i sigurnim. Koristi matematičke metode za zaštitu
+            podataka i potvrđivanje identiteta bez potrebe za središnjim
+            autoritetom.
+          </p>
+          <div
+            class="animation-container"
+            style="width: 50%; max-width: 300px; margin: 0 auto"
+          >
+            <div
+              class="lottie-animation"
+              data-animation="Animations/Smart Contract.json"
+            ></div>
+          </div>
+          <h4>Ključni kriptografski koncepti u blockchain tehnologiji:</h4>
+          <div class="concept-box">
+            <h5>1. Kriptografske hash funkcije</h5>
+            <p>
+              Hash funkcije su poput digitalnog otiska prsta - pretvaraju
+              podatke bilo koje veličine u jedinstveni kod fiksne duljine.
+              Bitcoin koristi SHA-256, a Ethereum Keccak-256.
+            </p>
+            <p>U blockchainu, hash funkcije:</p>
+            <ul>
+              <li>Štite podatke od neovlaštenih izmjena</li>
+              <li>
+                Povezuju blokove u lanac (svaki blok sadrži hash prethodnog
+                bloka)
+              </li>
+              <li>Omogućuju brzu provjeru velikih količina podataka</li>
+              <li>Omogućuju rudarima dokazati obavljeni rad</li>
+            </ul>
+          </div>
+
+          <div class="concept-box">
+            <h5>2. Asimetrična kriptografija</h5>
+            <p>
+              Asimetrična kriptografija koristi dva povezana ključa koji djeluju
+              poput brave i ključa:
+            </p>
+            <ul>
+              <li>
+                <strong>Privatni ključ</strong>: Vaš osobni digitalni ključ koji
+                nikad ne dijelite. Njime pristupate svojim sredstvima i
+                potpisujete transakcije.
+              </li>
+              <li>
+                <strong>Javni ključ</strong>: Možete ga slobodno dijeliti. On
+                stvara adresu vašeg novčanika.
+              </li>
+            </ul>
+            <p>
+              Ovi ključevi matematički su povezani tako da je nemoguće otkriti
+              privatni ključ iz javnog, čak ni s najsnažnijim računalima.
+            </p>
+          </div>
+
+          <div class="concept-box">
+            <h5>3. Digitalni potpisi</h5>
+            <p>
+              Digitalni potpis je kriptografski dokaz da ste vi autor neke
+              transakcije. On:
+            </p>
+            <ul>
+              <li>
+                Potvrđuje vaš identitet (samo vi možete potpisati sa svojim
+                privatnim ključem)
+              </li>
+              <li>Osigurava da transakcija nije naknadno izmijenjena</li>
+              <li>Ne može biti kopiran ili falsificiran</li>
+            </ul>
+            <p>
+              Svaka blockchain transakcija sadrži digitalni potpis koji dokazuje
+              da ju je pokrenuo vlasnik sredstava.
+            </p>
+          </div>
+        </section>
+
+        <section class="tutorial-section">
+          <h3>Konsenzusni algoritmi: Kako blockchain postiže dogovor</h3>
+
+          <p>
+            Konsenzusni algoritmi omogućuju blockchain mreži da postigne dogovor
+            bez središnjeg autoriteta. Oni osiguravaju da svi čvorovi imaju
+            identičnu kopiju podataka i sprječavaju zlonamjerne napade na mrežu.
+          </p>
+
+          <div
+            class="lottie-animation"
+            data-animation="Animations/consensus1.json"
+            style="width: 100%; max-width: 400px; height: 300px; margin: 0 auto"
+          ></div>
+
+          <h4>Četiri ključna konsenzusna algoritma:</h4>
+
+          <div class="concept-box">
+            <h5>1. Proof-of-Work (PoW)</h5>
+            <p>
+              Najstariji i najpouzdaniji konsenzusni algoritam, koristi ga
+              Bitcoin. Rudari računalno rješavaju složene matematičke zagonetke.
+            </p>
+            <p><strong>Kako radi:</strong></p>
+            <ul>
+              <li>
+                Rudari se natječu u rješavanju kompleksnih matematičkih problema
+              </li>
+              <li>
+                Prvi koji riješi problem dobiva pravo dodati novi blok i osvaja
+                nagradu
+              </li>
+              <li>
+                Svi ostali rudari potvrđuju točnost rješenja prije prihvaćanja
+                bloka
+              </li>
+            </ul>
+            <p>
+              <strong>Primjena:</strong> Bitcoin (SHA-256), Litecoin (Scrypt),
+              Dogecoin i mnogi drugi.
+            </p>
+          </div>
+
+          <div class="concept-box">
+            <h5>2. Proof-of-Stake (PoS)</h5>
+            <p>
+              Energetski učinkovita alternativa gdje se validatori biraju prema
+              količini kriptovalute koju posjeduju i spremni su "založiti".
+            </p>
+            <p><strong>Kako radi:</strong></p>
+            <ul>
+              <li>
+                Validatori zalažu ("stake") određenu količinu kriptovalute kao
+                jamstvo
+              </li>
+              <li>
+                Algoritam bira validatore za ovjeru blokova, većim udjelom veća
+                šansa za odabir
+              </li>
+              <li>Nepošten rad rezultira gubitkom založenih sredstava</li>
+            </ul>
+            <p>
+              <strong>Primjena:</strong> Ethereum 2.0, Cardano, Solana,
+              Polkadot, Cosmos.
+            </p>
+          </div>
+
+          <div class="concept-box">
+            <h5>3. Delegated Proof-of-Stake (DPoS)</h5>
+            <p>
+              Nadogradnja PoS-a koja funkcionira poput izborne demokracije -
+              vlasnici tokena glasaju za delegate koji validiraju transakcije.
+            </p>
+            <p><strong>Prednosti:</strong></p>
+            <ul>
+              <li>Vrlo brze transakcije (tisuće transakcija u sekundi)</li>
+              <li>Niska potrošnja energije</li>
+              <li>Sudionici mogu zamijeniti delegate koji loše rade</li>
+            </ul>
+            <p>
+              <strong>Primjena:</strong> EOS (21 proizvođača blokova), TRON (27
+              super predstavnika), BitShares.
+            </p>
+          </div>
+
+          <div class="concept-box">
+            <h5>4. Proof-of-Authority (PoA)</h5>
+            <p>
+              Konsenzusni algoritam za privatne blockchaine gdje je identitet
+              validatora poznat i potvrđen. Oslanja se na reputaciju umjesto na
+              ulog.
+            </p>
+            <p><strong>Kako radi:</strong></p>
+            <ul>
+              <li>Validatori su javno poznati i provjereni entiteti</li>
+              <li>
+                Validatori se izmjenjuju u potvrđivanju blokova prema rasporedu
+              </li>
+              <li>Sigurnost se temelji na riziku gubitka reputacije</li>
+            </ul>
+            <p>
+              <strong>Primjena:</strong> VeChain, Azure Blockchain, privatni
+              blockchainovi za poduzeća i konzorcije.
+            </p>
+          </div>
+        </section>
+
+        <section class="tutorial-section">
+          <h3>
+            Distribuirani čvorovi i pametni ugovori: Temelj decentralizacije
+          </h3>
+
+          <p>
+            Nakon kriptografije i konsenzusnih algoritama, upoznat ćemo fizičku
+            infrastrukturu blockchaina i programsku logiku koja omogućuje
+            napredne aplikacije.
+          </p>
+
+          <h4>Distribuirani čvorovi: Infrastruktura blockchaina</h4>
+
+          <div
+            class="lottie-animation"
+            data-animation="Animations/blockchain.json"
+            style="width: 100%; max-width: 400px; height: 300px; margin: 0 auto"
+          ></div>
+
+          <div class="concept-box">
+            <h5>Što su distribuirani čvorovi?</h5>
+            <p>
+              Distribuirani čvorovi su mreža međusobno povezanih računala koja
+              zajednički održavaju blockchain. Umjesto oslanjanja na jedan
+              centralni server, blockchain koristi mrežu ravnopravnih računala
+              raspoređenih diljem svijeta.
+            </p>
+            <p>
+              <strong>Uloge u mreži:</strong>
+            </p>
+            <ul>
+              <li>
+                <strong>Čuvari podataka</strong>: Pohranjuju i čuvaju potpunu
+                ili djelomičnu kopiju blockchain zapisa
+              </li>
+              <li>
+                <strong>Verifikatori</strong>: Provjeravaju ispravnost novih
+                transakcija prije njihovog dodavanja u blockchain
+              </li>
+              <li>
+                <strong>Graditelji blokova</strong>: Posebna skupina čvorova
+                koja stvara nove blokove koristeći konsenzusne algoritme
+              </li>
+            </ul>
+          </div>
+
+          <div class="concept-box">
+            <h5>Zašto su distribuirani čvorovi važni?</h5>
+            <ul>
+              <li>
+                <strong>Otpornost na kvarove:</strong> Mreža radi čak i ako
+                mnogi čvorovi prestanu raditi
+              </li>
+              <li>
+                <strong>Sigurnost:</strong> Napasti mrežu znači kontrolirati
+                većinu čvorova, što je gotovo nemoguće
+              </li>
+              <li>
+                <strong>Zaštita od cenzure:</strong> Nitko ne može jednostrano
+                blokirati ili mijenjati transakcije
+              </li>
+              <li>
+                <strong>Redundancija podataka:</strong> Podaci su sigurno
+                pohranjeni na tisućama računala istovremeno
+              </li>
+            </ul>
+          </div>
+
+          <h4>Pametni ugovori: Automatizirana pravila na blockchainu</h4>
+
+          <div class="concept-box">
+            <h5>Što su pametni ugovori?</h5>
+            <p>
+              Pametni ugovori su programi koji se izvršavaju automatski na
+              blockchainu kada su ispunjeni određeni uvjeti. Djeluju kao
+              digitalni ugovori koji se sami provode bez potrebe za
+              posrednicima.
+            </p>
+            
+            <div
+              class="lottie-animation"
+              data-animation="Animations/smcontract.json"
+              style="width: 100%; max-width: 400px; height: 300px; margin: 0 auto"
+            ></div>
+            
+            <p>
+              <strong>Glavne karakteristike:</strong>
+            </p>
+            <ul>
+              <li>
+                <strong>Automatsko izvršavanje</strong>: Aktiviraju se kad su
+                zadovoljeni predviđeni uvjeti
+              </li>
+              <li>
+                <strong>Nepromjenjivost</strong>: Nakon što se postave na
+                blockchain, ne mogu se mijenjati
+              </li>
+              <li>
+                <strong>Transparentnost</strong>: Svatko može vidjeti njihov kod
+                i kako funkcioniraju
+              </li>
+              <li>
+                <strong>Pouzdanost</strong>: Isti ulazni podaci uvijek daju isti
+                rezultat
+              </li>
+            </ul>
+          </div>
+
+          <div class="concept-box">
+            <h5>Primjene pametnih ugovora</h5>
+            <p>
+              Pametni ugovori omogućuju različite decentralizirane aplikacije
+              (dApps):
+            </p>
+
+            <ul>
+              <li>
+                <strong>DeFi (Decentralizirane financije):</strong> Financijske
+                usluge bez banaka
+                <ul>
+                  <li>
+                    Pozajmljivanje i posudba kriptovaluta (Aave, Compound)
+                  </li>
+                  <li>Trgovanje bez posrednika (Uniswap, SushiSwap)</li>
+                  <li>Stabilni novčići vezani uz vrijednost dolara ili eura</li>
+                </ul>
+              </li>
+
+              <li>
+                <strong>NFT (Nezamjenjivi tokeni):</strong> Digitalna umjetnost,
+                kolekcionarski predmeti i certifikati vlasništva
+              </li>
+
+              <li>
+                <strong>DAO (Decentralizirane autonomne organizacije):</strong>
+                Organizacije kojima upravljaju korisnici kroz glasanje
+              </li>
+
+              <li>
+                <strong>Lančani opskrbe:</strong> Praćenje proizvoda od
+                proizvođača do kupca s automatskim plaćanjem
+              </li>
+            </ul>
+          </div>
+
+          <div class="concept-box">
+            <h5>Izazovi pametnih ugovora</h5>
+
+            <ul>
+              <li>
+                <strong>Sigurnost:</strong> Pogreške u kodu mogu dovesti do
+                gubitka sredstava (poznati primjer: DAO hack)
+              </li>
+
+              <li>
+                <strong>Nepromjenjivost:</strong> Nakon postavljanja na
+                blockchain, kod se ne može mijenjati, pa sigurnosni propusti
+                ostaju
+              </li>
+
+              <li>
+                <strong>Oracle problem:</strong> Pametni ugovori trebaju posebne
+                sustave ("oracle") za pristup vanjskim podacima
+              </li>
+
+              <li>
+                <strong>Skalabilnost:</strong> Ograničen broj transakcija po
+                sekundi i visoke naknade na popularnim blockchainovima
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="tutorial-conclusion">
+          <h3>Zaključak</h3>
+          <p>
+            Blockchain tehnologija temelji se na četiri ključna elementa:
+            kriptografiji, konsenzusnim algoritmima, distribuiranim čvorovima i
+            pametnim ugovorima. Zajedno, oni omogućuju stvaranje
+            decentraliziranih sustava koji ne zahtijevaju povjerenje u središnji
+            autoritet.
+          </p>
+          <p>
+            Ova revolucionarna tehnologija mijenja način na koji razmjenjujemo
+            vrijednost, pohranjujemo podatke i automatiziramo procese u
+            digitalnom svijetu. Blockchain stvara nove mogućnosti za
+            transparentnije, sigurnije i dostupnije financijske sustave,
+            poslovne procese i digitalno vlasništvo.
+          </p>
+        </div>
+
+        <div class="tutorial-navigation">
+          <a href="tutorial-2.html" class="prev-tutorial"
+            >← Prethodni vodič: Kriptonovčanici</a
+          >
+          <a href="tutorial-4.html" class="next-tutorial"
+            >Sljedeći vodič: Najpoznatije kriptovalute i njihove razlike →</a
+          >
+        </div>
+      </section>
+    </main>
+    </section>
+    <footer class="kripto-footer">
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+            <a href="../index.html" class="kripto-footer-logo"><img src="../assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="img-fluid"></a>
+            <p class="kripto-footer-desc">Edukacija i interaktive radionice o kriptovalutama i blockchainu.</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h6 class="kripto-footer-heading">Linkovi</h6>
+            <ul class="kripto-footer-links">
+              <li><a href="../index.html">Početna</a></li>
+              <li><a href="../kviz.html">Kviz</a></li>
+              <li><a href="../index.html#kontakt">Kontakt</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/particles.min.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/scrolltopcontrol.js"></script>
+    <script src="../assets/js/scripts-index.js"></script>
+  </body>
+</html>

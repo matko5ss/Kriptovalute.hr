@@ -75,10 +75,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Redirect - relativna putanja radi u root i subdirektorijima
-$redirect_base = (dirname($_SERVER['SCRIPT_NAME']) === '/' || dirname($_SERVER['SCRIPT_NAME']) === '\\') 
-    ? 'index.html' 
-    : dirname($_SERVER['SCRIPT_NAME']) . '/index.html';
+// Redirect - koristi hidden "redirect" ako je poslan, inače index.html
+$redirect_page = isset($_POST['redirect']) ? basename(trim($_POST['redirect'])) : '';
+$valid_pages = ['edukacija-i-radionice.html', 'kripto-rjesenja-za-poslovanje.html', 'alati-i-platforme-za-trgovanje.html', 'pravni-i-porezni-savjeti.html', 'blockchain-rjesenja.html', 'savjetovanje-i-podrska.html'];
+$redirect_base = ($redirect_page && in_array($redirect_page, $valid_pages)) ? $redirect_page : 'index.html';
 $redirect_url = $success 
     ? $redirect_base . '?sent=1#kontakt' 
     : ($error ? $redirect_base . '?error=' . urlencode($error) . '#kontakt' : $redirect_base . '#kontakt');
