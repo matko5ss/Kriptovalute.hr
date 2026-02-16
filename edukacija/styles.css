@@ -872,6 +872,13 @@ footer {
   background-color: rgba(108, 92, 231, 0.1);
 }
 
+@media (max-width: 768px) {
+  .option.selected {
+    border-color: var(--light-bg);
+    background-color: var(--main-bg-color);
+  }
+}
+
 .option.correct {
   border-color: #2ecc71;
   background-color: rgba(46, 204, 113, 0.1);

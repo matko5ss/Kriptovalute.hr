@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
             question: "Koji porezni tretman imaju kriptovalute u Hrvatskoj?",
             options: [
                 "Ne podliježu nikakvom oporezivanju",
-                "Oporezuju se po stopi od 10% plus prirez, uz određena oslobođenja",
+                "Oporezuju se po stopi od 12% plus prirez, uz određena oslobođenja",
                 "Oporezuju se jednako kao dionice po stopi od 25%",
                 "Oporezuju se samo ako se koriste za plaćanje robe i usluga"
             ],
@@ -223,6 +223,111 @@ document.addEventListener('DOMContentLoaded', function() {
                 "Provođenje dubinske analize stranaka (KYC) i praćenje sumnjivih transakcija",
                 "Isključivo izvještavanje porezne uprave o godišnjim prihodima"
             ],
+            correctAnswer: 2
+        },
+        {
+            question: "Na kojoj tehnologiji se temelji većina kriptovaluta?",
+            options: ["Cloud computing", "Blockchain", "Umjetna inteligencija", "Internet stvari"],
+            correctAnswer: 1
+        },
+        {
+            question: "Što određuje vrijednost kriptovalute?",
+            options: ["Državna regulacija", "Količina zlata", "Ponuda i potražnja", "Starost valute"],
+            correctAnswer: 2
+        },
+        {
+            question: "Što znači da je kriptovaluta decentralizirana?",
+            options: [
+                "Kontrolira je jedna banka",
+                "Nema središnje institucije koja je kontrolira",
+                "Može se koristiti samo lokalno",
+                "Ima fizičku podružnicu"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "Koji je jedan od glavnih rizika ulaganja u kriptovalute?",
+            options: ["Spora obrada transakcija", "Visoka volatilnost cijena", "Nemogućnost kupnje", "Obavezno plaćanje poreza"],
+            correctAnswer: 1
+        },
+        {
+            question: "Kako se zove najmanja jedinica Bitcoina?",
+            options: ["Bit", "Coin", "Satoshi", "Nano"],
+            correctAnswer: 2
+        },
+        {
+            question: "Što je kripto burza?",
+            options: [
+                "Digitalni novčanik",
+                "Platforma za kupnju i prodaju kriptovaluta",
+                "Program za rudarenje",
+                "Vrsta blockchaina"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "Što znači HODL?",
+            options: ["Vrsta kriptovalute", "Brza prodaja", "Dugoročno držanje kriptovaluta", "Program za trgovanje"],
+            correctAnswer: 2
+        },
+        {
+            question: "Što znači kratica NFT?",
+            options: ["New Finance Token", "Non-Fungible Token", "Network File Transfer", "New Form of Trading"],
+            correctAnswer: 1
+        },
+        {
+            question: "Što je \"gas fee\" na Ethereum mreži?",
+            options: ["Porez na kripto", "Nagrada rudarima", "Naknada za izvršavanje transakcija", "Cijena Ethereuma"],
+            correctAnswer: 2
+        },
+        {
+            question: "Što znači \"rug pull\"?",
+            options: [
+                "Pad cijene zbog tržišta",
+                "Prevara u kojoj kreatori projekta povuku novac",
+                "Tehnička greška blockchaina",
+                "Vrsta NFT-a"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "Što je DeFi?",
+            options: ["Digitalna fiat valuta", "Decentralizirane financije", "Vrsta kripto burze", "Program za rudarenje"],
+            correctAnswer: 1
+        },
+        {
+            question: "Što znači \"burn\" tokena?",
+            options: ["Stvaranje novih tokena", "Privremeno zamrzavanje", "Trajno uklanjanje tokena iz opticaja", "Zamjena za NFT"],
+            correctAnswer: 2
+        },
+        {
+            question: "Što znači pojam \"bull market\"?",
+            options: ["Tržište bez trgovanja", "Tržište na kojem cijene rastu", "Tržište samo za dionice", "Tržište s padom cijena"],
+            correctAnswer: 1
+        },
+        {
+            question: "Što znači pojam \"bear market\"?",
+            options: ["Tržište s rastom cijena", "Tržište s malim rizikom", "Tržište s dugotrajnim padom cijena", "Tržište s velikim dobitkom"],
+            correctAnswer: 2
+        },
+        {
+            question: "Što je \"ATH\" u kriptovalutama?",
+            options: ["Prosječna cijena", "Najniža cijena", "Najviša povijesna cijena", "Početna cijena"],
+            correctAnswer: 2
+        },
+        {
+            question: "Što je \"staking\"?",
+            options: ["Brza prodaja", "Rudarenje Bitcoina", "Zaključavanje kriptovaluta radi nagrade", "Gubitak tokena"],
+            correctAnswer: 2
+        },
+        {
+            question: "Što znači \"pump and dump\"?",
+            options: ["Stabilan rast", "Dugoročna investicija", "Umjetno dizanje pa nagli pad cijene", "Vrsta stablecoina"],
+            correctAnswer: 2
+        },
+        {
+            question: "Što je \"halving\" kod Bitcoina?",
+            options: ["Duplanje nagrade", "Gašenje mreže", "Smanjenje nagrade za rudarenje", "Promjena blockchaina"],
             correctAnswer: 2
         }
     ];
@@ -249,16 +354,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let userAnswers = window.userAnswers;
     let shuffledQuestions = window.shuffledQuestions;
     
-    // Initialize quiz
+    // Initialize quiz - uvijek 20 pitanja, nasumično odabranih iz baze
+    const QUIZ_QUESTION_COUNT = 20;
     function initQuiz() {
-        // Reset state
         currentQuestionIndex = 0;
-        userAnswers = Array(quizQuestions.length).fill(null);
+        // Shuffle and pick 20 questions
+        shuffledQuestions = [...quizQuestions].sort(() => Math.random() - 0.5).slice(0, QUIZ_QUESTION_COUNT);
+        userAnswers = Array(shuffledQuestions.length).fill(null);
         
-        // Shuffle questions
-        shuffledQuestions = [...quizQuestions].sort(() => Math.random() - 0.5);
-        
-        // Update total questions count
         totalQuestions.textContent = shuffledQuestions.length;
         
         // Show first question
@@ -365,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     const duration = 5 * 1000;
                     const animationEnd = Date.now() + duration;
-                    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+                    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 99999 };
 
                     function randomInRange(min, max) {
                         return Math.random() * (max - min) + min;

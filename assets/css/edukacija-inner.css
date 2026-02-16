@@ -316,6 +316,12 @@ body:has(.kripto-edukacija-inner) a {
 .kripto-edukacija-inner .option:hover {
 	background: rgba(40, 50, 120, 0.55) !important;
 }
+@media (max-width: 768px) {
+	.kripto-edukacija-inner .option.selected {
+		background: rgba(10, 13, 66, 0.35) !important;
+		border-color: rgba(255, 255, 255, 0.2) !important;
+	}
+}
 /* Boje u pregledu odgovora kviza */
 .kripto-edukacija-inner .answers-review .correct-text {
 	color: #2ecc71 !important;
