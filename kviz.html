@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Kviz - Provjeri znanje | Kriptovalute.hr</title>
+		<meta name="description" content="Provjerite svoje znanje o blockchain tehnologiji i kriptovalutama. Interaktivni kviz s pitanjima iz svih dijelova vodiča.">
+		<link rel="icon" type="image/png" href="favicon.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/materialdesignicons-min.css">
+		<link rel="stylesheet" href="assets/css/style-two.css?v=15">
+		<link rel="stylesheet" href="edukacija/styles.css">
+		<link rel="stylesheet" href="assets/css/edukacija-inner.css?v=3">
+		<script src="edukacija/js/quiz.js" defer></script>
+		<script>
+			if (new URLSearchParams(window.location.search).get('autostart') === '1') {
+				document.documentElement.classList.add('kviz-autostart');
+			}
+		</script>
+		<style>
+			.kviz-autostart #quiz-start-screen { display: none !important; }
+		</style>
+	</head>
+	<body>
+		<div id="particles-js"></div>
+		<nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+			<div class="container">
+				<a class="navbar-brand" href="index.html"><img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="kripto-nav-logo"></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation"><span class="mdi mdi-menu"></span></button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav ms-auto align-items-center">
+						<li class="nav-item"><a class="nav-link" href="index.html">Početna</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usluge</a>
+							<ul class="dropdown-menu dropdown-menu-end kripto-nav-dropdown">
+								<li><a class="dropdown-item" href="edukacija-i-radionice.html">Edukacija i radionice</a></li>
+								<li><a class="dropdown-item" href="kripto-rjesenja-za-poslovanje.html">Kripto rješenja za poslovanje</a></li>
+								<li><a class="dropdown-item" href="alati-i-platforme-za-trgovanje.html">Alati i platforme za trgovanje</a></li>
+								<li><a class="dropdown-item" href="pravni-i-porezni-savjeti.html">Pravni i porezni savjeti</a></li>
+								<li><a class="dropdown-item" href="blockchain-rjesenja.html">Blockchain rješenja</a></li>
+								<li><a class="dropdown-item" href="savjetovanje-i-podrska.html">Savjetovanje i podrška</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a class="nav-link active" href="kviz.html">Kviz</a></li>
+						<li class="nav-item"><a class="nav-link" href="index.html#kontakt">Kontakt</a></li>
+						<li class="nav-item ms-lg-3"><a href="index.html#kontakt" class="btn_one btn-nav">Kontaktirajte nas</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- Custom confirm modal -->
+	<div id="kviz-confirm-modal" style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center;">
+		<div style="position:absolute; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px);"></div>
+		<div style="position:relative; background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:32px 28px; max-width:360px; width:90%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+			<div style="font-size:36px; margin-bottom:12px;">🔄</div>
+			<h4 style="color:#fff; font-size:17px; margin-bottom:8px; font-weight:600;">Pokreni kviz iznova?</h4>
+			<p style="color:rgba(255,255,255,0.6); font-size:14px; margin-bottom:24px;">Tvoj trenutni napredak bit će izgubljen.</p>
+			<div style="display:flex; gap:10px; justify-content:center;">
+				<button id="kviz-confirm-cancel" style="flex:1; padding:10px 0; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:transparent; color:rgba(255,255,255,0.7); font-size:14px; cursor:pointer; transition:all 0.2s;">Odustani</button>
+				<button id="kviz-confirm-ok" style="flex:1; padding:10px 0; border-radius:8px; border:none; background:linear-gradient(135deg,#6c5ce7,#a29bfe); color:#fff; font-size:14px; font-weight:600; cursor:pointer; transition:all 0.2s;">Pokreni ponovo</button>
+			</div>
+		</div>
+	</div>
+
+	<section class="about_us section-padding kriptovalute-services kripto-edukacija-inner kviz-page" style="padding-top: 120px;">
+			<div class="container">
+
+			<div class="quiz-container" id="quiz">
+		<div id="quiz-inner">
+
+					<!-- START SCREEN -->
+					<div id="quiz-start-screen" class="quiz-step">
+						<div class="kviz-start-hero">
+							<div class="kviz-start-icon"><i class="fa fa-bolt"></i></div>
+							<h2 class="kviz-start-title">Provjeri znanje</h2>
+							<p class="kviz-start-desc">Testiraj se iz kriptovaluta i blockchain tehnologije kroz 20 nasumičnih pitanja.</p>
+							<div class="kviz-start-stats">
+								<div class="kviz-stat">
+									<span class="kviz-stat-num">20</span>
+									<span class="kviz-stat-label">pitanja</span>
+								</div>
+								<div class="kviz-stat-divider"></div>
+								<div class="kviz-stat">
+									<span class="kviz-stat-num">16</span>
+									<span class="kviz-stat-label">za prolaz</span>
+								</div>
+								<div class="kviz-stat-divider"></div>
+								<div class="kviz-stat">
+									<span class="kviz-stat-num">∞</span>
+									<span class="kviz-stat-label">pokušaja</span>
+								</div>
+							</div>
+							<button id="start-quiz-btn" class="btn kviz-start-btn">Započni kviz &nbsp;<i class="fa fa-arrow-right"></i></button>
+						</div>
+					</div>
+
+				<!-- QUESTIONS SCREEN -->
+				<div id="quiz-questions" class="quiz-step" style="display: none;">
+					<div class="kviz-restart-above-progress" id="restart-quiz-mid-wrap" style="display: none;">
+						<span style="position: relative; display: inline-block;">
+							<button id="restart-quiz-mid-btn" style="background: transparent; border: none; cursor: pointer; color: rgba(255,255,255,0.4); font-size: 18px; line-height: 1; padding: 4px; transition: color 0.2s ease;" onmouseover="this.style.color='rgba(255,255,255,0.9)';document.getElementById('restart-tooltip').style.opacity='1'" onmouseout="this.style.color='rgba(255,255,255,0.4)';document.getElementById('restart-tooltip').style.opacity='0'"><i class="fa fa-refresh"></i></button>
+							<span id="restart-tooltip" style="position: absolute; right: 0; top: 32px; background: rgba(20,20,40,0.95); color: #fff; font-size: 12px; white-space: nowrap; padding: 5px 10px; border-radius: 6px; pointer-events: none; opacity: 0; transition: opacity 0.2s ease; border: 1px solid rgba(255,255,255,0.15); z-index: 10;">Pokreni ponovo</span>
+						</span>
+					</div>
+					<div class="kviz-progress-wrap">
+						<div class="kviz-progress-bar-bg">
+							<div class="kviz-progress-bar-fill" id="kviz-progress-fill"></div>
+						</div>
+						<span class="kviz-progress-label" id="question-number">1 / 20</span>
+					</div>
+					<div id="question-container"></div>
+				</div>
+
+					<!-- RESULTS SCREEN -->
+					<div id="quiz-results" class="quiz-step" style="display: none;">
+						<div class="kviz-results-top-btn">
+							<button id="restart-quiz-btn" class="btn kviz-start-btn"><i class="fa fa-refresh"></i>&nbsp; Pokreni kviz ponovno</button>
+						</div>
+						<div class="kviz-results-header">
+							<div class="kviz-results-icon" id="kviz-results-icon">🏆</div>
+							<h3 class="kviz-results-title">Rezultati kviza</h3>
+						</div>
+						<div class="kviz-score-display">
+							<div class="kviz-score-main">
+								<span id="correct-answers">0</span><span class="kviz-score-slash">/</span><span id="total-questions">0</span>
+							</div>
+							<div class="kviz-score-label">točnih odgovora</div>
+							<div id="score-percentage"></div>
+						</div>
+					</div>
+
+				</div>
+				</div>
+			</div>
+		</section>
+		<footer class="kripto-footer">
+			<div class="container">
+				<div class="row align-items-start">
+					<div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+						<a href="index.html" class="kripto-footer-logo"><img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="img-fluid"></a>
+						<p class="kripto-footer-desc">Edukacija i interaktivne radionice o kriptovalutama i blockchainu.</p>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h6 class="kripto-footer-heading">Linkovi</h6>
+						<ul class="kripto-footer-links">
+							<li><a href="index.html">Početna</a></li>
+							<li><a href="edukacija-i-radionice.html">Edukacija i radionice</a></li>
+							<li><a href="index.html#kontakt">Kontakt</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="assets/js/jquery-1.12.4.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<script src="assets/js/particles.min.js"></script>
+		<script src="assets/js/app.js"></script>
+		<script src="assets/js/scrolltopcontrol.js"></script>
+		<script src="assets/js/scripts-index.js"></script>
+	</body>
+</html>

@@ -1,0 +1,93 @@
+/* Edukacija stranica - Kriptovalute.hr stil */
+.kripto-edukacija-page .kripto-edukacija-hero {
+	text-align: center;
+	margin-bottom: 2.5rem;
+}
+.kripto-edukacija-page .kripto-edukacija-hero h1 {
+	font-size: 2rem;
+	font-weight: 600;
+	color: #fff;
+}
+.kripto-edukacija-page .kripto-edukacija-intro {
+	max-width: 800px;
+	margin: 0 auto 3rem;
+}
+.kripto-edukacija-page .kripto-edukacija-intro h2 {
+	font-size: 1.5rem;
+	color: #fff;
+	margin-bottom: 1.25rem;
+}
+.kripto-edukacija-page .kripto-edukacija-intro p {
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 1.1rem;
+	line-height: 1.8;
+	margin-bottom: 1rem;
+}
+.kripto-edukacija-page .kripto-edukacija-tutorials h3 {
+	color: #fff;
+	font-size: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+.kripto-edukacija-level-card {
+	background: rgba(10, 13, 66, 0.5);
+	backdrop-filter: blur(6px);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 12px;
+	padding: 1.25rem 1.5rem;
+	margin-bottom: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.kripto-edukacija-level-card:hover {
+	background: rgba(96, 23, 255, 0.25);
+	border-color: rgba(96, 23, 255, 0.5);
+}
+.kripto-edukacija-level-card h4 {
+	color: #fff;
+	margin: 0;
+	font-size: 1.25rem;
+}
+.kripto-edukacija-cards {
+	display: none;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+.kripto-edukacija-cards.active {
+	display: flex;
+}
+.kripto-edukacija-card {
+	background: rgba(10, 13, 66, 0.35);
+	backdrop-filter: blur(6px);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 12px;
+	padding: 1.5rem;
+	flex: 1 1 calc(50% - 0.5rem);
+	min-width: 280px;
+	transition: all 0.3s ease;
+}
+.kripto-edukacija-card:hover {
+	background: rgba(96, 23, 255, 0.2);
+	border-color: rgba(96, 23, 255, 0.4);
+	transform: translateY(-2px);
+}
+.kripto-edukacija-card h4 {
+	color: rgba(255, 255, 255, 0.95);
+	font-size: 1rem;
+	margin-bottom: 1rem;
+	line-height: 1.4;
+}
+.kripto-edukacija-card .btn_one {
+	margin-top: 0;
+	font-size: 0.9rem;
+	padding: 0.5rem 1rem;
+}
+.kripto-edukacija-toggle {
+	font-size: 0.9rem;
+	padding: 0.5rem 1rem;
+}
