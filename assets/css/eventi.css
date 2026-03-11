@@ -1,0 +1,378 @@
+/* Kriptovalute.hr - Eventi stranica */
+.kripto-eventi-hero {
+  text-align: center;
+  padding: 40px 0 60px;
+}
+.kripto-eventi-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--kripto-heading);
+}
+.kripto-eventi-hero p {
+  font-size: 1.1rem;
+  color: var(--kripto-text);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Filteri */
+.kripto-eventi-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+.kripto-eventi-filters select,
+.kripto-eventi-filters input {
+  background: var(--kripto-bg-card);
+  border: 1px solid var(--kripto-border);
+  color: var(--kripto-text);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  min-width: 160px;
+}
+.kripto-eventi-filters select:focus,
+.kripto-eventi-filters input:focus {
+  outline: none;
+  border-color: var(--kripto-accent);
+}
+.kripto-eventi-filters .btn-filter {
+  background: transparent;
+  border: 2px solid var(--kripto-accent);
+  color: var(--kripto-accent);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.kripto-eventi-filters .btn-filter:hover {
+  background: var(--kripto-accent);
+  color: var(--kripto-btn-text);
+}
+.kripto-eventi-filters .btn-reset {
+  background: transparent;
+  border: 1px solid var(--kripto-border);
+  color: var(--kripto-text);
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.kripto-eventi-filters .btn-reset:hover {
+  border-color: var(--kripto-text);
+}
+
+/* Tabovi - Nadolazeći / Prošli */
+.kripto-eventi-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--kripto-border);
+  padding-bottom: 0;
+}
+.kripto-eventi-tabs .tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--kripto-text);
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+}
+.kripto-eventi-tabs .tab-btn:hover {
+  color: var(--kripto-accent);
+}
+.kripto-eventi-tabs .tab-btn.active {
+  color: var(--kripto-accent);
+  font-weight: 600;
+}
+.kripto-eventi-tabs .tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--kripto-accent);
+}
+
+/* Event kartice */
+.kripto-eventi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+.kripto-event-card {
+  background: var(--kripto-bg-card);
+  border: 1px solid var(--kripto-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.kripto-event-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+.kripto-event-card.featured {
+  border-color: var(--kripto-accent);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+.kripto-event-card-image {
+  width: 100%;
+  aspect-ratio: 16/7;
+  object-fit: cover;
+  background: var(--kripto-bg);
+}
+.kripto-event-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.kripto-event-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--kripto-text);
+}
+.kripto-event-card-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.kripto-event-card-meta span i {
+  color: var(--kripto-accent);
+  font-size: 12px;
+}
+.kripto-event-card-badge {
+  background: rgba(96, 23, 255, 0.3);
+  color: var(--kripto-accent);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: inline-block;
+  width: fit-content;
+}
+.kripto-event-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  color: var(--kripto-heading);
+}
+.kripto-event-card h3 a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.kripto-event-card h3 a:hover {
+  color: var(--kripto-accent);
+}
+.kripto-event-card p {
+  font-size: 14px;
+  color: var(--kripto-text);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Countdown */
+.kripto-event-countdown,
+.kripto-event-countdown[data-end] {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.kripto-countdown-item {
+  background: var(--kripto-bg);
+  border-radius: 8px;
+  padding: 8px 12px;
+  text-align: center;
+  min-width: 50px;
+}
+.kripto-countdown-item .num {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--kripto-accent);
+  line-height: 1.2;
+}
+.kripto-countdown-item .label {
+  font-size: 10px;
+  color: var(--kripto-text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Past event - datum */
+.kripto-event-past-date {
+  font-size: 14px;
+  color: var(--kripto-text);
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+/* CTA gumb */
+.kripto-event-card .kripto-event-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--kripto-accent);
+  color: var(--kripto-btn-text);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin-top: auto;
+}
+.kripto-event-card .kripto-event-cta:hover {
+  background: var(--kripto-accent-hover);
+  color: var(--kripto-btn-text);
+  transform: translateX(4px);
+}
+.kripto-event-card .kripto-event-cta i {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+.kripto-event-card .kripto-event-cta:hover i {
+  transform: translateX(4px);
+}
+
+/* Prazno stanje */
+.kripto-eventi-empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--kripto-text);
+}
+.kripto-eventi-empty i {
+  font-size: 48px;
+  color: var(--kripto-border);
+  margin-bottom: 20px;
+}
+.kripto-eventi-empty h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: var(--kripto-heading);
+}
+
+/* Dodaj event modal */
+.kripto-add-event-modal .modal-content {
+  background: var(--kripto-bg-card);
+  border: 1px solid var(--kripto-border);
+  border-radius: 12px;
+  color: var(--kripto-text);
+}
+.kripto-add-event-modal .modal-header {
+  border-bottom: 1px solid var(--kripto-border);
+  padding: 20px 24px;
+}
+.kripto-add-event-modal .modal-title {
+  color: var(--kripto-heading);
+  font-weight: 600;
+}
+.kripto-add-event-modal .btn-close {
+  filter: invert(1);
+  opacity: 0.7;
+}
+.kripto-add-event-modal .modal-body {
+  padding: 24px;
+}
+.kripto-add-event-modal .form-label {
+  color: var(--kripto-heading);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.kripto-add-event-modal .form-control {
+  background: var(--kripto-bg);
+  border: 1px solid var(--kripto-border);
+  color: var(--kripto-text);
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+.kripto-add-event-modal .form-control:focus {
+  border-color: var(--kripto-accent);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+.kripto-add-event-modal .modal-footer {
+  border-top: 1px solid var(--kripto-border);
+  padding: 16px 24px;
+}
+.kripto-add-event-modal .btn-primary {
+  background: var(--kripto-accent);
+  color: var(--kripto-btn-text);
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.kripto-add-event-modal .btn-primary:hover {
+  background: var(--kripto-accent-hover);
+  color: var(--kripto-btn-text);
+}
+.kripto-add-event-output {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--kripto-bg);
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+}
+.kripto-add-event-output.show {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .kripto-eventi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .kripto-eventi-hero h1 {
+    font-size: 1.75rem;
+  }
+  .kripto-eventi-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .kripto-eventi-filters select,
+  .kripto-eventi-filters input {
+    min-width: 100%;
+  }
+  .kripto-eventi-grid {
+    grid-template-columns: 1fr;
+  }
+  .kripto-eventi-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="hr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Eventi - Kriptovalute.hr</title>
+		<meta name="description" content="Kalendar kripto i blockchain eventa. Nadolazeći i prošli događaji s odbrojavanjem i linkovima na službene stranice.">
+		<link rel="icon" type="image/png" href="favicon.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/materialdesignicons-min.css">
+		<link rel="stylesheet" href="assets/css/style-two.css?v=16">
+		<link rel="stylesheet" href="assets/css/eventi.css?v=2">
+	</head>
+	<body>
+		<div id="particles-js"></div>
+		<nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+			<div class="container">
+				<a class="navbar-brand" href="index.html"><img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="kripto-nav-logo"></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation"><span class="mdi mdi-menu"></span></button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav ms-auto align-items-center">
+						<li class="nav-item"><a class="nav-link" href="index.html">Početna</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usluge</a>
+							<ul class="dropdown-menu dropdown-menu-end kripto-nav-dropdown">
+								<li><a class="dropdown-item" href="edukacija-i-radionice.html">Edukacija i radionice</a></li>
+								<li><a class="dropdown-item" href="kripto-rjesenja-za-poslovanje.html">Kripto rješenja za poslovanje</a></li>
+								<li><a class="dropdown-item" href="alati-i-platforme-za-trgovanje.html">Alati i platforme za trgovanje</a></li>
+								<li><a class="dropdown-item" href="pravni-i-porezni-savjeti.html">Pravni i porezni savjeti</a></li>
+								<li><a class="dropdown-item" href="blockchain-rjesenja.html">Blockchain rješenja</a></li>
+								<li><a class="dropdown-item" href="savjetovanje-i-podrska.html">Savjetovanje i podrška</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a class="nav-link active" href="eventi.html">Eventi</a></li>
+						<li class="nav-item"><a class="nav-link" href="kviz.html">Kviz</a></li>
+						<li class="nav-item"><a class="nav-link" href="index.html#kontakt">Kontakt</a></li>
+						<li class="nav-item ms-lg-3"><a href="index.html#kontakt" class="btn_one btn-nav">Kontaktirajte nas</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<section class="about_us section-padding kriptovalute-services" style="padding-top: 120px;">
+			<div class="container">
+				<div class="kripto-eventi-hero">
+					<h1>Kripto i blockchain eventi</h1>
+					<p>Pregled nadolazećih i prošlih događaja iz svijeta kriptovaluta, blockchaina i Web3. Svaki event vodi na vanjsku stranicu organizatora.</p>
+					<button type="button" class="btn_one mt-3" data-bs-toggle="modal" data-bs-target="#addEventModal">Dodaj event</button>
+				</div>
+
+				<!-- Modal za dodavanje eventa -->
+				<div class="modal fade kripto-add-event-modal" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="addEventModalLabel">Dodaj novi event</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zatvori"></button>
+							</div>
+							<div class="modal-body">
+								<p class="text-muted mb-4">Ispunite sva polja. Nakon slanja dobit ćete kod za dodavanje u datoteku <code>assets/js/events-data.js</code>.</p>
+								<form id="addEventForm">
+									<div class="row">
+										<div class="col-md-12 mb-3">
+											<label for="ev-title" class="form-label">Naslov eventa *</label>
+											<input type="text" id="ev-title" class="form-control" placeholder="npr. BTC Prague 2025" required>
+										</div>
+										<div class="col-md-12 mb-3">
+											<label for="ev-description" class="form-label">Kratak opis eventa *</label>
+											<textarea id="ev-description" class="form-control" rows="3" placeholder="Kratak opis o eventu (1-3 rečenice)" required></textarea>
+										</div>
+										<div class="col-md-6 mb-3">
+											<label for="ev-image" class="form-label">URL slike eventa *</label>
+											<input type="url" id="ev-image" class="form-control" placeholder="https://..." required>
+										</div>
+										<div class="col-md-6 mb-3">
+											<label for="ev-url" class="form-label">URL vanjske stranice *</label>
+											<input type="url" id="ev-url" class="form-control" placeholder="https://..." required>
+										</div>
+										<div class="col-md-6 mb-3">
+											<label for="ev-start" class="form-label">Datum početka *</label>
+											<input type="date" id="ev-start" class="form-control" required>
+										</div>
+										<div class="col-md-6 mb-3">
+											<label for="ev-end" class="form-label">Datum završetka *</label>
+											<input type="date" id="ev-end" class="form-control" required>
+										</div>
+										<div class="col-md-6 mb-3">
+											<label for="ev-location" class="form-label">Lokacija</label>
+											<input type="text" id="ev-location" class="form-control" placeholder="npr. Prag, Češka">
+										</div>
+										<div class="col-md-6 mb-3">
+											<label for="ev-category" class="form-label">Kategorija</label>
+											<select id="ev-category" class="form-control">
+												<option value="">Odaberi...</option>
+												<option value="Bitcoin">Bitcoin</option>
+												<option value="Ethereum">Ethereum</option>
+												<option value="Blockchain">Blockchain</option>
+												<option value="Crypto">Crypto</option>
+												<option value="Web3">Web3</option>
+											</select>
+										</div>
+										<div class="col-12 mb-3">
+											<label class="d-flex align-items-center gap-2" style="cursor: pointer;">
+												<input type="checkbox" id="ev-featured" class="form-check-input"> Istaknuti event
+											</label>
+										</div>
+									</div>
+									<div class="kripto-add-event-output" id="addEventOutput"></div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+								<button type="button" class="btn btn-primary" id="addEventSubmit">Generiraj kod</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="kripto-eventi-filters">
+					<select id="filter-category" class="form-select">
+						<option value="">Sve kategorije</option>
+						<option value="Bitcoin">Bitcoin</option>
+						<option value="Ethereum">Ethereum</option>
+						<option value="Blockchain">Blockchain</option>
+						<option value="Crypto">Crypto</option>
+						<option value="Web3">Web3</option>
+					</select>
+					<input type="text" id="filter-location" class="form-control" placeholder="Lokacija (npr. Prag, Dubai)" aria-label="Filtriraj po lokaciji">
+					<label class="d-flex align-items-center gap-2" style="color: var(--kripto-text); font-size: 14px; margin: 0; cursor: pointer;">
+						<input type="checkbox" id="filter-featured" class="form-check-input"> Istaknuti eventi
+					</label>
+					<button type="button" id="filter-reset" class="btn-reset">Očisti filtere</button>
+				</div>
+
+				<div class="kripto-eventi-tabs">
+					<button type="button" class="tab-btn active" id="tab-upcoming">Nadolazeći</button>
+					<button type="button" class="tab-btn" id="tab-past">Prošli</button>
+				</div>
+
+				<div id="kripto-events-upcoming" class="kripto-eventi-grid"></div>
+				<div id="kripto-events-past" class="kripto-eventi-grid" style="display: none;"></div>
+			</div>
+		</section>
+
+		<footer class="kripto-footer">
+			<div class="container">
+				<div class="row align-items-start">
+					<div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+						<a href="index.html" class="kripto-footer-logo"><img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="img-fluid"></a>
+						<p class="kripto-footer-desc">Edukacija i interaktive radionice o kriptovalutama i blockchainu.</p>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h6 class="kripto-footer-heading">Linkovi</h6>
+						<ul class="kripto-footer-links">
+							<li><a href="index.html">Početna</a></li>
+							<li><a href="eventi.html">Eventi</a></li>
+							<li><a href="kviz.html">Kviz</a></li>
+							<li><a href="index.html#kontakt">Kontakt</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="assets/js/jquery-1.12.4.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<script src="assets/js/particles.min.js"></script>
+		<script src="assets/js/app.js"></script>
+		<script src="assets/js/scrolltopcontrol.js"></script>
+		<script src="assets/js/scripts-index.js"></script>
+		<script src="assets/js/events-data.js"></script>
+		<script src="assets/js/events.js"></script>
+		<script>
+		(function() {
+			var form = document.getElementById('addEventForm');
+			var output = document.getElementById('addEventOutput');
+			var btn = document.getElementById('addEventSubmit');
+			if (!form || !output || !btn) return;
+			btn.addEventListener('click', function() {
+				var title = document.getElementById('ev-title').value.trim();
+				var desc = document.getElementById('ev-description').value.trim();
+				var image = document.getElementById('ev-image').value.trim();
+				var url = document.getElementById('ev-url').value.trim();
+				var start = document.getElementById('ev-start').value;
+				var end = document.getElementById('ev-end').value;
+				var location = document.getElementById('ev-location').value.trim();
+				var category = document.getElementById('ev-category').value;
+				var featured = document.getElementById('ev-featured').checked;
+				if (!title || !desc || !image || !url || !start || !end) {
+					alert('Molimo ispunite sva obavezna polja (naslov, kratak opis, slika, URL, datumi).');
+					return;
+				}
+				var catArr = category ? '["' + category + '"]' : '[]';
+				var code = '  {\n' +
+					'    id: "' + (Date.now()) + '",\n' +
+					'    title: "' + title.replace(/"/g, '\\"') + '",\n' +
+					'    shortDescription: "' + desc.replace(/"/g, '\\"').replace(/\n/g, ' ') + '",\n' +
+					'    image: "' + image + '",\n' +
+					'    url: "' + url + '",\n' +
+					'    startDate: "' + start + '",\n' +
+					'    endDate: "' + end + '",\n' +
+					'    location: "' + location.replace(/"/g, '\\"') + '",\n' +
+					'    country: "' + location.split(',')[0]?.trim() || '' + '",\n' +
+					'    category: ' + catArr + ',\n' +
+					'    featured: ' + featured + '\n' +
+					'  }';
+				output.textContent = '// Dodajte u KRIPTO_EVENTS niz u assets/js/events-data.js:\n\n' + code;
+				output.classList.add('show');
+				output.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+				try { navigator.clipboard.writeText(code); alert('Kod je kopiran u međuspremnik! Zalijepite ga u assets/js/events-data.js.'); } catch(e) {}
+			});
+		})();
+		</script>
+	</body>
+</html>
