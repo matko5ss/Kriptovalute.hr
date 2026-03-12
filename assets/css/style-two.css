@@ -966,13 +966,13 @@ margin-bottom: 20px;
 	padding: 10px 36px;
 	border: 2px solid var(--kripto-accent);
 	border-radius: 30px;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 500;
 	text-decoration: none;
 	transition: 0.3s;
 	white-space: nowrap;
 }
-.kripto-quiz-btn:hover {
+.:hover {
 	background: none;
 	color: var(--kripto-accent);
 	border: 2px solid var(--kripto-accent);

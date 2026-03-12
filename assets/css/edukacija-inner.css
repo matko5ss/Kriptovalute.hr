@@ -91,10 +91,10 @@ body:has(.kripto-edukacija-inner) a {
 	font-size: 0.95rem;
 }
 .kripto-edukacija-inner .breadcrumbs a {
-	color: var(--kripto-accent) !important;
+	color: var() !important;
 }
 .kripto-edukacija-inner .breadcrumbs a:hover {
-	color: var(--kripto-accent-hover) !important;
+	color: var(-hover) !important;
 }
 /* Sekcije u istom stilu kao kripto-service-card na početnoj */
 .kripto-edukacija-inner article,
@@ -116,7 +116,7 @@ body:has(.kripto-edukacija-inner) a {
 	top: 0;
 	width: 4px;
 	height: 100%;
-	background: var(--kripto-accent, #ffffff);
+	background: var(, #ffffff);
 	transform: scaleX(1);
 	transform-origin: left center;
 	z-index: 1;
@@ -150,10 +150,10 @@ body:has(.kripto-edukacija-inner) a {
 .kripto-edukacija-inner .prev-tutorial,
 .kripto-edukacija-inner .next-tutorial,
 .kripto-edukacija-inner .btn {
-	background: var(--kripto-accent, #ffffff);
+	background: var(, #ffffff);
 	color: var(--kripto-btn-text, #050530);
 	padding: 10px 36px;
-	border: 2px solid var(--kripto-accent, #ffffff);
+	border: 2px solid var(, #ffffff);
 	border-radius: 30px;
 	text-decoration: none;
 	font-weight: 500;
@@ -165,8 +165,8 @@ body:has(.kripto-edukacija-inner) a {
 .kripto-edukacija-inner .next-tutorial:hover,
 .kripto-edukacija-inner .btn:hover {
 	background: transparent;
-	border: 2px solid var(--kripto-accent, #ffffff);
-	color: var(--kripto-accent, #ffffff);
+	border: 2px solid var(, #ffffff);
+	color: var(, #ffffff);
 }
 .kripto-edukacija-inner .platform-goals,
 .kripto-edukacija-inner .mission-statement,
@@ -189,7 +189,7 @@ body:has(.kripto-edukacija-inner) a {
 	top: 0;
 	width: 4px;
 	height: 100%;
-	background: var(--kripto-accent, #ffffff);
+	background: var(, #ffffff);
 	z-index: 1;
 }
 .kripto-edukacija-inner .goals-list {
@@ -203,7 +203,7 @@ body:has(.kripto-edukacija-inner) a {
 	border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
 }
 .kripto-edukacija-inner .goals-list li strong {
-	color: var(--kripto-accent) !important;
+	color: var() !important;
 }
 .kripto-edukacija-inner img {
 	max-width: 100%;
@@ -227,7 +227,7 @@ body:has(.kripto-edukacija-inner) a {
 	top: 0;
 	width: 4px;
 	height: 100%;
-	background: var(--kripto-accent);
+	background: var();
 	z-index: 1;
 }
 .kviz-page .concept-box::before {
@@ -559,9 +559,9 @@ body:has(.kripto-edukacija-inner) a {
 .kripto-edukacija-inner .quiz-navigation button,
 .kripto-edukacija-inner #start-quiz-btn,
 .kripto-edukacija-inner .btn {
-	background: var(--kripto-accent, #ffffff) !important;
+	background: var(, #ffffff) !important;
 	color: var(--kripto-btn-text, #050530) !important;
-	border: 2px solid var(--kripto-accent, #ffffff) !important;
+	border: 2px solid var(, #ffffff) !important;
 	border-radius: 30px !important;
 	padding: 10px 36px !important;
 	font-weight: 600 !important;
@@ -571,8 +571,8 @@ body:has(.kripto-edukacija-inner) a {
 .kripto-edukacija-inner #start-quiz-btn:hover,
 .kripto-edukacija-inner .btn:hover {
 	background: transparent !important;
-	color: var(--kripto-accent, #ffffff) !important;
-	border-color: var(--kripto-accent, #ffffff) !important;
+	color: var(, #ffffff) !important;
+	border-color: var(, #ffffff) !important;
 }
 
 /* ---- ANSWERS REVIEW ---- */
@@ -649,7 +649,7 @@ body:has(.kripto-edukacija-inner) a {
 	top: 0;
 	width: 4px;
 	height: 100%;
-	background: var(--kripto-accent, #ffffff);
+	background: var(, #ffffff);
 	z-index: 1;
 }
 .kripto-edukacija-inner .wallet-image {
