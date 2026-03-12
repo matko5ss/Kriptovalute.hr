@@ -244,6 +244,16 @@ background:none;
 color: var(--kripto-accent);
 border:2px solid var(--kripto-accent);
 }
+.btn_one-outline {
+	background: none;
+	color: var(--kripto-accent);
+	border: 2px solid var(--kripto-accent);
+}
+.btn_one-outline:hover, .btn_one-outline:focus {
+	background: var(--kripto-accent);
+	color: var(--kripto-btn-text);
+	border: 2px solid var(--kripto-accent);
+}
 .btn_two {
 	background: rgba(255, 0, 102, 0.85);
 	padding: 10px 36px;
@@ -344,6 +354,24 @@ border:2px solid #fff;
 .navbar-custom .navbar-nav .nav-item:last-child .nav-link {
     margin-right: 0;
     padding-right: 0;
+}
+.kripto-nav-dropdown.dropdown-menu {
+	background: rgba(10, 13, 66, 0.97);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border: 1px solid var(--kripto-border);
+	border-radius: 10px;
+	padding: 8px 0;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+.kripto-nav-dropdown .dropdown-item {
+	color: var(--kripto-text);
+	padding: 10px 20px;
+}
+.kripto-nav-dropdown .dropdown-item:hover,
+.kripto-nav-dropdown .dropdown-item:focus {
+	background: rgba(18, 22, 82, 0.8);
+	color: var(--kripto-heading);
 }
 .navbar-custom.nav-sticky {
     background-color: rgba(10, 13, 66, 0.35) !important;
@@ -982,6 +1010,26 @@ margin-bottom: 20px;
 }
 .kripto-quiz-btn:hover i {
 	transform: translateX(4px);
+}
+.kviz-confirm-modal-btns {
+	display: flex;
+	gap: 12px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.kviz-confirm-modal-btns .btn_one,
+.kviz-confirm-modal-btns .btn_one-outline {
+	flex: 1;
+	min-width: 120px;
+	white-space: nowrap;
+}
+@media (max-width: 480px) {
+	.kviz-confirm-modal-btns .btn_one,
+	.kviz-confirm-modal-btns .btn_one-outline {
+		font-size: 13px;
+		padding: 8px 20px;
+		min-width: 0;
+	}
 }
 @media (max-width: 768px) {
 	.kripto-quiz-banner {
