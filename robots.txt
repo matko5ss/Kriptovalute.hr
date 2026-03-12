@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /send-contact.php
+
+# Sitemap
+Sitemap: https://kriptovalute.hr/sitemap.xml
