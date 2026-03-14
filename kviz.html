@@ -127,7 +127,7 @@
 				<div class="kripto-cookie-actions">
 					<button type="button" class="btn_one btn_one-outline kripto-cookie-btn" id="kripto-cookie-reject">Samo nužni</button>
 					<button type="button" class="btn_one kripto-cookie-btn" id="kripto-cookie-accept-all">Prihvaćam sve</button>
-					<button type="button" class="kripto-cookie-link" id="kripto-cookie-settings-toggle">Postavke</button>
+					<button type="button" class="btn_one btn_one-outline kripto-cookie-btn" id="kripto-cookie-settings-toggle">Postavke</button>
 				</div>
 			</div>
 			<div class="kripto-cookie-panel" id="kripto-cookie-panel">
@@ -281,6 +281,7 @@
 							<li><a href="index.html">Početna</a></li>
 							<li><a href="edukacija-i-radionice.html">Edukacija i radionice</a></li>
 							<li><a href="index.html#kontakt">Kontakt</a></li>
+							<li><a href="#" id="kripto-footer-cookie-settings">Postavke kolačića</a></li>
 						</ul>
 					</div>
 				</div>
@@ -328,14 +329,29 @@
 				s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JLBXS6BRQX';
 				s.onload = function () {
 					gtag('js', new Date());
-					gtag('config', 'G-JLBXS6BRQX');
+					gtag('config', 'G-JLBXS6BRQX', { anonymize_ip: true });
 				};
 				document.head.appendChild(s);
+			}
+
+			function revokeAnalytics() {
+				if (window.gtag) {
+					window.gtag('consent', 'update', { analytics_storage: 'denied' });
+				}
+				document.cookie.split(';').forEach(function(c) {
+					var name = c.split('=')[0].trim();
+					if (name.indexOf('_ga') === 0 || name.indexOf('_gid') === 0) {
+						document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.' + location.hostname;
+						document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+					}
+				});
 			}
 
 			function applyConsent(consent) {
 				if (consent.analytics) {
 					loadAnalytics();
+				} else {
+					revokeAnalytics();
 				}
 			}
 
@@ -401,6 +417,17 @@
 						saveConsent(consent);
 						applyConsent(consent);
 						bar.style.display = 'none';
+					});
+				}
+
+				var footerLink = document.getElementById('kripto-footer-cookie-settings');
+				if (footerLink) {
+					footerLink.addEventListener('click', function (e) {
+						e.preventDefault();
+						consent = loadConsent();
+						bar.style.display = 'block';
+						openPanel();
+						bar.scrollIntoView({ behavior: 'smooth' });
 					});
 				}
 			} catch (e) {}

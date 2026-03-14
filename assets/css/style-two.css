@@ -197,7 +197,8 @@ margin: auto;
 }
 /*END SECTION TITLE DESIGN*/
 .topcontrol {
-background: var(--kripto-accent) none repeat scroll 0 0;
+background: var(--kripto-bg-card);
+border: 1px solid var(--kripto-border);
 border-radius: 30px;
 bottom: 5px;
 box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
@@ -220,7 +221,7 @@ width: 50px;
 .topcontrol {display:none;}
 }
 .topcontrol:hover {
-    background: var(--kripto-bg-card);
+    background: var(--kripto-bg-card-hover);
     color: #fff;
 }
 /*END SCROLL TO TOP*/
