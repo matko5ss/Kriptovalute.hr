@@ -462,14 +462,16 @@ body:has(.kripto-edukacija-inner) a {
 	color: rgba(255,255,255,0.6);
 	transition: all 0.2s ease;
 }
-.kripto-edukacija-inner .option:hover {
-	background: rgba(255,255,255,0.09) !important;
-	border-color: rgba(255,255,255,0.3) !important;
-	transform: translateX(3px);
-}
-.kripto-edukacija-inner .option:hover .kviz-option-letter {
-	background: rgba(255,255,255,0.15);
-	color: #fff;
+@media (hover: hover) and (pointer: fine) {
+	.kripto-edukacija-inner .option:hover {
+		background: rgba(255,255,255,0.09) !important;
+		border-color: rgba(255,255,255,0.3) !important;
+		transform: translateX(3px);
+	}
+	.kripto-edukacija-inner .option:hover .kviz-option-letter {
+		background: rgba(255,255,255,0.15);
+		color: #fff;
+	}
 }
 .kripto-edukacija-inner .option.selected {
 	background: rgba(255,255,255,0.12) !important;

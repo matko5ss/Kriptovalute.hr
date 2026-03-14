@@ -392,6 +392,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Show question - exposed for countdown-timer.js
     window.showQuestion = function(index) {
         const question = shuffledQuestions[index];
+        questionContainer.style.pointerEvents = 'none';
         questionContainer.innerHTML = '';
         
         // Create question element
@@ -417,6 +418,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         questionElement.appendChild(optionsList);
         questionContainer.appendChild(questionElement);
+        
+        requestAnimationFrame(() => { questionContainer.style.pointerEvents = ''; });
         
         updateProgress(index);
         
