@@ -4,15 +4,6 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLBXS6BRQX"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'G-JLBXS6BRQX');
-		</script>
 		<title>Kripto Kviz – Provjeri Znanje o Kriptovalutama | Kriptovalute.hr</title>
 		<meta name="description" content="Besplatni interaktivni kviz o kriptovalutama i blockchain tehnologiji. 20 nasumičnih pitanja o Bitcoinu, Ethereumu, DeFi-ju, NFT-ovima i kripto regulativi u Hrvatskoj.">
 		<meta name="keywords" content="kripto kviz, blockchain kviz, kriptovalute pitanja, bitcoin kviz, ethereum kviz, kripto znanje, blockchain test, kriptovalute Hrvatska">
@@ -128,6 +119,46 @@
 		</style>
 	</head>
 	<body>
+		<div class="kripto-cookie-bar" id="kripto-cookie-bar" style="display:none;" role="dialog" aria-live="polite" aria-label="Postavke kolačića">
+			<div class="kripto-cookie-inner">
+				<div class="kripto-cookie-text">
+					<strong>Koristimo kolačiće</strong> za poboljšanje korisničkog iskustva, analitiku posjećenosti i prikaz relevantnog sadržaja. Možete prilagoditi postavke ili prihvatiti sve kolačiće.
+				</div>
+				<div class="kripto-cookie-actions">
+					<button type="button" class="btn_one btn_one-outline kripto-cookie-btn" id="kripto-cookie-reject">Samo nužni</button>
+					<button type="button" class="btn_one kripto-cookie-btn" id="kripto-cookie-accept-all">Prihvaćam sve</button>
+					<button type="button" class="kripto-cookie-link" id="kripto-cookie-settings-toggle">Postavke</button>
+				</div>
+			</div>
+			<div class="kripto-cookie-panel" id="kripto-cookie-panel">
+				<h3>Postavke kolačića</h3>
+				<p>Poštujemo Vašu privatnost. Nužni kolačići su potrebni za osnovno funkcioniranje stranice i ne mogu se isključiti. Analitički kolačići pomažu nam razumjeti kako se stranica koristi.</p>
+				<div class="kripto-cookie-row">
+					<div class="kripto-cookie-row-text">
+						<strong>Nužni kolačići</strong>
+						<p>Potrebni za ispravan rad stranice (sigurnost, osnovne postavke). Uvijek su aktivni.</p>
+					</div>
+					<div class="kripto-cookie-row-control">
+						<span class="kripto-cookie-badge">Uvijek aktivni</span>
+					</div>
+				</div>
+				<div class="kripto-cookie-row">
+					<div class="kripto-cookie-row-text">
+						<strong>Analitički kolačići</strong>
+						<p>Koristimo Google Analytics (anonimizirano) za mjerenje posjećenosti i poboljšanje sadržaja.</p>
+					</div>
+					<div class="kripto-cookie-row-control">
+						<label class="kripto-switch">
+							<input type="checkbox" id="kripto-cookie-analytics">
+							<span class="kripto-switch-slider"></span>
+						</label>
+					</div>
+				</div>
+				<div class="kripto-cookie-panel-footer">
+					<button type="button" class="btn_one btn_one-outline kripto-cookie-btn" id="kripto-cookie-save">Spremi odabir</button>
+				</div>
+			</div>
+		</div>
 		<div id="particles-js"></div>
 		<nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
 			<div class="container">
@@ -261,5 +292,119 @@
 		<script src="assets/js/app.js"></script>
 		<script src="assets/js/scrolltopcontrol.js"></script>
 		<script src="assets/js/scripts-index.js"></script>
+		<script>
+		(function() {
+			var STORAGE_KEY = 'kripto_cookie_consent_v1';
+
+			function loadConsent() {
+				try {
+					var raw = localStorage.getItem(STORAGE_KEY);
+					if (!raw) return { necessary: true, analytics: false };
+					var parsed = JSON.parse(raw);
+					return {
+						necessary: true,
+						analytics: !!parsed.analytics
+					};
+				} catch (e) {
+					return { necessary: true, analytics: false };
+				}
+			}
+
+			function saveConsent(consent) {
+				try {
+					localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+				} catch (e) {}
+			}
+
+			function loadAnalytics() {
+				if (window.kriptoGaLoaded) return;
+				window.kriptoGaLoaded = true;
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){ dataLayer.push(arguments); }
+				window.gtag = window.gtag || gtag;
+
+				var s = document.createElement('script');
+				s.async = true;
+				s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JLBXS6BRQX';
+				s.onload = function () {
+					gtag('js', new Date());
+					gtag('config', 'G-JLBXS6BRQX');
+				};
+				document.head.appendChild(s);
+			}
+
+			function applyConsent(consent) {
+				if (consent.analytics) {
+					loadAnalytics();
+				}
+			}
+
+			try {
+				var bar = document.getElementById('kripto-cookie-bar');
+				if (!bar) return;
+				var panel = document.getElementById('kripto-cookie-panel');
+				var btnAcceptAll = document.getElementById('kripto-cookie-accept-all');
+				var btnReject = document.getElementById('kripto-cookie-reject');
+				var btnToggle = document.getElementById('kripto-cookie-settings-toggle');
+				var chkAnalytics = document.getElementById('kripto-cookie-analytics');
+				var btnSave = document.getElementById('kripto-cookie-save');
+
+				var consent = loadConsent();
+				applyConsent(consent);
+
+				if (!localStorage.getItem(STORAGE_KEY)) {
+					bar.style.display = 'block';
+				}
+
+				function openPanel() {
+					if (!panel) return;
+					panel.style.display = 'block';
+					if (chkAnalytics) chkAnalytics.checked = !!consent.analytics;
+				}
+
+				function closePanel() {
+					if (!panel) return;
+					panel.style.display = 'none';
+				}
+
+				if (btnToggle) {
+					btnToggle.addEventListener('click', function () {
+						if (!panel) return;
+						if (panel.style.display === 'block') {
+							closePanel();
+						} else {
+							openPanel();
+						}
+					});
+				}
+
+				if (btnAcceptAll) {
+					btnAcceptAll.addEventListener('click', function () {
+						consent.analytics = true;
+						saveConsent(consent);
+						applyConsent(consent);
+						bar.style.display = 'none';
+					});
+				}
+
+				if (btnReject) {
+					btnReject.addEventListener('click', function () {
+						consent.analytics = false;
+						saveConsent(consent);
+						bar.style.display = 'none';
+					});
+				}
+
+				if (btnSave && chkAnalytics) {
+					btnSave.addEventListener('click', function () {
+						consent.analytics = !!chkAnalytics.checked;
+						saveConsent(consent);
+						applyConsent(consent);
+						bar.style.display = 'none';
+					});
+				}
+			} catch (e) {}
+		})();
+		</script>
 	</body>
 </html>

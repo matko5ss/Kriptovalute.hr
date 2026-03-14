@@ -1416,6 +1416,166 @@ margin-bottom: 20px;
 	width: 18px;
 	height: 18px;
 }
+
+/* Cookie bar */
+.kripto-cookie-bar {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	background: rgba(5, 5, 48, 0.96);
+	border-top: 1px solid var(--kripto-border);
+	box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.55);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	color: var(--kripto-text);
+	font-size: 14px;
+}
+.kripto-cookie-inner {
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 14px 20px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+.kripto-cookie-text {
+	flex: 1;
+}
+.kripto-cookie-text strong {
+	color: var(--kripto-heading);
+}
+.kripto-cookie-actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.kripto-cookie-link {
+	color: var(--kripto-accent);
+	text-decoration: underline;
+	font-size: 13px;
+}
+.kripto-cookie-btn {
+	border-radius: 999px;
+	font-size: 14px;
+	padding: 8px 20px;
+	white-space: nowrap;
+}
+/* Cookie bar – detaljne postavke */
+.kripto-cookie-panel {
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 10px 20px 14px;
+	border-top: 1px solid var(--kripto-border);
+	font-size: 13px;
+	display: none;
+}
+.kripto-cookie-panel h3 {
+	font-size: 15px;
+	margin: 0 0 6px;
+	color: var(--kripto-heading);
+}
+.kripto-cookie-panel p {
+	margin: 0 0 10px;
+	color: var(--kripto-text);
+	line-height: 1.5;
+}
+.kripto-cookie-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 8px 0;
+	border-top: 1px solid rgba(255,255,255,0.06);
+}
+.kripto-cookie-row:first-of-type {
+	border-top: none;
+}
+.kripto-cookie-row-text strong {
+	color: var(--kripto-heading);
+	display: block;
+	margin-bottom: 4px;
+}
+.kripto-cookie-row-text p {
+	margin-bottom: 0;
+}
+.kripto-cookie-row-control {
+	flex-shrink: 0;
+}
+.kripto-cookie-badge {
+	display: inline-block;
+	padding: 4px 10px;
+	border-radius: 999px;
+	background: rgba(255,255,255,0.08);
+	color: rgba(255,255,255,0.8);
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+.kripto-cookie-panel-footer {
+	margin-top: 10px;
+	text-align: right;
+}
+.kripto-cookie-panel-footer .kripto-cookie-btn {
+	font-size: 13px;
+}
+.kripto-switch {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 22px;
+}
+.kripto-switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.kripto-switch-slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--kripto-border);
+	transition: 0.3s;
+	border-radius: 999px;
+}
+.kripto-switch-slider:before {
+	position: absolute;
+	content: "";
+	height: 16px;
+	width: 16px;
+	left: 3px;
+	top: 3px;
+	background-color: #ffffff;
+	border-radius: 50%;
+	transition: 0.3s;
+}
+.kripto-switch input:checked + .kripto-switch-slider {
+	background-color: var(--kripto-accent);
+}
+.kripto-switch input:checked + .kripto-switch-slider:before {
+	transform: translateX(16px);
+}
+@media (max-width: 768px) {
+	.kripto-cookie-inner {
+		flex-direction: column;
+		align-items: stretch;
+		text-align: left;
+	}
+	.kripto-cookie-actions {
+		justify-content: flex-end;
+	}
+	.kripto-cookie-row {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.kripto-cookie-panel-footer {
+		text-align: left;
+	}
+}
 .kripto-footer-heading {
 	color: var(--kripto-heading);
 	font-size: 16px;
