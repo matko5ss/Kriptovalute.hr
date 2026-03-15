@@ -353,10 +353,10 @@ border:2px solid #fff;
 		padding: 12px 0;
 	}
 }
-/* Drugi "Edukacija i radionice" na sredini ekrana; lijevo od njega cijeli prvi set */
+/* 4 seta: drugi "Edukacija i radionice" na sredini, stalno puno teksta, nikad prazno */
 @keyframes kripto-ticker-scroll {
-	0% { transform: translateX(calc(50vw - 50%)); }
-	100% { transform: translateX(calc(50vw - 100%)); }
+	0% { transform: translateX(calc(50vw - 25%)); }
+	100% { transform: translateX(calc(50vw - 50%)); }
 }
 
 .navbar-custom {
