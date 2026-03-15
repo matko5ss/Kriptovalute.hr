@@ -311,6 +311,53 @@ border:2px solid #fff;
 	font-size: 14px;
 }
 
+/* Ticker ispod headera, malo razmaknut – u flowu, skrola s stranicom */
+.kripto-ticker-wrap {
+	margin-top: 88px;
+	background: var(--kripto-bg-card);
+	border-bottom: 1px solid var(--kripto-border);
+	padding: 12px 0;
+	overflow: hidden;
+	width: 100%;
+}
+.kripto-ticker {
+	overflow: hidden;
+	width: 100%;
+}
+.kripto-ticker-inner {
+	display: inline-flex;
+	align-items: center;
+	white-space: nowrap;
+	animation: kripto-ticker-scroll 50s linear infinite;
+}
+.kripto-ticker-inner span {
+	color: var(--kripto-text);
+	font-size: 14px;
+	font-weight: 500;
+}
+.kripto-ticker-sep {
+	color: rgba(255, 255, 255, 0.25);
+	margin: 0 18px;
+	font-size: 10px;
+	user-select: none;
+}
+@media (min-width: 769px) {
+	.kripto-ticker-inner span {
+		font-size: 17px;
+	}
+	.kripto-ticker-sep {
+		font-size: 12px;
+		margin: 0 22px;
+	}
+	.kripto-ticker-wrap {
+		padding: 12px 0;
+	}
+}
+@keyframes kripto-ticker-scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
+}
+
 .navbar-custom {
     background-color: transparent;
     padding: 10px 0;
@@ -1026,12 +1073,19 @@ margin-bottom: 20px;
 	min-width: 120px;
 	white-space: nowrap;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 	.kviz-confirm-modal-btns .btn_one,
 	.kviz-confirm-modal-btns .btn_one-outline {
 		font-size: 13px;
-		padding: 8px 20px;
+		padding: 8px 18px;
 		min-width: 0;
+	}
+}
+@media (max-width: 480px) {
+	.kviz-confirm-modal-btns .btn_one,
+	.kviz-confirm-modal-btns .btn_one-outline {
+		font-size: 12px;
+		padding: 7px 14px;
 	}
 }
 @media (max-width: 768px) {
@@ -1464,6 +1518,13 @@ margin-bottom: 20px;
 	font-size: 14px;
 	padding: 8px 20px;
 	white-space: nowrap;
+}
+.kripto-cookie-btn-icon {
+	padding: 10px 14px;
+	min-width: 44px;
+}
+.kripto-cookie-btn-icon .fa {
+	font-size: 18px;
 }
 /* Cookie bar – detaljne postavke */
 .kripto-cookie-panel {

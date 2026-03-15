@@ -377,6 +377,10 @@ body:has(.kripto-edukacija-inner) a {
 	padding: 14px 48px !important;
 	border-radius: 30px !important;
 }
+.kripto-edukacija-inner .btn_one.kviz-start-btn:hover,
+.kripto-edukacija-inner .btn_one.kviz-start-btn:focus {
+	color: #fff !important;
+}
 
 /* ---- RESTART ABOVE PROGRESS ---- */
 .kviz-restart-above-progress {
