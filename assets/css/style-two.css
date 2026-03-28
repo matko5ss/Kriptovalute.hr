@@ -418,6 +418,10 @@ border:2px solid #fff;
 .kripto-nav-dropdown .dropdown-item {
 	color: var(--kripto-text);
 	padding: 10px 20px;
+	text-transform: lowercase !important;
+}
+.kripto-nav-dropdown .dropdown-item::first-letter {
+	text-transform: uppercase !important;
 }
 .kripto-nav-dropdown .dropdown-item:hover,
 .kripto-nav-dropdown .dropdown-item:focus {
