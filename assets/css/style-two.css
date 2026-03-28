@@ -1129,6 +1129,58 @@ margin-bottom: 20px;
 @media (max-width: 767px) {
 	.kripto-services-row .col-sm-12 { width: 100%; }
 }
+/* Stranice usluga (edukacija, kripto rješenja, …) */
+.kripto-service-page-content {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0;
+}
+.kripto-service-page-content h1 {
+	font-size: 2.25rem;
+	margin-bottom: 1.5rem;
+	font-weight: 600;
+	color: var(--kripto-heading);
+}
+.kripto-service-page-content .kripto-service-page-subtitle {
+	font-size: 1.35rem;
+	font-weight: 600;
+	line-height: 1.45;
+	margin: 0 0 1.25rem;
+	color: var(--kripto-heading);
+}
+.kripto-service-page-content .kripto-service-page-list {
+	margin: 0 0 1.25rem;
+	padding-left: 1.35rem;
+}
+.kripto-service-page-content .kripto-service-page-list li {
+	margin-bottom: 0.5rem;
+}
+.kripto-service-page-content .kripto-service-page-text {
+	font-size: 1.15rem;
+	line-height: 1.8;
+	color: var(--kripto-text);
+}
+.kripto-service-page-content .kripto-service-page-text p {
+	margin-bottom: 1.25rem;
+}
+.kripto-service-page-content .kripto-service-page-text p:last-child {
+	margin-bottom: 0;
+}
+.kripto-service-page-content .kripto-service-page-text a {
+	color: var(--kripto-accent);
+}
+
+a.kripto-service-card-link {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	height: 100%;
+}
+a.kripto-service-card-link:hover .kripto-service-card {
+	background: rgba(18, 22, 82, 0.35);
+	-webkit-transform: translateY(-3px);
+	transform: translateY(-3px);
+}
 .kripto-service-card {
 	position: relative;
 	overflow: hidden;

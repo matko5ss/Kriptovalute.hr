@@ -64,11 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
             correctAnswer: 1
         },
         {
-            question: "Što je seed fraza i zašto je važna za pristup kripto novčaniku?",
+            question: "Što je privatni ključ u kontekstu kriptovaluta?",
             options: [
                 "Jedinstveni identifikator blockchain mreže",
                 "Lozinka za pristup burzi kriptovaluta",
-                "Tajni niz riječi koji omogućuje pristup i oporavak kripto novčanika",
+                "Tajni niz znakova koji omogućuje pristup i kontrolu nad kriptovalutama",
                 "Javna adresa za primanje kriptovaluta"
             ],
             correctAnswer: 2
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             correctAnswer: 1
         },
         {
-            question: "Koja je prva i najpoznatija kriptovaluta?",
+            question: "Koja je najpoznatija i prva kriptovaluta?",
             options: [
                 "Ethereum",
                 "Bitcoin",
@@ -124,13 +124,13 @@ document.addEventListener('DOMContentLoaded', function() {
             options: [
                 "Međunarodni centar za analizu kriptovaluta",
                 "Uredba EU o tržištima kriptoimovine",
-                "Metoda za identifikaciju kripto adresa",
+                "Metoda za identifikaciju crypto adresa",
                 "Mobilna aplikacija za praćenje cijena kriptovaluta"
             ],
             correctAnswer: 1
         },
         {
-            question: "Koje obveze u Hrvatskoj imaju pružatelji usluga povezanih s kriptovalutama?",
+            question: "Koje obveze u Hrvatskoj imaju pružatelji usluga vezanih uz kriptovalute?",
             options: [
                 "Nemaju nikakve obveze",
                 "Moraju se registrirati samo kod HNB-a",
@@ -141,6 +141,16 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         
         // Tutorial 7 - Primjene blockchaina izvan financija
+        {
+            question: "Koja je primjena blockchain tehnologije u zdravstvu?",
+            options: [
+                "Samo za naplatu usluga",
+                "Sigurna pohrana i dijeljenje medicinskih podataka",
+                "Isključivo za praćenje lijekova",
+                "Blockchain se ne koristi u zdravstvu"
+            ],
+            correctAnswer: 1
+        },
         {
             question: "Što su pametni ugovori?",
             options: [
@@ -317,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             question: "Što je \"halving\" kod Bitcoina?",
-            options: ["Duplanje nagrade", "Gašenje mreže", "Smanjenje nagrade za rudarenje i smanjenje količine novih Bitcoina koji ulaze u optjecaj.", "Promjena blockchaina"],
+            options: ["Duplanje nagrade", "Gašenje mreže", "Smanjenje nagrade za rudarenje", "Promjena blockchaina"],
             correctAnswer: 2
         }
     ];
@@ -343,28 +353,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentQuestionIndex = window.currentQuestionIndex;
     let userAnswers = window.userAnswers;
     let shuffledQuestions = window.shuffledQuestions;
-
-    // SessionStorage helpers
-    const STORAGE_KEY = 'kripto_quiz_state';
-    function saveState(screen) {
-        sessionStorage.setItem(STORAGE_KEY, JSON.stringify({
-            screen: screen || 'questions',
-            currentQuestionIndex,
-            userAnswers,
-            shuffledQuestions
-        }));
-    }
-    function clearState() {
-        sessionStorage.removeItem(STORAGE_KEY);
-    }
-    function loadState() {
-        try { return JSON.parse(sessionStorage.getItem(STORAGE_KEY)); } catch(e) { return null; }
-    }
     
     // Initialize quiz - uvijek 20 pitanja, nasumično odabranih iz baze
     const QUIZ_QUESTION_COUNT = 20;
     function initQuiz() {
-        clearState();
         currentQuestionIndex = 0;
         // Shuffle and pick 20 questions
         shuffledQuestions = [...quizQuestions].sort(() => Math.random() - 0.5).slice(0, QUIZ_QUESTION_COUNT);
@@ -372,38 +364,24 @@ document.addEventListener('DOMContentLoaded', function() {
         
         totalQuestions.textContent = shuffledQuestions.length;
         
-        saveState('questions');
         // Show first question
         showQuestion(currentQuestionIndex);
     }
     
-    // Update progress bar
-    function updateProgress(index) {
-        const fill = document.getElementById('kviz-progress-fill');
-        if (fill) {
-            const pct = ((index + 1) / shuffledQuestions.length) * 100;
-            fill.style.width = pct + '%';
-        }
-        if (questionNumber) {
-            questionNumber.textContent = `${index + 1} / ${shuffledQuestions.length}`;
-        }
-    }
-
     // Show question - exposed for countdown-timer.js
     window.showQuestion = function(index) {
+        console.log('Showing question', index + 1);
         const question = shuffledQuestions[index];
-        questionContainer.style.pointerEvents = 'none';
         questionContainer.innerHTML = '';
         
         // Create question element
         const questionElement = document.createElement('div');
         questionElement.className = 'question';
-        questionElement.innerHTML = `<h4>${question.question}</h4>`;
+        questionElement.innerHTML = `<h4>${index + 1}. ${question.question}</h4>`;
         
         // Create options
         const optionsList = document.createElement('ul');
         optionsList.className = 'options';
-        const letters = ['A', 'B', 'C', 'D', 'E'];
         
         question.options.forEach((option, i) => {
             const optionItem = document.createElement('li');
@@ -411,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (userAnswers[index] === i) {
                 optionItem.classList.add('selected');
             }
-            optionItem.innerHTML = `<span class="kviz-option-letter">${letters[i] || i + 1}</span><span>${option}</span>`;
+            optionItem.textContent = option;
             optionItem.addEventListener('click', () => selectOption(index, i));
             optionsList.appendChild(optionItem);
         });
@@ -419,9 +397,8 @@ document.addEventListener('DOMContentLoaded', function() {
         questionElement.appendChild(optionsList);
         questionContainer.appendChild(questionElement);
         
-        requestAnimationFrame(() => { questionContainer.style.pointerEvents = ''; });
-        
-        updateProgress(index);
+        // Update question number
+        questionNumber.textContent = `Pitanje ${index + 1} od ${shuffledQuestions.length}`;
         
         // Update local reference
         currentQuestionIndex = index;
@@ -441,7 +418,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        saveState('questions');
         // Wait a brief moment to show the selection before advancing
         setTimeout(() => {
             // Check if this is the last question
@@ -449,7 +425,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Move to next question
                 currentQuestionIndex = questionIndex + 1;
                 window.currentQuestionIndex = currentQuestionIndex;
-                saveState('questions');
                 showQuestion(currentQuestionIndex);
                 // Timer will be reset by the showQuestion function
             } else {
@@ -482,18 +457,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add percentage text
         const percentageText = document.createElement('p');
         percentageText.textContent = `Točnost: ${percentage.toFixed(1)}%`;
-        
-        // Update results icon based on score
-        const resultsIcon = document.getElementById('kviz-results-icon');
-        if (resultsIcon) {
-            if (score >= PASSING_SCORE) {
-                resultsIcon.textContent = score === shuffledQuestions.length ? '🥇' : '🏆';
-            } else if (score >= PASSING_SCORE * 0.7) {
-                resultsIcon.textContent = '📚';
-            } else {
-                resultsIcon.textContent = '💪';
-            }
-        }
         
         // Add pass/fail message
         const passFailMessage = document.createElement('p');
@@ -601,20 +564,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Add review to results
-        document.getElementById('quiz-results').appendChild(reviewContainer);
+        document.getElementById('quiz-results').insertBefore(reviewContainer, document.getElementById('restart-quiz-btn'));
         
         // Show results screen
         questionsScreen.style.display = 'none';
         resultsScreen.style.display = 'block';
-        if (restartMidWrap) restartMidWrap.style.display = 'none';
-        saveState('results');
     }
     
     // Event listeners
     startButton.addEventListener('click', () => {
         startScreen.style.display = 'none';
         questionsScreen.style.display = 'block';
-        if (restartMidWrap) restartMidWrap.style.display = 'block';
         initQuiz();
     });
     
@@ -629,59 +589,4 @@ document.addEventListener('DOMContentLoaded', function() {
         questionsScreen.style.display = 'block';
         initQuiz();
     });
-
-    const restartMidButton = document.getElementById('restart-quiz-mid-btn');
-    const restartMidWrap = document.getElementById('restart-quiz-mid-wrap');
-    const confirmModal = document.getElementById('kviz-confirm-modal');
-    const confirmOk = document.getElementById('kviz-confirm-ok');
-    const confirmCancel = document.getElementById('kviz-confirm-cancel');
-
-    function showRestartConfirm(onConfirm) {
-        if (!confirmModal) { if (onConfirm) onConfirm(); return; }
-        confirmModal.style.display = 'flex';
-        function cleanup() {
-            confirmModal.style.display = 'none';
-            confirmOk.removeEventListener('click', handleOk);
-            confirmCancel.removeEventListener('click', handleCancel);
-        }
-        function handleOk() { cleanup(); if (onConfirm) onConfirm(); }
-        function handleCancel() { cleanup(); }
-        confirmOk.addEventListener('click', handleOk);
-        confirmCancel.addEventListener('click', handleCancel);
-    }
-
-    if (restartMidButton) {
-        restartMidButton.addEventListener('click', () => {
-            showRestartConfirm(() => { initQuiz(); });
-        });
-    }
-
-    // Restore state on page load
-    const saved = loadState();
-    if (saved && saved.shuffledQuestions && saved.shuffledQuestions.length > 0) {
-        shuffledQuestions = saved.shuffledQuestions;
-        userAnswers = saved.userAnswers;
-        currentQuestionIndex = saved.currentQuestionIndex;
-        window.currentQuestionIndex = currentQuestionIndex;
-        window.shuffledQuestions = shuffledQuestions;
-        window.userAnswers = userAnswers;
-        totalQuestions.textContent = shuffledQuestions.length;
-
-        startScreen.style.display = 'none';
-
-        if (saved.screen === 'results') {
-            questionsScreen.style.display = 'none';
-            if (restartMidWrap) restartMidWrap.style.display = 'none';
-            window.showResults();
-        } else {
-            questionsScreen.style.display = 'block';
-            if (restartMidWrap) restartMidWrap.style.display = 'block';
-            showQuestion(currentQuestionIndex);
-        }
-    } else if (new URLSearchParams(window.location.search).get('autostart') === '1') {
-        startScreen.style.display = 'none';
-        questionsScreen.style.display = 'block';
-        if (restartMidWrap) restartMidWrap.style.display = 'block';
-        initQuiz();
-    }
 });
