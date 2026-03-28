@@ -1749,6 +1749,41 @@ a.kripto-service-card-link:hover .kripto-service-card {
 .kripto-legal-prose h3 { color: var(--kripto-heading); font-size: 1.1rem; margin-top: 1.25rem; margin-bottom: 0.5rem; }
 .kripto-legal-prose a { color: var(--kripto-accent); }
 
+/* FAQ sekcija na stranicama usluga */
+.kripto-faq-section {
+	max-width: 800px;
+	margin: 0 auto 3rem;
+}
+.kripto-faq-section > h2 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--kripto-heading);
+	margin-bottom: 1.5rem;
+}
+.kripto-faq-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.kripto-faq-item {
+	background: rgba(10, 13, 66, 0.45);
+	border: 1px solid var(--kripto-border);
+	border-radius: 8px;
+	padding: 20px 24px;
+}
+.kripto-faq-q {
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--kripto-heading);
+	margin-bottom: 0.6rem;
+}
+.kripto-faq-a {
+	font-size: 0.95rem;
+	color: var(--kripto-text);
+	line-height: 1.7;
+	margin: 0;
+}
+
 /*
 * ----------------------------------------------------------------------------------------
 * 04.END ABOUT DESIGN
