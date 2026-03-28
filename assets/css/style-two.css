@@ -1129,11 +1129,29 @@ margin-bottom: 20px;
 @media (max-width: 767px) {
 	.kripto-services-row .col-sm-12 { width: 100%; }
 }
-/* Stranice usluga (edukacija, kripto rješenja, …) */
+/* Stranice usluga – isti raspon i stil kao kontakt blok na početnoj (puna širina containera) */
 .kripto-service-page-content {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 0;
+	width: 100%;
+	max-width: none;
+	margin: 0;
+	padding: 56px;
+	border-radius: 15px;
+	overflow: hidden;
+	background: rgba(10, 13, 66, 0.35);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	box-sizing: border-box;
+}
+@media (max-width: 991px) {
+	.kripto-service-page-content {
+		padding: 32px 24px;
+	}
+}
+@media (max-width: 767px) {
+	.kripto-service-page-content {
+		padding: 24px 20px;
+		border-radius: 12px;
+	}
 }
 .kripto-service-page-content h1 {
 	font-size: 2.25rem;
@@ -1216,6 +1234,12 @@ a.kripto-service-card-link:hover .kripto-service-card {
 	font-size: 15px;
 	line-height: 26px;
 	margin: 0;
+}
+.kripto-service-card p.kripto-service-card-more {
+	margin-top: 16px;
+	margin-bottom: 0;
+	font-weight: 600;
+	color: var(--kripto-accent);
 }
 .kripto-connect-row {
 	margin-top: var(--kripto-gap);
