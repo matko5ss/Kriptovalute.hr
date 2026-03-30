@@ -2816,24 +2816,63 @@ font-weight: 600;
 * ----------------------------------------------------------------------------------------
 */
 
-/* About intro row */
-.kripto-about-intro-row {
-    margin-bottom: 1.5rem;
-}
-.kripto-about-intro {
-    background: rgba(10, 13, 66, 0.3);
-    border: 1px solid var(--kripto-border);
-    border-radius: 10px;
-    padding: 20px 28px;
+/* Hero text section */
+.kripto-hero-text-section {
     max-width: 860px;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
+    text-align: center;
+    padding: 0 1rem;
 }
-.kripto-about-intro p {
-    font-size: 1rem;
-    color: var(--kripto-text);
-    line-height: 1.75;
-    margin: 0;
-}
-.kripto-about-intro strong {
+.kripto-hero-h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
     color: var(--kripto-heading);
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+}
+.kripto-hero-lead {
+    font-size: 1.05rem;
+    color: var(--kripto-text);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.kripto-hero-lead strong {
+    color: var(--kripto-heading);
+}
+.kripto-hero-usps {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 2rem;
+    max-width: 680px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+.kripto-hero-usps li {
+    font-size: 0.97rem;
+    color: var(--kripto-text);
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+.kripto-hero-usps li .fa {
+    color: var(--kripto-accent, #6c5ce7);
+    margin-top: 2px;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+}
+.kripto-hero-usps li strong {
+    color: var(--kripto-heading);
+}
+.kripto-hero-cta-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
 }
