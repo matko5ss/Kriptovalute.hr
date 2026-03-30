@@ -2815,3 +2815,25 @@ font-weight: 600;
 * 15.END SECTION TOP DESIGN
 * ----------------------------------------------------------------------------------------
 */
+
+/* About intro row */
+.kripto-about-intro-row {
+    margin-bottom: 1.5rem;
+}
+.kripto-about-intro {
+    background: rgba(10, 13, 66, 0.3);
+    border: 1px solid var(--kripto-border);
+    border-radius: 10px;
+    padding: 20px 28px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+.kripto-about-intro p {
+    font-size: 1rem;
+    color: var(--kripto-text);
+    line-height: 1.75;
+    margin: 0;
+}
+.kripto-about-intro strong {
+    color: var(--kripto-heading);
+}
