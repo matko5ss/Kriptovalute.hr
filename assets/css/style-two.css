@@ -329,6 +329,8 @@ border:2px solid #fff;
 	align-items: center;
 	white-space: nowrap;
 	animation: kripto-ticker-scroll 50s linear infinite;
+	will-change: transform;
+	backface-visibility: hidden;
 }
 .kripto-ticker-inner span {
 	color: var(--kripto-text);
@@ -1290,6 +1292,8 @@ a.kripto-service-card-link:hover .kripto-service-card {
 .kripto-contact-row {
 	margin-top: var(--kripto-gap);
 	margin-bottom: var(--kripto-gap);
+	content-visibility: auto;
+	contain-intrinsic-size: 0 600px;
 }
 /* kriptovalute.hr style contact section */
 .kripto-contact-kvhr-style {
@@ -1514,6 +1518,8 @@ a.kripto-service-card-link:hover .kripto-service-card {
 	background: var(--kripto-bg-card);
 	padding: 60px 0 40px;
 	border-top: 1px solid var(--kripto-border);
+	content-visibility: auto;
+	contain-intrinsic-size: 0 280px;
 }
 .kripto-footer-logo img {
 	max-width: 200px;
