@@ -564,7 +564,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Add review to results
-        document.getElementById('quiz-results').insertBefore(reviewContainer, document.getElementById('restart-quiz-btn'));
+        document.getElementById('quiz-results').appendChild(reviewContainer);
         
         // Show results screen
         questionsScreen.style.display = 'none';
