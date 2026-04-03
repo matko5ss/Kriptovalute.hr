@@ -13,8 +13,8 @@ particlesJS.load('particles-js', 'particles.json', function() {
 
 (function() {
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  var particleCount = isMobile ? 40 : 80;
-  var particleArea = isMobile ? 1200 : 800;
+  var particleCount = isMobile ? 20 : 50;
+  var particleArea = isMobile ? 2000 : 1000;
   
 particlesJS('particles-js',
   
