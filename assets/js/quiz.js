@@ -589,4 +589,10 @@ document.addEventListener('DOMContentLoaded', function() {
         questionsScreen.style.display = 'block';
         initQuiz();
     });
+
+    // Autostart kviza ako URL sadrži ?autostart=1
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('autostart') === '1') {
+        startButton.click();
+    }
 });
