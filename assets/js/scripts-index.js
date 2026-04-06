@@ -23,9 +23,11 @@
 		/*END MENU JS*/	
 	}); 	
 
-	/*START WOW ANIMATION JS*/
-	if (typeof WOW !== 'undefined') {
+	/*START WOW ANIMATION JS - samo na desktopu*/
+	var isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+		|| window.innerWidth < 768;
+	if (!isMobileDevice && typeof WOW !== 'undefined') {
 		new WOW().init();
 	}
-	/*END WOW ANIMATION JS*/	
+	/*END WOW ANIMATION JS*/
 })(jQuery);

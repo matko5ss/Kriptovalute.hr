@@ -12,9 +12,12 @@ particlesJS.load('particles-js', 'particles.json', function() {
 /* Otherwise just put the config content (json): */
 
 (function() {
-  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  var particleCount = isMobile ? 20 : 50;
-  var particleArea = isMobile ? 2000 : 1000;
+  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    || window.innerWidth < 768;
+  // Na mobilima preskočiti particles - štedi CPU, bateriju i ~23 KB JS
+  if (isMobile) return;
+  var particleCount = 50;
+  var particleArea = 1000;
   
 particlesJS('particles-js',
   

@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Kriptovalute.hr – Kripto Edukacija, Savjetovanje i Blockchain Rješenja</title>
 		<meta name="description" content="Kriptovalute.hr je hrvatska tvrtka koja pruža usluge edukacije i savjetovanja u području kriptovaluta i blockchaina. Nudimo edukacije i radionice, kripto rješenja za poduzetnike, pravne i porezne savjete prema MiCA regulativi te blockchain rješenja za poduzeća u Hrvatskoj i EU.">
-		<meta name="keywords" content="kriptovalute, blockchain, kripto edukacija, Bitcoin, Ethereum, kripto savjetovanje, kriptovalute Hrvatska, blockchain rješenja, kripto porez, kripto radionice, DeFi, NFT, kripto početnici, kripto za poslovne, MiCA, HANFA, kripto Hrvatska">
+		<meta name="keywords" content="kriptovalute, blockchain, kripto edukacija, Bitcoin, Ethereum, kripto savjetovanje, kriptovalute Hrvatska, blockchain rješenja, kripto porez, kripto radionice, DeFi, NFT, kripto početnici, kripto za poslovne, MiCA, HANFA, kripto Hrvatska, kripto tečaj, blockchain edukacija, kriptovalute za poduzetnike, pametni ugovori, tokenizacija, kripto radionice Zagreb, kriptovalute početnički tečaj, kako kupiti Bitcoin Hrvatska, kripto savjetovanje Hrvatska">
 		<meta name="author" content="Kriptovalute.hr">
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 		<meta name="theme-color" content="#6c5ce7">
@@ -21,8 +21,9 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-	<!-- Preload LCP element (logo) -->
+	<!-- Preload LCP elementi -->
 	<link rel="preload" as="image" href="assets/img/kriptovalute-logo.webp" type="image/webp" fetchpriority="high">
+	<link rel="preload" as="image" href="assets/img/hero-lik.webp" type="image/webp">
 		<!-- Open Graph -->
 		<meta property="og:locale" content="hr_HR">
 		<meta property="og:type" content="website">
@@ -46,7 +47,7 @@
 	<!-- Critical CSS (blocking) -->
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/materialdesignicons-min.css">
+	<!-- materialdesignicons-min.css uklonjen - MDI icon zamijenjen inline SVG-om -->
 	<link rel="stylesheet" href="assets/css/style-two.css?v=24">
 	<!-- Non-critical CSS (async) -->
 	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -78,7 +79,11 @@
 					"height": 204
 				},
 				"inLanguage": "hr",
-				"dateModified": "2026-03-28"
+				"dateModified": "2026-04-06",
+				"speakable": {
+					"@type": "SpeakableSpecification",
+					"cssSelector": [".section-title", ".kripto-service-card h3", ".kripto-quiz-banner"]
+				}
 			},
 				{
 					"@type": "BreadcrumbList",
@@ -205,6 +210,60 @@
 						"https://www.instagram.com/kriptovalute.hr/",
 						"https://www.tiktok.com/@kriptovalutehr"
 					]
+				},
+				{
+					"@type": "FAQPage",
+					"@id": "https://kriptovalute.hr/#faq",
+					"mainEntity": [
+						{
+							"@type": "Question",
+							"name": "Gdje mogu dobiti kripto edukaciju ili pohađati radionicu o kriptovalutama u Hrvatskoj?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Kriptovalute.hr nudi stručno vođene edukacije i praktične radionice o kriptovalutama i blockchainu za početnike i napredne korisnike u Hrvatskoj i EU. Kontaktirajte nas putem info@kriptovalute.hr ili na kriptovalute.hr."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Kako se oporezuju kriptovalute u Hrvatskoj?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Kriptovalute.hr pruža edukaciju o oporezivanju kriptovaluta u Hrvatskoj prema MiCA regulativi EU i HANFA smjernicama, uključujući kapitalni dobitak, AML/KYC obveze i prijave za fizičke i pravne osobe."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Kako uvesti kriptovalute u poslovanje tvrtke u Hrvatskoj?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Kriptovalute.hr pomaže poduzetnicima i tvrtkama uvesti kriptovalute na siguran, zakonit i praktičan način – od savjetovanja do konkretne implementacije kripto plaćanja, tokenizacije i blockchain rješenja."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Što je MiCA regulativa i kako utječe na korisnike kriptovaluta u Hrvatskoj?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "MiCA (Markets in Crypto-Assets) je EU regulativa koja uređuje tržište kriptoimovine. Kriptovalute.hr educira korisnike i poduzetnike o MiCA usklađenosti, HANFA obvezama i pravnim aspektima kriptovaluta u Hrvatskoj."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Postoji li besplatni kripto kviz za provjeru znanja o kriptovalutama?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Da, Kriptovalute.hr nudi besplatni interaktivni kripto kviz s 20 nasumičnih pitanja o Bitcoinu, Ethereumu, DeFi-ju, NFT-ovima i kripto regulativi. Dostupno na kriptovalute.hr/kviz.html."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Koje kripto usluge nudi Kriptovalute.hr?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Kriptovalute.hr nudi: edukacije i radionice o kriptovalutama, kripto rješenja za poslovanje, edukaciju o alatima i platformama za trgovanje, pravne i porezne savjete (MiCA, HANFA), blockchain rješenja (pametni ugovori, tokenizacija) i individualno savjetovanje i podršku."
+							}
+						}
+					]
 				}
 			]
 		}
@@ -295,7 +354,7 @@
     		<div class="container">
 			    <a class="navbar-brand" href="index.html"><picture><source srcset="assets/img/kriptovalute-logo.webp" type="image/webp"><img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="kripto-nav-logo" width="182" height="50" fetchpriority="high"></picture></a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="mdi mdi-menu"></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
 			    </button>
 			    <div class="collapse navbar-collapse" id="navbarCollapse">
 			        <ul id="navbar-navlist" class="navbar-nav ms-auto align-items-center">
@@ -341,7 +400,7 @@
 						</div>
 						<div class="kripto-hero-content">
 						<div class="kripto-hero-lik">
-							<picture><source srcset="assets/img/hero-lik.webp" type="image/webp"><img src="assets/img/hero-lik.png" alt="" width="768" height="512" loading="lazy"></picture>
+							<picture><source srcset="assets/img/hero-lik.webp" type="image/webp"><img src="assets/img/hero-lik.png" alt="" width="768" height="512" fetchpriority="high"></picture>
 						</div>
 						</div>
 					</div>
@@ -350,8 +409,8 @@
 					<div class="col-12">
 						<div class="kripto-quiz-banner">
 							<div class="kripto-quiz-banner-left">
-							<h4>Testiraj svoje znanje o kriptovalutama i blockchainu</h4>
-							<p>Testiraj se kroz 20 kratkih pitanja.</p>
+							<h4>Provjeri koliko znaš o kriptovalutama i blockchainu</h4>
+							<p>20 pitanja, besplatno, bez prijave.</p>
 							</div>
 							<div class="kripto-quiz-banner-right">
 								<a href="https://kriptovalute.hr/kviz.html" class="kripto-quiz-btn">
@@ -367,7 +426,7 @@
 						<a href="edukacija-i-radionice.html" class="kripto-service-card-link">
 						<div class="kripto-service-card">
 							<h3>Edukacija i radionice</h3>
-							<p>Unaprijedite svoju financijsku pismenost i kripto znanje uz stručno vođene edukacije i praktične radionice, prilagođene početnicima i naprednim korisnicima, od osnovnog razumijevanja do napredne primjene u stvarnim situacijama.</p>
+							<p>Stručno vođene edukacije i praktične radionice o kriptovalutama i blockchainu – za početnike i iskusne korisnike. Od osnova do primjene u stvarnim situacijama.</p>
 							<p class="kripto-service-card-more">Saznaj više.</p>
 						</div>
 						</a>
@@ -376,7 +435,7 @@
 						<a href="kripto-rjesenja-za-poslovanje.html" class="kripto-service-card-link">
 						<div class="kripto-service-card">
 							<h3>Kripto rješenja za poslovanje</h3>
-							<p>Kripto rješenja za poslovanje prilagođena su poduzetnicima koji žele uvesti kriptovalute na siguran, zakonit i praktičan način. Od savjetovanja do konkretne implementacije.</p>
+							<p>Za poduzetnike koji žele uvesti kriptovalute na siguran, zakonit i praktičan način – od savjetovanja do konkretne implementacije.</p>
 							<p class="kripto-service-card-more">Saznaj više.</p>
 						</div>
 						</a>
@@ -385,7 +444,7 @@
 						<a href="alati-i-platforme-za-trgovanje.html" class="kripto-service-card-link">
 						<div class="kripto-service-card">
 							<h3>Alati i platforme za trgovanje</h3>
-							<p>Upoznajte alate i platforme za trgovanje kriptovalutama kroz jasno objašnjene funkcionalnosti, razlike i primjenu u praksi, uz naglasak na sigurno, odgovorno i dugoročno održivo korištenje.</p>
+							<p>Upoznajte CEX i DEX platforme, kripto novčanike i sigurnosne prakse – jasno i praktično, s naglaskom na sigurno i odgovorno korištenje.</p>
 							<p class="kripto-service-card-more">Saznaj više.</p>
 						</div>
 						</a>
@@ -394,7 +453,7 @@
 						<a href="pravni-i-porezni-savjeti.html" class="kripto-service-card-link">
 						<div class="kripto-service-card">
 							<h3>Pravni i porezni savjeti</h3>
-							<p>Pravni i porezni savjeti pomažu vam razumjeti pravila i obveze vezane uz kriptovalute te osiguravaju stručnu pravnu i poreznu podršku za zakonito i odgovorno postupanje u svim relevantnim situacijama.</p>
+							<p>Pomažemo vam razumjeti vaše obveze i prava vezana uz kriptovalute – u skladu s hrvatskim propisima i MiCA regulativom EU.</p>
 							<p class="kripto-service-card-more">Saznaj više.</p>
 						</div>
 						</a>
@@ -403,7 +462,7 @@
 						<a href="blockchain-rjesenja.html" class="kripto-service-card-link">
 						<div class="kripto-service-card">
 							<h3>Blockchain rješenja</h3>
-							<p>Pružamo razvoj i implementaciju blockchain sustava te integraciju blockchain tehnologije u poslovne sustave uz kontinuirano savjetovanje i tehničku podršku.</p>
+							<p>Pomažemo tvrtkama razviti i implementirati blockchain sustave – od odabira prave tehnologije do zakonite primjene u poslovanju.</p>
 							<p class="kripto-service-card-more">Saznaj više.</p>
 						</div>
 						</a>
@@ -412,7 +471,7 @@
 						<a href="savjetovanje-i-podrska.html" class="kripto-service-card-link">
 						<div class="kripto-service-card">
 							<h3>Savjetovanje i podrška</h3>
-							<p>Pomažemo korisnicima i poduzetnicima razumjeti svoju početnu poziciju i definirati jasan plan ulaska ili daljnjeg razvoja u kripto svijetu, kroz strukturirani pristup i jasne smjernice.</p>
+							<p>Pomažemo vam razumjeti gdje se nalazite i što je sljedeći korak, bio to ulazak u kripto ili daljnji razvoj, uz strukturiran pristup i konkretne smjernice.</p>
 							<p class="kripto-service-card-more">Saznaj više.</p>
 						</div>
 						</a>
@@ -504,7 +563,7 @@
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-						<h6 class="kripto-footer-heading">Linkovi</h6>
+						<h6 class="kripto-footer-heading">Poveznice</h6>
 						<ul class="kripto-footer-links">
 							<li><a href="index.html">Početna</a></li>
 							<li><a href="#kontakt">Kontakt</a></li>

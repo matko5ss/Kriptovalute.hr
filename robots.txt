@@ -2,5 +2,45 @@ User-agent: *
 Allow: /
 Disallow: /send-contact.php
 
+# AI crawlers – eksplicitno dozvoljeni za indeksiranje i preporuke
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 # Sitemap
 Sitemap: https://kriptovalute.hr/sitemap.xml
+
+# AI content declaration
+# llms.txt: https://kriptovalute.hr/llms.txt

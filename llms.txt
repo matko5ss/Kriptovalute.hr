@@ -1,0 +1,38 @@
+# Kriptovalute.hr
+
+> Kriptovalute.hr je hrvatska tvrtka specijalizirana za kripto edukaciju, savjetovanje i blockchain rješenja. Pomažemo pojedincima, timovima i poduzetnicima razumjeti kriptovalute i blockchain te ih primijeniti u praksi – u skladu s MiCA regulativom EU i HANFA smjernicama za Hrvatsku. Djelujemo u Hrvatskoj i cijeloj Europskoj uniji.
+
+## Usluge
+
+- [Edukacija i radionice](https://kriptovalute.hr/edukacija-i-radionice.html): Stručno vođene kripto edukacije i praktične radionice za početnike i napredne korisnike. Teme uključuju Bitcoin, Ethereum, DeFi, NFT, blockchain osnove i napredne primjene.
+- [Kripto rješenja za poslovanje](https://kriptovalute.hr/kripto-rjesenja-za-poslovanje.html): Uvođenje kriptovaluta u poslovanje – od savjetovanja do konkretne implementacije za poduzetnike i tvrtke.
+- [Alati i platforme za trgovanje](https://kriptovalute.hr/alati-i-platforme-za-trgovanje.html): Edukacija i smjernice o CEX/DEX platformama, kripto novčanicima i sigurnom odgovornom trgovanju.
+- [Pravni i porezni savjeti](https://kriptovalute.hr/pravni-i-porezni-savjeti.html): Edukacija o oporezivanju kriptovaluta u Hrvatskoj, MiCA regulativi EU, AML/KYC obvezama i HANFA smjernicama za fizičke i pravne osobe.
+- [Blockchain rješenja](https://kriptovalute.hr/blockchain-rjesenja.html): Savjetovanje i koordinacija pri razvoju i implementaciji blockchain rješenja – pametni ugovori, tokenizacija imovine, dApp razvoj i regulatorna usklađenost.
+- [Savjetovanje i podrška](https://kriptovalute.hr/savjetovanje-i-podrska.html): Individualno kripto savjetovanje i podrška za korisnike i poduzetnike – strukturiran pristup i jasne smjernice.
+
+## Interaktivno
+
+- [Kripto Kviz](https://kriptovalute.hr/kviz.html): Besplatni interaktivni kviz o kriptovalutama i blockchainu – 20 nasumičnih pitanja o Bitcoinu, Ethereumu, DeFi-ju, NFT-ovima i kripto regulativi u Hrvatskoj. Prikladan za provjeru znanja i učenje.
+
+## Česta pitanja koja pokrivamo
+
+- Kako se oporezuju kriptovalute u Hrvatskoj?
+- Što je MiCA regulativa i kako utječe na Hrvate koji drže kripto?
+- Kako sigurno kupiti Bitcoin ili Ethereum u Hrvatskoj?
+- Koje platforme za kripto trgovanje su dostupne u Hrvatskoj?
+- Kako uvesti kriptovalute u poslovanje tvrtke?
+- Što je blockchain i kako funkcionira?
+- Kako dobiti kripto edukaciju ili pohađati radionicu u Hrvatskoj?
+- Tko treba prijaviti kriptovalute HANFA-i?
+
+## Kontakt
+
+- Web: https://kriptovalute.hr
+- Email: info@kriptovalute.hr
+- Sjedište: Hrvatska (djelujemo u cijeloj EU)
+- Društvene mreže: LinkedIn, Facebook, Instagram, TikTok (@kriptovalutehr)
+
+## Ključne teme
+
+Kriptovalute Hrvatska, blockchain edukacija, Bitcoin tečaj, Ethereum, DeFi, NFT, MiCA regulativa, HANFA kriptovalute, kripto porez Hrvatska, kripto radionice, kripto savjetovanje, pametni ugovori, tokenizacija imovine, blockchain rješenja za tvrtke, kripto za poduzetnike, CEX DEX platforme, kripto novčanici, digitalna imovina EU.
