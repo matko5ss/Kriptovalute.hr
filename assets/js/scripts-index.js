@@ -8,6 +8,10 @@
 			$('.status').fadeOut();
 			$('.preloader').delay(350).fadeOut('slow'); 
 		}); 
+		/* Fallback timeout to hide preloader after 5 seconds */
+		setTimeout(function() {
+			$('.preloader').fadeOut('slow');
+		}, 5000);
 		/*END PRELOADER JS*/		
 			
 		/*START MENU JS*/		
