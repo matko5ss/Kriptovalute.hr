@@ -15,6 +15,27 @@ DirectoryIndex index.html index.php
 </IfModule>
 
 # -----------------------------------------------
+# Serviranje pre-komprimiranih .gz datoteka
+# (garantira kompresiju bez obzira na server modul)
+# -----------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP:Accept-Encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}.gz -f
+    RewriteRule ^(.+\.(css|js))$ $1.gz [L]
+</IfModule>
+<FilesMatch "\.css\.gz$">
+    ForceType text/css
+    Header set Content-Encoding gzip
+    Header set Vary Accept-Encoding
+</FilesMatch>
+<FilesMatch "\.js\.gz$">
+    ForceType application/javascript
+    Header set Content-Encoding gzip
+    Header set Vary Accept-Encoding
+</FilesMatch>
+
+# -----------------------------------------------
 # Brotli kompresija (brža od Gzip gdje je dostupna)
 # -----------------------------------------------
 <IfModule mod_brotli.c>
