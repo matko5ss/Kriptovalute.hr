@@ -1610,10 +1610,8 @@ a.kripto-service-card-link:hover .kripto-service-card {
 	padding: 10px 14px;
 	min-width: 44px;
 }
-.kripto-cookie-btn-icon svg {
-	width: 18px;
-	height: 18px;
-	vertical-align: middle;
+.kripto-cookie-btn-icon .fa {
+	font-size: 18px;
 }
 /* Cookie bar – detaljne postavke */
 .kripto-cookie-panel {
