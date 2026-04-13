@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Tržište kriptovaluta – Cijene u stvarnom vremenu | Kriptovalute.hr</title>
+	<meta name="description" content="Pratite cijene kriptovaluta u stvarnom vremenu. Top 100 kriptovaluta po tržišnoj kapitalizaciji s grafikonima, volumenom i portfolio trackerom. Besplatno na Kriptovalute.hr.">
+	<meta name="keywords" content="cijene kriptovaluta, tržište kriptovaluta, bitcoin cijena, ethereum cijena, kripto tržište, kripto portfolio, kriptovalute Hrvatska, coinmarketcap alternativa">
+	<meta name="author" content="Kriptovalute.hr">
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+	<meta name="language" content="hr">
+	<meta name="geo.region" content="HR">
+	<link rel="canonical" href="https://kriptovalute.hr/trziste.html">
+	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!-- Open Graph -->
+	<meta property="og:locale" content="hr_HR">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Tržište kriptovaluta – Cijene u stvarnom vremenu | Kriptovalute.hr">
+	<meta property="og:description" content="Pratite cijene kriptovaluta u stvarnom vremenu. Top 100 kriptovaluta s grafikonima i portfolio trackerom.">
+	<meta property="og:url" content="https://kriptovalute.hr/trziste.html">
+	<meta property="og:site_name" content="Kriptovalute.hr">
+	<meta property="og:image" content="https://kriptovalute.hr/assets/img/kriptovalute-logo-blue.png">
+	<meta property="og:image:width" content="741">
+	<meta property="og:image:height" content="204">
+	<meta property="og:image:type" content="image/png">
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@kriptovalutehr">
+	<meta name="twitter:title" content="Tržište kriptovaluta – Kriptovalute.hr">
+	<meta name="twitter:description" content="Pratite cijene kriptovaluta u stvarnom vremenu s portfolio trackerom.">
+	<meta name="twitter:image" content="https://kriptovalute.hr/assets/img/kriptovalute-logo-blue.png">
+	<!-- Structured Data -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "WebPage",
+		"name": "Tržište kriptovaluta",
+		"description": "Pratite cijene kriptovaluta u stvarnom vremenu. Top 100 kriptovaluta po tržišnoj kapitalizaciji.",
+		"url": "https://kriptovalute.hr/trziste.html",
+		"isPartOf": {"@id": "https://kriptovalute.hr/#website"},
+		"inLanguage": "hr"
+	}
+	</script>
+	<!-- CSS -->
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/style-two.css?v=24">
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<style>
+	/* ==========================================
+	   TRŽIŠTE PAGE — SPECIFIC STYLES
+	   ========================================== */
+
+	/* Page header */
+	.trziste-hero {
+		padding: 120px 0 40px;
+		text-align: center;
+		position: relative;
+		z-index: 1;
+	}
+	.trziste-hero h1 {
+		font-size: clamp(1.8rem, 4vw, 2.6rem);
+		font-weight: 700;
+		margin-bottom: 10px;
+		background: linear-gradient(135deg, #fff 40%, rgba(255,255,255,0.6));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+	.trziste-hero p {
+		color: #abb8c3;
+		font-size: 1rem;
+	}
+
+	/* Global stats bar */
+	.trziste-global {
+		background: rgba(10,13,66,0.98);
+		border-top: 1px solid #1a2066;
+		border-bottom: 1px solid #1a2066;
+		padding: 12px 0;
+		position: relative;
+		z-index: 1;
+		overflow-x: auto;
+	}
+	.trziste-global-inner {
+		display: flex;
+		align-items: center;
+		gap: 6px 20px;
+		flex-wrap: wrap;
+		font-size: 13px;
+		min-width: max-content;
+	}
+	.trziste-stat-item {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		white-space: nowrap;
+	}
+	.trziste-stat-label { color: #abb8c3; }
+	.trziste-stat-val { color: #fff; font-weight: 600; }
+	.trziste-stat-sep {
+		width: 1px;
+		height: 14px;
+		background: #1a2066;
+		flex-shrink: 0;
+	}
+
+	/* Main section */
+	.trziste-main {
+		padding: 36px 0 80px;
+		position: relative;
+		z-index: 1;
+	}
+
+	/* Tabs */
+	.trziste-tabs {
+		display: flex;
+		gap: 4px;
+		border-bottom: 1px solid #1a2066;
+		margin-bottom: 24px;
+	}
+	.trziste-tab-btn {
+		background: none;
+		border: none;
+		border-bottom: 3px solid transparent;
+		color: #abb8c3;
+		font-family: 'Quicksand', sans-serif;
+		font-size: 15px;
+		font-weight: 600;
+		padding: 10px 18px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 7px;
+		margin-bottom: -1px;
+		transition: color 0.2s;
+	}
+	.trziste-tab-btn:hover { color: #fff; }
+	.trziste-tab-btn.active {
+		color: #fff;
+		border-bottom-color: #fff;
+	}
+	.trziste-tab-badge {
+		background: rgba(255,255,255,0.15);
+		color: #fff;
+		font-size: 11px;
+		font-weight: 700;
+		padding: 2px 7px;
+		border-radius: 20px;
+		min-width: 20px;
+		text-align: center;
+	}
+
+	/* Controls bar */
+	.trziste-controls {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 16px;
+		flex-wrap: wrap;
+	}
+	.trziste-search-wrap {
+		position: relative;
+		flex: 1;
+		min-width: 200px;
+		max-width: 380px;
+	}
+	.trziste-search-wrap .search-icon {
+		position: absolute;
+		left: 14px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #abb8c3;
+		pointer-events: none;
+	}
+	#trziste-search {
+		width: 100%;
+		background: #0a0d42;
+		border: 1px solid #1a2066;
+		border-radius: 30px;
+		color: #fff;
+		font-family: 'Quicksand', sans-serif;
+		font-size: 14px;
+		padding: 9px 16px 9px 40px;
+		outline: none;
+		transition: border-color 0.2s;
+	}
+	#trziste-search::placeholder { color: #4a5568; }
+	#trziste-search:focus { border-color: rgba(255,255,255,0.35); }
+
+	.trziste-cur-group {
+		display: flex;
+		background: #0a0d42;
+		border: 1px solid #1a2066;
+		border-radius: 30px;
+		overflow: hidden;
+	}
+	.trziste-cur-btn {
+		background: none;
+		border: none;
+		color: #abb8c3;
+		font-family: 'Quicksand', sans-serif;
+		font-size: 13px;
+		font-weight: 600;
+		padding: 8px 14px;
+		cursor: pointer;
+		transition: all 0.2s;
+	}
+	.trziste-cur-btn.active {
+		background: rgba(255,255,255,0.12);
+		color: #fff;
+	}
+
+	.trziste-update-info {
+		display: flex;
+		align-items: center;
+		gap: 7px;
+		margin-left: auto;
+		font-size: 12px;
+		color: #abb8c3;
+	}
+	.trziste-countdown-ring {
+		width: 20px;
+		height: 20px;
+		transform: rotate(-90deg);
+		flex-shrink: 0;
+	}
+	.trziste-countdown-ring circle {
+		fill: none;
+		stroke: #1a2066;
+		stroke-width: 2.5;
+	}
+	.trziste-countdown-ring .cring-progress {
+		stroke: rgba(255,255,255,0.35);
+		stroke-dasharray: 50.27;
+		stroke-dashoffset: 0;
+		transition: stroke-dashoffset 1s linear;
+	}
+	.trziste-refresh-btn {
+		background: #0a0d42;
+		border: 1px solid #1a2066;
+		color: #abb8c3;
+		width: 34px;
+		height: 34px;
+		border-radius: 50%;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.2s;
+		flex-shrink: 0;
+		padding: 0;
+	}
+	.trziste-refresh-btn:hover { background: #121652; color: #fff; border-color: rgba(255,255,255,0.2); }
+	.trziste-refresh-btn.spinning svg { animation: trziste-spin 0.8s linear infinite; }
+	@keyframes trziste-spin { to { transform: rotate(360deg); } }
+
+	/* Results count */
+	.trziste-results-count {
+		font-size: 12px;
+		color: #abb8c3;
+		margin-bottom: 10px;
+		padding: 0 2px;
+	}
+
+	/* Table wrapper */
+	.trziste-table-wrap {
+		background: #0a0d42;
+		border: 1px solid #1a2066;
+		border-radius: 16px;
+		overflow: hidden;
+	}
+	.trziste-table-scroll { overflow-x: auto; }
+
+	/* Coin icon with letter fallback */
+	.coin-icon-wrap { display: inline-flex; align-items: center; flex-shrink: 0; }
+	.coin-icon-fb {
+		width: 28px; height: 28px; border-radius: 50%;
+		align-items: center; justify-content: center;
+		font-size: 11px; font-weight: 700; color: #fff;
+		flex-shrink: 0; letter-spacing: 0;
+	}
+
+	/* Market table */
+	.trziste-table {
+		width: 100%;
+		border-collapse: collapse;
+		min-width: 860px;
+	}
+	.trziste-table thead tr {
+		border-bottom: 1px solid #1a2066;
+	}
+	.trziste-table th {
+		color: #6b7a8d;
+		font-size: 11px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.6px;
+		padding: 13px 14px;
+		white-space: nowrap;
+		text-align: right;
+		background: rgba(5,5,48,0.4);
+	}
+	.trziste-table th:nth-child(1),
+	.trziste-table th:nth-child(2),
+	.trziste-table th:nth-child(3) { text-align: left; }
+	.trziste-table th.sortable {
+		cursor: pointer;
+		user-select: none;
+		transition: color 0.15s;
+	}
+	.trziste-table th.sortable:hover { color: #abb8c3; }
+	.trziste-table th.sort-active { color: #fff; }
+	.sort-arrow {
+		display: inline-block;
+		margin-left: 3px;
+		font-size: 9px;
+		opacity: 0.4;
+		transition: opacity 0.15s;
+	}
+	.sort-arrow.active { opacity: 1; }
+
+	.trziste-table td {
+		padding: 11px 14px;
+		font-size: 13.5px;
+		color: #abb8c3;
+		border-bottom: 1px solid rgba(26,32,102,0.4);
+		white-space: nowrap;
+		text-align: right;
+		vertical-align: middle;
+	}
+	.trziste-table td:nth-child(1),
+	.trziste-table td:nth-child(2),
+	.trziste-table td:nth-child(3) { text-align: left; }
+	.trziste-table tbody tr { transition: background 0.12s; }
+	.trziste-table tbody tr:hover { background: rgba(255,255,255,0.027); }
+	.trziste-table tbody tr:last-child td { border-bottom: none; }
+
+	/* Coin cell */
+	.trziste-coin-cell {
+		display: flex;
+		align-items: center;
+		gap: 9px;
+	}
+	.trziste-coin-img {
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		object-fit: cover;
+		flex-shrink: 0;
+		background: #1a2066;
+	}
+	.trziste-coin-name {
+		color: #fff;
+		font-weight: 600;
+		font-size: 13.5px;
+		line-height: 1.2;
+		display: block;
+	}
+	.trziste-coin-sym {
+		color: #6b7a8d;
+		font-size: 11px;
+		text-transform: uppercase;
+		line-height: 1.2;
+		display: block;
+	}
+	.trziste-rank {
+		color: #6b7a8d;
+		font-size: 13px;
+		display: block;
+		text-align: center;
+	}
+	.trziste-price {
+		color: #fff;
+		font-weight: 600;
+	}
+
+	/* Price change colors */
+	.price-up { color: #00d4aa; font-weight: 600; }
+	.price-down { color: #ff4765; font-weight: 600; }
+	.price-neutral { color: #abb8c3; }
+
+	/* Sparkline */
+	.trziste-sparkline {
+		width: 100px;
+		height: 36px;
+		display: block;
+	}
+
+	/* Favorite button */
+	.trziste-fav-btn {
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 3px 6px;
+		color: #2d3a4a;
+		transition: color 0.15s, transform 0.15s;
+		line-height: 1;
+		display: block;
+		margin: 0 auto;
+	}
+	.trziste-fav-btn:hover { transform: scale(1.25); color: #f6c90e; }
+	.trziste-fav-btn.active { color: #f6c90e; }
+
+	/* Add to portfolio btn */
+	.trziste-add-btn {
+		background: rgba(255,255,255,0.05);
+		border: 1px solid rgba(255,255,255,0.1);
+		color: #abb8c3;
+		width: 26px;
+		height: 26px;
+		border-radius: 50%;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.2s;
+		margin: 0 auto;
+		padding: 0;
+	}
+	.trziste-add-btn:hover {
+		background: rgba(255,255,255,0.12);
+		color: #fff;
+		border-color: rgba(255,255,255,0.25);
+	}
+	.trziste-add-btn.in-portfolio {
+		background: rgba(0,212,170,0.1);
+		border-color: rgba(0,212,170,0.35);
+		color: #00d4aa;
+	}
+
+	/* Skeleton loading */
+	.trziste-skel {
+		display: inline-block;
+		background: linear-gradient(90deg, #0d1048 25%, #161b6b 50%, #0d1048 75%);
+		background-size: 200% 100%;
+		animation: skel-pulse 1.5s infinite;
+		border-radius: 6px;
+	}
+	@keyframes skel-pulse {
+		0% { background-position: 200% 0; }
+		100% { background-position: -200% 0; }
+	}
+
+	/* Error & empty states */
+	.trziste-state-msg {
+		text-align: center;
+		padding: 56px 20px;
+	}
+	.trziste-state-msg .state-icon { font-size: 44px; margin-bottom: 14px; }
+	.trziste-state-msg h3 { color: #fff; margin-bottom: 8px; }
+	.trziste-state-msg p { color: #abb8c3; max-width: 400px; margin: 0 auto 20px; }
+
+	/* Portfolio summary cards */
+	.trziste-pf-summary {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+		gap: 14px;
+		margin-bottom: 24px;
+	}
+	.trziste-pf-card {
+		background: #0a0d42;
+		border: 1px solid #1a2066;
+		border-radius: 14px;
+		padding: 18px 22px;
+	}
+	.trziste-pf-card-label {
+		font-size: 11px;
+		color: #6b7a8d;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin-bottom: 6px;
+	}
+	.trziste-pf-card-val {
+		font-size: 1.4rem;
+		font-weight: 700;
+		color: #fff;
+		line-height: 1.2;
+	}
+	.trziste-pf-card-sub {
+		font-size: 12px;
+		color: #abb8c3;
+		margin-top: 3px;
+	}
+
+	/* Portfolio table */
+	.trziste-pf-table {
+		width: 100%;
+		border-collapse: collapse;
+		min-width: 720px;
+	}
+	.trziste-pf-table th {
+		color: #6b7a8d;
+		font-size: 11px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		padding: 12px 14px;
+		text-align: right;
+		border-bottom: 1px solid #1a2066;
+		background: rgba(5,5,48,0.4);
+	}
+	.trziste-pf-table th:first-child { text-align: left; }
+	.trziste-pf-table td {
+		padding: 11px 14px;
+		font-size: 13.5px;
+		color: #abb8c3;
+		border-bottom: 1px solid rgba(26,32,102,0.4);
+		text-align: right;
+		vertical-align: middle;
+		white-space: nowrap;
+	}
+	.trziste-pf-table td:first-child { text-align: left; }
+	.trziste-pf-table tbody tr { transition: background 0.12s; }
+	.trziste-pf-table tbody tr:hover { background: rgba(255,255,255,0.027); }
+	.trziste-pf-table tbody tr:last-child td { border-bottom: none; }
+
+	/* Portfolio allocation bar */
+	.pf-bar-track {
+		width: 64px;
+		height: 5px;
+		background: rgba(255,255,255,0.06);
+		border-radius: 3px;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 5px;
+	}
+	.pf-bar-fill {
+		height: 100%;
+		border-radius: 3px;
+		background: linear-gradient(90deg, #6c5ce7, #00d4aa);
+		transition: width 0.4s;
+	}
+
+	/* Action buttons in portfolio */
+	.trziste-act-btn {
+		background: none;
+		border: 1px solid rgba(255,255,255,0.1);
+		color: #abb8c3;
+		padding: 3px 9px;
+		border-radius: 6px;
+		font-size: 12px;
+		font-family: 'Quicksand', sans-serif;
+		cursor: pointer;
+		transition: all 0.18s;
+	}
+	.trziste-act-btn:hover { background: rgba(255,255,255,0.07); color: #fff; }
+	.trziste-act-btn.danger:hover {
+		background: rgba(255,71,101,0.12);
+		border-color: rgba(255,71,101,0.35);
+		color: #ff4765;
+	}
+
+	/* Portfolio empty state */
+	.trziste-pf-empty {
+		background: #0a0d42;
+		border: 1px solid #1a2066;
+		border-radius: 16px;
+		text-align: center;
+		padding: 60px 20px;
+	}
+	.trziste-pf-note {
+		font-size: 12px;
+		color: #6b7a8d;
+		margin-top: 14px;
+		display: flex;
+		align-items: center;
+		gap: 6px;
+	}
+
+	/* Modal */
+	.trziste-modal .modal-content {
+		background: #0a0d42;
+		border: 1px solid #1a2066;
+		border-radius: 16px;
+		color: #fff;
+	}
+	.trziste-modal .modal-header {
+		border-bottom: 1px solid #1a2066;
+		padding: 18px 22px;
+	}
+	.trziste-modal .modal-title {
+		font-family: 'Quicksand', sans-serif;
+		font-weight: 700;
+		font-size: 1rem;
+	}
+	.trziste-modal .modal-body { padding: 22px; }
+	.trziste-modal .modal-footer {
+		border-top: 1px solid #1a2066;
+		padding: 14px 22px;
+	}
+	.trziste-modal .btn-close { filter: invert(1); opacity: 0.5; }
+	.trziste-modal .btn-close:hover { opacity: 1; }
+	.trziste-modal .form-label { color: #abb8c3; font-size: 12.5px; margin-bottom: 5px; }
+	.trziste-modal .form-control {
+		background: rgba(5,5,48,0.8);
+		border: 1px solid #1a2066;
+		color: #fff;
+		border-radius: 10px;
+		font-family: 'Quicksand', sans-serif;
+		font-size: 14px;
+	}
+	.trziste-modal .form-control:focus {
+		background: rgba(5,5,48,0.8);
+		border-color: rgba(255,255,255,0.3);
+		color: #fff;
+		box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
+	}
+	.trziste-modal .form-control::placeholder { color: #4a5568; }
+	.trziste-modal .form-text { font-size: 11.5px; color: #6b7a8d; }
+	.trziste-modal-coin-preview {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 12px 14px;
+		background: rgba(255,255,255,0.04);
+		border-radius: 10px;
+		margin-bottom: 18px;
+	}
+	.trziste-modal-coin-preview img {
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+	}
+	.modal-coin-title { font-weight: 700; color: #fff; font-size: 14px; }
+	.modal-coin-price { color: #abb8c3; font-size: 12.5px; }
+	.modal-live-val {
+		background: rgba(0,212,170,0.07);
+		border: 1px solid rgba(0,212,170,0.15);
+		border-radius: 10px;
+		padding: 11px 14px;
+		font-size: 13px;
+		display: none;
+		margin-top: 12px;
+	}
+
+	/* Disclaimer */
+	.trziste-disclaimer {
+		padding: 0 0 48px;
+		position: relative;
+		z-index: 1;
+	}
+	.trziste-disclaimer-box {
+		background: rgba(246,201,14,0.05);
+		border: 1px solid rgba(246,201,14,0.14);
+		border-radius: 12px;
+		padding: 12px 18px;
+		font-size: 12.5px;
+		color: #abb8c3;
+		display: flex;
+		align-items: flex-start;
+		gap: 9px;
+	}
+	.trziste-disclaimer-box svg { flex-shrink: 0; color: #f6c90e; margin-top: 1px; }
+
+	/* Panel animation */
+	.trziste-panel { animation: t-fadein 0.2s ease; }
+	@keyframes t-fadein {
+		from { opacity: 0; transform: translateY(5px); }
+		to   { opacity: 1; transform: translateY(0); }
+	}
+
+	/* Mobile responsive */
+	@media (max-width: 992px) {
+		.trziste-update-info span { display: none; }
+	}
+	@media (max-width: 768px) {
+		.trziste-controls { flex-direction: column; align-items: stretch; }
+		.trziste-search-wrap { max-width: 100%; }
+		.trziste-update-info { margin-left: 0; }
+		.trziste-table { min-width: 640px; }
+	}
+
+	/* Quick-add toast */
+	.trziste-toast {
+		position: fixed;
+		bottom: 28px;
+		left: 50%;
+		transform: translateX(-50%) translateY(20px);
+		background: #121652;
+		border: 1px solid rgba(255,255,255,0.12);
+		color: #fff;
+		padding: 10px 20px;
+		border-radius: 30px;
+		font-size: 14px;
+		font-weight: 600;
+		z-index: 9999;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.25s, transform 0.25s;
+		white-space: nowrap;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+	}
+	.trziste-toast.show {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+	}
+	</style>
+</head>
+
+<body data-spy="scroll" data-offset="80">
+
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+		</div>
+	</div>
+
+	<!-- Cookie bar -->
+	<div class="kripto-cookie-bar" id="kripto-cookie-bar" style="display:none;" role="dialog" aria-live="polite" aria-label="Postavke kolačića">
+		<div class="kripto-cookie-inner">
+			<div class="kripto-cookie-text">
+				<strong>Koristimo kolačiće</strong> za poboljšanje korisničkog iskustva, analitiku posjećenosti i prikaz relevantnog sadržaja. Možete prilagoditi postavke ili prihvatiti sve kolačiće.
+			</div>
+			<div class="kripto-cookie-actions">
+				<button type="button" class="btn_one btn_one-outline kripto-cookie-btn" id="kripto-cookie-reject">Samo nužni</button>
+				<button type="button" class="btn_one kripto-cookie-btn" id="kripto-cookie-accept-all">Prihvaćam sve</button>
+				<button type="button" class="btn_one btn_one-outline kripto-cookie-btn kripto-cookie-btn-icon" id="kripto-cookie-settings-toggle" aria-label="Postavke kolačića"><i class="fa fa-cog"></i></button>
+			</div>
+		</div>
+		<div class="kripto-cookie-panel" id="kripto-cookie-panel">
+			<h3>Postavke kolačića</h3>
+			<p>Poštujemo Vašu privatnost. Nužni kolačići su potrebni za osnovno funkcioniranje stranice i ne mogu se isključiti. Analitički kolačići pomažu nam razumjeti kako se stranica koristi.</p>
+			<div class="kripto-cookie-row">
+				<div class="kripto-cookie-row-text">
+					<strong>Nužni kolačići</strong>
+					<p>Potrebni za ispravan rad stranice (sigurnost, osnovne postavke). Uvijek su aktivni.</p>
+				</div>
+				<div class="kripto-cookie-row-control">
+					<span class="kripto-cookie-badge">Uvijek aktivni</span>
+				</div>
+			</div>
+			<div class="kripto-cookie-row">
+				<div class="kripto-cookie-row-text">
+					<strong>Analitički kolačići</strong>
+					<p>Koristimo Google Analytics (anonimizirano) za mjerenje posjećenosti i poboljšanje sadržaja.</p>
+				</div>
+				<div class="kripto-cookie-row-control">
+					<label class="kripto-switch">
+						<input type="checkbox" id="kripto-cookie-analytics">
+						<span class="kripto-switch-slider"></span>
+					</label>
+				</div>
+			</div>
+			<div class="kripto-cookie-panel-footer">
+				<button type="button" class="btn_one btn_one-outline kripto-cookie-btn" id="kripto-cookie-save">Spremi odabir</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Particles background -->
+	<div id="particles-js"></div>
+
+	<!-- Scroll to top -->
+	<a class="topcontrol" href="#" title="Na vrh"><i class="fa fa-angle-up"></i></a>
+
+	<!-- Navigation -->
+	<nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">
+				<picture>
+					<source srcset="assets/img/kriptovalute-logo.webp" type="image/webp">
+					<img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="kripto-nav-logo" width="182" height="50">
+				</picture>
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul id="navbar-navlist" class="navbar-nav ms-auto align-items-center">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usluge</a>
+						<ul class="dropdown-menu dropdown-menu-end kripto-nav-dropdown">
+							<li><a class="dropdown-item" href="edukacija-i-radionice.html">Edukacija i radionice</a></li>
+							<li><a class="dropdown-item" href="kripto-rjesenja-za-poslovanje.html">Kripto rješenja za poslovanje</a></li>
+							<li><a class="dropdown-item" href="alati-i-platforme-za-trgovanje.html">Alati i platforme za trgovanje</a></li>
+							<li><a class="dropdown-item" href="pravni-i-porezni-savjeti.html">Pravni i porezni savjeti</a></li>
+							<li><a class="dropdown-item" href="blockchain-rjesenja.html">Blockchain rješenja</a></li>
+							<li><a class="dropdown-item" href="savjetovanje-i-podrska.html">Savjetovanje i podrška</a></li>
+						</ul>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="kviz.html">Kviz</a></li>
+					<li class="nav-item"><a class="nav-link active" href="trziste.html" aria-current="page">Tržište</a></li>
+					<li class="nav-item ms-lg-3"><a href="index.html#kontakt" class="btn_one btn-nav">Kontaktirajte nas</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Page Hero -->
+	<div class="trziste-hero">
+		<div class="container">
+			<h1>Tržište kriptovaluta</h1>
+			<p>Cijene u stvarnom vremenu · Svi coinovi s Binance burze · Portfolio tracker</p>
+		</div>
+	</div>
+
+	<!-- Global Market Stats Bar -->
+	<div class="trziste-global">
+		<div class="container">
+			<div class="trziste-global-inner" id="trziste-global-inner">
+				<div class="trziste-stat-item">
+					<span class="trziste-stat-label">Vol. 24h (USDT)</span>
+					<span class="trziste-stat-val" id="g-vol">—</span>
+				</div>
+				<div class="trziste-stat-sep"></div>
+				<div class="trziste-stat-item">
+					<span class="trziste-stat-label">USDT parova</span>
+					<span class="trziste-stat-val" id="g-coins">—</span>
+				</div>
+				<div class="trziste-stat-sep"></div>
+				<div class="trziste-stat-item">
+					<span class="trziste-stat-label">BTC cijena</span>
+					<span class="trziste-stat-val" id="g-btc">—</span>
+				</div>
+				<div class="trziste-stat-sep"></div>
+				<div class="trziste-stat-item">
+					<span class="trziste-stat-label">Top rast 24h</span>
+					<span class="trziste-stat-val" id="g-top-gainer">—</span>
+				</div>
+				<div class="trziste-stat-sep"></div>
+				<div class="trziste-stat-item">
+					<span class="trziste-stat-label">Top pad 24h</span>
+					<span class="trziste-stat-val" id="g-top-loser">—</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Main Section -->
+	<section class="trziste-main">
+		<div class="container">
+
+			<!-- Tabs -->
+			<div class="trziste-tabs" role="tablist">
+				<button class="trziste-tab-btn active" id="tab-market" onclick="trziste.switchTab('market')" role="tab" aria-selected="true" aria-controls="panel-market">
+					<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 9l-5 5-3-3-4 4"/></svg>
+					Tržište
+				</button>
+				<button class="trziste-tab-btn" id="tab-portfolio" onclick="trziste.switchTab('portfolio')" role="tab" aria-selected="false" aria-controls="panel-portfolio">
+					<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+					Moj portfolio
+					<span class="trziste-tab-badge" id="pf-badge" style="display:none">0</span>
+				</button>
+			</div>
+
+			<!-- MARKET PANEL -->
+			<div id="panel-market" class="trziste-panel" role="tabpanel" aria-labelledby="tab-market">
+
+				<!-- Controls -->
+				<div class="trziste-controls">
+					<div class="trziste-search-wrap">
+						<svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+						<input type="search" id="trziste-search" placeholder="Pretraži kriptovalutu..." autocomplete="off" spellcheck="false" aria-label="Pretraži kriptovalutu">
+					</div>
+
+					<div class="trziste-cur-group" role="group" aria-label="Valuta">
+						<button class="trziste-cur-btn" id="cur-usd" onclick="trziste.setCurrency('usd')" aria-pressed="true">USD $</button>
+						<button class="trziste-cur-btn" id="cur-eur" onclick="trziste.setCurrency('eur')" aria-pressed="false">EUR €</button>
+					</div>
+
+					<div class="trziste-update-info">
+						<svg class="trziste-countdown-ring" viewBox="0 0 20 20" aria-hidden="true">
+							<circle cx="10" cy="10" r="8"/>
+							<circle class="cring-progress" id="cring" cx="10" cy="10" r="8"/>
+						</svg>
+						<span id="trziste-last-update">Učitavam...</span>
+						<button class="trziste-refresh-btn" id="refresh-btn" onclick="trziste.manualRefresh()" title="Osvježi" aria-label="Osvježi podatke">
+							<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+						</button>
+					</div>
+				</div>
+
+				<div id="trziste-results-count" class="trziste-results-count" aria-live="polite"></div>
+
+				<!-- Table -->
+				<div class="trziste-table-wrap">
+					<div class="trziste-table-scroll">
+						<table class="trziste-table" id="trziste-table" role="grid">
+							<thead>
+								<tr>
+									<th style="width:30px;text-align:center;padding-right:6px;" aria-label="Favoriti"></th>
+									<th style="width:42px;text-align:center;">#</th>
+									<th>Kriptovaluta</th>
+									<th class="sortable" data-sort="current_price">Cijena <span class="sort-arrow" id="arrow-current_price">↕</span></th>
+									<th class="sortable" data-sort="price_change_percentage_24h">24h % <span class="sort-arrow" id="arrow-price_change_percentage_24h">↕</span></th>
+									<th class="sortable" data-sort="high_24h">24h Vis. <span class="sort-arrow" id="arrow-high_24h">↕</span></th>
+									<th class="sortable" data-sort="low_24h">24h Nis. <span class="sort-arrow" id="arrow-low_24h">↕</span></th>
+									<th class="sortable" data-sort="total_volume">Vol. 24h <span class="sort-arrow active" id="arrow-total_volume">▼</span></th>
+									<th style="width:34px;text-align:center;" aria-label="Dodaj u portfolio"></th>
+								</tr>
+							</thead>
+							<tbody id="trziste-tbody" aria-live="polite"></tbody>
+						</table>
+					</div>
+
+					<!-- Error state -->
+					<div id="trziste-error-state" class="trziste-state-msg" style="display:none;">
+						<div class="state-icon">⚠️</div>
+						<h3>Greška pri učitavanju</h3>
+						<p id="trziste-error-msg">Nije moguće dohvatiti podatke. Provjerite internetsku vezu.</p>
+						<button onclick="trziste.manualRefresh()" class="btn_one">Pokušaj ponovo</button>
+					</div>
+				</div>
+
+				<!-- No search results -->
+				<div id="trziste-no-results" class="trziste-state-msg" style="display:none;">
+					<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="1.5" style="margin-bottom:12px" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+					<p style="color:#abb8c3;">Nema rezultata za "<strong id="trziste-search-term" style="color:#fff;"></strong>"</p>
+				</div>
+
+			</div><!-- /panel-market -->
+
+			<!-- PORTFOLIO PANEL -->
+			<div id="panel-portfolio" class="trziste-panel" role="tabpanel" aria-labelledby="tab-portfolio" style="display:none;">
+
+				<div class="trziste-pf-summary" id="pf-summary"></div>
+				<div id="pf-content"></div>
+
+				<p class="trziste-pf-note">
+					<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+					Podaci portfolia pohranjuju se isključivo na vašem uređaju (lokalno, bez prijave).
+				</p>
+			</div><!-- /panel-portfolio -->
+
+		</div>
+	</section>
+
+	<!-- Disclaimer -->
+	<div class="trziste-disclaimer">
+		<div class="container">
+			<div class="trziste-disclaimer-box">
+				<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+				<span>Cijene se osvježavaju svakih 60 sekundi putem Binance API-ja. Prikazani podaci služe isključivo u edukativne svrhe. <strong>Ovo nije financijski savjet.</strong></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Portfolio Modal -->
+	<div class="modal fade trziste-modal" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="portfolioModalLabel">Dodaj u portfolio</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zatvori"></button>
+				</div>
+				<div class="modal-body">
+					<div class="trziste-modal-coin-preview">
+						<img id="modal-coin-img" src="" alt="" width="36" height="36" style="background:#1a2066;border-radius:50%;">
+						<div>
+							<div class="modal-coin-title" id="modal-coin-name">—</div>
+							<div class="modal-coin-price" id="modal-coin-price">—</div>
+						</div>
+					</div>
+					<div class="mb-3">
+						<label class="form-label" for="modal-amount">Količina <span style="color:#4a5568;">(opcjonalno)</span></label>
+						<input type="number" class="form-control" id="modal-amount" placeholder="npr. 0.5" min="0" step="any">
+						<div class="form-text">Ostavite prazno ako još ne znate količinu.</div>
+					</div>
+					<div class="mb-2">
+						<label class="form-label" for="modal-buy-price">Prosječna cijena kupnje <span style="color:#4a5568;">(opcjonalno)</span></label>
+						<input type="number" class="form-control" id="modal-buy-price" placeholder="npr. 45000" min="0" step="any">
+						<div class="form-text">Ostavite prazno ako ne pratite dobit/gubitak.</div>
+					</div>
+					<div class="modal-live-val" id="modal-live-val">
+						<span style="color:#abb8c3;">Trenutna vrijednost: </span>
+						<strong id="modal-live-val-text" style="color:#00d4aa;">—</strong>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn_one btn_one-outline" data-bs-dismiss="modal">Odustani</button>
+					<button type="button" class="btn_one" id="modal-save-btn" onclick="trziste.savePortfolioEntry()">
+						<span id="modal-save-label">Spremi</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="kripto-footer">
+		<div class="container">
+			<div class="row align-items-start">
+				<div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+					<a href="index.html" class="kripto-footer-logo">
+						<picture>
+							<source srcset="assets/img/kriptovalute-logo.webp" type="image/webp">
+							<img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="img-fluid" width="200" height="55" loading="lazy">
+						</picture>
+					</a>
+					<p class="kripto-footer-desc">Pomažemo vam razumjeti kripto svijet i pretvoriti znanje u stvarne prilike.</p>
+					<div class="kripto-footer-social">
+						<a href="https://www.linkedin.com/company/111132384" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+						<a href="https://www.facebook.com/kriptovalute.hr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+						<a href="https://www.instagram.com/kriptovalute.hr/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.tiktok.com/@kriptovalutehr" target="_blank" rel="noopener" aria-label="TikTok"><svg class="tiktok-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" fill="currentColor"></path></svg></a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+					<h6 class="kripto-footer-heading">Poveznice</h6>
+					<ul class="kripto-footer-links">
+						<li><a href="index.html">Početna</a></li>
+						<li><a href="trziste.html">Tržište</a></li>
+						<li><a href="kviz.html">Kviz</a></li>
+						<li><a href="index.html#kontakt">Kontakt</a></li>
+						<li><a href="politika-privatnosti.html">Politika privatnosti</a></li>
+						<li><a href="politika-kolacici.html">Kolačići</a></li>
+						<li><a href="#" id="kripto-footer-cookie-settings">Postavke kolačića</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h6 class="kripto-footer-heading">Kontakt</h6>
+					<ul class="kripto-footer-contact">
+						<li><a href="mailto:info@kriptovalute.hr"><i class="fa fa-envelope"></i> info@kriptovalute.hr</a></li>
+					</ul>
+					<a href="index.html#kontakt" class="btn_one btn-footer">Kontaktirajte nas</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Core scripts -->
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/particles.min.js"></script>
+	<script src="assets/js/app.js"></script>
+	<script src="assets/js/wow.min.js"></script>
+	<script src="assets/js/scrolltopcontrol.js"></script>
+	<script src="assets/js/scripts-index.js"></script>
+
+	<!-- Cookie consent (inline) -->
+	<script>
+	(function() {
+		var STORAGE_KEY = 'kripto_cookie_consent_v1';
+		function loadConsent() {
+			try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e) { return {}; }
+		}
+		function saveConsent(c) {
+			try { localStorage.setItem(STORAGE_KEY, JSON.stringify(c)); } catch(e) {}
+		}
+		function applyConsent(c) {
+			if (c.analytics && typeof gtag !== 'undefined') {
+				gtag('consent', 'update', { analytics_storage: 'granted' });
+			}
+		}
+		function openPanel() {
+			var panel = document.getElementById('kripto-cookie-panel');
+			if (panel) panel.style.display = 'block';
+		}
+		try {
+			var bar = document.getElementById('kripto-cookie-bar');
+			var btnToggle = document.getElementById('kripto-cookie-settings-toggle');
+			var btnAcceptAll = document.getElementById('kripto-cookie-accept-all');
+			var btnReject = document.getElementById('kripto-cookie-reject');
+			var btnSave = document.getElementById('kripto-cookie-save');
+			var chkAnalytics = document.getElementById('kripto-cookie-analytics');
+			var consent = loadConsent();
+			if (!consent.decided) { bar.style.display = 'block'; }
+			else { applyConsent(consent); }
+			if (btnToggle) {
+				btnToggle.addEventListener('click', function() {
+					var panel = document.getElementById('kripto-cookie-panel');
+					if (panel) panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+				});
+			}
+			if (btnAcceptAll) {
+				btnAcceptAll.addEventListener('click', function() {
+					consent.analytics = true; consent.decided = true;
+					saveConsent(consent); applyConsent(consent);
+					bar.style.display = 'none';
+				});
+			}
+			if (btnReject) {
+				btnReject.addEventListener('click', function() {
+					consent.analytics = false; consent.decided = true;
+					saveConsent(consent); bar.style.display = 'none';
+				});
+			}
+			if (btnSave && chkAnalytics) {
+				btnSave.addEventListener('click', function() {
+					consent.analytics = !!chkAnalytics.checked; consent.decided = true;
+					saveConsent(consent); applyConsent(consent);
+					bar.style.display = 'none';
+				});
+			}
+			var footerLink = document.getElementById('kripto-footer-cookie-settings');
+			if (footerLink) {
+				footerLink.addEventListener('click', function(e) {
+					e.preventDefault();
+					consent = loadConsent();
+					bar.style.display = 'block';
+					openPanel();
+					bar.scrollIntoView({ behavior: 'smooth' });
+				});
+			}
+		} catch(e) {}
+	})();
+	</script>
+
+	<!-- Navbar sticky -->
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		var navbar = document.getElementById('navbar');
+		window.addEventListener('scroll', function() {
+			if (document.documentElement.scrollTop >= 50) {
+				navbar.classList.add('nav-sticky');
+			} else {
+				navbar.classList.remove('nav-sticky');
+			}
+		});
+	});
+	</script>
+
+	<!-- MARKET PAGE LOGIC -->
+	<script>
+	var trziste = (function() {
+		'use strict';
+
+		/* ── STATE ───────────────────────────────────────── */
+		var S = {
+			coins:       [],
+			globalData:  null,
+			currency:    localStorage.getItem('trziste_currency') || 'usd',
+			eurRate:     0.93,
+			sortKey:     'total_volume',
+			sortDir:     'desc',
+			search:      '',
+			favorites:   JSON.parse(localStorage.getItem('trziste_favorites') || '[]'),
+			portfolio:   JSON.parse(localStorage.getItem('trziste_portfolio') || '[]'),
+			loading:     false,
+			error:       null,
+			lastUpdated: null,
+			countdown:   60,
+			activeTab:   'market',
+			modalCoinId: null,
+			modalCoin:   null,
+			modalEditIdx: -1
+		};
+
+		var CIRC = 2 * Math.PI * 8; /* stroke-dasharray for r=8 ring */
+		var BINANCE_API = 'https://api.binance.com/api/v3/ticker/24hr';
+		var CUR  = { usd: '$', eur: '€' };
+
+		var IMAGES = {
+			'BTC':'https://coin-images.coingecko.com/coins/images/1/small/bitcoin.png?1696501400','ETH':'https://coin-images.coingecko.com/coins/images/279/small/ethereum.png?1696501628','USDT':'https://coin-images.coingecko.com/coins/images/325/small/Tether.png?1696501661','XRP':'https://coin-images.coingecko.com/coins/images/44/small/xrp-symbol-white-128.png?1696501442','BNB':'https://coin-images.coingecko.com/coins/images/825/small/bnb-icon2_2x.png?1696501970',
+			'USDC':'https://coin-images.coingecko.com/coins/images/6319/small/USDC.png?1769615602','SOL':'https://coin-images.coingecko.com/coins/images/4128/small/solana.png?1718769756','TRX':'https://coin-images.coingecko.com/coins/images/1094/small/photo_2026-04-13_09-59-16.png?1776048311','FIGR_HELOC':'https://coin-images.coingecko.com/coins/images/68480/small/figure.png?1755863954','DOGE':'https://coin-images.coingecko.com/coins/images/5/small/dogecoin.png?1696501409',
+			'USDS':'https://coin-images.coingecko.com/coins/images/39926/small/usds.webp?1726666683','WBT':'https://coin-images.coingecko.com/coins/images/27045/small/wbt_token.png?1696526096','HYPE':'https://coin-images.coingecko.com/coins/images/50882/small/hyperliquid.jpg?1729431300','LEO':'https://coin-images.coingecko.com/coins/images/8418/small/leo-token.png?1696508607','ADA':'https://coin-images.coingecko.com/coins/images/975/small/cardano.png?1696502090',
+			'BCH':'https://coin-images.coingecko.com/coins/images/780/small/bitcoin-cash-circle.png?1696501932','XMR':'https://coin-images.coingecko.com/coins/images/69/small/monero_logo.png?1696501460','LINK':'https://coin-images.coingecko.com/coins/images/877/small/Chainlink_Logo_500.png?1760023405','ZEC':'https://coin-images.coingecko.com/coins/images/486/small/circle-zcash-color.png?1696501740','USDE':'https://coin-images.coingecko.com/coins/images/33613/small/usde.png?1733810059',
+			'CC':'https://coin-images.coingecko.com/coins/images/70468/small/Canton-Ticker_%281%29.png?1762826299','M':'https://coin-images.coingecko.com/coins/images/53247/small/square-bg-transparent.png?1752637478','XLM':'https://coin-images.coingecko.com/coins/images/100/small/fmpFRHHQ_400x400.jpg?1735231350','DAI':'https://coin-images.coingecko.com/coins/images/9956/small/Badge_Dai.png?1696509996','USD1':'https://coin-images.coingecko.com/coins/images/54977/small/USD1_1000x1000_transparent.png?1749297002',
+			'LTC':'https://coin-images.coingecko.com/coins/images/2/small/litecoin.png?1696501400','PYUSD':'https://coin-images.coingecko.com/coins/images/31212/small/PYUSD_Token_Logo_2x.png?1765987788','AVAX':'https://coin-images.coingecko.com/coins/images/12559/small/Avalanche_Circle_RedWhite_Trans.png?1696512369','RAIN':'https://coin-images.coingecko.com/coins/images/69134/small/Rain_logo_1_.png?1762952191','HBAR':'https://coin-images.coingecko.com/coins/images/3688/small/hbar.png?1696504364',
+			'SUI':'https://coin-images.coingecko.com/coins/images/26375/small/sui-ocean-square.png?1727791290','TON':'https://coin-images.coingecko.com/coins/images/17980/small/photo_2024-09-10_17.09.00.jpeg?1725963446','SHIB':'https://coin-images.coingecko.com/coins/images/11939/small/shiba.png?1696511800','CRO':'https://coin-images.coingecko.com/coins/images/7310/small/cro_token_logo.png?1696507599','USYC':'https://coin-images.coingecko.com/coins/images/51054/small/Hashnote_SDYC_200x200.png?1730370965',
+			'XAUT':'https://coin-images.coingecko.com/coins/images/10481/small/logo.png?1774627372','WLFI':'https://coin-images.coingecko.com/coins/images/50767/small/wlfi.png?1756438915','TAO':'https://coin-images.coingecko.com/coins/images/28452/small/ARUsPeNQ_400x400.jpeg?1696527447','BUIDL':'https://coin-images.coingecko.com/coins/images/36291/small/blackrock.png?1711013223','PAXG':'https://coin-images.coingecko.com/coins/images/9519/small/paxgold.png?1696509604',
+			'RAVE':'https://coin-images.coingecko.com/coins/images/70544/small/coin.jpeg?1762452940','MNT':'https://coin-images.coingecko.com/coins/images/30980/small/MNT_Token_Logo.png?1765516974','USDG':'https://coin-images.coingecko.com/coins/images/51281/small/GDN_USDG_Token_200x200.png?1730484111','DOT':'https://coin-images.coingecko.com/coins/images/12171/small/polkadot.jpg?1766533446','UNI':'https://coin-images.coingecko.com/coins/images/12504/small/uniswap-logo.png?1720676669',
+			'NEAR':'https://coin-images.coingecko.com/coins/images/10365/small/near.jpg?1696510367','USDF':'https://coin-images.coingecko.com/coins/images/54133/small/USDF_LOGO.png?1738393978','OKB':'https://coin-images.coingecko.com/coins/images/4463/small/WeChat_Image_20220118095654.png?1696505053','PI':'https://coin-images.coingecko.com/coins/images/54342/small/pi_network.jpg?1739347576','SKY':'https://coin-images.coingecko.com/coins/images/39925/small/sky.jpg?1724827980',
+			'HTX':'https://coin-images.coingecko.com/coins/images/35491/small/Frame_1321318576.png?1708908626','ASTER':'https://coin-images.coingecko.com/coins/images/69040/small/_ASTER.png?1757326782','PEPE':'https://coin-images.coingecko.com/coins/images/29850/small/pepe-token.jpeg?1696528776','USDD':'https://coin-images.coingecko.com/coins/images/25380/small/UUSD.jpg?1696524513','AAVE':'https://coin-images.coingecko.com/coins/images/12645/small/aave-token-round.png?1720472354',
+			'RLUSD':'https://coin-images.coingecko.com/coins/images/39651/small/RLUSD_200x200_%281%29.png?1727376633','JTRSY':'https://coin-images.coingecko.com/coins/images/70445/small/JTRSY.png?1762078582','USDY':'https://coin-images.coingecko.com/coins/images/31700/small/usdy_%281%29.png?1696530524','ICP':'https://coin-images.coingecko.com/coins/images/14495/small/Internet_Computer_logo.png?1696514180','BFUSD':'https://coin-images.coingecko.com/coins/images/68227/small/bfusd.png?1755132827',
+			'BGB':'https://coin-images.coingecko.com/coins/images/11610/small/Bitget_logo.png?1736925727','ETC':'https://coin-images.coingecko.com/coins/images/453/small/ethereum-classic-logo.png?1696501717','ONDO':'https://coin-images.coingecko.com/coins/images/26580/small/ONDO.png?1696525656','GT':'https://coin-images.coingecko.com/coins/images/8183/small/200X200.png?1735246724','KCS':'https://coin-images.coingecko.com/coins/images/1047/small/sa9z79.png?1696502152',
+			'QNT':'https://coin-images.coingecko.com/coins/images/3370/small/5ZOu7brX_400x400.jpg?1696504070','PUMP':'https://coin-images.coingecko.com/coins/images/67164/small/pump.jpg?1751949376','RENDER':'https://coin-images.coingecko.com/coins/images/11636/small/rndr.png?1696511529','WLD':'https://coin-images.coingecko.com/coins/images/31069/small/worldcoin.jpeg?1696529903','MORPHO':'https://coin-images.coingecko.com/coins/images/29837/small/Morpho-token-icon.png?1726771230',
+			'EUTBL':'https://coin-images.coingecko.com/coins/images/39657/small/EUTBL.png?1723517425','ALGO':'https://coin-images.coingecko.com/coins/images/4380/small/download.png?1696504978','POL':'https://coin-images.coingecko.com/coins/images/32440/small/pol.png?1759114181','USDTB':'https://coin-images.coingecko.com/coins/images/52804/small/76357aa8-4ef7-446c-bad3-a3f944eeec7a.jpeg?1758277468','KAS':'https://coin-images.coingecko.com/coins/images/25751/small/kaspa-icon-exchanges.png?1696524837',
+			'NEXO':'https://coin-images.coingecko.com/coins/images/3695/small/CG-nexo-token-200x200_2x.png?1730414360','ATOM':'https://coin-images.coingecko.com/coins/images/1481/small/cosmos_hub.png?1696502525','USTB':'https://coin-images.coingecko.com/coins/images/35012/small/ustb.jpeg?1707102680','ENA':'https://coin-images.coingecko.com/coins/images/36530/small/ethena.png?1711701436','BCAP':'https://coin-images.coingecko.com/coins/images/56040/small/bcap_logo_200.png?1748088291',
+			'JST':'https://coin-images.coingecko.com/coins/images/11095/small/JUST.jpg?1696511035','OUSG':'https://coin-images.coingecko.com/coins/images/29023/small/OUSG.png?1696527993','ARB':'https://coin-images.coingecko.com/coins/images/16547/small/arb.jpg?1721358242','FIL':'https://coin-images.coingecko.com/coins/images/12817/small/filecoin.png?1696512609','APT':'https://coin-images.coingecko.com/coins/images/26455/small/Aptos-Network-Symbol-Black-RGB-1x.png?1761789140',
+			'FLR':'https://coin-images.coingecko.com/coins/images/28624/small/FLR-icon200x200.png?1696527609','HASH':'https://coin-images.coingecko.com/coins/images/66154/small/Hastra_Icon.png?1748497203','TRUMP':'https://coin-images.coingecko.com/coins/images/53746/small/trump.png?1737171561','NIGHT':'https://coin-images.coingecko.com/coins/images/71015/small/midnight.png?1765193080','STABLE':'https://coin-images.coingecko.com/coins/images/69242/small/stable-logotype-framed-square-light.png?1762753913',
+			'BDX':'https://coin-images.coingecko.com/coins/images/5111/small/Beldex.png?1696505631','XDC':'https://coin-images.coingecko.com/coins/images/2912/small/xdc-icon.png?1696503661','YLDS':'https://coin-images.coingecko.com/coins/images/66486/small/YLDS.png?1772560579','GHO':'https://coin-images.coingecko.com/coins/images/30663/small/gho-token-logo.png?1720517092','JUP':'https://coin-images.coingecko.com/coins/images/34188/small/jup.png?1704266489',
+			'VET':'https://coin-images.coingecko.com/coins/images/1167/small/VET.png?1742383283','SIREN':'https://coin-images.coingecko.com/coins/images/54479/small/siren.png?1739960056','USD0':'https://coin-images.coingecko.com/coins/images/38272/small/USD0LOGO.png?1716962811','DASH':'https://coin-images.coingecko.com/coins/images/19/small/dash-logo.png?1696501423','FET':'https://coin-images.coingecko.com/coins/images/5681/small/ASI.png?1719827289',
+			'BONK':'https://coin-images.coingecko.com/coins/images/28600/small/bonk.jpg?1696527587','TUSD':'https://coin-images.coingecko.com/coins/images/3449/small/tusd.png?1696504140','CAKE':'https://coin-images.coingecko.com/coins/images/12632/small/pancakeswap-cake-logo_%281%29.png?1696512440','A7A5':'https://coin-images.coingecko.com/coins/images/66657/small/A7A5_200.png?1750163839','ZRO':'https://coin-images.coingecko.com/coins/images/28206/small/ftxG9_TJ_400x400.jpeg?1696527208',
+			'DEXE':'https://coin-images.coingecko.com/coins/images/12713/small/DEXE_token_logo.png?1696512514','ADI':'https://coin-images.coingecko.com/coins/images/68846/small/ADI_Token-min.png?1765296433','VIRTUAL':'https://coin-images.coingecko.com/coins/images/34057/small/LOGOMARK.png?1708356054','EURC':'https://coin-images.coingecko.com/coins/images/26045/small/EURC.png?1769615705','PENGU':'https://coin-images.coingecko.com/coins/images/52622/small/PUDGY_PENGUINS_PENGU_PFP.png?1733809110',
+			'JAAA':'https://coin-images.coingecko.com/coins/images/70446/small/jaaa.png?1762078666','FDUSD':'https://coin-images.coingecko.com/coins/images/31079/small/FDUSD_icon_black.png?1731097953','STX':'https://coin-images.coingecko.com/coins/images/2069/small/Stacks_Logo_png.png?1709979332','MON':'https://coin-images.coingecko.com/coins/images/38927/small/mon.png?1766029057','VVV':'https://coin-images.coingecko.com/coins/images/54023/small/VVV_Token_Transparent.png?1741856877',
+			'CHZ':'https://coin-images.coingecko.com/coins/images/8834/small/CHZ_Token_updated.png?1696508986','DCR':'https://coin-images.coingecko.com/coins/images/329/small/dcr.png?1762890696','XTZ':'https://coin-images.coingecko.com/coins/images/976/small/Tezos-logo.png?1696502091','SEI':'https://coin-images.coingecko.com/coins/images/28205/small/Sei_Logo_-_Transparent.png?1696527207','USX':'https://coin-images.coingecko.com/coins/images/68429/small/Solstice_Icons_for_DEX_512x512_USX.png?1755718377',
+			'PRIME':'https://coin-images.coingecko.com/coins/images/71002/small/Frame_427319702.png?1765093510','KAU':'https://coin-images.coingecko.com/coins/images/29788/small/kau-currency-ticker.png?1696528718','SUN':'https://coin-images.coingecko.com/coins/images/12424/small/RSFOmQ.png?1696512245','NFT':'https://coin-images.coingecko.com/coins/images/15687/small/AINFT.png?1761099340','AERO':'https://coin-images.coingecko.com/coins/images/31745/small/token.png?1696530564',
+			'ETHFI':'https://coin-images.coingecko.com/coins/images/35958/small/etherfi.jpeg?1710254562','BTT':'https://coin-images.coingecko.com/coins/images/22457/small/btt_logo.png?1696521780','EDGE':'https://coin-images.coingecko.com/coins/images/102172616/small/edgex.png?1774332310','GNO':'https://coin-images.coingecko.com/coins/images/662/small/logo_square_simple_300px.png?1696501854','CRV':'https://coin-images.coingecko.com/coins/images/12124/small/Curve.png?1696511967',
+			'BSV':'https://coin-images.coingecko.com/coins/images/6799/small/BSV.png?1696507128','XPL':'https://coin-images.coingecko.com/coins/images/66489/small/Plasma-symbol-green-1.png?1755142558','USDAI':'https://coin-images.coingecko.com/coins/images/55857/small/USDai_Token_Full_Glyph.png?1755229050','INJ':'https://coin-images.coingecko.com/coins/images/12882/small/Other_200x200.png?1738782212','SPX':'https://coin-images.coingecko.com/coins/images/31401/small/centeredcoin_%281%29.png?1737048493',
+			'KAG':'https://coin-images.coingecko.com/coins/images/29789/small/kag-currency-ticker.png?1696528719','LIT':'https://coin-images.coingecko.com/coins/images/71121/small/lighter.png?1765888098','FRAX':'https://coin-images.coingecko.com/coins/images/13422/small/LFRAX.png?1751911193','CFX':'https://coin-images.coingecko.com/coins/images/13079/small/3vuYMbjN.png?1696512867','KAIA':'https://coin-images.coingecko.com/coins/images/39901/small/KAIA.png?1724734368',
+			'FLOKI':'https://coin-images.coingecko.com/coins/images/16746/small/PNG_image.png?1696516318','2Z':'https://coin-images.coingecko.com/coins/images/68339/small/Coingecko_-_PFP.png?1755694420','TIA':'https://coin-images.coingecko.com/coins/images/31967/small/tia.jpg?1696530772','FO':'https://coin-images.coingecko.com/coins/images/55682/small/fo.jpg?1746982885','SYRUP':'https://coin-images.coingecko.com/coins/images/51232/small/_syrup_token_logo.png?1747292046',
+			'LDO':'https://coin-images.coingecko.com/coins/images/13573/small/Lido_DAO.png?1696513326','JASMY':'https://coin-images.coingecko.com/coins/images/13876/small/JASMY200x200.jpg?1696513620','APEPE':'https://coin-images.coingecko.com/coins/images/39614/small/APEPE_200.png?1723142351','GRT':'https://coin-images.coingecko.com/coins/images/13397/small/Graph_Token.png?1696513159','ZBCN':'https://coin-images.coingecko.com/coins/images/37052/small/zbcn.jpeg?1713168241',
+			'OHM':'https://coin-images.coingecko.com/coins/images/14483/small/token_OHM_%281%29.png?1696514169','CRVUSD':'https://coin-images.coingecko.com/coins/images/30118/small/crvusd.jpg?1746670973','PYTH':'https://coin-images.coingecko.com/coins/images/31924/small/pyth.png?1701245725','KITE':'https://coin-images.coingecko.com/coins/images/70426/small/KITE-ICON.png?1762328605','IOTA':'https://coin-images.coingecko.com/coins/images/692/small/IOTA_Thumbnail_%281%29.png?1743772896',
+			'OP':'https://coin-images.coingecko.com/coins/images/25244/small/Token.png?1774456081','LUNC':'https://coin-images.coingecko.com/coins/images/8284/small/01_LunaClassic_color.png?1696508486','UDS':'https://coin-images.coingecko.com/coins/images/36308/small/01_avatar.jpg?1711090303','USDA':'https://coin-images.coingecko.com/coins/images/51599/small/SUSDA.png?1731604761','AUSD':'https://coin-images.coingecko.com/coins/images/39284/small/AUSD_1024px.png?1764684132',
+			'9BIT':'https://coin-images.coingecko.com/coins/images/71396/small/v1.png?1767864318','ENS':'https://coin-images.coingecko.com/coins/images/19785/small/ENS.jpg?1727872989','REAL':'https://coin-images.coingecko.com/coins/images/20665/small/TGBfBt6Y2Dm3RHdNpZAdqywBsvfdysf834.jpeg?1749135788','VSN':'https://coin-images.coingecko.com/coins/images/67399/small/Logo-Vision-Symbol-BG-Green.png?1752676915','SAND':'https://coin-images.coingecko.com/coins/images/12129/small/sandbox_logo.jpg?1696511971',
+			'COMP':'https://coin-images.coingecko.com/coins/images/10775/small/COMP.png?1696510737','ULTIMA':'https://coin-images.coingecko.com/coins/images/31844/small/ULTIMA-200x200.png?1763090865','GRASS':'https://coin-images.coingecko.com/coins/images/40094/small/Grass.jpg?1725697048','TEL':'https://coin-images.coingecko.com/coins/images/1899/small/tel.png?1696502892','币安人生':'https://coin-images.coingecko.com/coins/images/69848/small/%E5%B8%81%E5%AE%89%E4%BA%BA%E7%94%9F.png?1759839225',
+			'NEO':'https://coin-images.coingecko.com/coins/images/480/small/NEO_512_512.png?1696501735','PC0000031':'https://coin-images.coingecko.com/coins/images/66150/small/tradable.jpg?1748488921','WIF':'https://coin-images.coingecko.com/coins/images/33566/small/dogwifhat.jpg?1702499428','STRK':'https://coin-images.coingecko.com/coins/images/26433/small/starknet.png?1696525507','FARTCOIN':'https://coin-images.coingecko.com/coins/images/50891/small/fart.jpg?1729503972',
+			'HNT':'https://coin-images.coingecko.com/coins/images/4284/small/helium_logo_use.png?1748092589','BTSE':'https://coin-images.coingecko.com/coins/images/10807/small/BTSE_logo_Square.jpeg?1696510765','AXS':'https://coin-images.coingecko.com/coins/images/13029/small/axie_infinity_logo.png?1696512817','H':'https://coin-images.coingecko.com/coins/images/66811/small/H_tokenLogo_original.png?1750581252','FF':'https://coin-images.coingecko.com/coins/images/69121/small/ff.png?1757573403',
+			'REUSD':'https://coin-images.coingecko.com/coins/images/66291/small/Points_Program_Group_91.png?1749676055','XCN':'https://coin-images.coingecko.com/coins/images/24210/small/onyxlogo.jpg?1696523397','BORG':'https://coin-images.coingecko.com/coins/images/2117/small/YJUrRy7r_400x400.png?1696503083','PENDLE':'https://coin-images.coingecko.com/coins/images/15069/small/Pendle_Logo_Normal-03.png?1696514728','NUSD':'https://coin-images.coingecko.com/coins/images/70027/small/NUSD-200x200.png?1760452629',
+			'B':'https://coin-images.coingecko.com/coins/images/55974/small/T7asvmCb_400x400.jpg?1747902862','IP':'https://coin-images.coingecko.com/coins/images/54035/small/Transparent_bg.png?1738075331','RAY':'https://coin-images.coingecko.com/coins/images/13928/small/PSigc4ie_400x400.jpg?1696513668','TWT':'https://coin-images.coingecko.com/coins/images/11085/small/Trust.png?1696511026','USTBL':'https://coin-images.coingecko.com/coins/images/39666/small/USTB.png?1723541269',
+			'THETA':'https://coin-images.coingecko.com/coins/images/2538/small/theta-token-logo.png?1696503349','WFI':'https://coin-images.coingecko.com/coins/images/51842/small/200x200Logo.png?1732049089','RIVER':'https://coin-images.coingecko.com/coins/images/69318/small/river-token.png?1758523089','ARIA':'https://coin-images.coingecko.com/coins/images/68392/small/aria.png?1755601564','FDIT':'https://coin-images.coingecko.com/coins/images/69097/small/Se9OAY6C_400x400.jpg?1757491787',
+			'MANA':'https://coin-images.coingecko.com/coins/images/878/small/decentraland-mana.png?1696502010','MX':'https://coin-images.coingecko.com/coins/images/8545/small/mexc.jpg?1747142259','KOGE':'https://coin-images.coingecko.com/coins/images/13827/small/bnb48.png?1696513570','SATUSD':'https://coin-images.coingecko.com/coins/images/37760/small/Instagram_post_-_25.png?1715475306','WAL':'https://coin-images.coingecko.com/coins/images/54914/small/Walrus_Token_Full_Color_200x200.png?1772722407',
+			'CVX':'https://coin-images.coingecko.com/coins/images/15585/small/convex.png?1696515221','EURS':'https://coin-images.coingecko.com/coins/images/5164/small/EURS_300x300.png?1696505680','S':'https://coin-images.coingecko.com/coins/images/38108/small/200x200_Sonic_Logo.png?1734679256','AB':'https://coin-images.coingecko.com/coins/images/4376/small/400%E6%96%B9.png?1740377493','GUSD':'https://coin-images.coingecko.com/coins/images/68725/small/gusd-logo.jpeg?1757681286',
+			'ZK':'https://coin-images.coingecko.com/coins/images/38043/small/ZKTokenBlack.png?1718614502','JTO':'https://coin-images.coingecko.com/coins/images/33228/small/jto.png?1701137022','SFP':'https://coin-images.coingecko.com/coins/images/13905/small/sfp.png?1696513647','BAT':'https://coin-images.coingecko.com/coins/images/677/small/basic-attention-token.png?1696501867','LUX':'https://coin-images.coingecko.com/coins/images/70524/small/200X200_RED.png?1762411816',
+			'GALA':'https://coin-images.coingecko.com/coins/images/12493/small/GALA_token_image_-_200PNG.png?1709725869','ZANO':'https://coin-images.coingecko.com/coins/images/8370/small/Icon-App-512x512.png?1761825305','XEC':'https://coin-images.coingecko.com/coins/images/16646/small/Logo_final-22.png?1696516207','CRCLON':'https://coin-images.coingecko.com/coins/images/68595/small/crclon_160x160.png?1756129889','RUNE':'https://coin-images.coingecko.com/coins/images/6595/small/THORChain_Circle_Gradient__with_Lightning_Bolt_-_Square_Transparent_Background_200px.png?1768635632',
+			'ONYC':'https://coin-images.coingecko.com/coins/images/67072/small/ONyc_Logo_PNG_200px.png?1768587229','GEKKO':'https://coin-images.coingecko.com/coins/images/32439/small/gekko_%281%29.png?1698228341','THBILL':'https://coin-images.coingecko.com/coins/images/67650/small/thBILL.png?1753401034','APXUSD':'https://coin-images.coingecko.com/coins/images/102172243/small/apxUSD.png?1772448502','FRXUSD':'https://coin-images.coingecko.com/coins/images/53963/small/frxUSD.png?1737792154',
+			'ACRED':'https://coin-images.coingecko.com/coins/images/54809/small/ACRED.png?1741801356','0G':'https://coin-images.coingecko.com/coins/images/69096/small/0G_1024x1024_Circular_Outlined.png?1758637574','TIBBIR':'https://coin-images.coingecko.com/coins/images/54970/small/Untitled_design.png?1742941268','SOSO':'https://coin-images.coingecko.com/coins/images/53919/small/soso.jpg?1737717378','TRAC':'https://coin-images.coingecko.com/coins/images/1877/small/TRAC.jpg?1696502873',
+			'1INCH':'https://coin-images.coingecko.com/coins/images/13469/small/1inch-logo.jpeg?1759404663','A':'https://coin-images.coingecko.com/coins/images/55616/small/Vaulta_CEX_Icon_Circle_-_cmc.png?1746859132','OZO':'https://coin-images.coingecko.com/coins/images/31385/small/ozonechain-momogram-200x200.png?1696530201','AVUSD':'https://coin-images.coingecko.com/coins/images/53527/small/token-avusd.png?1736579003','GLM':'https://coin-images.coingecko.com/coins/images/542/small/Golem_Submark_Positive_RGB.png?1696501761',
+			'CASH':'https://coin-images.coingecko.com/coins/images/69679/small/cash.jpg?1759283906','FLUID':'https://coin-images.coingecko.com/coins/images/14688/small/Logo_1_%28brighter%29.png?1734430693','EURCV':'https://coin-images.coingecko.com/coins/images/33415/small/eurcv_%281%29.png?1701752017','IMX':'https://coin-images.coingecko.com/coins/images/17233/small/immutableX-symbol-BLK-RGB.png?1696516787','SHFL':'https://coin-images.coingecko.com/coins/images/35148/small/shuffle_token_200x200.png?1707552712',
+			'SKYAI':'https://coin-images.coingecko.com/coins/images/55294/small/1.png?1745517593','PUSD':'https://coin-images.coingecko.com/coins/images/70448/small/%E7%BE%8E%E5%85%83_%281%29.png?1762079129','GOMINING':'https://coin-images.coingecko.com/coins/images/15662/small/GoMining_Logo.webp?1769225542','COW':'https://coin-images.coingecko.com/coins/images/24384/small/CoW-token_logo.png?1719524382','FT':'https://coin-images.coingecko.com/coins/images/68285/small/FlyingTulip_FT_200px.png?1759802398',
+			'ATH':'https://coin-images.coingecko.com/coins/images/36179/small/logogram_circle_dark_green_vb_green_%281%29.png?1718232706','WEMIX':'https://coin-images.coingecko.com/coins/images/12998/small/wemixcoin_color_200.png?1696512788','PC0000023':'https://coin-images.coingecko.com/coins/images/66954/small/tradable.jpg?1751254449','GWEI':'https://coin-images.coingecko.com/coins/images/71375/small/ethgas_token_200.png?1769055039','AKT':'https://coin-images.coingecko.com/coins/images/12785/small/akash-logo.png?1696512580',
+			'SENT':'https://coin-images.coingecko.com/coins/images/70508/small/SENTIENT-Icon-BlushForce-L.png?1762267532','QRL':'https://coin-images.coingecko.com/coins/images/700/small/qrl-logo.png?1763796842','BC':'https://coin-images.coingecko.com/coins/images/53197/small/Graphic_Only-200black.png?1746867614','TKX':'https://coin-images.coingecko.com/coins/images/4984/small/TKX_-_Logo_-_RGB-15.png?1696505519'
+		};
+
+		var NAMES = {
+			BTC:'Bitcoin',ETH:'Ethereum',BNB:'BNB',SOL:'Solana',XRP:'XRP',
+			USDC:'USD Coin',ADA:'Cardano',AVAX:'Avalanche',DOGE:'Dogecoin',
+			DOT:'Polkadot',TRX:'TRON',LINK:'Chainlink',MATIC:'Polygon',
+			SHIB:'Shiba Inu',LTC:'Litecoin',BCH:'Bitcoin Cash',UNI:'Uniswap',
+			ATOM:'Cosmos',XLM:'Stellar',ETC:'Ethereum Classic',
+			FIL:'Filecoin',NEAR:'NEAR Protocol',APT:'Aptos',ARB:'Arbitrum',
+			OP:'Optimism',SUI:'Sui',VET:'VeChain',ALGO:'Algorand',
+			GRT:'The Graph',FTM:'Fantom',SAND:'The Sandbox',MANA:'Decentraland',
+			AXS:'Axie Infinity',THETA:'Theta Network',EGLD:'MultiversX',
+			XTZ:'Tezos',EOS:'EOS',AAVE:'Aave',RUNE:'THORChain',
+			CAKE:'PancakeSwap',SNX:'Synthetix',CRV:'Curve DAO',
+			LDO:'Lido DAO',MKR:'Maker',COMP:'Compound',YFI:'yearn.finance',
+			SUSHI:'SushiSwap',ENJ:'Enjin Coin',CHZ:'Chiliz',FLOW:'Flow',
+			GALA:'Gala',IMX:'Immutable X',INJ:'Injective',SEI:'Sei',
+			TIA:'Celestia',JTO:'Jito',WIF:'dogwifhat',BONK:'Bonk',
+			PEPE:'Pepe',FLOKI:'Floki',TON:'Toncoin',NOT:'Notcoin',
+			RENDER:'Render',WLD:'Worldcoin',FET:'Fetch.ai',
+			AGIX:'SingularityNET',OCEAN:'Ocean Protocol',
+			JUP:'Jupiter',RAY:'Raydium',HBAR:'Hedera',
+			ICP:'Internet Computer',STX:'Stacks',QNT:'Quant',
+			ZEC:'Zcash',DASH:'Dash',BAT:'Basic Attention Token',
+			ENS:'Ethereum Name Service',RPL:'Rocket Pool',
+			CFX:'Conflux',OM:'Mantra',AR:'Arweave',KSM:'Kusama',
+			KAVA:'Kava',CTSI:'Cartesi',ID:'SPACE ID',
+			BLUR:'Blur',DYDX:'dYdX',GMX:'GMX',PENDLE:'Pendle',
+			JASMY:'JasmyCoin',ANKR:'Ankr',HOT:'Holo',CELO:'Celo',
+			ZIL:'Zilliqa',IOTX:'IoTeX',TWT:'Trust Wallet Token',
+			BAND:'Band Protocol',REN:'Ren',DENT:'Dent',
+			WAVES:'Waves',ZRX:'0x Protocol',BAL:'Balancer',
+			KNC:'Kyber Network',NMR:'Numeraire',ANT:'Aragon',
+			ALPHA:'Alpha Finance Lab',ALICE:'My Neighbor Alice',
+			APE:'ApeCoin',LRC:'Loopring',LPT:'Livepeer',
+			MINA:'Mina Protocol',MASK:'Mask Network',
+			ROSE:'Oasis Network',RSR:'Reserve Rights',
+			SKL:'SKALE',STORJ:'Storj',SUN:'Sun Token',
+			TFUEL:'Theta Fuel',TLM:'Alien Worlds',
+			WAN:'Wanchain',WOO:'WOO Network',YGG:'Yield Guild Games',
+			ZEN:'Horizen',PEOPLE:'ConstitutionDAO',
+			LUNC:'Terra Classic',CRO:'Cronos',SPELL:'Spell Token',
+			MAGIC:'Magic',SUPER:'SuperFarm',LOOM:'Loom Network'
+		};
+
+		/* ── FETCH ────────────────────────────────────────────── */
+		function normalizeCoin(t, idx) {
+			var base = t.symbol.replace(/USDT$/, '');
+			return {
+				id:                          base,
+				symbol:                      base,
+				name:                        NAMES[base] || base,
+				image:                       'https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons@master/32/color/' + base.toLowerCase() + '.png',
+				current_price:               parseFloat(t.lastPrice)          || 0,
+				market_cap_rank:             idx + 1,
+				total_volume:                parseFloat(t.quoteVolume)        || 0,
+				price_change_percentage_24h: parseFloat(t.priceChangePercent) || 0,
+				high_24h:                    parseFloat(t.highPrice)          || 0,
+				low_24h:                     parseFloat(t.lowPrice)           || 0
+			};
+		}
+
+		function computeGlobal(coins) {
+			var totalVol = 0, btcPrice = 0, topGainer = null, topLoser = null;
+			coins.forEach(function(c) {
+				totalVol += c.total_volume;
+				if (c.id === 'BTC') btcPrice = c.current_price;
+				if (!topGainer || c.price_change_percentage_24h > topGainer.price_change_percentage_24h) topGainer = c;
+				if (!topLoser  || c.price_change_percentage_24h < topLoser.price_change_percentage_24h)  topLoser  = c;
+			});
+			return {
+				total_volume_usd: totalVol,
+				coins_count:      coins.length,
+				btc_price:        btcPrice,
+				top_gainer:       topGainer,
+				top_loser:        topLoser
+			};
+		}
+
+		function fetchData(showSkeleton) {
+			if (S.loading) return;
+			S.loading = true;
+			if (showSkeleton) renderSkeleton();
+
+			Promise.all([
+				fetch(BINANCE_API).then(function(r) {
+					if (!r.ok) throw new Error(r.status); return r.json();
+				}),
+				fetch('https://open.er-api.com/v6/latest/USD')
+					.then(function(r) { return r.json(); })
+					.catch(function() { return null; })
+			]).then(function(results) {
+				var tickers = results[0];
+				var fxData  = results[1];
+				if (fxData && fxData.rates && fxData.rates.EUR) S.eurRate = fxData.rates.EUR;
+				var pairs = tickers.filter(function(t) {
+					return t.symbol.endsWith('USDT') &&
+						!t.symbol.startsWith('USDT') &&
+						parseFloat(t.lastPrice) > 0 &&
+						parseFloat(t.quoteVolume) > 0;
+				});
+				pairs.sort(function(a, b) {
+					return parseFloat(b.quoteVolume) - parseFloat(a.quoteVolume);
+				});
+				S.coins      = pairs.map(normalizeCoin);
+				S.globalData = computeGlobal(S.coins);
+				S.error      = null;
+				S.lastUpdated = new Date();
+				S.loading    = false;
+				renderAll();
+				resetCountdown();
+			}).catch(function(err) {
+				S.error   = err.message;
+				S.loading = false;
+				renderError();
+			});
+		}
+
+		/* ── FORMAT ──────────────────────────────────────── */
+		function toDisplay(n) {
+			/* Convert USD price to selected currency */
+			return S.currency === 'eur' ? n * S.eurRate : n;
+		}
+
+		function fmtPrice(n) {
+			if (n == null || isNaN(n)) return '—';
+			var v   = toDisplay(n);
+			var sym = CUR[S.currency] || '$';
+			if (v >= 10000)  return sym + Math.round(v).toLocaleString('hr-HR');
+			if (v >= 1)      return sym + v.toLocaleString('hr-HR', {minimumFractionDigits:2, maximumFractionDigits:2});
+			if (v >= 0.01)   return sym + v.toLocaleString('hr-HR', {minimumFractionDigits:4, maximumFractionDigits:4});
+			if (v >= 0.0001) return sym + v.toFixed(6);
+			return sym + v.toFixed(10);
+		}
+
+		function fmtBig(n) {
+			if (n == null || isNaN(n)) return '—';
+			var v   = toDisplay(n);
+			var sym = CUR[S.currency] || '$';
+			if (v >= 1e12) return sym + (v / 1e12).toFixed(2) + 'T';
+			if (v >= 1e9)  return sym + (v / 1e9).toFixed(2) + 'B';
+			if (v >= 1e6)  return sym + (v / 1e6).toFixed(2) + 'M';
+			return sym + v.toLocaleString('hr-HR', {maximumFractionDigits:0});
+		}
+
+		function fmtPct(n, arrows) {
+			if (n == null || isNaN(n)) return '<span class="price-neutral">—</span>';
+			var cls = n > 0 ? 'price-up' : (n < 0 ? 'price-down' : 'price-neutral');
+			var pfx = arrows ? (n > 0 ? '▲ ' : (n < 0 ? '▼ ' : '')) : '';
+			var sgn = n > 0 ? '+' : '';
+			return '<span class="' + cls + '">' + pfx + sgn + n.toFixed(2) + '%</span>';
+		}
+
+		/* ── SPARKLINE ───────────────────────────────────── */
+		function sparkline(prices, isPos) {
+			if (!prices || prices.length < 3)
+				return '<span style="color:#2d3a4a;font-size:11px;">N/A</span>';
+			var step = Math.max(1, Math.floor(prices.length / 32));
+			var pts = [];
+			for (var i = 0; i < prices.length; i += step) pts.push(prices[i]);
+			var W = 100, H = 36, PAD = 2;
+			var mn = Math.min.apply(null, pts);
+			var mx = Math.max.apply(null, pts);
+			var rng = mx - mn || 1;
+			var coords = pts.map(function(v, i) {
+				var x = (i / (pts.length - 1)) * W;
+				var y = H - PAD - ((v - mn) / rng) * (H - PAD * 2);
+				return x.toFixed(1) + ',' + y.toFixed(1);
+			}).join(' ');
+			var col = isPos ? '#00d4aa' : '#ff4765';
+			return '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" ' +
+				'class="trziste-sparkline" aria-hidden="true">' +
+				'<polyline points="' + coords + '" fill="none" stroke="' + col + '" ' +
+				'stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>' +
+				'</svg>';
+		}
+
+		/* ── ESCAPE HTML ─────────────────────────────────── */
+		function esc(s) {
+			return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;')
+				.replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+		}
+
+		function coinIconHtml(symbol, name, size) {
+			size = size || 28;
+			var sym  = (symbol || '').toLowerCase();
+			var symUpper = (symbol || '').toUpperCase();
+			var url  = IMAGES[symUpper] ||
+				'https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons@master/32/color/' + sym + '.png';
+			var hash = 0;
+			for (var i = 0; i < sym.length; i++) hash = sym.charCodeAt(i) + ((hash << 5) - hash);
+			var hue  = Math.abs(hash) % 360;
+			var bg   = 'hsl(' + hue + ',55%,42%)';
+			var ltr  = (symbol || '?').charAt(0).toUpperCase();
+			var s    = String(size);
+			return '<span class="coin-icon-wrap">' +
+				'<img class="trziste-coin-img" src="' + url + '" alt="' + esc(name) + '" ' +
+					'width="' + s + '" height="' + s + '" loading="lazy" ' +
+					'onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'">' +
+				'<span class="coin-icon-fb" style="background:' + bg + ';width:' + s + 'px;height:' + s + 'px;font-size:' + Math.round(size*0.4) + 'px;display:none">' +
+					ltr + '</span>' +
+			'</span>';
+		}
+
+		function $id(id) { return document.getElementById(id); }
+
+		/* ── GLOBAL STATS ────────────────────────────────── */
+		function renderGlobalStats() {
+			var d = S.globalData;
+			if (!d) return;
+			$id('g-vol').textContent   = fmtBig(d.total_volume_usd);
+			$id('g-coins').textContent = (d.coins_count || 0).toLocaleString('hr-HR');
+			$id('g-btc').textContent   = fmtPrice(d.btc_price);
+			var tg = $id('g-top-gainer');
+			var tl = $id('g-top-loser');
+			if (tg && d.top_gainer) {
+				tg.innerHTML = '<span class="price-up">' + esc(d.top_gainer.id) + ' +' +
+					d.top_gainer.price_change_percentage_24h.toFixed(2) + '%</span>';
+			}
+			if (tl && d.top_loser) {
+				tl.innerHTML = '<span class="price-down">' + esc(d.top_loser.id) +
+					' ' + d.top_loser.price_change_percentage_24h.toFixed(2) + '%</span>';
+			}
+		}
+
+		/* ── MARKET TABLE ────────────────────────────────── */
+		function renderMarketTable() {
+			var coins  = filteredSorted();
+			var tbody  = $id('trziste-tbody');
+			var noRes  = $id('trziste-no-results');
+			var errEl  = $id('trziste-error-state');
+			var cntEl  = $id('trziste-results-count');
+			errEl.style.display = 'none';
+
+			if (!coins.length && S.search) {
+				$id('trziste-search-term').textContent = S.search;
+				noRes.style.display = 'block';
+				tbody.innerHTML = '';
+				cntEl.textContent = '';
+				return;
+			}
+			noRes.style.display = 'none';
+			cntEl.textContent = S.search
+				? 'Pronađeno ' + coins.length + ' rezultata za "' + esc(S.search) + '"'
+				: 'Prikazano ' + coins.length + ' kriptovaluta s Binance burze · Izvor: Binance API';
+
+			tbody.innerHTML = coins.map(function(coin, i) {
+				var p24   = coin.price_change_percentage_24h;
+				var isFav = S.favorites.indexOf(coin.id) > -1;
+				var pfIdx  = indexInPortfolio(coin.id);
+				var inPf   = pfIdx > -1;
+
+				return '<tr>' +
+					/* fav */
+					'<td style="text-align:center;padding-right:4px;">' +
+						'<button class="trziste-fav-btn' + (isFav ? ' active' : '') + '" ' +
+							'onclick="trziste.toggleFav(\'' + esc(coin.id) + '\')" ' +
+							'title="' + (isFav ? 'Ukloni iz favorita' : 'Dodaj u favorite') + '" aria-label="Favorit">' +
+							'<svg width="13" height="13" viewBox="0 0 24 24" fill="' + (isFav ? '#f6c90e' : 'none') + '" ' +
+								'stroke="' + (isFav ? '#f6c90e' : 'currentColor') + '" stroke-width="2">' +
+								'<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>' +
+							'</svg>' +
+						'</button>' +
+					'</td>' +
+					/* rank */
+					'<td style="text-align:center;"><span class="trziste-rank">' + (i + 1) + '</span></td>' +
+					/* coin */
+					'<td><div class="trziste-coin-cell">' +
+						coinIconHtml(coin.symbol, coin.name, 28) +
+						'<div>' +
+							'<span class="trziste-coin-name">' + esc(coin.name) + '</span>' +
+							'<span class="trziste-coin-sym">' + esc((coin.symbol || '').toUpperCase()) + '</span>' +
+						'</div>' +
+					'</div></td>' +
+					/* price */
+					'<td><span class="trziste-price" id="pr-' + esc(coin.id) + '">' + fmtPrice(coin.current_price) + '</span></td>' +
+					/* 24h */
+					'<td>' + fmtPct(p24, true) + '</td>' +
+					/* 24h high */
+					'<td>' + fmtPrice(coin.high_24h) + '</td>' +
+					/* 24h low */
+					'<td>' + fmtPrice(coin.low_24h) + '</td>' +
+					/* volume */
+					'<td>' + fmtBig(coin.total_volume) + '</td>' +
+					/* add btn */
+					'<td style="text-align:center;">' +
+						'<button class="trziste-add-btn' + (inPf ? ' in-portfolio' : '') + '" ' +
+							'onclick="trziste.openModal(\'' + esc(coin.id) + '\')" ' +
+							'title="' + (inPf ? 'Uredi u portfoliu' : 'Dodaj u portfolio') + '" ' +
+							'aria-label="' + (inPf ? 'Uredi' : 'Dodaj u portfolio') + '">' +
+							(inPf
+								? '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>'
+								: '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>') +
+						'</button>' +
+					'</td>' +
+				'</tr>';
+			}).join('');
+		}
+
+		/* ── SKELETON ────────────────────────────────────── */
+		function renderSkeleton() {
+			var rows = '';
+			for (var i = 0; i < 15; i++) {
+				rows += '<tr>' +
+					'<td></td>' +
+					'<td style="text-align:center;"><span class="trziste-skel" style="width:18px;height:14px;"></span></td>' +
+					'<td><div class="trziste-coin-cell">' +
+						'<span class="trziste-skel" style="width:28px;height:28px;border-radius:50%;"></span>' +
+						'<div><span class="trziste-skel" style="width:72px;height:14px;display:block;margin-bottom:4px;"></span>' +
+						'<span class="trziste-skel" style="width:36px;height:10px;display:block;"></span></div>' +
+					'</div></td>' +
+					'<td><span class="trziste-skel" style="width:68px;height:14px;"></span></td>' +
+					'<td><span class="trziste-skel" style="width:46px;height:14px;"></span></td>' +
+					'<td><span class="trziste-skel" style="width:46px;height:14px;"></span></td>' +
+					'<td><span class="trziste-skel" style="width:78px;height:14px;"></span></td>' +
+					'<td><span class="trziste-skel" style="width:68px;height:14px;"></span></td>' +
+					'<td></td>' +
+				'</tr>';
+			}
+			$id('trziste-tbody').innerHTML = rows;
+			$id('trziste-error-state').style.display = 'none';
+			$id('trziste-no-results').style.display   = 'none';
+		}
+
+		/* ── ERROR ───────────────────────────────────────── */
+		function renderError() {
+			$id('trziste-tbody').innerHTML = '';
+			$id('trziste-error-state').style.display = 'block';
+			$id('trziste-no-results').style.display   = 'none';
+			$id('trziste-error-msg').textContent = S.error === '429'
+				? 'Prekoračen limit zahtjeva (30/min). Pokušajte za nekoliko sekundi.'
+				: 'Nije moguće dohvatiti podatke. Provjerite internetsku vezu.';
+			$id('trziste-last-update').textContent = 'Greška pri dohvatu';
+		}
+
+		/* ── RENDER ALL ──────────────────────────────────── */
+		function renderAll() {
+			renderGlobalStats();
+			renderMarketTable();
+			updatePortfolioBadge();
+			if (S.activeTab === 'portfolio') renderPortfolio();
+			updateLastUpdated();
+		}
+
+		/* ── FILTER + SORT ───────────────────────────────── */
+		function filteredSorted() {
+			var arr = S.coins.slice();
+			if (S.search) {
+				var q = S.search.toLowerCase();
+				arr = arr.filter(function(c) {
+					return c.name.toLowerCase().indexOf(q) > -1 ||
+						(c.symbol || '').toLowerCase().indexOf(q) > -1 ||
+						c.id.toLowerCase().indexOf(q) > -1;
+				});
+			}
+			var key = S.sortKey, dir = S.sortDir;
+			arr.sort(function(a, b) {
+				var va = a[key], vb = b[key];
+				if (va == null) va = dir === 'asc' ?  Infinity : -Infinity;
+				if (vb == null) vb = dir === 'asc' ?  Infinity : -Infinity;
+				return dir === 'asc' ? (va > vb ? 1 : va < vb ? -1 : 0)
+				                     : (va < vb ? 1 : va > vb ? -1 : 0);
+			});
+			return arr;
+		}
+
+		/* ── SEARCH ──────────────────────────────────────── */
+		function handleSearch(val) { S.search = val; renderMarketTable(); }
+
+		/* ── SORT ────────────────────────────────────────── */
+		function initSort() {
+			document.querySelectorAll('.trziste-table th.sortable').forEach(function(th) {
+				th.addEventListener('click', function() {
+					var key = th.dataset.sort;
+					if (S.sortKey === key) {
+						S.sortDir = S.sortDir === 'asc' ? 'desc' : 'asc';
+					} else {
+						S.sortKey = key;
+						S.sortDir = 'desc';
+					}
+					updateSortArrows();
+					renderMarketTable();
+				});
+			});
+		}
+
+		function updateSortArrows() {
+			['current_price','price_change_percentage_24h','high_24h','low_24h','total_volume'
+			].forEach(function(k) {
+				var el = $id('arrow-' + k);
+				if (!el) return;
+				if (k === S.sortKey) {
+					el.className = 'sort-arrow active';
+					el.textContent = S.sortDir === 'asc' ? '▲' : '▼';
+				} else {
+					el.className = 'sort-arrow';
+					el.textContent = '↕';
+				}
+			});
+			document.querySelectorAll('.trziste-table th.sortable').forEach(function(th) {
+				th.classList.toggle('sort-active', th.dataset.sort === S.sortKey);
+			});
+		}
+
+		/* ── CURRENCY ────────────────────────────────────── */
+		function setCurrency(c) {
+			S.currency = c;
+			localStorage.setItem('trziste_currency', c);
+			$id('cur-usd').classList.toggle('active', c === 'usd');
+			$id('cur-eur').classList.toggle('active', c === 'eur');
+			$id('cur-usd').setAttribute('aria-pressed', c === 'usd');
+			$id('cur-eur').setAttribute('aria-pressed', c === 'eur');
+			/* Binance prices are USD — just re-render with EUR conversion */
+			renderAll();
+		}
+
+		/* ── TABS ────────────────────────────────────────── */
+		function switchTab(tab) {
+			S.activeTab = tab;
+			$id('tab-market').classList.toggle('active',    tab === 'market');
+			$id('tab-portfolio').classList.toggle('active', tab === 'portfolio');
+			$id('tab-market').setAttribute('aria-selected',    tab === 'market');
+			$id('tab-portfolio').setAttribute('aria-selected', tab === 'portfolio');
+			$id('panel-market').style.display    = tab === 'market'    ? '' : 'none';
+			$id('panel-portfolio').style.display = tab === 'portfolio' ? '' : 'none';
+			if (tab === 'portfolio') renderPortfolio();
+		}
+
+		/* ── FAVORITES ───────────────────────────────────── */
+		function toggleFav(id) {
+			var idx = S.favorites.indexOf(id);
+			if (idx > -1) S.favorites.splice(idx, 1);
+			else S.favorites.push(id);
+			localStorage.setItem('trziste_favorites', JSON.stringify(S.favorites));
+			renderMarketTable();
+		}
+
+		/* ── PORTFOLIO HELPERS ───────────────────────────── */
+		function indexInPortfolio(id) {
+			for (var i = 0; i < S.portfolio.length; i++) {
+				if (S.portfolio[i].id === id) return i;
+			}
+			return -1;
+		}
+
+		function getPriceForCoin(id) {
+			var c = S.coins.filter(function(x) { return x.id === id; })[0];
+			return c ? c.current_price : 0;
+		}
+
+
+		/* ── TOAST ──────────────────────────────────────────────── */
+		var _toastTimer = null;
+		function showToast(msg) {
+			var el = $id('trziste-toast');
+			if (!el) return;
+			el.textContent = msg;
+			el.classList.add('show');
+			if (_toastTimer) clearTimeout(_toastTimer);
+			_toastTimer = setTimeout(function() { el.classList.remove('show'); }, 2200);
+		}
+
+		/* ── QUICK ADD ─────────────────────────────────────────── */
+		function quickAdd(coinId) {
+			var coin = S.coins.filter(function(c) { return c.id === coinId; })[0];
+			if (!coin) return;
+			if (indexInPortfolio(coinId) > -1) {
+				openModal(coinId);
+				return;
+			}
+			var entry = {
+				id:       coin.id,
+				name:     coin.name,
+				symbol:   (coin.symbol || '').toUpperCase(),
+				image:    coin.image || '',
+				amount:   0,
+				buyPrice: null,
+				addedAt:  new Date().toISOString().split('T')[0]
+			};
+			S.portfolio.push(entry);
+			localStorage.setItem('trziste_portfolio', JSON.stringify(S.portfolio));
+			updatePortfolioBadge();
+			renderMarketTable();
+			showToast('✓ ' + coin.name + ' dodan u portfolio');
+		}
+
+		/* ── OPEN MODAL ──────────────────────────────────────────── */
+		function openModal(coinId) {
+			var coin = S.coins.filter(function(c) { return c.id === coinId; })[0];
+			if (!coin) return;
+			S.modalCoin   = coin;
+			S.modalCoinId = coinId;
+			var pfIdx = indexInPortfolio(coinId);
+			S.modalEditIdx = pfIdx;
+
+			$id('modal-coin-img').src        = coin.image || '';
+			$id('modal-coin-img').alt        = coin.name;
+			$id('modal-coin-name').textContent  = coin.name + ' (' + (coin.symbol || '').toUpperCase() + ')';
+			$id('modal-coin-price').textContent = 'Trenutna cijena: ' + fmtPrice(coin.current_price);
+			$id('modal-save-label').textContent = pfIdx > -1 ? 'Ažuriraj' : 'Spremi';
+			$id('portfolioModalLabel').textContent = pfIdx > -1 ? 'Uredi u portfoliu' : 'Dodaj u portfolio';
+
+			if (pfIdx > -1) {
+				var e = S.portfolio[pfIdx];
+				$id('modal-amount').value    = e.amount    || '';
+				$id('modal-buy-price').value = e.buyPrice  || '';
+			} else {
+				$id('modal-amount').value    = '';
+				$id('modal-buy-price').value = '';
+			}
+			updateModalLive();
+
+			var el = document.getElementById('portfolioModal');
+			(bootstrap.Modal.getInstance(el) || new bootstrap.Modal(el)).show();
+		}
+
+		function updateModalLive() {
+			var amt  = parseFloat($id('modal-amount').value);
+			var coin = S.modalCoin;
+			var lv   = $id('modal-live-val');
+			if (!coin || !amt || isNaN(amt) || amt <= 0) {
+				lv.style.display = 'none';
+				return;
+			}
+			lv.style.display = 'block';
+			$id('modal-live-val-text').textContent = fmtPrice(amt * coin.current_price);
+		}
+
+		function savePortfolioEntry() {
+			var coin = S.modalCoin;
+			if (!coin) return;
+			var amt  = Math.max(0, parseFloat($id('modal-amount').value) || 0);
+			var bp   = parseFloat($id('modal-buy-price').value);
+			var entry = {
+				id:       coin.id,
+				name:     coin.name,
+				symbol:   (coin.symbol || '').toUpperCase(),
+				image:    coin.image || '',
+				amount:   amt,
+				buyPrice: (!isNaN(bp) && bp > 0) ? bp : null,
+				addedAt:  new Date().toISOString().split('T')[0]
+			};
+			if (S.modalEditIdx > -1) S.portfolio[S.modalEditIdx] = entry;
+			else S.portfolio.push(entry);
+			localStorage.setItem('trziste_portfolio', JSON.stringify(S.portfolio));
+			(bootstrap.Modal.getInstance(document.getElementById('portfolioModal')) || new bootstrap.Modal(document.getElementById('portfolioModal'))).hide();
+			updatePortfolioBadge();
+			renderMarketTable();
+			if (S.activeTab === 'portfolio') renderPortfolio();
+		}
+
+		function removePortfolioEntry(idx) {
+			if (!confirm('Ukloniti ' + S.portfolio[idx].name + ' iz portfolia?')) return;
+			S.portfolio.splice(idx, 1);
+			localStorage.setItem('trziste_portfolio', JSON.stringify(S.portfolio));
+			updatePortfolioBadge();
+			renderPortfolio();
+			renderMarketTable();
+		}
+
+		function editPortfolioEntry(idx) {
+			var entry = S.portfolio[idx];
+			if (!entry) return;
+			var coin = S.coins.filter(function(c) { return c.id === entry.id; })[0];
+			if (!coin) {
+				coin = { id: entry.id, name: entry.name,
+					symbol: entry.symbol.toLowerCase(), image: entry.image, current_price: 0 };
+			}
+			S.modalCoin    = coin;
+			S.modalCoinId  = coin.id;
+			S.modalEditIdx = idx;
+			$id('modal-coin-img').src        = coin.image || '';
+			$id('modal-coin-img').alt        = coin.name;
+			$id('modal-coin-name').textContent  = coin.name + ' (' + entry.symbol + ')';
+			$id('modal-coin-price').textContent = coin.current_price > 0
+				? 'Trenutna cijena: ' + fmtPrice(coin.current_price) : 'Cijena nedostupna';
+			$id('modal-amount').value    = entry.amount    || '';
+			$id('modal-buy-price').value = entry.buyPrice  || '';
+			$id('modal-save-label').textContent      = 'Ažuriraj';
+			$id('portfolioModalLabel').textContent   = 'Uredi unos';
+			updateModalLive();
+			(bootstrap.Modal.getInstance(document.getElementById('portfolioModal')) || new bootstrap.Modal(document.getElementById('portfolioModal'))).show();
+		}
+
+		/* ── RENDER PORTFOLIO ────────────────────────────── */
+		function renderPortfolio() {
+			var pf    = S.portfolio;
+			var sumEl = $id('pf-summary');
+			var ctEl  = $id('pf-content');
+			updatePortfolioBadge();
+
+			if (!pf.length) {
+				sumEl.innerHTML = '';
+				ctEl.innerHTML  =
+					'<div class="trziste-pf-empty">' +
+						'<div style="font-size:44px;margin-bottom:14px;">📊</div>' +
+						'<h3>Portfolio je prazan</h3>' +
+						'<p style="color:#abb8c3;max-width:360px;margin:0 auto 18px;">Dodaj kriptovalute u portfolio ' +
+						'klikom na gumb "+" u tablici Tržišta.</p>' +
+						'<button onclick="trziste.switchTab(\'market\')" class="btn_one">Pogledaj Tržište</button>' +
+					'</div>';
+				return;
+			}
+
+			var totalVal = 0, totalCost = 0, hasBP = false;
+			pf.forEach(function(e) {
+				var price = getPriceForCoin(e.id);
+				totalVal += e.amount * price;
+				if (e.buyPrice) { totalCost += e.amount * e.buyPrice; hasBP = true; }
+			});
+			var pnl     = hasBP ? totalVal - totalCost : null;
+			var pnlPct  = (hasBP && totalCost > 0) ? ((totalVal - totalCost) / totalCost) * 100 : null;
+			var avgChg  = portfolioAvg24h(pf);
+
+			/* Summary cards */
+			sumEl.innerHTML =
+				'<div class="trziste-pf-card">' +
+					'<div class="trziste-pf-card-label">Ukupna vrijednost</div>' +
+					'<div class="trziste-pf-card-val">' + fmtPrice(totalVal) + '</div>' +
+					'<div class="trziste-pf-card-sub">' + pf.length + ' pozicij' + (pf.length === 1 ? 'a' : 'a') + '</div>' +
+				'</div>' +
+				(hasBP
+					? '<div class="trziste-pf-card">' +
+						'<div class="trziste-pf-card-label">Ukupni P&amp;L</div>' +
+						'<div class="trziste-pf-card-val ' + (pnl >= 0 ? 'price-up' : 'price-down') + '">' +
+							(pnl >= 0 ? '+' : '') + fmtPrice(pnl) +
+						'</div>' +
+						'<div class="trziste-pf-card-sub">' + fmtPct(pnlPct, false) + '</div>' +
+					'</div>'
+					: '') +
+				'<div class="trziste-pf-card">' +
+					'<div class="trziste-pf-card-label">Prosječno 24h</div>' +
+					'<div class="trziste-pf-card-val">' + avgChg + '</div>' +
+					'<div class="trziste-pf-card-sub">Ponderirana po vrijednosti</div>' +
+				'</div>';
+
+						/* Table rows */
+			var rows = pf.map(function(entry, idx) {
+				var price  = getPriceForCoin(entry.id);
+				var coin24 = S.coins.filter(function(c) { return c.id === entry.id; })[0];
+				var chg24  = coin24 ? coin24.price_change_percentage_24h : null;
+				var val    = entry.amount * price;
+				var pct    = totalVal > 0 ? (val / totalVal) * 100 : 0;
+				var pnlE   = (entry.buyPrice && entry.amount > 0) ? val - (entry.amount * entry.buyPrice) : null;
+				var pnlP   = (entry.buyPrice && entry.buyPrice > 0) ? ((price - entry.buyPrice) / entry.buyPrice) * 100 : null;
+				var amtStr = entry.amount > 0
+					? entry.amount.toLocaleString('hr-HR', {maximumFractionDigits:8}) + ' ' + esc(entry.symbol)
+					: '<span style="color:#6b7a8d;font-style:italic;">nije postavljeno</span>';
+				return '<tr>' +
+					'<td><div class="trziste-coin-cell">' +
+						coinIconHtml(entry.symbol.toLowerCase(), entry.name, 28) +
+						'<div>' +
+							'<span class="trziste-coin-name">' + esc(entry.name) + '</span>' +
+							'<span class="trziste-coin-sym">' + esc(entry.symbol) + '</span>' +
+						'</div>' +
+					'</div></td>' +
+					'<td>' + amtStr + '</td>' +
+					'<td>' + (entry.buyPrice ? fmtPrice(entry.buyPrice) : '<span style="color:#6b7a8d;font-style:italic;">nije postavljeno</span>') + '</td>' +
+					'<td>' + (price > 0 ? fmtPrice(price) : '<span style="color:#2d3a4a">—</span>') + '</td>' +
+					'<td>' + (chg24 !== null ? fmtPct(chg24, true) : '<span style="color:#2d3a4a">—</span>') + '</td>' +
+					'<td>' + (entry.amount > 0 ? '<strong style="color:#fff;">' + fmtPrice(val) + '</strong>' : '<span style="color:#2d3a4a">—</span>') + '</td>' +
+					'<td>' + (pnlE !== null ? '<span class="' + (pnlE >= 0 ? 'price-up' : 'price-down') + '">' + (pnlE >= 0 ? '+' : '') + fmtPrice(pnlE) + '</span>' : '<span style="color:#2d3a4a">—</span>') + '</td>' +
+					'<td>' + (pnlP !== null ? fmtPct(pnlP, false) : '<span style="color:#2d3a4a">—</span>') + '</td>' +
+					'<td style="min-width:90px;">' +
+						'<span class="pf-bar-track"><span class="pf-bar-fill" style="width:' + Math.min(100, pct).toFixed(1) + '%;"></span></span>' +
+						' ' + pct.toFixed(1) + '%' +
+					'</td>' +
+					'<td style="white-space:nowrap;">' +
+						'<button class="trziste-act-btn" onclick="trziste.editPortfolioEntry(' + idx + ')" title="Uredi količinu i cijenu kupnje">' +
+							'<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;">' +
+								'<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>' +
+								'<path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>' +
+							'</svg> Uredi' +
+						'</button> ' +
+						'<button class="trziste-act-btn danger" onclick="trziste.removePortfolioEntry(' + idx + ')">×</button>' +
+					'</td>' +
+				'</tr>';
+			}).join('');
+
+			ctEl.innerHTML =
+				'<div class="trziste-table-wrap">' +
+					'<div class="trziste-table-scroll">' +
+						'<table class="trziste-pf-table">' +
+							'<thead><tr>' +
+								'<th style="text-align:left;">Kriptovaluta</th>' +
+								'<th title="Ručno uneseno — kliknite Uredi za izmjenu">✎ Količina</th>' +
+								'<th title="Ručno uneseno — kliknite Uredi za izmjenu">✎ Cijena kupnje</th>' +
+								'<th>Tren. cijena</th>' +
+								'<th>24h %</th>' +
+								'<th>Vrijednost</th>' +
+								'<th>P&amp;L</th>' +
+								'<th>P&amp;L %</th>' +
+								'<th>Udio</th>' +
+								'<th>Akcije</th>' +
+							'</tr></thead>' +
+							'<tbody>' + rows + '</tbody>' +
+						'</table>' +
+					'</div>' +
+				'</div>';
+		}
+
+		function portfolioAvg24h(pf) {
+			if (!pf.length || !S.coins.length) return '<span class="price-neutral">—</span>';
+			var tv = 0, wc = 0;
+			pf.forEach(function(e) {
+				var coin = S.coins.filter(function(c) { return c.id === e.id; })[0];
+				if (!coin) return;
+				var v = e.amount * coin.current_price;
+				tv += v;
+				wc += v * (coin.price_change_percentage_24h || 0);
+			});
+			if (!tv) return '<span class="price-neutral">—</span>';
+			return fmtPct(wc / tv, true);
+		}
+
+		function updatePortfolioBadge() {
+			var n  = S.portfolio.length;
+			var el = $id('pf-badge');
+			if (n > 0) { el.textContent = n; el.style.display = ''; }
+			else el.style.display = 'none';
+		}
+
+		/* ── COUNTDOWN / REFRESH ─────────────────────────── */
+		function resetCountdown() {
+			S.countdown = 60;
+			updateRing();
+		}
+
+		function updateRing() {
+			var ring = $id('cring');
+			if (!ring) return;
+			ring.style.strokeDashoffset = (CIRC * (1 - S.countdown / 60)).toFixed(2);
+		}
+
+		function updateLastUpdated() {
+			if (!S.lastUpdated) return;
+			var d = S.lastUpdated;
+			var t = d.getHours().toString().padStart(2,'0') + ':' +
+				d.getMinutes().toString().padStart(2,'0') + ':' +
+				d.getSeconds().toString().padStart(2,'0');
+			$id('trziste-last-update').textContent = 'Ažurirano u ' + t;
+		}
+
+		function manualRefresh() {
+			var btn = $id('refresh-btn');
+			btn.classList.add('spinning');
+			setTimeout(function() { btn.classList.remove('spinning'); }, 900);
+			fetchData(false);
+		}
+
+		/* ── INIT ────────────────────────────────────────── */
+		function init() {
+			/* Set initial currency buttons */
+			$id('cur-usd').classList.toggle('active', S.currency === 'usd');
+			$id('cur-eur').classList.toggle('active', S.currency === 'eur');
+			$id('cur-usd').setAttribute('aria-pressed', S.currency === 'usd');
+			$id('cur-eur').setAttribute('aria-pressed', S.currency === 'eur');
+
+			/* Search input */
+			var si = $id('trziste-search');
+			si.addEventListener('input',  function() { handleSearch(this.value); });
+			si.addEventListener('search', function() { handleSearch(this.value); });
+
+			/* Modal amount live preview */
+			$id('modal-amount').addEventListener('input', updateModalLive);
+
+			/* Sort headers */
+			initSort();
+
+			/* First load */
+			renderSkeleton();
+			fetchData(false);
+
+			/* Auto-refresh every 60 s */
+			setInterval(function() { fetchData(false); }, 60000);
+
+			/* Countdown ring every second */
+			setInterval(function() {
+				S.countdown = Math.max(0, S.countdown - 1);
+				updateRing();
+			}, 1000);
+
+			updatePortfolioBadge();
+		}
+
+		/* Run on DOMContentLoaded */
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', init);
+		} else {
+			init();
+		}
+
+		/* Public API */
+		return {
+			switchTab:            switchTab,
+			setCurrency:          setCurrency,
+			toggleFav:            toggleFav,
+			openModal:            openModal,
+			quickAdd:             quickAdd,
+			savePortfolioEntry:   savePortfolioEntry,
+			removePortfolioEntry: removePortfolioEntry,
+			editPortfolioEntry:   editPortfolioEntry,
+			manualRefresh:        manualRefresh
+		};
+	})();
+	</script>
+
+	<div id="trziste-toast" class="trziste-toast"></div>
+
+</body>
+</html>
