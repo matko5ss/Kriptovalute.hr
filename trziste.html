@@ -1330,7 +1330,7 @@
 				var capData = results[2];
 				var capMap  = {};
 				if (capData && Array.isArray(capData)) {
-					capData.data.forEach(function(a) {
+					capData.forEach(function(a) {
 					capMap[a.symbol.toUpperCase()] = parseFloat((a.quotes && a.quotes.USD) ? a.quotes.USD.market_cap : 0) || 0;
 					});
 				}
