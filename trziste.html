@@ -1345,6 +1345,9 @@
 					return parseFloat(b.quoteVolume) - parseFloat(a.quoteVolume);
 				});
 				S.coins      = pairs.map(function(t, idx) { return normalizeCoin(t, idx, capMap); });
+				/* assign rank by market cap order */
+				var byMcap = S.coins.slice().sort(function(a, b) { return b.market_cap - a.market_cap; });
+				byMcap.forEach(function(c, i) { c.market_cap_rank = i + 1; });
 				S.globalData = computeGlobal(S.coins);
 				S.error      = null;
 				S.lastUpdated = new Date();
