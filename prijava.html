@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Prijava i registracija – Kriptovalute.hr</title>
+  <meta name="description" content="Prijavite se ili registrirajte na Kriptovalute.hr – vodeći hrvatski portal o kriptovalutama.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://kriptovalute.hr/prijava.html">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/style-two.css?v=24">
+
+  <style>
+    :root {
+      --auth-bg:       #0d1117;
+      --auth-card:     #161b22;
+      --auth-border:   rgba(255,255,255,0.08);
+      --auth-accent:   #6c5ce7;
+      --auth-accent2:  #a29bfe;
+      --auth-text:     #e6edf3;
+      --auth-muted:    #7d8590;
+      --auth-success:  #00d4aa;
+      --auth-error:    #ff6b6b;
+      --auth-input-bg: #0d1117;
+    }
+
+    body { background: var(--auth-bg); color: var(--auth-text); min-height: 100vh; }
+
+    /* ── Layout ─────────────────────────────────────────────── */
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 16px 40px;
+    }
+
+    .auth-logo { margin-bottom: 32px; text-align: center; }
+    .auth-logo img { height: 44px; width: auto; }
+
+    /* ── Card ───────────────────────────────────────────────── */
+    .auth-card {
+      background: var(--auth-card);
+      border: 1px solid var(--auth-border);
+      border-radius: 16px;
+      padding: 40px 36px;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: 0 8px 40px rgba(0,0,0,.45);
+    }
+
+    .auth-card-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--auth-text);
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .auth-card-sub {
+      font-size: 14px;
+      color: var(--auth-muted);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    /* ── Steps ──────────────────────────────────────────────── */
+    .auth-step { display: none; }
+    .auth-step.active { display: block; }
+
+    /* ── Form elements ──────────────────────────────────────── */
+    .auth-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--auth-muted);
+      margin-bottom: 6px;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+    }
+
+    .auth-input {
+      width: 100%;
+      background: var(--auth-input-bg);
+      border: 1px solid var(--auth-border);
+      border-radius: 10px;
+      color: var(--auth-text);
+      font-size: 15px;
+      padding: 12px 14px;
+      transition: border-color .2s;
+      outline: none;
+    }
+    .auth-input:focus { border-color: var(--auth-accent); }
+    .auth-input::placeholder { color: var(--auth-muted); }
+
+    /* OTP input — large digits */
+    .auth-otp-input {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 14px;
+      text-align: center;
+      padding: 14px 14px;
+    }
+
+    /* ── Buttons ────────────────────────────────────────────── */
+    .auth-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 13px 20px;
+      cursor: pointer;
+      transition: opacity .15s, transform .1s;
+    }
+    .auth-btn:active { transform: scale(0.98); }
+    .auth-btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+
+    .auth-btn-primary {
+      background: linear-gradient(135deg, var(--auth-accent), var(--auth-accent2));
+      color: #fff;
+    }
+    .auth-btn-primary:hover:not(:disabled) { opacity: .9; }
+
+    .auth-btn-google {
+      background: #fff;
+      color: #1a1a1a;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .auth-btn-google:hover:not(:disabled) { background: #f0f0f0; }
+
+    .auth-btn-ghost {
+      background: transparent;
+      color: var(--auth-muted);
+      border: 1px solid var(--auth-border);
+      font-size: 13px;
+      padding: 10px 20px;
+    }
+    .auth-btn-ghost:hover:not(:disabled) { color: var(--auth-text); border-color: rgba(255,255,255,0.2); }
+
+    /* ── Divider ────────────────────────────────────────────── */
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+      color: var(--auth-muted);
+      font-size: 12px;
+    }
+    .auth-divider::before,
+    .auth-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--auth-border);
+    }
+
+    /* ── Alerts ─────────────────────────────────────────────── */
+    .auth-alert {
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 13px;
+      margin-bottom: 16px;
+      display: none;
+    }
+    .auth-alert.show { display: block; }
+    .auth-alert-error { background: rgba(255,107,107,.12); border: 1px solid rgba(255,107,107,.3); color: var(--auth-error); }
+    .auth-alert-success { background: rgba(0,212,170,.1); border: 1px solid rgba(0,212,170,.3); color: var(--auth-success); }
+
+    /* ── OTP sent info ──────────────────────────────────────── */
+    .auth-otp-info {
+      background: rgba(108,92,231,.1);
+      border: 1px solid rgba(108,92,231,.3);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: var(--auth-muted);
+      text-align: center;
+    }
+    .auth-otp-info strong { color: var(--auth-text); }
+    .auth-otp-email { color: var(--auth-accent2); font-weight: 600; word-break: break-all; }
+
+    /* ── Resend ─────────────────────────────────────────────── */
+    .auth-resend {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--auth-muted);
+    }
+    .auth-resend-btn {
+      background: none;
+      border: none;
+      color: var(--auth-accent2);
+      cursor: pointer;
+      font-size: 13px;
+      padding: 0;
+      text-decoration: underline;
+    }
+    .auth-resend-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+    /* ── Success state ──────────────────────────────────────── */
+    .auth-success-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(0,212,170,.12);
+      border: 2px solid var(--auth-success);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+    }
+
+    /* ── Spinner ────────────────────────────────────────────── */
+    .auth-spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Footer note ────────────────────────────────────────── */
+    .auth-footer-note {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 12px;
+      color: var(--auth-muted);
+    }
+    .auth-footer-note a { color: var(--auth-muted); text-decoration: underline; }
+
+    /* ── Back to home ───────────────────────────────────────── */
+    .auth-back {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .auth-back a {
+      font-size: 13px;
+      color: var(--auth-muted);
+      text-decoration: none;
+    }
+    .auth-back a:hover { color: var(--auth-text); }
+    .auth-back svg { vertical-align: middle; margin-right: 4px; }
+  </style>
+</head>
+<body>
+
+<!-- ── Supabase SDK ──────────────────────────────────────────────── -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="assets/js/supabase-config.js"></script>
+
+<div class="auth-page">
+
+  <!-- Logo -->
+  <div class="auth-logo">
+    <a href="index.html">
+      <picture>
+        <source srcset="assets/img/kriptovalute-logo.webp" type="image/webp">
+        <img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" height="44">
+      </picture>
+    </a>
+  </div>
+
+  <!-- Card -->
+  <div class="auth-card">
+
+    <!-- STEP 1: Unos emaila -->
+    <div class="auth-step active" id="step-email">
+      <div class="auth-card-title">Dobrodošli</div>
+      <div class="auth-card-sub">Unesite email za prijavu ili registraciju</div>
+
+      <div id="alert-email" class="auth-alert auth-alert-error"></div>
+
+      <!-- Google prijava -->
+      <button class="auth-btn auth-btn-google" id="btn-google" onclick="authPage.googleLogin()">
+        <svg width="18" height="18" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.36-8.16 2.36-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+          <path fill="none" d="M0 0h48v48H0z"/>
+        </svg>
+        Nastavi s Google računom
+      </button>
+
+      <div class="auth-divider">ili</div>
+
+      <!-- Email unos -->
+      <div style="margin-bottom:16px;">
+        <label class="auth-label" for="input-email">Email adresa</label>
+        <input
+          type="email"
+          id="input-email"
+          class="auth-input"
+          placeholder="tvoj@email.com"
+          autocomplete="email"
+          inputmode="email"
+        >
+      </div>
+
+      <button class="auth-btn auth-btn-primary" id="btn-send-otp" onclick="authPage.sendOtp()">
+        Pošalji kod za prijavu
+      </button>
+
+      <div class="auth-footer-note" style="margin-top:20px;">
+        Nastavkom prihvaćaš naše <a href="politika-privatnosti.html" target="_blank">Uvjete korištenja</a>
+        i <a href="politika-kolacici.html" target="_blank">Politiku privatnosti</a>.
+      </div>
+    </div>
+
+    <!-- STEP 2: OTP verifikacija -->
+    <div class="auth-step" id="step-otp">
+      <div class="auth-card-title">Provjeri email</div>
+
+      <div class="auth-otp-info">
+        Poslali smo 6-znamenkasti kod na<br>
+        <span class="auth-otp-email" id="otp-email-display"></span>
+      </div>
+
+      <div id="alert-otp" class="auth-alert auth-alert-error"></div>
+
+      <div style="margin-bottom:20px;">
+        <label class="auth-label" for="input-otp">Jednokratni kod</label>
+        <input
+          type="text"
+          id="input-otp"
+          class="auth-input auth-otp-input"
+          placeholder="000000"
+          maxlength="6"
+          autocomplete="one-time-code"
+          inputmode="numeric"
+          pattern="[0-9]*"
+        >
+      </div>
+
+      <button class="auth-btn auth-btn-primary" id="btn-verify-otp" onclick="authPage.verifyOtp()">
+        Potvrdi i prijavi se
+      </button>
+
+      <div class="auth-resend">
+        Nisi primio kod?
+        <button class="auth-resend-btn" id="btn-resend" onclick="authPage.resend()">
+          Pošalji ponovo
+        </button>
+        <span id="resend-countdown" style="display:none;"></span>
+      </div>
+
+      <div style="margin-top:16px; text-align:center;">
+        <button class="auth-btn auth-btn-ghost" onclick="authPage.backToEmail()">
+          ← Promijeni email
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Uspješna prijava -->
+    <div class="auth-step" id="step-success">
+      <div style="text-align:center;">
+        <div class="auth-success-icon">✓</div>
+        <div class="auth-card-title">Uspješna prijava!</div>
+        <div class="auth-card-sub" id="success-msg">Prenosimo te na stranicu...</div>
+        <div style="margin-top:24px;">
+          <div class="auth-spinner" style="margin:0 auto;"></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /auth-card -->
+
+  <div class="auth-back">
+    <a href="index.html">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Natrag na početnu
+    </a>
+  </div>
+
+</div><!-- /auth-page -->
+
+<script src="assets/js/supabase-config.js" onerror=""></script>
+<script>
+(function() {
+  'use strict';
+
+  var sb = null;
+  var currentEmail = '';
+  var resendTimer  = null;
+  var RESEND_WAIT  = 60; // sekundi
+
+  function initSupabase() {
+    if (!window.supabase) return false;
+    if (!window.SUPABASE_URL || window.SUPABASE_URL.indexOf('OVDJE') === 0) {
+      showAlert('email', 'Supabase konfiguracija nije postavljena. Molimo kontaktirajte administratora.');
+      return false;
+    }
+    if (!sb) sb = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON);
+    return true;
+  }
+
+  function showStep(name) {
+    document.querySelectorAll('.auth-step').forEach(function(el) { el.classList.remove('active'); });
+    document.getElementById('step-' + name).classList.add('active');
+  }
+
+  function showAlert(step, msg) {
+    var el = document.getElementById('alert-' + step);
+    if (!el) return;
+    el.textContent = msg;
+    el.classList.add('show');
+  }
+  function hideAlert(step) {
+    var el = document.getElementById('alert-' + step);
+    if (el) el.classList.remove('show');
+  }
+
+  function setLoading(btnId, loading) {
+    var btn = document.getElementById(btnId);
+    if (!btn) return;
+    btn.disabled = loading;
+    if (loading) {
+      btn._origText = btn.innerHTML;
+      btn.innerHTML = '<span class="auth-spinner"></span>';
+    } else if (btn._origText) {
+      btn.innerHTML = btn._origText;
+    }
+  }
+
+  function startResendCountdown() {
+    var btn = document.getElementById('btn-resend');
+    var cd  = document.getElementById('resend-countdown');
+    if (!btn || !cd) return;
+    btn.style.display = 'none';
+    cd.style.display  = 'inline';
+    var sec = RESEND_WAIT;
+    cd.textContent = '(pošalji ponovo za ' + sec + 's)';
+    clearInterval(resendTimer);
+    resendTimer = setInterval(function() {
+      sec--;
+      if (sec <= 0) {
+        clearInterval(resendTimer);
+        btn.style.display = 'inline';
+        cd.style.display  = 'none';
+        btn.disabled = false;
+      } else {
+        cd.textContent = '(pošalji ponovo za ' + sec + 's)';
+      }
+    }, 1000);
+  }
+
+  function getRedirectUrl() {
+    var params = new URLSearchParams(window.location.search);
+    var ret = params.get('return') || params.get('from');
+    if (ret && ret.startsWith('/')) return ret;
+    return 'trziste.html';
+  }
+
+  function onSuccess(user) {
+    showStep('success');
+    var name = (user && user.user_metadata && (user.user_metadata.full_name || user.user_metadata.name))
+      || (user && user.email) || '';
+    var firstName = name ? name.split(/[\s@]/)[0] : '';
+    document.getElementById('success-msg').textContent =
+      (firstName ? 'Dobrodošao, ' + firstName + '! ' : '') + 'Prenosimo te na stranicu...';
+    setTimeout(function() {
+      window.location.href = getRedirectUrl();
+    }, 1500);
+  }
+
+  // ── API ─────────────────────────────────────────────────────
+  var authPage = {
+
+    sendOtp: async function() {
+      if (!initSupabase()) return;
+      hideAlert('email');
+      var email = document.getElementById('input-email').value.trim().toLowerCase();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showAlert('email', 'Unesi ispravnu email adresu.');
+        return;
+      }
+      setLoading('btn-send-otp', true);
+      try {
+        var { error } = await sb.auth.signInWithOtp({
+          email: email,
+          options: { shouldCreateUser: true }
+        });
+        if (error) { showAlert('email', error.message); return; }
+        currentEmail = email;
+        document.getElementById('otp-email-display').textContent = email;
+        document.getElementById('input-otp').value = '';
+        showStep('otp');
+        startResendCountdown();
+        setTimeout(function() {
+          var inp = document.getElementById('input-otp');
+          if (inp) inp.focus();
+        }, 100);
+      } catch(e) {
+        showAlert('email', 'Greška pri slanju koda. Pokušaj ponovo.');
+      } finally {
+        setLoading('btn-send-otp', false);
+      }
+    },
+
+    verifyOtp: async function() {
+      if (!initSupabase()) return;
+      hideAlert('otp');
+      var token = document.getElementById('input-otp').value.trim().replace(/\D/g, '');
+      if (token.length !== 6) {
+        showAlert('otp', 'Unesi 6-znamenkasti kod iz emaila.');
+        return;
+      }
+      setLoading('btn-verify-otp', true);
+      try {
+        var { data, error } = await sb.auth.verifyOtp({
+          email: currentEmail,
+          token: token,
+          type: 'email'
+        });
+        if (error) {
+          var msg = error.message.indexOf('expired') > -1 || error.message.indexOf('invalid') > -1
+            ? 'Kod nije ispravan ili je istekao. Pošalji novi kod.'
+            : error.message;
+          showAlert('otp', msg);
+          return;
+        }
+        onSuccess(data && data.user);
+      } catch(e) {
+        showAlert('otp', 'Greška pri provjeri koda. Pokušaj ponovo.');
+      } finally {
+        setLoading('btn-verify-otp', false);
+      }
+    },
+
+    resend: async function() {
+      if (!initSupabase() || !currentEmail) return;
+      var btn = document.getElementById('btn-resend');
+      if (btn) btn.disabled = true;
+      hideAlert('otp');
+      try {
+        var { error } = await sb.auth.signInWithOtp({
+          email: currentEmail,
+          options: { shouldCreateUser: true }
+        });
+        if (error) { showAlert('otp', error.message); return; }
+        startResendCountdown();
+      } catch(e) {
+        showAlert('otp', 'Greška pri ponovnom slanju. Pokušaj ponovo.');
+        if (btn) btn.disabled = false;
+      }
+    },
+
+    googleLogin: async function() {
+      if (!initSupabase()) return;
+      setLoading('btn-google', true);
+      try {
+        var redirect = window.location.origin + '/prijava.html?callback=1&return=' + encodeURIComponent(getRedirectUrl());
+        var { error } = await sb.auth.signInWithOAuth({
+          provider: 'google',
+          options: {
+            redirectTo: redirect,
+            queryParams: { prompt: 'select_account' }
+          }
+        });
+        if (error) {
+          showAlert('email', error.message);
+          setLoading('btn-google', false);
+        }
+        // Ako uspije, preglednik otvara Google stranicu — loading ostaje
+      } catch(e) {
+        showAlert('email', 'Greška pri Google prijavi.');
+        setLoading('btn-google', false);
+      }
+    },
+
+    backToEmail: function() {
+      clearInterval(resendTimer);
+      hideAlert('otp');
+      showStep('email');
+    }
+  };
+
+  window.authPage = authPage;
+
+  // ── Inicijalizacija ──────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', async function() {
+    // Ako je povratak s Google OAuth-a, provjeri sesiju
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('callback') === '1' && initSupabase()) {
+      var { data: { session } } = await sb.auth.getSession();
+      if (session && session.user) {
+        onSuccess(session.user);
+        return;
+      }
+    }
+
+    // Ako je već prijavljen, preusmjeri
+    if (initSupabase()) {
+      var { data: { session: existing } } = await sb.auth.getSession();
+      if (existing && existing.user) {
+        window.location.href = getRedirectUrl();
+        return;
+      }
+    }
+
+    // Enter na email polju
+    var emailInput = document.getElementById('input-email');
+    if (emailInput) {
+      emailInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') authPage.sendOtp();
+      });
+    }
+
+    // Enter na OTP polju + automatska submit kad 6 znakova
+    var otpInput = document.getElementById('input-otp');
+    if (otpInput) {
+      otpInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') authPage.verifyOtp();
+      });
+      otpInput.addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '').slice(0, 6);
+        if (this.value.length === 6) authPage.verifyOtp();
+      });
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

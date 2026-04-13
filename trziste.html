@@ -76,37 +76,6 @@
 	}
 
 	/* Global stats bar */
-	.trziste-global {
-		background: rgba(10,13,66,0.98);
-		border-top: 1px solid #1a2066;
-		border-bottom: 1px solid #1a2066;
-		padding: 12px 0;
-		position: relative;
-		z-index: 1;
-		overflow-x: auto;
-	}
-	.trziste-global-inner {
-		display: flex;
-		align-items: center;
-		gap: 6px 20px;
-		flex-wrap: wrap;
-		font-size: 13px;
-		min-width: max-content;
-	}
-	.trziste-stat-item {
-		display: flex;
-		align-items: center;
-		gap: 5px;
-		white-space: nowrap;
-	}
-	.trziste-stat-label { color: #abb8c3; }
-	.trziste-stat-val { color: #fff; font-weight: 600; }
-	.trziste-stat-sep {
-		width: 1px;
-		height: 14px;
-		background: #1a2066;
-		flex-shrink: 0;
-	}
 
 	/* Main section */
 	.trziste-main {
@@ -363,6 +332,11 @@
 	.trziste-table tbody tr { transition: background 0.12s; }
 	.trziste-table tbody tr:hover { background: rgba(255,255,255,0.027); }
 	.trziste-table tbody tr:last-child td { border-bottom: none; }
+	.trziste-pg-btn { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: #abb8c3; border-radius: 6px; padding: 5px 13px; cursor: pointer; font-size: 13px; transition: background 0.15s, color 0.15s; }
+	.trziste-pg-btn:hover { background: rgba(255,255,255,0.13); color: #fff; }
+	.trziste-pg-btn.active { background: #3b82f6; border-color: #3b82f6; color: #fff; font-weight: 600; }
+	.trziste-pg-btn:disabled { opacity: 0.35; cursor: default; }
+	.trziste-pg-info { color: #6b7280; font-size: 13px; }
 
 	/* Coin cell */
 	.trziste-coin-cell {
@@ -812,6 +786,28 @@
 					<li class="nav-item"><a class="nav-link" href="kviz.html">Kviz</a></li>
 					<li class="nav-item"><a class="nav-link active" href="trziste.html" aria-current="page">Tržište</a></li>
 					<li class="nav-item ms-lg-3"><a href="index.html#kontakt" class="btn_one btn-nav">Kontaktirajte nas</a></li>
+				<!-- Auth -->
+				<li class="nav-item ms-lg-2" id="nav-auth-item">
+					<a href="prijava.html" class="btn_one btn-nav btn-nav-auth" id="nav-auth-btn" style="background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;">
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:middle;margin-right:5px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prijava
+					</a>
+					<!-- Logged in dropdown -->
+					<div class="nav-item dropdown" id="nav-user-menu" style="display:none;">
+						<a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding:4px 8px;">
+							<span id="nav-user-avatar"></span>
+							<span id="nav-user-name" style="font-size:13px;font-weight:600;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end" style="min-width:200px;background:#161b22;border:1px solid rgba(255,255,255,0.08);border-radius:10px;">
+							<li><a class="dropdown-item" href="trziste.html" style="color:#e6edf3;font-size:13px;">
+								<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:7px;vertical-align:middle;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Tržište
+							</a></li>
+							<li><hr class="dropdown-divider" style="border-color:rgba(255,255,255,0.08);margin:4px 0;"></li>
+							<li><a class="dropdown-item" href="#" id="nav-logout-btn" style="color:#ff6b6b;font-size:13px;">
+								<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:7px;vertical-align:middle;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Odjava
+							</a></li>
+						</ul>
+					</div>
+				</li>
 				</ul>
 			</div>
 		</div>
@@ -825,37 +821,6 @@
 		</div>
 	</div>
 
-	<!-- Global Market Stats Bar -->
-	<div class="trziste-global">
-		<div class="container">
-			<div class="trziste-global-inner" id="trziste-global-inner">
-				<div class="trziste-stat-item">
-					<span class="trziste-stat-label">Vol. 24h (USDT)</span>
-					<span class="trziste-stat-val" id="g-vol">—</span>
-				</div>
-				<div class="trziste-stat-sep"></div>
-				<div class="trziste-stat-item">
-					<span class="trziste-stat-label">USDT parova</span>
-					<span class="trziste-stat-val" id="g-coins">—</span>
-				</div>
-				<div class="trziste-stat-sep"></div>
-				<div class="trziste-stat-item">
-					<span class="trziste-stat-label">BTC cijena</span>
-					<span class="trziste-stat-val" id="g-btc">—</span>
-				</div>
-				<div class="trziste-stat-sep"></div>
-				<div class="trziste-stat-item">
-					<span class="trziste-stat-label">Top rast 24h</span>
-					<span class="trziste-stat-val" id="g-top-gainer">—</span>
-				</div>
-				<div class="trziste-stat-sep"></div>
-				<div class="trziste-stat-item">
-					<span class="trziste-stat-label">Top pad 24h</span>
-					<span class="trziste-stat-val" id="g-top-loser">—</span>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!-- Main Section -->
 	<section class="trziste-main">
@@ -882,11 +847,6 @@
 					<div class="trziste-search-wrap">
 						<svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
 						<input type="search" id="trziste-search" placeholder="Pretraži kriptovalutu..." autocomplete="off" spellcheck="false" aria-label="Pretraži kriptovalutu">
-					</div>
-
-					<div class="trziste-cur-group" role="group" aria-label="Valuta">
-						<button class="trziste-cur-btn" id="cur-usd" onclick="trziste.setCurrency('usd')" aria-pressed="true">USD $</button>
-						<button class="trziste-cur-btn" id="cur-eur" onclick="trziste.setCurrency('eur')" aria-pressed="false">EUR €</button>
 					</div>
 
 					<div class="trziste-update-info">
@@ -937,6 +897,9 @@
 						<button onclick="trziste.manualRefresh()" class="btn_one">Pokušaj ponovo</button>
 					</div>
 				</div>
+
+				<!-- Pagination -->
+				<div id="trziste-pagination" style="display:none;justify-content:center;align-items:center;gap:8px;padding:18px 0 4px;flex-wrap:wrap;"></div>
 
 				<!-- No search results -->
 				<div id="trziste-no-results" class="trziste-state-msg" style="display:none;">
@@ -993,8 +956,10 @@
 						<div class="form-text">Ostavite prazno ako još ne znate količinu.</div>
 					</div>
 					<div class="mb-2">
-						<label class="form-label" for="modal-buy-price">Prosječna cijena kupnje <span style="color:#4a5568;">(opcjonalno)</span></label>
-						<input type="number" class="form-control" id="modal-buy-price" placeholder="npr. 45000" min="0" step="any">
+						<label class="form-label" for="modal-buy-price">Prosječna cijena kupnje (USD) <span style="color:#4a5568;">(opcjonalno)</span></label>
+						<div style="display:flex;gap:6px;align-items:center;">
+							<input type="number" class="form-control" id="modal-buy-price" placeholder="npr. 45000 $" min="0" step="any">
+						</div>
 						<div class="form-text">Ostavite prazno ako ne pratite dobit/gubitak.</div>
 					</div>
 					<div class="modal-live-val" id="modal-live-val">
@@ -1155,7 +1120,7 @@
 		var S = {
 			coins:       [],
 			globalData:  null,
-			currency:    localStorage.getItem('trziste_currency') || 'usd',
+			currency:    'usd',
 			eurRate:     0.93,
 			sortKey:     'market_cap',
 			sortDir:     'desc',
@@ -1170,13 +1135,160 @@
 			activeTab:   'market',
 			modalCoinId: null,
 			modalCoin:   null,
-			modalEditIdx: -1
+			modalEditIdx: -1,
+			page: 1,
+			pageSize: 100
 		};
 
 		var CIRC = 2 * Math.PI * 8; /* stroke-dasharray for r=8 ring */
 		var BINANCE_API = 'https://api.binance.com/api/v3/ticker/24hr';
 		var CG_API = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&sparkline=false&page=';
 		var CUR  = { usd: '$', eur: '€' };
+
+			var STATIC_IMAGES = {
+				'0G':'https://coin-images.coingecko.com/coins/images/69096/small/0G_1024x1024_Circular_Outlined.png','1000SATS':'https://www.cryptocompare.com/media/44154304/1000sats.png','1INCH':'https://coin-images.coingecko.com/coins/images/13469/small/1inch-logo.jpeg','1INCHDOWN':'https://coin-images.coingecko.com/coins/images/13469/small/1inch-logo.jpeg','1INCHUP':'https://coin-images.coingecko.com/coins/images/13469/small/1inch-logo.jpeg',
+				'2Z':'https://coin-images.coingecko.com/coins/images/68339/small/Coingecko_-_PFP.png','A':'https://coin-images.coingecko.com/coins/images/55616/small/Vaulta_CEX_Icon_Circle_-_cmc.png','A2Z':'https://coin-images.coingecko.com/coins/images/67345/small/logo_transparent_200x200.png','AAVE':'https://coin-images.coingecko.com/coins/images/12645/small/aave-token-round.png','AAVEDOWN':'https://coin-images.coingecko.com/coins/images/12645/small/aave-token-round.png',
+				'AAVEUP':'https://coin-images.coingecko.com/coins/images/12645/small/aave-token-round.png','ACA':'https://www.cryptocompare.com/media/39500944/aca.png','ACE':'https://www.cryptocompare.com/media/44213531/ace.png','ACH':'https://www.cryptocompare.com/media/43717530/ach.png','ACM':'https://www.cryptocompare.com/media/37746336/acm.png',
+				'ACT':'https://www.cryptocompare.com/media/45735064/act.png','ACX':'https://www.cryptocompare.com/media/43977237/acx.png','ADA':'https://coin-images.coingecko.com/coins/images/975/small/cardano.png','ADADOWN':'https://coin-images.coingecko.com/coins/images/975/small/cardano.png','ADAUP':'https://coin-images.coingecko.com/coins/images/975/small/cardano.png',
+				'ADX':'https://www.cryptocompare.com/media/40420669/adx.png','AE':'https://www.cryptocompare.com/media/37747087/ae.png','AERGO':'https://www.cryptocompare.com/media/44051328/aergo.png','AEUR':'https://www.cryptocompare.com/media/44213555/aeur.png','AEVO':'https://www.cryptocompare.com/media/44223534/aevo.png',
+				'AGI':'https://www.cryptocompare.com/media/44154274/agi.png','AGIX':'https://www.cryptocompare.com/media/37747000/agi.png','AGLD':'https://www.cryptocompare.com/media/38553417/agld.png','AI':'https://www.cryptocompare.com/media/44221380/ai.png','AION':'https://www.cryptocompare.com/media/37746924/aion.png',
+				'AIXBT':'https://www.cryptocompare.com/media/45735063/aixbt.png','AKRO':'https://www.cryptocompare.com/media/37747022/akro.png','ALCX':'https://www.cryptocompare.com/media/37746375/alcx.png','ALGO':'https://coin-images.coingecko.com/coins/images/4380/small/download.png','ALICE':'https://www.cryptocompare.com/media/37746591/alice.png',
+				'ALLO':'https://www.cryptocompare.com/media/46040222/allo.png','ALPACA':'https://www.cryptocompare.com/media/37746474/alpaca.png','ALPHA':'https://www.cryptocompare.com/media/37747634/alpha.png','ALPINE':'https://www.cryptocompare.com/media/39838206/alpine.png','ALT':'https://www.cryptocompare.com/media/44221839/alt.png',
+				'AMB':'https://www.cryptocompare.com/media/44051301/amb.png','AMP':'https://coin-images.coingecko.com/coins/images/12409/small/amp-200x200.png','ANC':'https://www.cryptocompare.com/media/39500880/anc.png','ANIME':'https://www.cryptocompare.com/media/45893547/anime.png','ANKR':'https://coin-images.coingecko.com/coins/images/4324/small/Ankr_Blue_Symbol.png',
+				'ANT':'https://www.cryptocompare.com/media/37746969/ant.png','ANY':'https://coin-images.coingecko.com/coins/images/70109/small/anyspend_200x200.png','APE':'https://coin-images.coingecko.com/coins/images/24383/small/APECOIN.png','API3':'https://www.cryptocompare.com/media/37746935/api3.png','APPC':'https://www.cryptocompare.com/media/37747084/appc.png',
+				'APT':'https://coin-images.coingecko.com/coins/images/26455/small/Aptos-Network-Symbol-Black-RGB-1x.png','AR':'https://coin-images.coingecko.com/coins/images/4343/small/oRt6SiEN_400x400.jpg','ARB':'https://coin-images.coingecko.com/coins/images/16547/small/arb.jpg','ARDR':'https://coin-images.coingecko.com/coins/images/525/small/Ardor_Vertical_1.png','ARK':'https://www.cryptocompare.com/media/37746978/ark.png',
+				'ARKM':'https://coin-images.coingecko.com/coins/images/30929/small/Arkham_Logo_CG.png','ARPA':'https://www.cryptocompare.com/media/38553312/arpa.png','ASR':'https://www.cryptocompare.com/media/37747213/asr.png','AST':'https://coin-images.coingecko.com/coins/images/1019/small/Airswap.png','ASTER':'https://coin-images.coingecko.com/coins/images/69040/small/_ASTER.png',
+				'ASTR':'https://coin-images.coingecko.com/coins/images/22617/small/astr.png','AT':'https://www.cryptocompare.com/media/46040195/at.png','ATA':'https://www.cryptocompare.com/media/37747739/ata.png','ATM':'https://coin-images.coingecko.com/coins/images/66968/small/project_20250628_1936277-01.png','ATOM':'https://coin-images.coingecko.com/coins/images/1481/small/cosmos_hub.png',
+				'AUCTION':'https://www.cryptocompare.com/media/39198131/auction-grande.png','AUDIO':'https://www.cryptocompare.com/media/37747027/audio.png','AUTO':'https://www.cryptocompare.com/media/37746888/auto.png','AVA':'https://coin-images.coingecko.com/coins/images/51935/small/7VZQ0qhB_400x400_%282%29.jpg','AVAX':'https://coin-images.coingecko.com/coins/images/12559/small/Avalanche_Circle_RedWhite_Trans.png',
+				'AVNT':'https://coin-images.coingecko.com/coins/images/68972/small/avnt-token.png','AWE':'https://coin-images.coingecko.com/coins/images/8713/small/awe-network.jpg','AXL':'https://coin-images.coingecko.com/coins/images/27277/small/V-65_xQ1_400x400.jpeg','AXS':'https://coin-images.coingecko.com/coins/images/13029/small/axie_infinity_logo.png','BABY':'https://coin-images.coingecko.com/coins/images/55092/small/Baby-Symbol-Mint_%281%29.png',
+				'BADGER':'https://coin-images.coingecko.com/coins/images/13287/small/badger_dao_logo.jpg','BAKE':'https://www.cryptocompare.com/media/37746920/bake.png','BAL':'https://www.cryptocompare.com/media/43607734/bal.png','BANANA':'https://www.cryptocompare.com/media/44221367/banana.png','BANANAS31':'https://coin-images.coingecko.com/coins/images/52230/small/Banana_token_image.png',
+				'BAND':'https://www.cryptocompare.com/media/43687809/band.png','BANK':'https://www.cryptocompare.com/media/46040412/bank.png','BAR':'https://www.cryptocompare.com/media/37747373/bar.png','BARD':'https://coin-images.coingecko.com/coins/images/68404/small/bard.png','BAT':'https://coin-images.coingecko.com/coins/images/677/small/basic-attention-token.png',
+				'BB':'https://coin-images.coingecko.com/coins/images/52618/small/lOviRzPu_400x400.png','BCD':'https://www.cryptocompare.com/media/37746158/bcd.png','BCH':'https://coin-images.coingecko.com/coins/images/780/small/bitcoin-cash-circle.png','BCHA':'https://www.cryptocompare.com/media/38553094/ecash.png','BCHDOWN':'https://coin-images.coingecko.com/coins/images/780/small/bitcoin-cash-circle.png',
+				'BCHUP':'https://coin-images.coingecko.com/coins/images/780/small/bitcoin-cash-circle.png','BCN':'https://coin-images.coingecko.com/coins/images/92/small/bytecoin-logo.png','BCPT':'https://www.cryptocompare.com/media/44081970/bcpt.png','BEAM':'https://coin-images.coingecko.com/coins/images/32417/small/cgicon.png','BEAR':'https://coin-images.coingecko.com/coins/images/54155/small/QmckXBopdPwEt9poD74jw1CAa24fj8ePmn89Pd9f2Vfftq.png',
+				'BEL':'https://coin-images.coingecko.com/coins/images/12478/small/Bella.png','BERA':'https://coin-images.coingecko.com/coins/images/25235/small/BERA.png','BETA':'https://www.cryptocompare.com/media/38553635/beta1.png','BETH':'https://www.cryptocompare.com/media/43881490/beth.png','BFUSD':'https://coin-images.coingecko.com/coins/images/68227/small/bfusd.png',
+				'BGBP':'https://www.cryptocompare.com/media/35651413/bgbp.png','BICO':'https://www.cryptocompare.com/media/39198135/bico.png','BIFI':'https://www.cryptocompare.com/media/37746640/bifi.png','BIGTIME':'https://www.cryptocompare.com/media/44154165/bigtime.png','BIO':'https://www.cryptocompare.com/media/45735434/bio.png',
+				'BKRW':'https://www.cryptocompare.com/media/9350818/binance.png','BLUR':'https://coin-images.coingecko.com/coins/images/28453/small/blur.png','BLZ':'https://www.cryptocompare.com/media/39501055/blz.png','BMT':'https://www.cryptocompare.com/media/45958328/bmt.png','BN':'https://www.cryptocompare.com/media/46039228/bn.png',
+				'BNB':'https://coin-images.coingecko.com/coins/images/825/small/bnb-icon2_2x.png','BNBBEAR':'https://coin-images.coingecko.com/coins/images/825/small/bnb-icon2_2x.png','BNBBULL':'https://coin-images.coingecko.com/coins/images/825/small/bnb-icon2_2x.png','BNBDOWN':'https://coin-images.coingecko.com/coins/images/825/small/bnb-icon2_2x.png','BNBUP':'https://coin-images.coingecko.com/coins/images/825/small/bnb-icon2_2x.png',
+				'BNSOL':'https://www.cryptocompare.com/media/45673821/bnsol.png','BNT':'https://www.cryptocompare.com/media/37747631/bnt.png','BNX':'https://coin-images.coingecko.com/coins/images/18095/small/BinaryX-RGB-01_%282%29.png','BOME':'https://www.cryptocompare.com/media/44224537/bome.png','BOND':'https://www.cryptocompare.com/media/38553711/bond.png',
+				'BONK':'https://coin-images.coingecko.com/coins/images/28600/small/bonk.jpg','BOT':'https://coin-images.coingecko.com/coins/images/71506/small/ehjk2027m2rlrr2pjq6yfwnmhp5e.','BRD':'https://www.cryptocompare.com/media/20780589/brd.png','BREV':'https://www.cryptocompare.com/media/46040523/brev.png','BSW':'https://www.cryptocompare.com/media/39838210/bsw.png',
+				'BTC':'https://coin-images.coingecko.com/coins/images/1/small/bitcoin.png','BTCA':'https://www.cryptocompare.com/media/43936153/btca.png','BTCB':'https://coin-images.coingecko.com/coins/images/38868/small/BTCB_Official_Logo_July_2024.png','BTCDOWN':'https://coin-images.coingecko.com/coins/images/1/small/bitcoin.png','BTCST':'https://www.cryptocompare.com/media/43717512/btcst.png',
+				'BTCUP':'https://coin-images.coingecko.com/coins/images/1/small/bitcoin.png','BTG':'https://www.cryptocompare.com/media/37747569/btg.png','BTS':'https://www.cryptocompare.com/media/37746917/bts.png','BTT':'https://coin-images.coingecko.com/coins/images/22457/small/btt_logo.png','BULL':'https://coin-images.coingecko.com/coins/images/39893/small/Tron_Bull.png',
+				'BURGER':'https://www.cryptocompare.com/media/37747667/burger.png','BUSD':'https://www.cryptocompare.com/media/37746248/busd.png','BZRX':'https://www.cryptocompare.com/media/40485103/bzrx.png','C':'https://www.cryptocompare.com/media/46039540/c.png','C98':'https://www.cryptocompare.com/media/37748313/c98.png',
+				'CAKE':'https://coin-images.coingecko.com/coins/images/12632/small/pancakeswap-cake-logo_%281%29.png','CATI':'https://www.cryptocompare.com/media/45734220/cati.png','CDT':'https://coin-images.coingecko.com/coins/images/102172468/small/IMG_20260313_012736_460.jpg','CELO':'https://coin-images.coingecko.com/coins/images/11090/small/InjXBNx9_400x400.jpg','CELR':'https://www.cryptocompare.com/media/43717514/celr.png',
+				'CETUS':'https://www.cryptocompare.com/media/44221342/cetus.png','CFG':'https://coin-images.coingecko.com/coins/images/55913/small/centrifuge.jpg','CFX':'https://coin-images.coingecko.com/coins/images/13079/small/3vuYMbjN.png','CGPT':'https://www.cryptocompare.com/media/44082134/cgpt.png','CHAT':'https://coin-images.coingecko.com/coins/images/35197/small/CHAT1.png',
+				'CHESS':'https://www.cryptocompare.com/media/38554148/chess.png','CHR':'https://www.cryptocompare.com/media/37746691/chr.png','CHZ':'https://coin-images.coingecko.com/coins/images/8834/small/CHZ_Token_updated.png','CITY':'https://coin-images.coingecko.com/coins/images/15799/small/CITY.png','CKB':'https://coin-images.coingecko.com/coins/images/9566/small/Nervos_White.png',
+				'CLOAK':'https://www.cryptocompare.com/media/39501086/cloak.png','CLV':'https://www.cryptocompare.com/media/37748267/clv1.png','CMT':'https://www.cryptocompare.com/media/39501149/cmt.png','CND':'https://www.cryptocompare.com/media/37747797/cnd.png','COMBO':'https://www.cryptocompare.com/media/44145693/combo.png',
+				'COMP':'https://coin-images.coingecko.com/coins/images/10775/small/COMP.png','COOKIE':'https://www.cryptocompare.com/media/45576245/cookie.png','COS':'https://coin-images.coingecko.com/coins/images/8379/small/4036.png','COTI':'https://www.cryptocompare.com/media/37746149/coti.png','COVER':'https://www.cryptocompare.com/media/37747337/cover.png',
+				'COW':'https://coin-images.coingecko.com/coins/images/24384/small/CoW-token_logo.png','CREAM':'https://www.cryptocompare.com/media/39501143/cream.png','CRV':'https://coin-images.coingecko.com/coins/images/12124/small/Curve.png','CTK':'https://www.cryptocompare.com/media/40484985/ctk.png','CTSI':'https://www.cryptocompare.com/media/36935008/ctsi.png',
+				'CTXC':'https://www.cryptocompare.com/media/30002149/ctxc.png','CVC':'https://www.cryptocompare.com/media/40484984/cvc.png','CVP':'https://www.cryptocompare.com/media/43717664/cvp.png','CVX':'https://coin-images.coingecko.com/coins/images/15585/small/convex.png','CYBER':'https://www.cryptocompare.com/media/44154121/cyber.png',
+				'D':'https://www.cryptocompare.com/media/45958311/d.png','DAI':'https://coin-images.coingecko.com/coins/images/9956/small/Badge_Dai.png','DAR':'https://www.cryptocompare.com/media/43717521/dar.png','DASH':'https://coin-images.coingecko.com/coins/images/19/small/dash-logo.png','DATA':'https://coin-images.coingecko.com/coins/images/17869/small/DATA_new_symbol_3x.png',
+				'DCR':'https://coin-images.coingecko.com/coins/images/329/small/dcr.png','DEGO':'https://www.cryptocompare.com/media/37746279/dego.png','DENT':'https://www.cryptocompare.com/media/37746692/dent.png','DEXE':'https://coin-images.coingecko.com/coins/images/12713/small/DEXE_token_logo.png','DF':'https://www.cryptocompare.com/media/37747100/df.png',
+				'DGB':'https://coin-images.coingecko.com/coins/images/63/small/digibyte.png','DGD':'https://www.cryptocompare.com/media/37305723/dgd.png','DIA':'https://www.cryptocompare.com/media/46039964/dia.png','DLT':'https://www.cryptocompare.com/media/39500856/dlt.png','DNT':'https://www.cryptocompare.com/media/37746973/dnt.png',
+				'DOCK':'https://www.cryptocompare.com/media/37747037/dock.png','DODO':'https://www.cryptocompare.com/media/37747680/dodo.png','DOGE':'https://coin-images.coingecko.com/coins/images/5/small/dogecoin.png','DOGS':'https://www.cryptocompare.com/media/45673751/dogs.png','DOLO':'https://www.cryptocompare.com/media/45958480/dolo.png',
+				'DOT':'https://coin-images.coingecko.com/coins/images/12171/small/polkadot.jpg','DOTDOWN':'https://coin-images.coingecko.com/coins/images/12171/small/polkadot.jpg','DOTUP':'https://coin-images.coingecko.com/coins/images/12171/small/polkadot.jpg','DREP':'https://www.cryptocompare.com/media/35650539/drep.png','DUSK':'https://coin-images.coingecko.com/coins/images/5217/small/image_widget_biddfvxd454b1.png',
+				'DYDX':'https://coin-images.coingecko.com/coins/images/32594/small/dydx.png','DYM':'https://coin-images.coingecko.com/coins/images/34182/small/dym.png','EASY':'https://www.cryptocompare.com/media/38553204/ez.png','EDEN':'https://www.cryptocompare.com/media/46039999/eden.png','EDU':'https://www.cryptocompare.com/media/44154092/edu.png',
+				'EGLD':'https://coin-images.coingecko.com/coins/images/12335/small/egld-token-logo.png','EIGEN':'https://coin-images.coingecko.com/coins/images/37441/small/eigencloud.jpg','ELF':'https://coin-images.coingecko.com/coins/images/1371/small/aelf-logo.png','ENA':'https://coin-images.coingecko.com/coins/images/36530/small/ethena.png','ENG':'https://coin-images.coingecko.com/coins/images/68134/small/Eggle_Logo_200x200.png',
+				'ENJ':'https://coin-images.coingecko.com/coins/images/1102/small/Symbol_Only_-_Purple.png','ENS':'https://coin-images.coingecko.com/coins/images/19785/small/ENS.jpg','ENSO':'https://www.cryptocompare.com/media/46040020/enso.png','EOS':'https://www.cryptocompare.com/media/45735374/eos.png','EOSBEAR':'https://www.cryptocompare.com/media/45735374/eos.png',
+				'EOSBULL':'https://www.cryptocompare.com/media/45735374/eos.png','EOSDOWN':'https://www.cryptocompare.com/media/45735374/eos.png','EOSUP':'https://www.cryptocompare.com/media/45735374/eos.png','EPIC':'https://coin-images.coingecko.com/coins/images/54734/small/PFP.png','EPS':'https://www.cryptocompare.com/media/38553315/eps.png',
+				'EPX':'https://www.cryptocompare.com/media/38553315/eps.png','ERA':'https://www.cryptocompare.com/media/46039470/era.png','ERD':'https://www.cryptocompare.com/media/35651026/erd.png','ERN':'https://coin-images.coingecko.com/coins/images/14238/small/logo_black.png','ESP':'https://www.cryptocompare.com/media/46293201/esp.png',
+				'ETC':'https://coin-images.coingecko.com/coins/images/453/small/ethereum-classic-logo.png','ETH':'https://coin-images.coingecko.com/coins/images/279/small/ethereum.png','ETHA':'https://www.cryptocompare.com/media/37747073/etha.png','ETHBEAR':'https://coin-images.coingecko.com/coins/images/279/small/ethereum.png','ETHBULL':'https://coin-images.coingecko.com/coins/images/279/small/ethereum.png',
+				'ETHDOWN':'https://coin-images.coingecko.com/coins/images/279/small/ethereum.png','ETHFI':'https://coin-images.coingecko.com/coins/images/35958/small/etherfi.jpeg','ETHUP':'https://coin-images.coingecko.com/coins/images/279/small/ethereum.png','EUL':'https://www.cryptocompare.com/media/40484581/eul.png','EURA':'https://www.cryptocompare.com/media/39109044/ageur.png',
+				'EURI':'https://coin-images.coingecko.com/coins/images/39952/small/EURI.jpg','EVX':'https://www.cryptocompare.com/media/37746997/evx.png','EZ':'https://www.cryptocompare.com/media/38553204/ez.png','F':'https://www.cryptocompare.com/media/45735287/f.png','FARM':'https://coin-images.coingecko.com/coins/images/12304/small/FARM_200x200.png',
+				'FDUSD':'https://coin-images.coingecko.com/coins/images/31079/small/FDUSD_icon_black.png','FET':'https://coin-images.coingecko.com/coins/images/5681/small/ASI.png','FF':'https://coin-images.coingecko.com/coins/images/69121/small/ff.png','FIDA':'https://www.cryptocompare.com/media/45734210/fida.png','FIL':'https://coin-images.coingecko.com/coins/images/12817/small/filecoin.png',
+				'FILDOWN':'https://coin-images.coingecko.com/coins/images/12817/small/filecoin.png','FILUP':'https://coin-images.coingecko.com/coins/images/12817/small/filecoin.png','FIO':'https://www.cryptocompare.com/media/37747725/fio.png','FIRO':'https://www.cryptocompare.com/media/37747103/firo.png','FIS':'https://www.cryptocompare.com/media/37747783/fis.png',
+				'FLM':'https://www.cryptocompare.com/media/38553100/flm.png','FLOKI':'https://coin-images.coingecko.com/coins/images/16746/small/PNG_image.png','FLOW':'https://coin-images.coingecko.com/coins/images/13446/small/5f6294c0c7a8cda55cb1c936_Flow_Wordmark.png','FLUX':'https://www.cryptocompare.com/media/37747474/flux.png','FOGO':'https://coin-images.coingecko.com/coins/images/68100/small/fogo_AppIcon.png',
+				'FOR':'https://www.cryptocompare.com/media/38553310/for.png','FORM':'https://coin-images.coingecko.com/coins/images/54912/small/four.jpg','FORTH':'https://www.cryptocompare.com/media/43607644/forth.png','FRAX':'https://coin-images.coingecko.com/coins/images/13422/small/LFRAX.png','FRONT':'https://coin-images.coingecko.com/coins/images/12479/small/frontier_logo.png',
+				'FTM':'https://www.cryptocompare.com/media/38553128/ftm.png','FTT':'https://www.cryptocompare.com/media/35651305/ftxt.png','FUEL':'https://coin-images.coingecko.com/coins/images/29577/small/fuel.png','FUN':'https://coin-images.coingecko.com/coins/images/761/small/FUN.png','G':'https://www.cryptocompare.com/media/45576572/g.png',
+				'GAL':'https://www.cryptocompare.com/media/43717791/gal.png','GALA':'https://coin-images.coingecko.com/coins/images/12493/small/GALA_token_image_-_200PNG.png','GAS':'https://coin-images.coingecko.com/coins/images/858/small/GAS_512_512.png','GFT':'https://www.cryptocompare.com/media/44051221/gft.png','GHST':'https://www.cryptocompare.com/media/38553406/ghst.png',
+				'GIGGLE':'https://www.cryptocompare.com/media/46040091/giggle.png','GLM':'https://coin-images.coingecko.com/coins/images/542/small/Golem_Submark_Positive_RGB.png','GLMR':'https://www.cryptocompare.com/media/39500747/glmr.png','GMT':'https://www.cryptocompare.com/media/39838490/gmt.png','GMX':'https://coin-images.coingecko.com/coins/images/18323/small/arbit.png',
+				'GNO':'https://coin-images.coingecko.com/coins/images/662/small/logo_square_simple_300px.png','GNS':'https://www.cryptocompare.com/media/40219374/gns.png','GNT':'https://www.cryptocompare.com/media/39109118/gnt.png','GO':'https://coin-images.coingecko.com/coins/images/3286/small/GoChain.png','GPS':'https://www.cryptocompare.com/media/45893860/gps.png',
+				'GRS':'https://www.cryptocompare.com/media/37746990/grs.png','GRT':'https://coin-images.coingecko.com/coins/images/13397/small/Graph_Token.png','GTC':'https://coin-images.coingecko.com/coins/images/15810/small/gitcoin.png','GTO':'https://www.cryptocompare.com/media/46039382/gto.png','GUN':'https://www.cryptocompare.com/media/45958345/gun.png',
+				'GVT':'https://www.cryptocompare.com/media/37747774/gvt.png','HAEDAL':'https://www.cryptocompare.com/media/45958476/haedal.png','HARD':'https://www.cryptocompare.com/media/37746905/hard.png','HBAR':'https://coin-images.coingecko.com/coins/images/3688/small/hbar.png','HC':'https://www.cryptocompare.com/media/39500905/hc.png',
+				'HEGIC':'https://www.cryptocompare.com/media/37459305/hegic.png','HEI':'https://coin-images.coingecko.com/coins/images/54379/small/heima.png','HEMI':'https://coin-images.coingecko.com/coins/images/68469/small/hemi.png','HFT':'https://www.cryptocompare.com/media/43881416/hft.png','HIFI':'https://www.cryptocompare.com/media/44051252/hifi.png',
+				'HIGH':'https://www.cryptocompare.com/media/39383057/high.png','HIVE':'https://www.cryptocompare.com/media/37746903/hive.png','HMSTR':'https://www.cryptocompare.com/media/45734261/hmstr.png','HNT':'https://coin-images.coingecko.com/coins/images/4284/small/helium_logo_use.png','HOLO':'https://www.cryptocompare.com/media/46039888/holo.png',
+				'HOME':'https://coin-images.coingecko.com/coins/images/54873/small/defi-app.png','HOOK':'https://www.cryptocompare.com/media/44150375/hook.png','HOT':'https://coin-images.coingecko.com/coins/images/3348/small/hot-mark-med.png','HSR':'https://www.cryptocompare.com/media/12318137/hsr.png','HUMA':'https://www.cryptocompare.com/media/46039009/huma.png',
+				'HYPER':'https://www.cryptocompare.com/media/46033594/hyper.png','ICN':'https://www.cryptocompare.com/media/351400/icn.png','ICP':'https://coin-images.coingecko.com/coins/images/14495/small/Internet_Computer_logo.png','ICX':'https://www.cryptocompare.com/media/37747580/icx.png','ID':'https://www.cryptocompare.com/media/44082112/id.png',
+				'IDEX':'https://www.cryptocompare.com/media/40484970/idex.png','ILV':'https://www.cryptocompare.com/media/37746810/ilv.png','IMX':'https://coin-images.coingecko.com/coins/images/17233/small/immutableX-symbol-BLK-RGB.png','INIT':'https://www.cryptocompare.com/media/45958473/init.png','INJ':'https://coin-images.coingecko.com/coins/images/12882/small/Other_200x200.png',
+				'INS':'https://www.cryptocompare.com/media/36798760/ins.png','IO':'https://www.cryptocompare.com/media/44614319/io.png','IOST':'https://www.cryptocompare.com/media/38553159/iost.png','IOTA':'https://coin-images.coingecko.com/coins/images/692/small/IOTA_Thumbnail_%281%29.png','IOTX':'https://coin-images.coingecko.com/coins/images/3334/small/20250731-171811.png',
+				'IQ':'https://www.cryptocompare.com/media/43957862/iq.png','IRIS':'https://coin-images.coingecko.com/coins/images/5135/small/IRIS.png','JASMY':'https://coin-images.coingecko.com/coins/images/13876/small/JASMY200x200.jpg','JOE':'https://www.cryptocompare.com/media/46039130/joe.png','JST':'https://coin-images.coingecko.com/coins/images/11095/small/JUST.jpg',
+				'JTO':'https://coin-images.coingecko.com/coins/images/33228/small/jto.png','JUP':'https://coin-images.coingecko.com/coins/images/34188/small/jup.png','JUV':'https://coin-images.coingecko.com/coins/images/10060/small/JUV.png','KAIA':'https://coin-images.coingecko.com/coins/images/39901/small/KAIA.png','KAITO':'https://coin-images.coingecko.com/coins/images/54411/small/Qm4DW488_400x400.jpg',
+				'KAT':'https://www.cryptocompare.com/media/46039656/katananet.png','KAVA':'https://coin-images.coingecko.com/coins/images/9761/small/kava.png','KDA':'https://www.cryptocompare.com/media/37747959/kda.png','KEEP':'https://www.cryptocompare.com/media/37072191/keep.png','KERNEL':'https://www.cryptocompare.com/media/45958376/kernel.png',
+				'KEY':'https://www.cryptocompare.com/media/37747020/key.png','KGST':'https://coin-images.coingecko.com/coins/images/71268/small/kgst.png','KITE':'https://coin-images.coingecko.com/coins/images/70426/small/KITE-ICON.png','KMD':'https://www.cryptocompare.com/media/37746989/kmd.png','KMNO':'https://coin-images.coingecko.com/coins/images/35801/small/Kamino_200x200.png',
+				'KNC':'https://www.cryptocompare.com/media/40219091/knc.png','KP3R':'https://www.cryptocompare.com/media/37746886/kp3r.png','KSM':'https://coin-images.coingecko.com/coins/images/9568/small/m4zRhP5e_400x400.jpg','LA':'https://www.cryptocompare.com/media/46039263/la.png','LAYER':'https://www.cryptocompare.com/media/45893697/layer.png',
+				'LAZIO':'https://www.cryptocompare.com/media/38553965/lazio.png','LDO':'https://coin-images.coingecko.com/coins/images/13573/small/Lido_DAO.png','LEND':'https://www.cryptocompare.com/media/37071994/aave.png','LEVER':'https://www.cryptocompare.com/media/40484769/lever.png','LINA':'https://www.cryptocompare.com/media/43961484/lina.png',
+				'LINEA':'https://coin-images.coingecko.com/coins/images/68507/small/linea-logo.jpeg','LINK':'https://coin-images.coingecko.com/coins/images/877/small/Chainlink_Logo_500.png','LINKDOWN':'https://coin-images.coingecko.com/coins/images/877/small/Chainlink_Logo_500.png','LINKUP':'https://coin-images.coingecko.com/coins/images/877/small/Chainlink_Logo_500.png','LISTA':'https://www.cryptocompare.com/media/44614497/lista.png',
+				'LIT':'https://coin-images.coingecko.com/coins/images/71121/small/lighter.png','LOKA':'https://www.cryptocompare.com/media/39500866/loka.png','LOOM':'https://www.cryptocompare.com/media/37747021/loom.png','LPT':'https://coin-images.coingecko.com/coins/images/7137/small/badge-logo-circuit-green.png','LQTY':'https://www.cryptocompare.com/media/37746907/lqty.png',
+				'LRC':'https://www.cryptocompare.com/media/36798698/lrc-logo.png','LSK':'https://www.cryptocompare.com/media/37747050/lsk.png','LTC':'https://coin-images.coingecko.com/coins/images/2/small/litecoin.png','LTCDOWN':'https://coin-images.coingecko.com/coins/images/2/small/litecoin.png','LTCUP':'https://coin-images.coingecko.com/coins/images/2/small/litecoin.png',
+				'LTO':'https://www.cryptocompare.com/media/37746972/lto.png','LUMIA':'https://www.cryptocompare.com/media/45734890/lumia.png','LUN':'https://www.cryptocompare.com/media/1383112/lunyr-logo.png','LUNA':'https://www.cryptocompare.com/media/40219253/luna.png','LUNC':'https://coin-images.coingecko.com/coins/images/8284/small/01_LunaClassic_color.png',
+				'MAGIC':'https://www.cryptocompare.com/media/43881453/magic.png','MANA':'https://coin-images.coingecko.com/coins/images/878/small/decentraland-mana.png','MANTA':'https://www.cryptocompare.com/media/44213520/manta.png','MANTRA':'https://coin-images.coingecko.com/coins/images/102172151/small/OM_Token_Primary-1K.png','MASK':'https://coin-images.coingecko.com/coins/images/14051/small/Mask_Network.jpg',
+				'MATIC':'https://www.cryptocompare.com/media/37746047/matic.png','MAV':'https://www.cryptocompare.com/media/44131956/mav.png','MBL':'https://www.cryptocompare.com/media/35650914/mbl.png','MBOX':'https://coin-images.coingecko.com/coins/images/14751/small/mobox.PNG','MC':'https://www.cryptocompare.com/media/38554152/mc.png',
+				'MCO':'https://www.cryptocompare.com/media/34478435/mco.png','MDA':'https://www.cryptocompare.com/media/39500935/mda.png','MDT':'https://www.cryptocompare.com/media/43717665/mdt.png','MDX':'https://www.cryptocompare.com/media/38553412/mdx.png','ME':'https://coin-images.coingecko.com/coins/images/39850/small/_ME_Profile_Dark_2x.png',
+				'MEME':'https://www.cryptocompare.com/media/44154224/meme.png','MET':'https://coin-images.coingecko.com/coins/images/69110/small/meteora.png','METIS':'https://www.cryptocompare.com/media/38553936/metis.png','MFT':'https://www.cryptocompare.com/media/37747033/mft.png','MINA':'https://coin-images.coingecko.com/coins/images/15628/small/JM4_vQ34_400x400.png',
+				'MIR':'https://www.cryptocompare.com/media/37747354/mir.png','MIRA':'https://www.cryptocompare.com/media/46039914/mira.png','MITH':'https://www.cryptocompare.com/media/37746860/mith.png','MITO':'https://www.cryptocompare.com/media/46039823/mito.png','MKR':'https://www.cryptocompare.com/media/45673726/mkr.png',
+				'MLN':'https://www.cryptocompare.com/media/39500853/mln.png','MMT':'https://www.cryptocompare.com/media/46040202/mmt.png','MOB':'https://www.cryptocompare.com/media/37747067/mob.png','MOD':'https://www.cryptocompare.com/media/37746159/mod.png','MORPHO':'https://coin-images.coingecko.com/coins/images/29837/small/Morpho-token-icon.png',
+				'MOVE':'https://coin-images.coingecko.com/coins/images/39345/small/movement-testnet-token.png','MOVR':'https://www.cryptocompare.com/media/38553373/movr.png','MTH':'https://www.cryptocompare.com/media/43977109/mth.png','MTL':'https://www.cryptocompare.com/media/37746820/mtl.png','MUBARAK':'https://www.cryptocompare.com/media/45958105/mubarak.png',
+				'MULTI':'https://www.cryptocompare.com/media/39838579/multi.png','NANO':'https://www.cryptocompare.com/media/39109064/nano.png','NAS':'https://www.cryptocompare.com/media/39500947/nas.png','NAV':'https://www.cryptocompare.com/media/39500945/nav.png','NBS':'https://www.cryptocompare.com/media/37305605/nbs.png',
+				'NBT':'https://coin-images.coingecko.com/coins/images/23698/small/WpcmdLW.png','NCASH':'https://www.cryptocompare.com/media/39500981/ncash.png','NEAR':'https://coin-images.coingecko.com/coins/images/10365/small/near.jpg','NEBL':'https://www.cryptocompare.com/media/43717523/nebl.png','NEIRO':'https://www.cryptocompare.com/media/45734241/neiro.png',
+				'NEO':'https://coin-images.coingecko.com/coins/images/480/small/NEO_512_512.png','NEWT':'https://www.cryptocompare.com/media/46039255/newt.png','NEXO':'https://coin-images.coingecko.com/coins/images/3695/small/CG-nexo-token-200x200_2x.png','NFP':'https://coin-images.coingecko.com/coins/images/34041/small/nfp.jpeg','NIGHT':'https://coin-images.coingecko.com/coins/images/71015/small/midnight.png',
+				'NIL':'https://www.cryptocompare.com/media/45958180/nil.png','NKN':'https://coin-images.coingecko.com/coins/images/3375/small/nkn.png','NMR':'https://coin-images.coingecko.com/coins/images/752/small/numeraire.png','NOM':'https://www.cryptocompare.com/media/44224711/omninet.png','NOT':'https://www.cryptocompare.com/media/44613958/not.png',
+				'NPXS':'https://www.cryptocompare.com/media/27010505/pxs.png','NTRN':'https://www.cryptocompare.com/media/44154185/ntrn.png','NU':'https://www.cryptocompare.com/media/38553701/nu.png','NULS':'https://www.cryptocompare.com/media/37747025/nuls.png','NXPC':'https://coin-images.coingecko.com/coins/images/55703/small/wk63iOZz_400x400.png',
+				'NXS':'https://www.cryptocompare.com/media/38553695/nxs.png','OAX':'https://www.cryptocompare.com/media/37747746/oax.png','OCEAN':'https://www.cryptocompare.com/media/35650582/ocean.png','OG':'https://www.cryptocompare.com/media/37747210/og.png','OGN':'https://www.cryptocompare.com/media/37746928/ogn.png',
+				'OM':'https://coin-images.coingecko.com/coins/images/12151/small/OM_Token.png','OMG':'https://coin-images.coingecko.com/coins/images/776/small/OMG_Network.jpg','OMNI':'https://www.cryptocompare.com/media/44224711/omninet.png','ONDO':'https://coin-images.coingecko.com/coins/images/26580/small/ONDO.png','ONE':'https://www.cryptocompare.com/media/37746590/one.png',
+				'ONG':'https://coin-images.coingecko.com/coins/images/5716/small/ONG_logo.png','ONT':'https://coin-images.coingecko.com/coins/images/3447/small/ONT.png','OOKI':'https://www.cryptocompare.com/media/39413390/ooki.png','OP':'https://coin-images.coingecko.com/coins/images/25244/small/Token.png','OPEN':'https://www.cryptocompare.com/media/46039880/open.png',
+				'OPN':'https://www.cryptocompare.com/media/46293302/opn.png','ORCA':'https://coin-images.coingecko.com/coins/images/17547/small/Orca_Logo.png','ORDI':'https://coin-images.coingecko.com/coins/images/30162/small/ordi.png','ORN':'https://www.cryptocompare.com/media/43717532/orn.png','OSMO':'https://www.cryptocompare.com/media/39500918/osmo.png',
+				'OST':'https://www.cryptocompare.com/media/38553767/ost.png','OXT':'https://coin-images.coingecko.com/coins/images/3916/small/download_%285%29.png','PARTI':'https://www.cryptocompare.com/media/45958188/parti.png','PAXG':'https://coin-images.coingecko.com/coins/images/9519/small/paxgold.png','PDA':'https://www.cryptocompare.com/media/44612999/pda.png',
+				'PENDLE':'https://coin-images.coingecko.com/coins/images/15069/small/Pendle_Logo_Normal-03.png','PENGU':'https://coin-images.coingecko.com/coins/images/52622/small/PUDGY_PENGUINS_PENGU_PFP.png','PEOPLE':'https://www.cryptocompare.com/media/39198201/people.png','PEPE':'https://coin-images.coingecko.com/coins/images/29850/small/pepe-token.jpeg','PERL':'https://www.cryptocompare.com/media/40484701/perl.png',
+				'PERP':'https://www.cryptocompare.com/media/37747268/perp.png','PHA':'https://www.cryptocompare.com/media/37305519/pha.png','PHB':'https://coin-images.coingecko.com/coins/images/1074/small/phoenix-logo.png','PIVX':'https://www.cryptocompare.com/media/37459237/pivx.png','PIXEL':'https://www.cryptocompare.com/media/44222941/pixel.png',
+				'PLA':'https://www.cryptocompare.com/media/38553664/pla.png','PLUME':'https://coin-images.coingecko.com/coins/images/53623/small/plume-token.png','PNT':'https://www.cryptocompare.com/media/37746983/pnt.png','PNUT':'https://www.cryptocompare.com/media/45734769/pnut.png','POA':'https://www.cryptocompare.com/media/35280537/poa.png',
+				'POE':'https://www.cryptocompare.com/media/45673695/poe.png','POL':'https://coin-images.coingecko.com/coins/images/32440/small/pol.png','POLS':'https://www.cryptocompare.com/media/37747140/pols.png','POLY':'https://www.cryptocompare.com/media/43717495/poly.png','POLYX':'https://coin-images.coingecko.com/coins/images/23496/small/Polymesh-symbol.png',
+				'POND':'https://www.cryptocompare.com/media/38553407/pond.png','PORTAL':'https://coin-images.coingecko.com/coins/images/35436/small/portal.jpeg','PORTO':'https://www.cryptocompare.com/media/39109099/porto.png','POWR':'https://www.cryptocompare.com/media/37746985/powr.png','PPT':'https://coin-images.coingecko.com/coins/images/753/small/populous.png',
+				'PROM':'https://www.cryptocompare.com/media/39838445/prom.png','PROS':'https://coin-images.coingecko.com/coins/images/13668/small/PROS_OldToken.png','PROVE':'https://coin-images.coingecko.com/coins/images/67905/small/succinct-logo.png','PSG':'https://www.cryptocompare.com/media/38553331/psg.png','PUMP':'https://coin-images.coingecko.com/coins/images/67164/small/pump.jpg',
+				'PUNDIX':'https://www.cryptocompare.com/media/37746795/pundix.png','PYR':'https://www.cryptocompare.com/media/37747135/pyr.png','PYTH':'https://coin-images.coingecko.com/coins/images/31924/small/pyth.png','QI':'https://coin-images.coingecko.com/coins/images/15329/small/qidao.jpeg','QKC':'https://www.cryptocompare.com/media/43687846/qkc.png',
+				'QLC':'https://www.cryptocompare.com/media/43717496/qlc.png','QNT':'https://coin-images.coingecko.com/coins/images/3370/small/5ZOu7brX_400x400.jpg','QSP':'https://www.cryptocompare.com/media/15887408/qsp.png','QTUM':'https://coin-images.coingecko.com/coins/images/684/small/Qtum_Logo_blue_CG.png','QUICK':'https://coin-images.coingecko.com/coins/images/25393/small/quickswap.png',
+				'RAD':'https://www.cryptocompare.com/media/37747938/rad.png','RAMP':'https://www.cryptocompare.com/media/38553393/ramp.png','RARE':'https://www.cryptocompare.com/media/38554190/rare.png','RAY':'https://coin-images.coingecko.com/coins/images/13928/small/PSigc4ie_400x400.jpg','RCN':'https://www.cryptocompare.com/media/39500752/rcn.png',
+				'RDN':'https://www.cryptocompare.com/media/37621859/rdn.png','RDNT':'https://www.cryptocompare.com/media/43881334/rdnt.png','RED':'https://coin-images.coingecko.com/coins/images/53640/small/RedStone_Logo_New_White.png','REEF':'https://www.cryptocompare.com/media/43687816/reef.png','REI':'https://www.cryptocompare.com/media/40200170/rei.png',
+				'REN':'https://www.cryptocompare.com/media/27010916/ren.jpg','RENBTC':'https://www.cryptocompare.com/media/43717884/renbtc.png','RENDER':'https://coin-images.coingecko.com/coins/images/11636/small/rndr.png','REP':'https://coin-images.coingecko.com/coins/images/309/small/REP.png','REQ':'https://coin-images.coingecko.com/coins/images/1031/small/Request_icon_green.png',
+				'RESOLV':'https://www.cryptocompare.com/media/46039131/resolv.png','REZ':'https://www.cryptocompare.com/media/44613223/rez.png','RGT':'https://www.cryptocompare.com/media/37747089/rgt.png','RIF':'https://www.cryptocompare.com/media/35309430/rif.jpg','RLC':'https://www.cryptocompare.com/media/37747617/rlc.png',
+				'RLUSD':'https://coin-images.coingecko.com/coins/images/39651/small/RLUSD_200x200_%281%29.png','RNDR':'https://www.cryptocompare.com/media/39500858/rndr.png','ROBO':'https://coin-images.coingecko.com/coins/images/102172005/small/fab.png','RONIN':'https://www.cryptocompare.com/media/39838418/ron.png','ROSE':'https://coin-images.coingecko.com/coins/images/13162/small/200x200_%28Rounded%29.png',
+				'RPL':'https://www.cryptocompare.com/media/43961461/rpl.png','RPX':'https://www.cryptocompare.com/media/45735033/rpx.png','RSR':'https://coin-images.coingecko.com/coins/images/8365/small/RSR_Blue_Circle_1000.png','RUNE':'https://coin-images.coingecko.com/coins/images/6595/small/THORChain_Circle_Gradient__with_Lightning_Bolt_-_Square_Transparent_Background_200px.png','RVN':'https://coin-images.coingecko.com/coins/images/3412/small/ravencoin.png',
+				'S':'https://coin-images.coingecko.com/coins/images/38108/small/200x200_Sonic_Logo.png','SAGA':'https://www.cryptocompare.com/media/44224895/saga.png','SAHARA':'https://coin-images.coingecko.com/coins/images/66681/small/Token_Logo_3x.png','SALT':'https://www.cryptocompare.com/media/9350744/salt.jpg','SAND':'https://coin-images.coingecko.com/coins/images/12129/small/sandbox_logo.jpg',
+				'SANTOS':'https://www.cryptocompare.com/media/39198159/santos.png','SAPIEN':'https://www.cryptocompare.com/media/46039781/sapien.png','SC':'https://coin-images.coingecko.com/coins/images/289/small/shard_transparent_200.png','SCR':'https://coin-images.coingecko.com/coins/images/50571/small/scroll.jpg','SCRT':'https://www.cryptocompare.com/media/37305742/scrt.png',
+				'SEI':'https://coin-images.coingecko.com/coins/images/28205/small/Sei_Logo_-_Transparent.png','SENT':'https://coin-images.coingecko.com/coins/images/70508/small/SENTIENT-Icon-BlushForce-L.png','SFP':'https://coin-images.coingecko.com/coins/images/13905/small/sfp.png','SHELL':'https://coin-images.coingecko.com/coins/images/54374/small/myshell.jpg','SHIB':'https://coin-images.coingecko.com/coins/images/11939/small/shiba.png',
+				'SIGN':'https://coin-images.coingecko.com/coins/images/55303/small/sign.jpg','SKL':'https://www.cryptocompare.com/media/37746911/skl.png','SKY':'https://coin-images.coingecko.com/coins/images/39925/small/sky.jpg','SKYCOIN':'https://www.cryptocompare.com/media/37746942/sky.png','SLF':'https://www.cryptocompare.com/media/45734306/slf.png',
+				'SLP':'https://www.cryptocompare.com/media/43717522/slp.png','SNGLS':'https://www.cryptocompare.com/media/37747842/sngls.png','SNM':'https://www.cryptocompare.com/media/1383564/snm.png','SNT':'https://www.cryptocompare.com/media/37747590/snt.png','SNX':'https://coin-images.coingecko.com/coins/images/3406/small/SNX.png',
+				'SOL':'https://coin-images.coingecko.com/coins/images/4128/small/solana.png','SOLV':'https://coin-images.coingecko.com/coins/images/27987/small/solv.jpg','SOMI':'https://www.cryptocompare.com/media/46039851/somi.png','SOPH':'https://www.cryptocompare.com/media/45735332/soph.png','SPARTA':'https://coin-images.coingecko.com/coins/images/55228/small/SPARTA_LOGO.jpg',
+				'SPELL':'https://www.cryptocompare.com/media/43717515/spell.png','SPK':'https://coin-images.coingecko.com/coins/images/38637/small/Spark-Logomark-RGB.png','SRM':'https://www.cryptocompare.com/media/37747019/srm.png','SSV':'https://www.cryptocompare.com/media/39501259/ssv.png','STEEM':'https://www.cryptocompare.com/media/43717507/steem.png',
+				'STG':'https://www.cryptocompare.com/media/39838517/stg.png','STMX':'https://www.cryptocompare.com/media/38553414/stmx.png','STO':'https://www.cryptocompare.com/media/46033565/sto.png','STORJ':'https://www.cryptocompare.com/media/38553125/storj.png','STORM':'https://www.cryptocompare.com/media/46039467/storm.png',
+				'STPT':'https://www.cryptocompare.com/media/40219056/stpt.png','STRAT':'https://coin-images.coingecko.com/coins/images/68171/small/logo-color.png','STRAX':'https://www.cryptocompare.com/media/37746904/strax.png','STRK':'https://coin-images.coingecko.com/coins/images/26433/small/starknet.png','STX':'https://coin-images.coingecko.com/coins/images/2069/small/Stacks_Logo_png.png',
+				'SUB':'https://www.cryptocompare.com/media/45576700/sub.png','SUI':'https://coin-images.coingecko.com/coins/images/26375/small/sui-ocean-square.png','SUN':'https://coin-images.coingecko.com/coins/images/12424/small/RSFOmQ.png','SUPER':'https://coin-images.coingecko.com/coins/images/14040/small/SV-Logo-200x200.png','SUSD':'https://www.cryptocompare.com/media/40485142/susd.png',
+				'SUSHI':'https://coin-images.coingecko.com/coins/images/12271/small/512x512_Logo_no_chop.png','SUSHIDOWN':'https://coin-images.coingecko.com/coins/images/12271/small/512x512_Logo_no_chop.png','SUSHIUP':'https://coin-images.coingecko.com/coins/images/12271/small/512x512_Logo_no_chop.png','SWRV':'https://www.cryptocompare.com/media/37305490/swrv.png','SXP':'https://coin-images.coingecko.com/coins/images/9368/small/Solar_Blockchain_Foundation_Sun_CG.png',
+				'SXPDOWN':'https://coin-images.coingecko.com/coins/images/9368/small/Solar_Blockchain_Foundation_Sun_CG.png','SXPUP':'https://coin-images.coingecko.com/coins/images/9368/small/Solar_Blockchain_Foundation_Sun_CG.png','SXT':'https://coin-images.coingecko.com/coins/images/55424/small/sxt-token_circle.jpg','SYN':'https://www.cryptocompare.com/media/44082125/syn.png','SYRUP':'https://coin-images.coingecko.com/coins/images/51232/small/_syrup_token_logo.png',
+				'SYS':'https://www.cryptocompare.com/media/39456587/sys.png','T':'https://coin-images.coingecko.com/coins/images/22228/small/nFPNiSbL_400x400.jpg','TAO':'https://coin-images.coingecko.com/coins/images/28452/small/ARUsPeNQ_400x400.jpeg','TCT':'https://www.cryptocompare.com/media/37746954/tct.png','TFUEL':'https://coin-images.coingecko.com/coins/images/8029/small/1_0YusgngOrriVg4ZYx4wOFQ.png',
+				'THETA':'https://coin-images.coingecko.com/coins/images/2538/small/theta-token-logo.png','TIA':'https://coin-images.coingecko.com/coins/images/31967/small/tia.jpg','TKO':'https://www.cryptocompare.com/media/37746998/tko.png','TLM':'https://www.cryptocompare.com/media/38553109/tlm.png','TNB':'https://www.cryptocompare.com/media/37747798/tnb.png',
+				'TNSR':'https://www.cryptocompare.com/media/44224533/tnsr.png','TNT':'https://www.cryptocompare.com/media/39501578/tnt.png','TOMO':'https://www.cryptocompare.com/media/45735356/tomo.png','TON':'https://coin-images.coingecko.com/coins/images/17980/small/photo_2024-09-10_17.09.00.jpeg','TORN':'https://www.cryptocompare.com/media/37746187/torn.png',
+				'TOWNS':'https://coin-images.coingecko.com/coins/images/55230/small/Towns_token_2x.png','TRB':'https://coin-images.coingecko.com/coins/images/9644/small/TRB-New_Logo.png','TREE':'https://www.cryptocompare.com/media/46039542/tree.png','TRIBE':'https://www.cryptocompare.com/media/37748098/tribe.png','TRIG':'https://www.cryptocompare.com/media/351489/trg.png',
+				'TROY':'https://www.cryptocompare.com/media/39198100/troy.png','TRU':'https://www.cryptocompare.com/media/37747178/tru.png','TRUMP':'https://coin-images.coingecko.com/coins/images/53746/small/trump.png','TRX':'https://coin-images.coingecko.com/coins/images/1094/small/photo_2026-04-13_09-59-16.png','TRXDOWN':'https://coin-images.coingecko.com/coins/images/1094/small/photo_2026-04-13_09-59-16.png',
+				'TRXUP':'https://coin-images.coingecko.com/coins/images/1094/small/photo_2026-04-13_09-59-16.png','TST':'https://coin-images.coingecko.com/coins/images/54274/small/Test.png','TURBO':'https://coin-images.coingecko.com/coins/images/30117/small/TurboMark-QL_200.png','TURTLE':'https://coin-images.coingecko.com/coins/images/69595/small/OUDzqTkE_400x400.png','TUSD':'https://coin-images.coingecko.com/coins/images/3449/small/tusd.png',
+				'TUT':'https://coin-images.coingecko.com/coins/images/54299/small/image_2025-02-08_18-56-13.png','TVK':'https://www.cryptocompare.com/media/43717541/tvk.png','TWT':'https://coin-images.coingecko.com/coins/images/11085/small/Trust.png','U':'https://coin-images.coingecko.com/coins/images/68859/small/union.png','UFT':'https://www.cryptocompare.com/media/37747770/uft.png',
+				'UMA':'https://www.cryptocompare.com/media/37072053/uma.png','UNFI':'https://www.cryptocompare.com/media/37747279/unfi.png','UNI':'https://coin-images.coingecko.com/coins/images/12504/small/uniswap-logo.png','UNIDOWN':'https://coin-images.coingecko.com/coins/images/12504/small/uniswap-logo.png','UNIUP':'https://coin-images.coingecko.com/coins/images/12504/small/uniswap-logo.png',
+				'USD1':'https://coin-images.coingecko.com/coins/images/54977/small/USD1_1000x1000_transparent.png','USDC':'https://coin-images.coingecko.com/coins/images/6319/small/USDC.png','USDE':'https://coin-images.coingecko.com/coins/images/33613/small/usde.png','USDP':'https://www.cryptocompare.com/media/38553592/usdp.png','USDS':'https://coin-images.coingecko.com/coins/images/39926/small/usds.webp',
+				'USDSB':'https://www.cryptocompare.com/media/35521034/usds.png','USDT':'https://coin-images.coingecko.com/coins/images/325/small/Tether.png','UST':'https://www.cryptocompare.com/media/37746421/wrapped-ust-token-trans.png','USTC':'https://www.cryptocompare.com/media/37305450/ust.png','USUAL':'https://www.cryptocompare.com/media/45735152/usual.png',
+				'UTK':'https://www.cryptocompare.com/media/38553725/utk.png','VANA':'https://www.cryptocompare.com/media/45735359/vana.png','VANRY':'https://www.cryptocompare.com/media/44154335/vanry.png','VEN':'https://www.cryptocompare.com/media/12318129/ven.png','VET':'https://coin-images.coingecko.com/coins/images/1167/small/VET.png',
+				'VGX':'https://www.cryptocompare.com/media/38553319/vgx.png','VIA':'https://www.cryptocompare.com/media/45958083/via.png','VIB':'https://www.cryptocompare.com/media/43687848/vib.png','VIBE':'https://www.cryptocompare.com/media/39501212/vibe.png','VIC':'https://www.cryptocompare.com/media/44213487/vic.png',
+				'VIDT':'https://www.cryptocompare.com/media/43717531/vidt.png','VIRTUAL':'https://coin-images.coingecko.com/coins/images/34057/small/LOGOMARK.png','VITE':'https://www.cryptocompare.com/media/40484946/vite.png','VOXEL':'https://www.cryptocompare.com/media/39198293/voxel.png','VTHO':'https://coin-images.coingecko.com/coins/images/5230/small/VTHO_Circle_Crop__Reference_.png',
+				'W':'https://coin-images.coingecko.com/coins/images/35087/small/W_Token_%283%29.png','WABI':'https://www.cryptocompare.com/media/37747127/wabi.png','WAL':'https://coin-images.coingecko.com/coins/images/54914/small/Walrus_Token_Full_Color_200x200.png','WAN':'https://www.cryptocompare.com/media/9350742/wan.jpg','WAVES':'https://www.cryptocompare.com/media/37746257/waves.png',
+				'WAXP':'https://www.cryptocompare.com/media/37746259/waxp.png','WBETH':'https://www.cryptocompare.com/media/44154234/wbeth.png','WBTC':'https://www.cryptocompare.com/media/35309588/wbtc.png','WCT':'https://www.cryptocompare.com/media/45958394/wct.png','WIF':'https://coin-images.coingecko.com/coins/images/33566/small/dogwifhat.jpg',
+				'WIN':'https://www.cryptocompare.com/media/35651255/win.png','WING':'https://www.cryptocompare.com/media/43687821/wing.png','WINGS':'https://www.cryptocompare.com/media/39501197/wings.png','WLD':'https://coin-images.coingecko.com/coins/images/31069/small/worldcoin.jpeg','WLFI':'https://coin-images.coingecko.com/coins/images/50767/small/wlfi.png',
+				'WNXM':'https://www.cryptocompare.com/media/40485190/wnxm.png','WOO':'https://www.cryptocompare.com/media/39501499/woo.png','WPR':'https://www.cryptocompare.com/media/37747745/wpr.png','WRX':'https://www.cryptocompare.com/media/37746933/wrx.png','WTC':'https://www.cryptocompare.com/media/37746952/wtc.png',
+				'XAI':'https://coin-images.coingecko.com/coins/images/69482/small/xai.png','XAUT':'https://coin-images.coingecko.com/coins/images/10481/small/logo.png','XEC':'https://coin-images.coingecko.com/coins/images/16646/small/Logo_final-22.png','XEM':'https://coin-images.coingecko.com/coins/images/242/small/NEM_WC_Logo_200px.png','XLM':'https://coin-images.coingecko.com/coins/images/100/small/fmpFRHHQ_400x400.jpg',
+				'XLMDOWN':'https://coin-images.coingecko.com/coins/images/100/small/fmpFRHHQ_400x400.jpg','XLMUP':'https://coin-images.coingecko.com/coins/images/100/small/fmpFRHHQ_400x400.jpg','XMR':'https://coin-images.coingecko.com/coins/images/69/small/monero_logo.png','XNO':'https://coin-images.coingecko.com/coins/images/756/small/nano.png','XPL':'https://coin-images.coingecko.com/coins/images/66489/small/Plasma-symbol-green-1.png',
+				'XRP':'https://coin-images.coingecko.com/coins/images/44/small/xrp-symbol-white-128.png','XRPBEAR':'https://coin-images.coingecko.com/coins/images/44/small/xrp-symbol-white-128.png','XRPBULL':'https://coin-images.coingecko.com/coins/images/44/small/xrp-symbol-white-128.png','XRPDOWN':'https://coin-images.coingecko.com/coins/images/44/small/xrp-symbol-white-128.png','XRPUP':'https://coin-images.coingecko.com/coins/images/44/small/xrp-symbol-white-128.png',
+				'XTZ':'https://coin-images.coingecko.com/coins/images/976/small/Tezos-logo.png','XTZDOWN':'https://coin-images.coingecko.com/coins/images/976/small/Tezos-logo.png','XTZUP':'https://coin-images.coingecko.com/coins/images/976/small/Tezos-logo.png','XUSD':'https://coin-images.coingecko.com/coins/images/39180/small/XUSD_Logo_Full_Colour_1.png','XVG':'https://coin-images.coingecko.com/coins/images/203/small/Verge_Coin_%28native%29_icon_200x200.jpg',
+				'XVS':'https://coin-images.coingecko.com/coins/images/12677/small/XVS_Token.jpg','YB':'https://www.cryptocompare.com/media/46040034/yb.png','YFI':'https://coin-images.coingecko.com/coins/images/11849/small/yearn.jpg','YFIDOWN':'https://coin-images.coingecko.com/coins/images/11849/small/yearn.jpg','YFII':'https://coin-images.coingecko.com/coins/images/11902/small/YFII-logo.78631676.png',
+				'YFIUP':'https://coin-images.coingecko.com/coins/images/11849/small/yearn.jpg','YGG':'https://www.cryptocompare.com/media/37748361/ygg.png','ZAMA':'https://coin-images.coingecko.com/coins/images/70921/small/zama.png','ZBT':'https://www.cryptocompare.com/media/46040073/zbt.png','ZEC':'https://coin-images.coingecko.com/coins/images/486/small/circle-zcash-color.png',
+				'ZEN':'https://coin-images.coingecko.com/coins/images/691/small/Horizen2.0-logo_icon-on-yellow_%281%29.png','ZIL':'https://coin-images.coingecko.com/coins/images/2687/small/Zilliqa-logo.png','ZK':'https://coin-images.coingecko.com/coins/images/38043/small/ZKTokenBlack.png','ZKC':'https://www.cryptocompare.com/media/46039894/zkc-1.png','ZKP':'https://www.cryptocompare.com/media/46040543/zkp.png',
+				'ZRO':'https://coin-images.coingecko.com/coins/images/28206/small/ftxG9_TJ_400x400.jpeg','ZRX':'https://coin-images.coingecko.com/coins/images/863/small/0x.png','币安人生':'https://coin-images.coingecko.com/coins/images/69848/small/%E5%B8%81%E5%AE%89%E4%BA%BA%E7%94%9F.png'
+			};
 
 
 		var NAMES = {
@@ -1229,7 +1341,7 @@
 				id:                          base,
 				symbol:                      base,
 				name:                        NAMES[base] || base,
-				image:                       (capMap && capMap[base]) ? capMap[base].img : '',
+				image:                       (capMap && capMap[base] && capMap[base].img) ? capMap[base].img : (STATIC_IMAGES[base] || ''),
 				current_price:               parseFloat(t.lastPrice)          || 0,
 				market_cap_rank:             (capMap && capMap[base] && capMap[base].rank) ? capMap[base].rank : idx + 1,
 				total_volume:                parseFloat(t.quoteVolume)        || 0,
@@ -1257,59 +1369,103 @@
 			};
 		}
 
-		function fetchData(showSkeleton) {
-			if (S.loading) return;
-			S.loading = true;
-			if (showSkeleton) renderSkeleton();
+			function fetchData(showSkeleton) {
+				if (S.loading) return;
+				S.loading = true;
+				if (showSkeleton) renderSkeleton();
 
-			Promise.all([
-				fetch(BINANCE_API).then(function(r) {
-					if (!r.ok) throw new Error(r.status); return r.json();
-				}),
-				fetch('https://open.er-api.com/v6/latest/USD')
-					.then(function(r) { return r.json(); })
-					.catch(function() { return null; }),
-				fetch(CG_API + '1').then(function(r) { return r.json(); }).catch(function() { return null; }),
-				fetch(CG_API + '2').then(function(r) { return r.json(); }).catch(function() { return null; }),
-				fetch(CG_API + '3').then(function(r) { return r.json(); }).catch(function() { return null; }),
-				fetch(CG_API + '4').then(function(r) { return r.json(); }).catch(function() { return null; })
-			]).then(function(results) {
-				var tickers = results[0];
-				var fxData  = results[1];
-				var capPages = [results[2], results[3], results[4], results[5]];
-				var capMap  = {};
-				capPages.forEach(function(page) {
-					if (!page || !Array.isArray(page)) return;
-					page.forEach(function(a) {
-						capMap[a.symbol.toUpperCase()] = { cap: a.market_cap || 0, rank: a.market_cap_rank || 0, img: a.image || '' };
+				Promise.all([
+					fetch(BINANCE_API).then(function(r) {
+						if (!r.ok) throw new Error(r.status); return r.json();
+					}),
+					fetch('https://open.er-api.com/v6/latest/USD')
+						.then(function(r) { return r.json(); })
+						.catch(function() { return null; })
+				]).then(function(results) {
+					var tickers = results[0];
+					var fxData  = results[1];
+					if (fxData && fxData.rates && fxData.rates.EUR) S.eurRate = fxData.rates.EUR;
+					var pairs = tickers.filter(function(t) {
+						return t.symbol.endsWith('USDT') &&
+							!t.symbol.startsWith('USDT') &&
+							parseFloat(t.lastPrice) > 0 &&
+							parseFloat(t.quoteVolume) > 0;
 					});
+					pairs.sort(function(a, b) {
+						return parseFloat(b.quoteVolume) - parseFloat(a.quoteVolume);
+					});
+					S.coins = pairs.map(function(t, idx) { return normalizeCoin(t, idx, null); });
+					S.globalData = computeGlobal(S.coins);
+					S.error      = null;
+					S.lastUpdated = new Date();
+					S.loading    = false;
+					renderAll();
+					resetCountdown();
+					setTimeout(fetchMarketCaps, 800);
+				}).catch(function(err) {
+					S.error   = err.message;
+					S.loading = false;
+					renderError();
 				});
-				if (fxData && fxData.rates && fxData.rates.EUR) S.eurRate = fxData.rates.EUR;
-				var pairs = tickers.filter(function(t) {
-					return t.symbol.endsWith('USDT') &&
-						!t.symbol.startsWith('USDT') &&
-						parseFloat(t.lastPrice) > 0 &&
-						parseFloat(t.quoteVolume) > 0;
+			}
+
+			/* ── MARKET CAP FETCH (dual source) ──────────────── */
+			function fetchMarketCaps() {
+				fetchCCPage(0);         /* CryptoCompare: top 800 */
+				fetchCoinlorePage(0);   /* Coinlore: wider coverage */
+			}
+
+			function applyCapData(sym, mcap) {
+				S.coins.forEach(function(c) {
+					if (c.symbol === sym && !c.market_cap) c.market_cap = mcap;
 				});
-				pairs.sort(function(a, b) {
-					return parseFloat(b.quoteVolume) - parseFloat(a.quoteVolume);
-				});
-				S.coins      = pairs.map(function(t, idx) { return normalizeCoin(t, idx, capMap); });
-				/* assign rank by market cap order */
+			}
+
+			function rerank() {
 				var byMcap = S.coins.slice().sort(function(a, b) { return b.market_cap - a.market_cap; });
 				byMcap.forEach(function(c, i) { c.market_cap_rank = i + 1; });
-				S.globalData = computeGlobal(S.coins);
-				S.error      = null;
-				S.lastUpdated = new Date();
-				S.loading    = false;
 				renderAll();
-				resetCountdown();
-			}).catch(function(err) {
-				S.error   = err.message;
-				S.loading = false;
-				renderError();
-			});
-		}
+			}
+
+			function fetchCCPage(page) {
+				if (page > 7) return;
+				fetch('https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=USD&page=' + page)
+					.then(function(r) { return r.ok ? r.json() : null; })
+					.catch(function() { return null; })
+					.then(function(data) {
+						var updated = false;
+						if (data && data.Data) {
+							data.Data.forEach(function(item) {
+								var sym = (item.CoinInfo && item.CoinInfo.Name || '').toUpperCase();
+								var mcap = item.RAW && item.RAW.USD && item.RAW.USD.MKTCAP;
+								if (sym && mcap) { applyCapData(sym, mcap); updated = true; }
+							});
+						}
+						if (updated) rerank();
+						setTimeout(function() { fetchCCPage(page + 1); }, 350);
+					});
+			}
+
+			function fetchCoinlorePage(start) {
+				if (start > 1900) return;
+				var stillNeed = S.coins.filter(function(c) { return !c.market_cap; }).length;
+				if (stillNeed === 0) return;
+				fetch('https://api.coinlore.net/api/tickers/?start=' + start + '&limit=100')
+					.then(function(r) { return r.ok ? r.json() : null; })
+					.catch(function() { return null; })
+					.then(function(data) {
+						var updated = false;
+						if (data && data.data) {
+							data.data.forEach(function(c) {
+								var sym = (c.symbol || '').toUpperCase();
+								var mcap = parseFloat(c.market_cap_usd || 0);
+								if (sym && mcap) { applyCapData(sym, mcap); updated = true; }
+							});
+						}
+						if (updated) rerank();
+						setTimeout(function() { fetchCoinlorePage(start + 100); }, 400);
+					});
+			}
 
 		/* ── FORMAT ──────────────────────────────────────── */
 		function toDisplay(n) {
@@ -1380,7 +1536,7 @@
 			size = size || 28;
 			var sym  = (symbol || '').toLowerCase();
 			var symUpper = (symbol || '').toUpperCase();
-			var url  = imgUrl ||
+			var url  = imgUrl || STATIC_IMAGES[symUpper] ||
 				'https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons@master/32/color/' + sym + '.png';
 			var hash = 0;
 			for (var i = 0; i < sym.length; i++) hash = sym.charCodeAt(i) + ((hash << 5) - hash);
@@ -1389,7 +1545,7 @@
 			var ltr  = (symbol || '?').charAt(0).toUpperCase();
 			var s    = String(size);
 			return '<span class="coin-icon-wrap">' +
-				'<img class="trziste-coin-img" src="' + url + '" alt="' + esc(name) + '" ' +
+			'<img class="trziste-coin-img" src="' + url + '" alt="' + esc(name) + '" data-sym="' + symUpper + '" ' +
 					'width="' + s + '" height="' + s + '" loading="lazy" ' +
 					'onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'">' +
 				'<span class="coin-icon-fb" style="background:' + bg + ';width:' + s + 'px;height:' + s + 'px;font-size:' + Math.round(size*0.4) + 'px;display:none">' +
@@ -1399,111 +1555,122 @@
 
 		function $id(id) { return document.getElementById(id); }
 
-		/* ── GLOBAL STATS ────────────────────────────────── */
-		function renderGlobalStats() {
-			var d = S.globalData;
-			if (!d) return;
-			$id('g-vol').textContent   = fmtBig(d.total_volume_usd);
-			$id('g-coins').textContent = (d.coins_count || 0).toLocaleString('hr-HR');
-			$id('g-btc').textContent   = fmtPrice(d.btc_price);
-			var tg = $id('g-top-gainer');
-			var tl = $id('g-top-loser');
-			if (tg && d.top_gainer) {
-				tg.innerHTML = '<span class="price-up">' + esc(d.top_gainer.id) + ' +' +
-					d.top_gainer.price_change_percentage_24h.toFixed(2) + '%</span>';
-			}
-			if (tl && d.top_loser) {
-				tl.innerHTML = '<span class="price-down">' + esc(d.top_loser.id) +
-					' ' + d.top_loser.price_change_percentage_24h.toFixed(2) + '%</span>';
-			}
-		}
 
 		/* ── MARKET TABLE ────────────────────────────────── */
-		function renderMarketTable() {
-			var coins  = filteredSorted();
-			var tbody  = $id('trziste-tbody');
-			var noRes  = $id('trziste-no-results');
-			var errEl  = $id('trziste-error-state');
-			var cntEl  = $id('trziste-results-count');
-			errEl.style.display = 'none';
+			function renderMarketTable() {
+				var all    = filteredSorted();
+				var tbody  = $id('trziste-tbody');
+				var noRes  = $id('trziste-no-results');
+				var errEl  = $id('trziste-error-state');
+				var cntEl  = $id('trziste-results-count');
+				errEl.style.display = 'none';
 
+				if (!all.length && S.showFavOnly) {
+					$id('trziste-search-term').innerHTML = '<span style="color:#abb8c3;">Nema favorita. Klikni ★ pored coina da ga dodaš.</span>';
+					noRes.style.display = 'block';
+					tbody.innerHTML = '';
+					cntEl.textContent = '';
+					renderPagination(0, 0);
+					return;
+				}
+				if (!all.length && S.search) {
+					$id('trziste-search-term').textContent = S.search;
+					noRes.style.display = 'block';
+					tbody.innerHTML = '';
+					cntEl.textContent = '';
+					renderPagination(0, 0);
+					return;
+				}
+				noRes.style.display = 'none';
 
-			if (!coins.length && S.showFavOnly) {
-				$id('trziste-search-term').innerHTML = '<span style="color:#abb8c3;">Nema favorita. Klikni ★ pored coina da ga dodaš.</span>';
-				noRes.style.display = 'block';
-				tbody.innerHTML = '';
-				cntEl.textContent = '';
-				return;
+				var totalPages = Math.ceil(all.length / S.pageSize);
+				if (S.page > totalPages) S.page = totalPages || 1;
+				var from  = (S.page - 1) * S.pageSize;
+				var coins = all.slice(from, from + S.pageSize);
+
+				cntEl.textContent = S.search
+					? 'Pronađeno ' + all.length + ' rezultata za "' + esc(S.search) + '"'
+					: 'Prikazano ' + all.length + ' kriptovaluta s Binance burze · Izvor: Binance API';
+
+				tbody.innerHTML = coins.map(function(coin) {
+					var p24   = coin.price_change_percentage_24h;
+					var isFav = S.favorites.indexOf(coin.id) > -1;
+					var pfIdx  = indexInPortfolio(coin.id);
+					var inPf   = pfIdx > -1;
+
+					return '<tr>' +
+						/* fav */
+						'<td style="text-align:center;padding-right:4px;">' +
+							'<button class="trziste-fav-btn' + (isFav ? ' active' : '') + '" ' +
+								'onclick="trziste.toggleFav(\'' + esc(coin.id) + '\')" ' +
+								'title="' + (isFav ? 'Ukloni iz favorita' : 'Dodaj u favorite') + '" aria-label="Favorit">' +
+								'<svg width="13" height="13" viewBox="0 0 24 24" fill="' + (isFav ? '#f6c90e' : 'none') + '" ' +
+									'stroke="' + (isFav ? '#f6c90e' : 'currentColor') + '" stroke-width="2">' +
+									'<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>' +
+								'</svg>' +
+							'</button>' +
+						'</td>' +
+						/* rank */
+						'<td style="text-align:center;"><span class="trziste-rank">' + coin.market_cap_rank + '</span></td>' +
+						/* coin */
+						'<td><div class="trziste-coin-cell">' +
+							coinIconHtml(coin.symbol, coin.name, 28, coin.image) +
+							'<div>' +
+								'<span class="trziste-coin-name">' + esc(coin.name) + '</span>' +
+								'<span class="trziste-coin-sym">' + esc((coin.symbol || '').toUpperCase()) + '</span>' +
+							'</div>' +
+						'</div></td>' +
+						/* kupi */
+						'<td style="white-space:nowrap;">' +
+							'<a href="https://www.binance.com/register?ref=UW0F76CC" target="_blank" rel="noopener nofollow" ' +
+								'class="trziste-buy-btn" title="Kupi ' + esc(coin.name) + ' na Binanceu">Kupi</a>' +
+						'</td>' +
+						/* price */
+						'<td><span class="trziste-price" id="pr-' + esc(coin.id) + '">' + fmtPrice(coin.current_price) + '</span></td>' +
+						/* 24h */
+						'<td>' + fmtPct(p24, true) + '</td>' +
+						/* 24h high */
+						'<td>' + fmtPrice(coin.high_24h) + '</td>' +
+						/* 24h low */
+						'<td>' + fmtPrice(coin.low_24h) + '</td>' +
+						/* market cap */
+						'<td>' + fmtBig(coin.market_cap) + '</td>' +
+						/* add btn */
+						'<td style="text-align:center;">' +
+							'<button class="trziste-add-btn' + (inPf ? ' in-portfolio' : '') + '" ' +
+								'onclick="trziste.openModal(\'' + esc(coin.id) + '\')" ' +
+								'title="' + (inPf ? 'Uredi u portfoliu' : 'Dodaj u portfolio') + '" ' +
+								'aria-label="' + (inPf ? 'Uredi' : 'Dodaj u portfolio') + '">' +
+								(inPf
+									? '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>'
+									: '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>') +
+							'</button>' +
+						'</td>' +
+					'</tr>';
+				}).join('');
+
+				renderPagination(S.page, totalPages);
 			}
-			if (!coins.length && S.search) {
-				$id('trziste-search-term').textContent = S.search;
-				noRes.style.display = 'block';
-				tbody.innerHTML = '';
-				cntEl.textContent = '';
-				return;
+
+			function renderPagination(current, total) {
+				var el = $id('trziste-pagination');
+				if (total <= 1) { el.style.display = 'none'; return; }
+				el.style.display = 'flex';
+				var html = '';
+				html += '<button class="trziste-pg-btn" ' + (current === 1 ? 'disabled' : '') +
+					' onclick="trziste.goPage(' + (current-1) + ')">&#8592; Prethodna</button>';
+				for (var p = 1; p <= total; p++) {
+					if (total > 7 && p > 2 && p < total - 1 && Math.abs(p - current) > 1) {
+						if (p === 3 || p === total - 2) html += '<span class="trziste-pg-info">…</span>';
+						continue;
+					}
+					html += '<button class="trziste-pg-btn' + (p === current ? ' active' : '') +
+						'" onclick="trziste.goPage(' + p + ')"> ' + p + ' </button>';
+				}
+				html += '<button class="trziste-pg-btn" ' + (current === total ? 'disabled' : '') +
+					' onclick="trziste.goPage(' + (current+1) + ')">Sljedeća &#8594;</button>';
+				el.innerHTML = html;
 			}
-			noRes.style.display = 'none';
-			cntEl.textContent = S.search
-				? 'Pronađeno ' + coins.length + ' rezultata za "' + esc(S.search) + '"'
-				: 'Prikazano ' + coins.length + ' kriptovaluta s Binance burze · Izvor: Binance API';
-
-			tbody.innerHTML = coins.map(function(coin, i) {
-				var p24   = coin.price_change_percentage_24h;
-				var isFav = S.favorites.indexOf(coin.id) > -1;
-				var pfIdx  = indexInPortfolio(coin.id);
-				var inPf   = pfIdx > -1;
-
-				return '<tr>' +
-					/* fav */
-					'<td style="text-align:center;padding-right:4px;">' +
-						'<button class="trziste-fav-btn' + (isFav ? ' active' : '') + '" ' +
-							'onclick="trziste.toggleFav(\'' + esc(coin.id) + '\')" ' +
-							'title="' + (isFav ? 'Ukloni iz favorita' : 'Dodaj u favorite') + '" aria-label="Favorit">' +
-							'<svg width="13" height="13" viewBox="0 0 24 24" fill="' + (isFav ? '#f6c90e' : 'none') + '" ' +
-								'stroke="' + (isFav ? '#f6c90e' : 'currentColor') + '" stroke-width="2">' +
-								'<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>' +
-							'</svg>' +
-						'</button>' +
-					'</td>' +
-					/* rank */
-					'<td style="text-align:center;"><span class="trziste-rank">' + coin.market_cap_rank + '</span></td>' +
-					/* coin */
-					'<td><div class="trziste-coin-cell">' +
-						coinIconHtml(coin.symbol, coin.name, 28, coin.image) +
-						'<div>' +
-							'<span class="trziste-coin-name">' + esc(coin.name) + '</span>' +
-							'<span class="trziste-coin-sym">' + esc((coin.symbol || '').toUpperCase()) + '</span>' +
-						'</div>' +
-					'</div></td>' +
-					/* kupi */
-					'<td style="white-space:nowrap;">' +
-						'<a href="https://www.binance.com/register?ref=UW0F76CC" target="_blank" rel="noopener nofollow" ' +
-							'class="trziste-buy-btn" title="Kupi ' + esc(coin.name) + ' na Binanceu">Kupi</a>' +
-					'</td>' +
-					/* price */
-					'<td><span class="trziste-price" id="pr-' + esc(coin.id) + '">' + fmtPrice(coin.current_price) + '</span></td>' +
-					/* 24h */
-					'<td>' + fmtPct(p24, true) + '</td>' +
-					/* 24h high */
-					'<td>' + fmtPrice(coin.high_24h) + '</td>' +
-					/* 24h low */
-					'<td>' + fmtPrice(coin.low_24h) + '</td>' +
-					/* volume */
-					'<td>' + fmtBig(coin.market_cap) + '</td>' +
-					/* add btn */
-					'<td style="text-align:center;">' +
-						'<button class="trziste-add-btn' + (inPf ? ' in-portfolio' : '') + '" ' +
-							'onclick="trziste.openModal(\'' + esc(coin.id) + '\')" ' +
-							'title="' + (inPf ? 'Uredi u portfoliu' : 'Dodaj u portfolio') + '" ' +
-							'aria-label="' + (inPf ? 'Uredi' : 'Dodaj u portfolio') + '">' +
-							(inPf
-								? '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>'
-								: '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>') +
-						'</button>' +
-					'</td>' +
-				'</tr>';
-			}).join('');
-		}
 
 		/* ── SKELETON ────────────────────────────────────── */
 		function renderSkeleton() {
@@ -1544,7 +1711,6 @@
 
 		/* ── RENDER ALL ──────────────────────────────────── */
 		function renderAll() {
-			renderGlobalStats();
 			renderMarketTable();
 			updatePortfolioBadge();
 			if (S.activeTab === 'portfolio') renderPortfolio();
@@ -1553,7 +1719,7 @@
 
 		/* ── FILTER + SORT ───────────────────────────────── */
 		function filteredSorted() {
-			var arr = S.coins.slice();
+			var arr = S.coins.filter(function(c) { return c.market_cap > 0; });
 			if (S.showFavOnly) {
 				arr = arr.filter(function(c) { return S.favorites.indexOf(c.id) > -1; });
 			}
@@ -1577,7 +1743,7 @@
 		}
 
 		/* ── SEARCH ──────────────────────────────────────── */
-		function handleSearch(val) { S.search = val; renderMarketTable(); }
+		function handleSearch(val) { S.search = val; S.page = 1; renderMarketTable(); }
 
 		/* ── SORT ────────────────────────────────────────── */
 		function initSort() {
@@ -1589,6 +1755,7 @@
 					} else {
 						S.sortKey = key;
 						S.sortDir = 'desc';
+						S.page = 1;
 					}
 					updateSortArrows();
 					renderMarketTable();
@@ -1618,11 +1785,6 @@
 		function setCurrency(c) {
 			S.currency = c;
 			localStorage.setItem('trziste_currency', c);
-			$id('cur-usd').classList.toggle('active', c === 'usd');
-			$id('cur-eur').classList.toggle('active', c === 'eur');
-			$id('cur-usd').setAttribute('aria-pressed', c === 'usd');
-			$id('cur-eur').setAttribute('aria-pressed', c === 'eur');
-			/* Binance prices are USD — just re-render with EUR conversion */
 			renderAll();
 		}
 
@@ -1721,8 +1883,10 @@
 
 			if (pfIdx > -1) {
 				var e = S.portfolio[pfIdx];
-				$id('modal-amount').value    = e.amount    || '';
-				$id('modal-buy-price').value = e.buyPrice  || '';
+				$id('modal-amount').value = e.amount || '';
+				$id('modal-buy-price').value = e.buyPrice
+					? e.buyPrice.toFixed(2)
+					: '';
 			} else {
 				$id('modal-amount').value    = '';
 				$id('modal-buy-price').value = '';
@@ -1750,13 +1914,14 @@
 			if (!coin) return;
 			var amt  = Math.max(0, parseFloat($id('modal-amount').value) || 0);
 			var bp   = parseFloat($id('modal-buy-price').value);
+			var bpUsd = (!isNaN(bp) && bp > 0) ? bp : null;
 			var entry = {
 				id:       coin.id,
 				name:     coin.name,
 				symbol:   (coin.symbol || '').toUpperCase(),
 				image:    coin.image || '',
 				amount:   amt,
-				buyPrice: (!isNaN(bp) && bp > 0) ? bp : null,
+				buyPrice: bpUsd,
 				addedAt:  new Date().toISOString().split('T')[0]
 			};
 			if (S.modalEditIdx > -1) S.portfolio[S.modalEditIdx] = entry;
@@ -1793,8 +1958,10 @@
 			$id('modal-coin-name').textContent  = coin.name + ' (' + entry.symbol + ')';
 			$id('modal-coin-price').textContent = coin.current_price > 0
 				? 'Trenutna cijena: ' + fmtPrice(coin.current_price) : 'Cijena nedostupna';
-			$id('modal-amount').value    = entry.amount    || '';
-			$id('modal-buy-price').value = entry.buyPrice  || '';
+			$id('modal-amount').value = entry.amount || '';
+			$id('modal-buy-price').value = entry.buyPrice
+				? entry.buyPrice.toFixed(2)
+				: '';
 			$id('modal-save-label').textContent      = 'Ažuriraj';
 			$id('portfolioModalLabel').textContent   = 'Uredi unos';
 			updateModalLive();
@@ -1969,12 +2136,6 @@
 
 		/* ── INIT ────────────────────────────────────────── */
 		function init() {
-			/* Set initial currency buttons */
-			$id('cur-usd').classList.toggle('active', S.currency === 'usd');
-			$id('cur-eur').classList.toggle('active', S.currency === 'eur');
-			$id('cur-usd').setAttribute('aria-pressed', S.currency === 'usd');
-			$id('cur-eur').setAttribute('aria-pressed', S.currency === 'eur');
-
 			/* Search input */
 			var si = $id('trziste-search');
 			si.addEventListener('input',  function() { handleSearch(this.value); });
@@ -2009,6 +2170,7 @@
 			init();
 		}
 
+
 		/* Public API */
 		return {
 			switchTab:            switchTab,
@@ -2020,12 +2182,18 @@
 			savePortfolioEntry:   savePortfolioEntry,
 			removePortfolioEntry: removePortfolioEntry,
 			editPortfolioEntry:   editPortfolioEntry,
-			manualRefresh:        manualRefresh
+			manualRefresh:        manualRefresh,
+			goPage:               function(p) { S.page = p; renderMarketTable(); window.scrollTo({top: document.getElementById('trziste-table').offsetTop - 80, behavior:'smooth'}); }
 		};
 	})();
 	</script>
 
 	<div id="trziste-toast" class="trziste-toast"></div>
+
+	<!-- Supabase Auth -->
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
+	<script src="assets/js/supabase-config.js" defer></script>
+	<script src="assets/js/auth.js" defer></script>
 
 </body>
 </html>
