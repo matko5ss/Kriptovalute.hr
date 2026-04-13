@@ -275,6 +275,31 @@
 	}
 	.trziste-table-scroll { overflow-x: auto; }
 
+	/* Kupi button */
+	.trziste-buy-btn {
+		display: inline-flex;
+		align-items: center;
+		background: rgba(0, 212, 170, 0.12);
+		border: 1px solid rgba(0, 212, 170, 0.35);
+		color: #00d4aa;
+		font-family: 'Quicksand', sans-serif;
+		font-size: 10px;
+		font-weight: 700;
+		padding: 2px 7px;
+		border-radius: 20px;
+		text-decoration: none;
+		white-space: nowrap;
+		transition: background 0.2s, border-color 0.2s;
+		margin-left: 6px;
+		vertical-align: middle;
+	}
+	.trziste-buy-btn:hover {
+		background: rgba(0, 212, 170, 0.25);
+		border-color: #00d4aa;
+		color: #00d4aa;
+		text-decoration: none;
+	}
+
 	/* Coin icon with letter fallback */
 	.coin-icon-wrap { display: inline-flex; align-items: center; flex-shrink: 0; }
 	.coin-icon-fb {
@@ -884,9 +909,14 @@
 						<table class="trziste-table" id="trziste-table" role="grid">
 							<thead>
 								<tr>
-									<th style="width:30px;text-align:center;padding-right:6px;" aria-label="Favoriti"></th>
+									<th style="width:30px;text-align:center;padding-right:6px;" aria-label="Favoriti">
+										<button id="fav-filter-btn" class="trziste-fav-btn" onclick="trziste.toggleFavFilter()" title="Prikaži samo favorite" aria-label="Filter favorita">
+											<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+										</button>
+									</th>
 									<th style="width:42px;text-align:center;">#</th>
 									<th>Kriptovaluta</th>
+									<th></th>
 									<th class="sortable" data-sort="current_price">Cijena <span class="sort-arrow" id="arrow-current_price">↕</span></th>
 									<th class="sortable" data-sort="price_change_percentage_24h">24h % <span class="sort-arrow" id="arrow-price_change_percentage_24h">↕</span></th>
 									<th class="sortable" data-sort="high_24h">24h Vis. <span class="sort-arrow" id="arrow-high_24h">↕</span></th>
@@ -1131,6 +1161,7 @@
 			sortDir:     'desc',
 			search:      '',
 			favorites:   JSON.parse(localStorage.getItem('trziste_favorites') || '[]'),
+			showFavOnly: false,
 			portfolio:   JSON.parse(localStorage.getItem('trziste_portfolio') || '[]'),
 			loading:     false,
 			error:       null,
@@ -1431,6 +1462,14 @@
 			var cntEl  = $id('trziste-results-count');
 			errEl.style.display = 'none';
 
+
+			if (!coins.length && S.showFavOnly) {
+				$id('trziste-search-term').innerHTML = '<span style="color:#abb8c3;">Nema favorita. Klikni ★ pored coina da ga dodaš.</span>';
+				noRes.style.display = 'block';
+				tbody.innerHTML = '';
+				cntEl.textContent = '';
+				return;
+			}
 			if (!coins.length && S.search) {
 				$id('trziste-search-term').textContent = S.search;
 				noRes.style.display = 'block';
@@ -1471,6 +1510,11 @@
 							'<span class="trziste-coin-sym">' + esc((coin.symbol || '').toUpperCase()) + '</span>' +
 						'</div>' +
 					'</div></td>' +
+					/* kupi */
+					'<td style="white-space:nowrap;">' +
+						'<a href="https://www.binance.com/register?ref=UW0F76CC" target="_blank" rel="noopener nofollow" ' +
+							'class="trziste-buy-btn" title="Kupi ' + esc(coin.name) + ' na Binanceu">Kupi</a>' +
+					'</td>' +
 					/* price */
 					'<td><span class="trziste-price" id="pr-' + esc(coin.id) + '">' + fmtPrice(coin.current_price) + '</span></td>' +
 					/* 24h */
@@ -1508,6 +1552,7 @@
 						'<div><span class="trziste-skel" style="width:72px;height:14px;display:block;margin-bottom:4px;"></span>' +
 						'<span class="trziste-skel" style="width:36px;height:10px;display:block;"></span></div>' +
 					'</div></td>' +
+					'<td></td>' +
 					'<td><span class="trziste-skel" style="width:68px;height:14px;"></span></td>' +
 					'<td><span class="trziste-skel" style="width:46px;height:14px;"></span></td>' +
 					'<td><span class="trziste-skel" style="width:46px;height:14px;"></span></td>' +
@@ -1544,6 +1589,9 @@
 		/* ── FILTER + SORT ───────────────────────────────── */
 		function filteredSorted() {
 			var arr = S.coins.slice();
+			if (S.showFavOnly) {
+				arr = arr.filter(function(c) { return S.favorites.indexOf(c.id) > -1; });
+			}
 			if (S.search) {
 				var q = S.search.toLowerCase();
 				arr = arr.filter(function(c) {
@@ -1631,6 +1679,13 @@
 			if (idx > -1) S.favorites.splice(idx, 1);
 			else S.favorites.push(id);
 			localStorage.setItem('trziste_favorites', JSON.stringify(S.favorites));
+			renderMarketTable();
+		}
+
+		function toggleFavFilter() {
+			S.showFavOnly = !S.showFavOnly;
+			var btn = document.getElementById('fav-filter-btn');
+			if (btn) btn.classList.toggle('active', S.showFavOnly);
 			renderMarketTable();
 		}
 
@@ -1994,6 +2049,7 @@
 			switchTab:            switchTab,
 			setCurrency:          setCurrency,
 			toggleFav:            toggleFav,
+			toggleFavFilter:      toggleFavFilter,
 			openModal:            openModal,
 			quickAdd:             quickAdd,
 			savePortfolioEntry:   savePortfolioEntry,
