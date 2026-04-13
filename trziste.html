@@ -1281,7 +1281,7 @@
 				id:                          base,
 				symbol:                      base,
 				name:                        NAMES[base] || base,
-				image:                       'https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons@master/32/color/' + base.toLowerCase() + '.png',
+				image:                       (capMap && capMap[base] && capMap[base].img) ? capMap[base].img : (IMAGES[base] || 'https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons@master/32/color/' + base.toLowerCase() + '.png'),
 				current_price:               parseFloat(t.lastPrice)          || 0,
 				market_cap_rank:             (capMap && capMap[base] && capMap[base].rank) ? capMap[base].rank : idx + 1,
 				total_volume:                parseFloat(t.quoteVolume)        || 0,
@@ -1331,7 +1331,7 @@
 				capPages.forEach(function(page) {
 					if (!page || !Array.isArray(page)) return;
 					page.forEach(function(a) {
-						capMap[a.symbol.toUpperCase()] = { cap: a.market_cap || 0, rank: a.market_cap_rank || 0 };
+						capMap[a.symbol.toUpperCase()] = { cap: a.market_cap || 0, rank: a.market_cap_rank || 0, img: a.image || '' };
 					});
 				});
 				if (fxData && fxData.rates && fxData.rates.EUR) S.eurRate = fxData.rates.EUR;
@@ -1426,11 +1426,11 @@
 				.replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 		}
 
-		function coinIconHtml(symbol, name, size) {
+		function coinIconHtml(symbol, name, size, imgUrl) {
 			size = size || 28;
 			var sym  = (symbol || '').toLowerCase();
 			var symUpper = (symbol || '').toUpperCase();
-			var url  = IMAGES[symUpper] ||
+			var url  = imgUrl || IMAGES[symUpper] ||
 				'https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons@master/32/color/' + sym + '.png';
 			var hash = 0;
 			for (var i = 0; i < sym.length; i++) hash = sym.charCodeAt(i) + ((hash << 5) - hash);
@@ -1519,7 +1519,7 @@
 					'<td style="text-align:center;"><span class="trziste-rank">' + coin.market_cap_rank + '</span></td>' +
 					/* coin */
 					'<td><div class="trziste-coin-cell">' +
-						coinIconHtml(coin.symbol, coin.name, 28) +
+						coinIconHtml(coin.symbol, coin.name, 28, coin.image) +
 						'<div>' +
 							'<span class="trziste-coin-name">' + esc(coin.name) + '</span>' +
 							'<span class="trziste-coin-sym">' + esc((coin.symbol || '').toUpperCase()) + '</span>' +
