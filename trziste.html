@@ -921,7 +921,7 @@
 									<th class="sortable" data-sort="price_change_percentage_24h">24h % <span class="sort-arrow" id="arrow-price_change_percentage_24h">↕</span></th>
 									<th class="sortable" data-sort="high_24h">24h Vis. <span class="sort-arrow" id="arrow-high_24h">↕</span></th>
 									<th class="sortable" data-sort="low_24h">24h Nis. <span class="sort-arrow" id="arrow-low_24h">↕</span></th>
-									<th class="sortable" data-sort="total_volume">Vol. 24h <span class="sort-arrow active" id="arrow-total_volume">▼</span></th>
+									<th class="sortable" data-sort="market_cap">Market Cap <span class="sort-arrow active" id="arrow-market_cap">▼</span></th>
 									<th style="width:34px;text-align:center;" aria-label="Dodaj u portfolio"></th>
 								</tr>
 							</thead>
@@ -1157,7 +1157,7 @@
 			globalData:  null,
 			currency:    localStorage.getItem('trziste_currency') || 'usd',
 			eurRate:     0.93,
-			sortKey:     'total_volume',
+			sortKey:     'market_cap',
 			sortDir:     'desc',
 			search:      '',
 			favorites:   JSON.parse(localStorage.getItem('trziste_favorites') || '[]'),
@@ -1175,6 +1175,7 @@
 
 		var CIRC = 2 * Math.PI * 8; /* stroke-dasharray for r=8 ring */
 		var BINANCE_API = 'https://api.binance.com/api/v3/ticker/24hr';
+		var COINCAP_API  = 'https://api.coincap.io/v2/assets?limit=2000';
 		var CUR  = { usd: '$', eur: '€' };
 
 		var IMAGES = {
@@ -1274,7 +1275,7 @@
 		};
 
 		/* ── FETCH ────────────────────────────────────────────── */
-		function normalizeCoin(t, idx) {
+		function normalizeCoin(t, idx, capMap) {
 			var base = t.symbol.replace(/USDT$/, '');
 			return {
 				id:                          base,
@@ -1284,6 +1285,7 @@
 				current_price:               parseFloat(t.lastPrice)          || 0,
 				market_cap_rank:             idx + 1,
 				total_volume:                parseFloat(t.quoteVolume)        || 0,
+				market_cap:                  (capMap && capMap[base]) ? capMap[base] : 0,
 				price_change_percentage_24h: parseFloat(t.priceChangePercent) || 0,
 				high_24h:                    parseFloat(t.highPrice)          || 0,
 				low_24h:                     parseFloat(t.lowPrice)           || 0
@@ -1318,10 +1320,20 @@
 				}),
 				fetch('https://open.er-api.com/v6/latest/USD')
 					.then(function(r) { return r.json(); })
+					.catch(function() { return null; }),
+				fetch(COINCAP_API)
+					.then(function(r) { return r.json(); })
 					.catch(function() { return null; })
 			]).then(function(results) {
 				var tickers = results[0];
 				var fxData  = results[1];
+				var capData = results[2];
+				var capMap  = {};
+				if (capData && capData.data) {
+					capData.data.forEach(function(a) {
+						capMap[a.symbol.toUpperCase()] = parseFloat(a.marketCapUsd) || 0;
+					});
+				}
 				if (fxData && fxData.rates && fxData.rates.EUR) S.eurRate = fxData.rates.EUR;
 				var pairs = tickers.filter(function(t) {
 					return t.symbol.endsWith('USDT') &&
@@ -1332,7 +1344,7 @@
 				pairs.sort(function(a, b) {
 					return parseFloat(b.quoteVolume) - parseFloat(a.quoteVolume);
 				});
-				S.coins      = pairs.map(normalizeCoin);
+				S.coins      = pairs.map(function(t, idx) { return normalizeCoin(t, idx, capMap); });
 				S.globalData = computeGlobal(S.coins);
 				S.error      = null;
 				S.lastUpdated = new Date();
@@ -1524,7 +1536,7 @@
 					/* 24h low */
 					'<td>' + fmtPrice(coin.low_24h) + '</td>' +
 					/* volume */
-					'<td>' + fmtBig(coin.total_volume) + '</td>' +
+					'<td>' + fmtBig(coin.market_cap) + '</td>' +
 					/* add btn */
 					'<td style="text-align:center;">' +
 						'<button class="trziste-add-btn' + (inPf ? ' in-portfolio' : '') + '" ' +
@@ -1632,7 +1644,7 @@
 		}
 
 		function updateSortArrows() {
-			['current_price','price_change_percentage_24h','high_24h','low_24h','total_volume'
+			['current_price','price_change_percentage_24h','high_24h','low_24h','market_cap'
 			].forEach(function(k) {
 				var el = $id('arrow-' + k);
 				if (!el) return;
