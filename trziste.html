@@ -670,8 +670,90 @@
 		.trziste-controls { flex-direction: column; align-items: stretch; }
 		.trziste-search-wrap { max-width: 100%; }
 		.trziste-update-info { margin-left: 0; }
-		.trziste-table { min-width: 640px; }
+		.trziste-table-wrap { display: none; }
+		.trziste-pf-table-wrap { display: none; }
 	}
+	@media (min-width: 769px) {
+		.tm-cards-list { display: none !important; }
+		.tm-pf-cards-list { display: none !important; }
+	}
+
+	/* ── Mobile Cards — Tržište ─────────────────────────── */
+	.tm-cards-list { display: flex; flex-direction: column; gap: 8px; }
+	.tm-card {
+		background: rgba(255,255,255,0.03);
+		border: 1px solid rgba(255,255,255,0.07);
+		border-radius: 12px;
+		overflow: hidden;
+		transition: border-color .15s;
+	}
+	.tm-card.expanded { border-color: rgba(108,92,231,0.35); }
+	.tm-card-main {
+		display: flex; align-items: center; justify-content: space-between;
+		padding: 12px 14px; gap: 10px; cursor: pointer;
+	}
+	.tm-card-left {
+		display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1;
+	}
+	.tm-card-rank {
+		font-size: 11px; color: #4a5568; font-weight: 600;
+		min-width: 18px; text-align: center; flex-shrink: 0;
+	}
+	.tm-card-right {
+		display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0;
+	}
+	.tm-card-price { font-size: 15px; font-weight: 700; color: #fff; }
+	.tm-card-row2 { display: flex; align-items: center; gap: 8px; }
+	.tm-expand-btn {
+		background: none; border: none; color: #4a5568; cursor: pointer;
+		padding: 0; line-height: 1; transition: color .15s, transform .2s;
+		display: flex; align-items: center;
+	}
+	.tm-card.expanded .tm-expand-btn { transform: rotate(180deg); color: #a29bfe; }
+	.tm-card-details {
+		display: none; padding: 0 14px 14px;
+		border-top: 1px solid rgba(255,255,255,0.05);
+		padding-top: 12px;
+	}
+	.tm-card.expanded .tm-card-details { display: block; }
+	.tm-detail-grid {
+		display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;
+	}
+	.tm-detail-item { display: flex; flex-direction: column; gap: 2px; }
+	.tm-detail-label { font-size: 10px; color: #4a5568; text-transform: uppercase; letter-spacing: .4px; font-weight: 600; }
+	.tm-detail-val { font-size: 13px; color: #abb8c3; font-weight: 600; }
+	.tm-card-actions { display: flex; gap: 8px; align-items: center; margin-top: 4px; }
+	.tm-fav-btn {
+		background: none; border: none; cursor: pointer; padding: 4px;
+		color: rgba(255,255,255,0.3); line-height: 1;
+	}
+	.tm-fav-btn.active { color: #f6c90e; }
+
+	/* ── Mobile Cards — Portfolio ───────────────────────── */
+	.tm-pf-cards-list { display: flex; flex-direction: column; gap: 8px; }
+	.tm-pf-card {
+		background: rgba(255,255,255,0.03);
+		border: 1px solid rgba(255,255,255,0.07);
+		border-radius: 12px; overflow: hidden; transition: border-color .15s;
+	}
+	.tm-pf-card.expanded { border-color: rgba(108,92,231,0.35); }
+	.tm-pf-card-main {
+		display: flex; align-items: center; justify-content: space-between;
+		padding: 12px 14px; gap: 10px; cursor: pointer;
+	}
+	.tm-pf-card-left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; }
+	.tm-pf-card-right { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0; }
+	.tm-pf-amt { font-size: 14px; font-weight: 700; color: #fff; }
+	.tm-pf-val { font-size: 12px; color: #abb8c3; }
+	.tm-pf-card-details {
+		display: none; padding: 12px 14px 14px;
+		border-top: 1px solid rgba(255,255,255,0.05);
+	}
+	.tm-pf-card.expanded .tm-pf-card-details { display: block; }
+	.tm-pf-detail-grid {
+		display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;
+	}
+	.tm-pf-actions { display: flex; gap: 8px; margin-top: 4px; }
 
 	/* Quick-add toast */
 	.trziste-toast {
@@ -901,6 +983,9 @@
 					</div>
 				</div>
 
+				<!-- Mobile cards — tržište -->
+				<div class="tm-cards-list" id="trziste-mobile-list"></div>
+
 				<!-- Pagination -->
 				<div id="trziste-pagination" style="display:none;justify-content:center;align-items:center;gap:8px;padding:18px 0 4px;flex-wrap:wrap;"></div>
 
@@ -932,7 +1017,10 @@
 				<!-- Portfolio sadržaj — prikazuje se samo prijavljenim korisnicima -->
 				<div id="pf-logged-in" style="display:none;">
 					<div class="trziste-pf-summary" id="pf-summary"></div>
+					<!-- Desktop table -->
 					<div id="pf-content"></div>
+					<!-- Mobile cards -->
+					<div class="tm-pf-cards-list" id="pf-mobile-list"></div>
 					<p class="trziste-pf-note">
 						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
 						Podaci portfolia pohranjuju se lokalno na vašem uređaju.
@@ -1670,7 +1758,123 @@
 				}).join('');
 
 				renderPagination(S.page, totalPages);
+				renderMarketMobile(coins);
 			}
+
+			/* ── MOBILE RENDER — Tržište ──────────────────────────── */
+			function renderMarketMobile(coins) {
+				var el = $id('trziste-mobile-list');
+				if (!el) return;
+				el.innerHTML = coins.map(function(coin) {
+					var p24   = coin.price_change_percentage_24h;
+					var isFav = S.favorites.indexOf(coin.id) > -1;
+					var inPf  = indexInPortfolio(coin.id) > -1;
+					var pctCls = p24 > 0 ? 'price-up' : p24 < 0 ? 'price-down' : 'price-neutral';
+					var sign   = p24 > 0 ? '+' : '';
+					return '<div class="tm-card" data-id="' + esc(coin.id) + '">' +
+						'<div class="tm-card-main" onclick="tmToggle(this.closest(\'.tm-card\'))">' +
+							'<div class="tm-card-left">' +
+								'<button class="tm-fav-btn' + (isFav ? ' active' : '') + '" ' +
+									'onclick="event.stopPropagation();trziste.toggleFav(\'' + esc(coin.id) + '\')" aria-label="Favorit">' +
+									'<svg width="14" height="14" viewBox="0 0 24 24" fill="' + (isFav ? '#f6c90e' : 'none') + '" stroke="' + (isFav ? '#f6c90e' : 'rgba(255,255,255,0.3)') + '" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' +
+								'</button>' +
+								'<span class="tm-card-rank">' + coin.market_cap_rank + '</span>' +
+								coinIconHtml(coin.symbol, coin.name, 32, coin.image) +
+								'<div>' +
+									'<div style="font-size:14px;font-weight:700;color:#fff;">' + esc(coin.name) + '</div>' +
+									'<div style="font-size:11px;color:#4a5568;font-weight:600;">' + esc((coin.symbol||'').toUpperCase()) + '</div>' +
+								'</div>' +
+							'</div>' +
+							'<div class="tm-card-right">' +
+								'<span class="tm-card-price">' + fmtPrice(coin.current_price) + '</span>' +
+								'<div class="tm-card-row2">' +
+									'<span class="' + pctCls + '" style="font-size:12px;font-weight:600;">' + sign + (p24 ? p24.toFixed(2) : '0.00') + '%</span>' +
+									'<button class="tm-expand-btn" onclick="event.stopPropagation();tmToggle(this.closest(\'.tm-card\'))" aria-label="Prikaži više">' +
+										'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>' +
+									'</button>' +
+								'</div>' +
+							'</div>' +
+						'</div>' +
+						'<div class="tm-card-details">' +
+							'<div class="tm-detail-grid">' +
+								'<div class="tm-detail-item"><span class="tm-detail-label">24h Visoko</span><span class="tm-detail-val">' + fmtPrice(coin.high_24h) + '</span></div>' +
+								'<div class="tm-detail-item"><span class="tm-detail-label">24h Nisko</span><span class="tm-detail-val">' + fmtPrice(coin.low_24h) + '</span></div>' +
+								'<div class="tm-detail-item"><span class="tm-detail-label">Market Cap</span><span class="tm-detail-val">' + fmtBig(coin.market_cap) + '</span></div>' +
+								'<div class="tm-detail-item"><span class="tm-detail-label">Rang</span><span class="tm-detail-val">#' + coin.market_cap_rank + '</span></div>' +
+							'</div>' +
+							'<div class="tm-card-actions">' +
+								'<a href="https://www.binance.com/register?ref=UW0F76CC" target="_blank" rel="noopener nofollow" class="trziste-buy-btn">Kupi na Binance</a>' +
+								'<button class="trziste-add-btn' + (inPf ? ' in-portfolio' : '') + '" onclick="trziste.openModal(\'' + esc(coin.id) + '\')" title="' + (inPf ? 'Uredi' : 'Dodaj u portfolio') + '">' +
+									(inPf
+										? '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>'
+										: '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>') +
+								'</button>' +
+							'</div>' +
+						'</div>' +
+					'</div>';
+				}).join('');
+			}
+
+			/* ── MOBILE RENDER — Portfolio ────────────────────────── */
+			function renderPortfolioMobile(pf, totalVal) {
+				var el = $id('pf-mobile-list');
+				if (!el) return;
+				if (!pf.length) { el.innerHTML = ''; return; }
+				el.innerHTML = pf.map(function(entry, idx) {
+					var price  = getPriceForCoin(entry.id);
+					var coin24 = S.coins.filter(function(c) { return c.id === entry.id; })[0];
+					var chg24  = coin24 ? coin24.price_change_percentage_24h : null;
+					var val    = entry.amount * price;
+					var pnlE   = (entry.buyPrice && entry.amount > 0) ? val - (entry.amount * entry.buyPrice) : null;
+					var pnlP   = (entry.buyPrice && entry.buyPrice > 0) ? ((price - entry.buyPrice) / entry.buyPrice) * 100 : null;
+					var pct    = totalVal > 0 ? (val / totalVal) * 100 : 0;
+					var amtStr = entry.amount > 0
+						? entry.amount.toLocaleString('hr-HR', {maximumFractionDigits:8}) + ' ' + esc(entry.symbol)
+						: '—';
+					var pctCls = chg24 > 0 ? 'price-up' : chg24 < 0 ? 'price-down' : 'price-neutral';
+					return '<div class="tm-pf-card" data-idx="' + idx + '">' +
+						'<div class="tm-pf-card-main" onclick="tmToggle(this.closest(\'.tm-pf-card\'))">' +
+							'<div class="tm-pf-card-left">' +
+								coinIconHtml(entry.symbol.toLowerCase(), entry.name, 36) +
+								'<div>' +
+									'<div style="font-size:14px;font-weight:700;color:#fff;">' + esc(entry.name) + '</div>' +
+									'<div style="font-size:12px;color:#abb8c3;font-weight:600;">' + amtStr + '</div>' +
+								'</div>' +
+							'</div>' +
+							'<div class="tm-pf-card-right">' +
+								'<span class="tm-pf-amt">' + (val > 0 ? fmtPrice(val) : '—') + '</span>' +
+								'<div class="tm-card-row2">' +
+									(chg24 !== null ? '<span class="' + pctCls + '" style="font-size:12px;">' + (chg24 > 0 ? '+' : '') + chg24.toFixed(2) + '%</span>' : '') +
+									'<button class="tm-expand-btn" onclick="event.stopPropagation();tmToggle(this.closest(\'.tm-pf-card\'))" aria-label="Prikaži više">' +
+										'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>' +
+									'</button>' +
+								'</div>' +
+							'</div>' +
+						'</div>' +
+						'<div class="tm-pf-card-details">' +
+							'<div class="tm-pf-detail-grid">' +
+								'<div class="tm-detail-item"><span class="tm-detail-label">Cijena kupnje</span><span class="tm-detail-val">' + (entry.buyPrice ? fmtPrice(entry.buyPrice) : '—') + '</span></div>' +
+								'<div class="tm-detail-item"><span class="tm-detail-label">Tren. cijena</span><span class="tm-detail-val">' + (price > 0 ? fmtPrice(price) : '—') + '</span></div>' +
+								'<div class="tm-detail-item"><span class="tm-detail-label">P&amp;L</span><span class="tm-detail-val ' + (pnlE >= 0 ? 'price-up' : 'price-down') + '">' + (pnlE !== null ? (pnlE >= 0 ? '+' : '') + fmtPrice(pnlE) : '—') + '</span></div>' +
+								'<div class="tm-detail-item"><span class="tm-detail-label">P&amp;L %</span><span class="tm-detail-val ' + (pnlP >= 0 ? 'price-up' : 'price-down') + '">' + (pnlP !== null ? (pnlP >= 0 ? '+' : '') + pnlP.toFixed(2) + '%' : '—') + '</span></div>' +
+								'<div class="tm-detail-item"><span class="tm-detail-label">Udio</span><span class="tm-detail-val">' + pct.toFixed(1) + '%</span></div>' +
+							'</div>' +
+							'<div class="tm-pf-actions">' +
+								'<button class="trziste-act-btn" onclick="trziste.editPortfolioEntry(' + idx + ')" style="flex:1;justify-content:center;">' +
+									'<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-right:4px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Uredi' +
+								'</button>' +
+								'<button class="trziste-act-btn danger" onclick="trziste.removePortfolioEntry(' + idx + ')" style="padding:8px 14px;">×</button>' +
+							'</div>' +
+						'</div>' +
+					'</div>';
+				}).join('');
+			}
+
+			/* Expand/collapse toggle za mobilne kartice */
+			window.tmToggle = function(card) {
+				if (!card) return;
+				card.classList.toggle('expanded');
+			};
 
 			function renderPagination(current, total) {
 				var el = $id('trziste-pagination');
@@ -2121,7 +2325,7 @@
 			}).join('');
 
 			ctEl.innerHTML =
-				'<div class="trziste-table-wrap">' +
+				'<div class="trziste-pf-table-wrap trziste-table-wrap">' +
 					'<div class="trziste-table-scroll">' +
 						'<table class="trziste-pf-table">' +
 							'<thead><tr>' +
@@ -2140,6 +2344,8 @@
 						'</table>' +
 					'</div>' +
 				'</div>';
+
+			renderPortfolioMobile(pf, totalVal);
 		}
 
 		function portfolioAvg24h(pf) {
