@@ -130,13 +130,17 @@
     // Provjeri sesiju pri učitavanju
     var user = await getUser();
     updateNavbar(user);
+    // Sync iz DB-a samo ako nema lokalnih postavki (prvi put na ovom uređaju)
     if (user && window.KriptoDB) {
-      window.KriptoDB.syncOnLogin(user);
+      var hasLocal = false;
+      try { hasLocal = !!localStorage.getItem('kriptoSettings'); } catch(e) {}
+      if (!hasLocal) window.KriptoDB.syncOnLogin(user);
     }
 
     // Slušaj promjene auth stanja
     onAuthChange(function (_event, session) {
       updateNavbar(session ? session.user : null);
+      // Sync iz DB-a samo pri stvarnoj prijavi (SIGNED_IN event)
       if (_event === 'SIGNED_IN' && session && window.KriptoDB) {
         window.KriptoDB.syncOnLogin(session.user);
       }
