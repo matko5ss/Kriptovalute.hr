@@ -13,5 +13,5 @@
 //     Redirect URLs: https://kriptovalute.hr/*, http://localhost:8080/*
 // ─────────────────────────────────────────────────────────────────
 
-window.SUPABASE_URL  = 'OVDJE_ZALIJEPI_SUPABASE_PROJECT_URL';
-window.SUPABASE_ANON = 'OVDJE_ZALIJEPI_SUPABASE_ANON_KEY';
+window.SUPABASE_URL  = 'https://eqwkjyqpfvtclliyrvnw.supabase.co';
+window.SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVxd2tqeXFwZnZ0Y2xsaXlydm53Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxNTUzNzQsImV4cCI6MjA5MTczMTM3NH0.Tgsz7OeDPa_uR9KCFz2LYl_pENpB60nAz2S2gr-b8QE';

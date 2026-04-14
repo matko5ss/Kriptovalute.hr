@@ -399,7 +399,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Update question number
         questionNumber.textContent = `Pitanje ${index + 1} od ${shuffledQuestions.length}`;
-        
+
+        // Update progress bar width
+        const fill = document.getElementById('kviz-progress-fill');
+        if (fill) {
+            fill.style.width = `${((index + 1) / shuffledQuestions.length) * 100}%`;
+        }
+
         // Update local reference
         currentQuestionIndex = index;
     }

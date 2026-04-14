@@ -341,7 +341,7 @@
           id="input-otp"
           class="auth-input auth-otp-input"
           placeholder="000000"
-          maxlength="6"
+          maxlength="8"
           autocomplete="one-time-code"
           inputmode="numeric"
           pattern="[0-9]*"
@@ -517,8 +517,8 @@
       if (!initSupabase()) return;
       hideAlert('otp');
       var token = document.getElementById('input-otp').value.trim().replace(/\D/g, '');
-      if (token.length !== 6) {
-        showAlert('otp', 'Unesi 6-znamenkasti kod iz emaila.');
+      if (token.length < 6 || token.length > 8) {
+        showAlert('otp', 'Unesi kod iz emaila (6-8 znamenki).');
         return;
       }
       setLoading('btn-verify-otp', true);
@@ -629,8 +629,8 @@
         if (e.key === 'Enter') authPage.verifyOtp();
       });
       otpInput.addEventListener('input', function() {
-        this.value = this.value.replace(/\D/g, '').slice(0, 6);
-        if (this.value.length === 6) authPage.verifyOtp();
+        this.value = this.value.replace(/\D/g, '').slice(0, 8);
+        if (this.value.length === 8) authPage.verifyOtp();
       });
     }
   });
