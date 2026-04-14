@@ -912,13 +912,30 @@
 			<!-- PORTFOLIO PANEL -->
 			<div id="panel-portfolio" class="trziste-panel" role="tabpanel" aria-labelledby="tab-portfolio" style="display:none;">
 
-				<div class="trziste-pf-summary" id="pf-summary"></div>
-				<div id="pf-content"></div>
+				<!-- Auth gate — prikazuje se samo ako korisnik nije prijavljen -->
+				<div id="pf-auth-gate" style="display:none;text-align:center;padding:60px 20px;">
+					<div style="width:64px;height:64px;border-radius:50%;background:rgba(108,92,231,0.12);border:2px solid rgba(108,92,231,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+						<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a29bfe" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+					</div>
+					<h3 style="color:#fff;font-size:18px;font-weight:700;margin-bottom:8px;">Prijava je potrebna</h3>
+					<p style="color:#7d8590;font-size:14px;margin-bottom:24px;max-width:320px;margin-left:auto;margin-right:auto;">Za pristup portfoliu trebaš imati račun. Registracija je besplatna i traje manje od minute.</p>
+					<a href="prijava.html?return=trziste.html" class="btn_one" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+						Prijava / Registracija
+					</a>
+					<p style="color:#4a5568;font-size:12px;margin-top:16px;">Već imaš račun? <a href="prijava.html?return=trziste.html" style="color:#a29bfe;">Prijavi se</a></p>
+				</div>
 
-				<p class="trziste-pf-note">
-					<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-					Podaci portfolia pohranjuju se isključivo na vašem uređaju (lokalno, bez prijave).
-				</p>
+				<!-- Portfolio sadržaj — prikazuje se samo prijavljenim korisnicima -->
+				<div id="pf-logged-in" style="display:none;">
+					<div class="trziste-pf-summary" id="pf-summary"></div>
+					<div id="pf-content"></div>
+					<p class="trziste-pf-note">
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+						Podaci portfolia pohranjuju se lokalno na vašem uređaju.
+					</p>
+				</div>
+
 			</div><!-- /panel-portfolio -->
 
 		</div>
@@ -1790,6 +1807,26 @@
 
 		/* ── TABS ────────────────────────────────────────── */
 		function switchTab(tab) {
+			if (tab === 'portfolio') {
+				// Provjeri auth prije prikazivanja portfolia
+				var authCheck = (window.KriptoAuth && window.KriptoAuth.getSession)
+					? window.KriptoAuth.getSession()
+					: Promise.resolve(null);
+				authCheck.then(function(session) {
+					var loggedIn = !!(session && session.user);
+					$id('pf-auth-gate').style.display   = loggedIn ? 'none' : '';
+					$id('pf-logged-in').style.display   = loggedIn ? '' : 'none';
+					S.activeTab = 'portfolio';
+					$id('tab-market').classList.remove('active');
+					$id('tab-portfolio').classList.add('active');
+					$id('tab-market').setAttribute('aria-selected', 'false');
+					$id('tab-portfolio').setAttribute('aria-selected', 'true');
+					$id('panel-market').style.display    = 'none';
+					$id('panel-portfolio').style.display = '';
+					if (loggedIn) renderPortfolio();
+				});
+				return;
+			}
 			S.activeTab = tab;
 			$id('tab-market').classList.toggle('active',    tab === 'market');
 			$id('tab-portfolio').classList.toggle('active', tab === 'portfolio');
@@ -1797,7 +1834,6 @@
 			$id('tab-portfolio').setAttribute('aria-selected', tab === 'portfolio');
 			$id('panel-market').style.display    = tab === 'market'    ? '' : 'none';
 			$id('panel-portfolio').style.display = tab === 'portfolio' ? '' : 'none';
-			if (tab === 'portfolio') renderPortfolio();
 		}
 
 		/* ── FAVORITES ───────────────────────────────────── */
@@ -1842,11 +1878,25 @@
 		}
 
 		/* ── QUICK ADD ─────────────────────────────────────────── */
+		function requireAuth(callback) {
+			var authCheck = (window.KriptoAuth && window.KriptoAuth.getSession)
+				? window.KriptoAuth.getSession()
+				: Promise.resolve(null);
+			authCheck.then(function(session) {
+				if (session && session.user) {
+					callback();
+				} else {
+					window.location.href = 'prijava.html?return=trziste.html';
+				}
+			});
+		}
+
 		function quickAdd(coinId) {
+			requireAuth(function() {
 			var coin = S.coins.filter(function(c) { return c.id === coinId; })[0];
 			if (!coin) return;
 			if (indexInPortfolio(coinId) > -1) {
-				openModal(coinId);
+				_openModal(coinId);
 				return;
 			}
 			var entry = {
@@ -1863,10 +1913,14 @@
 			updatePortfolioBadge();
 			renderMarketTable();
 			showToast('✓ ' + coin.name + ' dodan u portfolio');
+			}); // requireAuth
 		}
 
 		/* ── OPEN MODAL ──────────────────────────────────────────── */
 		function openModal(coinId) {
+			requireAuth(function() { _openModal(coinId); });
+		}
+		function _openModal(coinId) {
 			var coin = S.coins.filter(function(c) { return c.id === coinId; })[0];
 			if (!coin) return;
 			S.modalCoin   = coin;
