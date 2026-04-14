@@ -25,9 +25,9 @@
   function getSettings() {
     try {
       return JSON.parse(localStorage.getItem(STORAGE_KEY)) ||
-             { avatar: 'satoshi', currency: 'eur' };
+             { avatar: 'satoshi', currency: 'eur', theme: 'dark' };
     } catch(e) {
-      return { avatar: 'satoshi', currency: 'eur' };
+      return { avatar: 'satoshi', currency: 'eur', theme: 'dark' };
     }
   }
 
@@ -39,6 +39,15 @@
   function avatarUrl(seed) {
     return 'https://api.dicebear.com/7.x/bottts/svg?seed=' + encodeURIComponent(seed) +
            '&backgroundColor=6c5ce7&radius=50';
+  }
+
+  // ── Primijeni temu ───────────────────────────────────────────
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      document.documentElement.classList.add('light');
+    } else {
+      document.documentElement.classList.remove('light');
+    }
   }
 
   // ── Ažuriraj navbar avatar ───────────────────────────────────
@@ -104,6 +113,17 @@
           '</div>' +
         '</div>' +
 
+        '<div class="ks-section">' +
+          '<div class="ks-section-title">' +
+            '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>' +
+            'Tema' +
+          '</div>' +
+          '<div class="ks-cur-group" id="ks-theme-group">' +
+            '<button class="ks-cur-btn' + (s.theme !== 'light' ? ' active' : '') + '" data-theme="dark">🌙 Tamna</button>' +
+            '<button class="ks-cur-btn' + (s.theme === 'light' ? ' active' : '') + '" data-theme="light">☀️ Svijetla</button>' +
+          '</div>' +
+        '</div>' +
+
         '<div class="ks-footer">' +
           '<button class="ks-save-btn" id="ks-save-btn">Spremi postavke</button>' +
         '</div>' +
@@ -154,6 +174,19 @@
       });
     }
 
+    // Tema odabir
+    var themeGroup = document.getElementById('ks-theme-group');
+    if (themeGroup) {
+      themeGroup.addEventListener('click', function(e) {
+        var btn = e.target.closest('.ks-cur-btn');
+        if (!btn) return;
+        themeGroup.querySelectorAll('.ks-cur-btn').forEach(function(b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+      });
+    }
+
     // Spremi
     var saveBtn = document.getElementById('ks-save-btn');
     if (saveBtn) saveBtn.addEventListener('click', saveAndClose);
@@ -166,14 +199,17 @@
 
   // ── Spremi i zatvori ─────────────────────────────────────────
   function saveAndClose() {
-    var selectedAv = document.querySelector('.ks-av-item.ks-av-selected');
-    var selectedCur = document.querySelector('.ks-cur-btn.active');
-    var seed = selectedAv ? selectedAv.dataset.seed : 'satoshi';
-    var cur  = selectedCur ? selectedCur.dataset.cur : 'eur';
+    var selectedAv    = document.querySelector('.ks-av-item.ks-av-selected');
+    var selectedCur   = document.querySelector('#ks-cur-group .ks-cur-btn.active');
+    var selectedTheme = document.querySelector('#ks-theme-group .ks-cur-btn.active');
+    var seed  = selectedAv    ? selectedAv.dataset.seed      : 'satoshi';
+    var cur   = selectedCur   ? selectedCur.dataset.cur      : 'eur';
+    var theme = selectedTheme ? selectedTheme.dataset.theme  : 'dark';
 
-    saveSettings({ avatar: seed, currency: cur });
+    saveSettings({ avatar: seed, currency: cur, theme: theme });
     refreshNavAvatar(seed);
     applyCurrency(cur);
+    applyTheme(theme);
     hideSettings();
 
     // Flash feedback
@@ -197,8 +233,11 @@
     document.querySelectorAll('.ks-av-item').forEach(function(el) {
       el.classList.toggle('ks-av-selected', el.dataset.seed === s.avatar);
     });
-    document.querySelectorAll('.ks-cur-btn').forEach(function(el) {
+    document.querySelectorAll('#ks-cur-group .ks-cur-btn').forEach(function(el) {
       el.classList.toggle('active', el.dataset.cur === s.currency);
+    });
+    document.querySelectorAll('#ks-theme-group .ks-cur-btn').forEach(function(el) {
+      el.classList.toggle('active', el.dataset.theme === s.theme);
     });
     var modal = document.getElementById('kriptoSettingsModal');
     if (modal) {
@@ -298,6 +337,7 @@
     localStorage.removeItem('trziste_currency');
 
     var s = getSettings();
+    applyTheme(s.theme);
     // Primijeni spremljenu valutu na trziste nakon što se stranica učita
     window.addEventListener('load', function() {
       applyCurrency(s.currency);
