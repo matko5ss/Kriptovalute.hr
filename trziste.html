@@ -1782,7 +1782,7 @@
 					var pctCls = p24 > 0 ? 'price-up' : p24 < 0 ? 'price-down' : 'price-neutral';
 					var sign   = p24 > 0 ? '+' : '';
 					return '<div class="tm-card" data-id="' + esc(coin.id) + '">' +
-						'<div class="tm-card-main" onclick="tmToggle(this.closest(\'.tm-card\'))">' +
+						'<div class="tm-card-main" ontouchend="event.preventDefault();tmToggle(this.closest(\'.tm-card\'))" onclick="tmToggle(this.closest(\'.tm-card\'))">' +
 							'<div class="tm-card-left">' +
 								'<button class="tm-fav-btn' + (isFav ? ' active' : '') + '" ' +
 									'onclick="event.stopPropagation();trziste.toggleFav(\'' + esc(coin.id) + '\')" aria-label="Favorit">' +
@@ -1821,11 +1821,6 @@
 							'</div>' +
 							'<div class="tm-card-actions">' +
 								'<a href="https://www.binance.com/register?ref=UW0F76CC" target="_blank" rel="noopener nofollow" class="trziste-buy-btn">Kupi na Binance</a>' +
-								'<button class="trziste-add-btn' + (inPf ? ' in-portfolio' : '') + '" onclick="trziste.openModal(\'' + esc(coin.id) + '\')" title="' + (inPf ? 'Uredi' : 'Dodaj u portfolio') + '">' +
-									(inPf
-										? '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>'
-										: '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>') +
-								'</button>' +
 							'</div>' +
 						'</div>' +
 					'</div>';
@@ -1850,7 +1845,7 @@
 						: '—';
 					var pctCls = chg24 > 0 ? 'price-up' : chg24 < 0 ? 'price-down' : 'price-neutral';
 					return '<div class="tm-pf-card" data-idx="' + idx + '">' +
-						'<div class="tm-pf-card-main" onclick="tmToggle(this.closest(\'.tm-pf-card\'))">' +
+						'<div class="tm-pf-card-main" ontouchend="event.preventDefault();tmToggle(this.closest(\'.tm-pf-card\'))" onclick="tmToggle(this.closest(\'.tm-pf-card\'))">' +
 							'<div class="tm-pf-card-left">' +
 								coinIconHtml(entry.symbol.toLowerCase(), entry.name, 36) +
 								'<div>' +
@@ -1890,9 +1885,6 @@
 			/* Expand/collapse toggle za mobilne kartice */
 			window.tmToggle = function(card) {
 				if (!card) return;
-				if (card._toggling) return;
-				card._toggling = true;
-				setTimeout(function() { card._toggling = false; }, 350);
 				card.classList.toggle('expanded');
 			};
 
