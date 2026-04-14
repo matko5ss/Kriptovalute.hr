@@ -95,9 +95,9 @@
       var avatarUrl = (user.user_metadata && user.user_metadata.avatar_url) || '';
       var displayName = (user.user_metadata && (user.user_metadata.full_name || user.user_metadata.name))
         || user.email || '';
-      var initials = displayName
-        ? displayName.split(' ').map(function(w){ return w[0]; }).join('').toUpperCase().slice(0,2)
-        : '?';
+      // DiceBear Bottts robot avatar kao default (unikatan po emailu)
+      var seed = encodeURIComponent(user.email || displayName || 'user');
+      var defaultAvatar = 'https://api.dicebear.com/7.x/bottts/svg?seed=' + seed + '&backgroundColor=6c5ce7&radius=50';
 
       if (btn) btn.style.display = 'none';
       if (userMenu) {
@@ -105,11 +105,8 @@
         var avatar = document.getElementById('nav-user-avatar');
         var name = document.getElementById('nav-user-name');
         if (avatar) {
-          if (avatarUrl) {
-            avatar.innerHTML = '<img src="' + avatarUrl + '" alt="Avatar" style="width:30px;height:30px;border-radius:50%;object-fit:cover;">';
-          } else {
-            avatar.innerHTML = '<span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#6c5ce7,#a29bfe);color:#fff;font-size:12px;font-weight:700;">' + initials + '</span>';
-          }
+          var src = avatarUrl || defaultAvatar;
+          avatar.innerHTML = '<img src="' + src + '" alt="Avatar" style="width:30px;height:30px;border-radius:50%;object-fit:cover;background:#1a1a2e;">';
         }
         if (name) name.textContent = displayName.split('@')[0];
       }
@@ -130,7 +127,7 @@
     updateNavbar(user);
 
     // Slušaj promjene auth stanja
-    onAuthChange(function (event, session) {
+    onAuthChange(function (_event, session) {
       updateNavbar(session ? session.user : null);
     });
 
