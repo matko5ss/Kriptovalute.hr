@@ -703,7 +703,16 @@
 	.tm-card-right {
 		display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0;
 	}
+	.tm-card-row-price { display: flex; align-items: center; gap: 7px; justify-content: flex-end; }
 	.tm-card-price { font-size: 15px; font-weight: 700; color: #fff; }
+	.tm-quick-add {
+		display: flex; align-items: center; justify-content: center;
+		width: 24px; height: 24px; border-radius: 6px; border: 1.5px solid rgba(108,92,231,0.5);
+		background: rgba(108,92,231,0.12); color: #a29bfe;
+		cursor: pointer; flex-shrink: 0; transition: background .15s, border-color .15s;
+	}
+	.tm-quick-add:active { background: rgba(108,92,231,0.3); }
+	.tm-quick-add.in-portfolio { border-color: rgba(0,212,170,0.5); background: rgba(0,212,170,0.1); color: #00d4aa; }
 	.tm-card-row2 { display: flex; align-items: center; gap: 8px; }
 	.tm-expand-btn {
 		background: none; border: none; color: #4a5568; cursor: pointer;
@@ -1787,7 +1796,14 @@
 								'</div>' +
 							'</div>' +
 							'<div class="tm-card-right">' +
-								'<span class="tm-card-price">' + fmtPrice(coin.current_price) + '</span>' +
+								'<div class="tm-card-row-price">' +
+									'<span class="tm-card-price">' + fmtPrice(coin.current_price) + '</span>' +
+									'<button class="tm-quick-add' + (inPf ? ' in-portfolio' : '') + '" onclick="event.stopPropagation();trziste.openModal(\'' + esc(coin.id) + '\')" title="' + (inPf ? 'Uredi u portfoliu' : 'Dodaj u portfolio') + '" aria-label="' + (inPf ? 'Uredi' : 'Dodaj u portfolio') + '">' +
+										(inPf
+											? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>'
+											: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>') +
+									'</button>' +
+								'</div>' +
 								'<div class="tm-card-row2">' +
 									'<span class="' + pctCls + '" style="font-size:12px;font-weight:600;">' + sign + (p24 ? p24.toFixed(2) : '0.00') + '%</span>' +
 									'<button class="tm-expand-btn" onclick="event.stopPropagation();tmToggle(this.closest(\'.tm-card\'))" aria-label="Prikaži više">' +
