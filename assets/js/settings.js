@@ -210,6 +210,14 @@
     refreshNavAvatar(seed);
     applyCurrency(cur);
     applyTheme(theme);
+
+    // Spremi u DB ako je korisnik prijavljen
+    if (window.KriptoDB && window.KriptoAuth) {
+      window.KriptoAuth.getUser().then(function(user) {
+        if (user) window.KriptoDB.saveSettings(user.id, { avatar: seed, currency: cur, theme: theme });
+      });
+    }
+
     hideSettings();
 
     // Flash feedback

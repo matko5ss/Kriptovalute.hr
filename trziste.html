@@ -48,6 +48,7 @@
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/style-two.css?v=24">
+	<link rel="stylesheet" href="assets/css/themes.css">
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<style>
 	/* ==========================================
@@ -2120,6 +2121,12 @@
 			updatePortfolioBadge();
 			renderMarketTable();
 			showToast('✓ ' + coin.name + ' dodan u portfolio');
+			// Sync u DB
+			if (window.KriptoDB && window.KriptoAuth) {
+				window.KriptoAuth.getUser().then(function(user) {
+					if (user) window.KriptoDB.upsertPortfolioEntry(user.id, entry);
+				});
+			}
 			}); // requireAuth
 		}
 
@@ -2192,15 +2199,28 @@
 			updatePortfolioBadge();
 			renderMarketTable();
 			if (S.activeTab === 'portfolio') renderPortfolio();
+			// Sync u DB
+			if (window.KriptoDB && window.KriptoAuth) {
+				window.KriptoAuth.getUser().then(function(user) {
+					if (user) window.KriptoDB.upsertPortfolioEntry(user.id, entry);
+				});
+			}
 		}
 
 		function removePortfolioEntry(idx) {
 			if (!confirm('Ukloniti ' + S.portfolio[idx].name + ' iz portfolia?')) return;
+			var removed = S.portfolio[idx];
 			S.portfolio.splice(idx, 1);
 			localStorage.setItem('trziste_portfolio', JSON.stringify(S.portfolio));
 			updatePortfolioBadge();
 			renderPortfolio();
 			renderMarketTable();
+			// Sync u DB
+			if (window.KriptoDB && window.KriptoAuth) {
+				window.KriptoAuth.getUser().then(function(user) {
+					if (user) window.KriptoDB.deletePortfolioEntry(user.id, removed.id);
+				});
+			}
 		}
 
 		function editPortfolioEntry(idx) {
@@ -2446,6 +2466,14 @@
 			removePortfolioEntry: removePortfolioEntry,
 			editPortfolioEntry:   editPortfolioEntry,
 			manualRefresh:        manualRefresh,
+			getCoins:             function() { return S.coins; },
+			setPortfolio:         function(pf) {
+				S.portfolio = pf;
+				localStorage.setItem('trziste_portfolio', JSON.stringify(pf));
+				updatePortfolioBadge();
+				renderMarketTable();
+				if (S.activeTab === 'portfolio') renderPortfolio();
+			},
 			goPage:               function(p) { S.page = p; renderMarketTable(); window.scrollTo({top: document.getElementById('trziste-table').offsetTop - 80, behavior:'smooth'}); }
 		};
 	})();
@@ -2456,6 +2484,7 @@
 	<!-- Supabase Auth + Settings -->
 	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
 	<script src="assets/js/supabase-config.js" defer></script>
+	<script src="assets/js/db.js" defer></script>
 	<script src="assets/js/auth.js" defer></script>
 	<script src="assets/js/settings.js" defer></script>
 	<script>
@@ -2463,6 +2492,20 @@
 		if (window.trziste && window.trziste.setCurrency) {
 			window.trziste.setCurrency(e.detail.currency);
 		}
+	});
+	// Kada se portfolio učita iz baze, primijeni ga
+	window.addEventListener('kriptoPortfolioSynced', function(e) {
+		if (!window.trziste || !e.detail || !e.detail.portfolio) return;
+		var pf = e.detail.portfolio;
+		// Nadopuni image iz trenutnih tržišnih podataka gdje je moguće
+		var coins = window.trziste.getCoins ? window.trziste.getCoins() : [];
+		pf.forEach(function(entry) {
+			if (!entry.image) {
+				var match = coins.filter(function(c) { return c.id === entry.id; })[0];
+				if (match) entry.image = match.image || '';
+			}
+		});
+		window.trziste.setPortfolio(pf);
 	});
 	</script>
 

@@ -130,10 +130,16 @@
     // Provjeri sesiju pri učitavanju
     var user = await getUser();
     updateNavbar(user);
+    if (user && window.KriptoDB) {
+      window.KriptoDB.syncOnLogin(user);
+    }
 
     // Slušaj promjene auth stanja
     onAuthChange(function (_event, session) {
       updateNavbar(session ? session.user : null);
+      if (_event === 'SIGNED_IN' && session && window.KriptoDB) {
+        window.KriptoDB.syncOnLogin(session.user);
+      }
     });
 
     // Odjava gumb
