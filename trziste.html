@@ -1782,7 +1782,7 @@
 					var pctCls = p24 > 0 ? 'price-up' : p24 < 0 ? 'price-down' : 'price-neutral';
 					var sign   = p24 > 0 ? '+' : '';
 					return '<div class="tm-card" data-id="' + esc(coin.id) + '">' +
-						'<div class="tm-card-main" ontouchend="event.preventDefault();tmToggle(this.closest(\'.tm-card\'))" onclick="tmToggle(this.closest(\'.tm-card\'))">' +
+						'<div class="tm-card-main" onclick="tmToggle(this.closest(\'.tm-card\'))">' +
 							'<div class="tm-card-left">' +
 								'<button class="tm-fav-btn' + (isFav ? ' active' : '') + '" ' +
 									'onclick="event.stopPropagation();trziste.toggleFav(\'' + esc(coin.id) + '\')" aria-label="Favorit">' +
@@ -1845,7 +1845,7 @@
 						: '—';
 					var pctCls = chg24 > 0 ? 'price-up' : chg24 < 0 ? 'price-down' : 'price-neutral';
 					return '<div class="tm-pf-card" data-idx="' + idx + '">' +
-						'<div class="tm-pf-card-main" ontouchend="event.preventDefault();tmToggle(this.closest(\'.tm-pf-card\'))" onclick="tmToggle(this.closest(\'.tm-pf-card\'))">' +
+						'<div class="tm-pf-card-main" onclick="tmToggle(this.closest(\'.tm-pf-card\'))">' +
 							'<div class="tm-pf-card-left">' +
 								coinIconHtml(entry.symbol.toLowerCase(), entry.name, 36) +
 								'<div>' +
@@ -1885,6 +1885,9 @@
 			/* Expand/collapse toggle za mobilne kartice */
 			window.tmToggle = function(card) {
 				if (!card) return;
+				var now = Date.now();
+				if (card._lt && now - card._lt < 600) return;
+				card._lt = now;
 				card.classList.toggle('expanded');
 			};
 
