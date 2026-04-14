@@ -94,9 +94,6 @@
       // Prijavljeni korisnik — prikaži avatar i dropdown
       var displayName = (user.user_metadata && (user.user_metadata.full_name || user.user_metadata.name))
         || user.email || '';
-      // DiceBear Bottts robot avatar kao default (unikatan po emailu)
-      var seed = encodeURIComponent(user.email || displayName || 'user');
-      var defaultAvatar = 'https://api.dicebear.com/7.x/bottts/svg?seed=' + seed + '&backgroundColor=6c5ce7&radius=50';
 
       if (btn) btn.style.display = 'none';
       if (userMenu) {
@@ -104,11 +101,20 @@
         var avatar = document.getElementById('nav-user-avatar');
         var name = document.getElementById('nav-user-name');
         if (avatar) {
-          var src = defaultAvatar;
+          // Koristi avatar iz postavki ako postoji, inače default seed po emailu
+          var savedSeed = null;
+          try {
+            var s = JSON.parse(localStorage.getItem('kriptoSettings'));
+            if (s && s.avatar) savedSeed = s.avatar;
+          } catch(e) {}
+          var seed = savedSeed || encodeURIComponent(user.email || 'user');
+          var src = 'https://api.dicebear.com/7.x/bottts/svg?seed=' + seed + '&backgroundColor=6c5ce7&radius=50';
           avatar.innerHTML = '<img src="' + src + '" alt="Avatar" style="width:30px;height:30px;border-radius:50%;object-fit:cover;background:#1a1a2e;">';
         }
         if (name) name.textContent = displayName.split('@')[0];
       }
+      // Obavijesti settings.js da je auth spreman
+      window.dispatchEvent(new CustomEvent('kriptoAuthReady', { detail: { user: user } }));
     } else {
       // Odjavljeni korisnik — prikaži "Prijava" gumb
       if (btn) btn.style.display = '';
