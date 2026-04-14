@@ -1402,23 +1402,23 @@
         ];
         var eurRate = 0.93;
         var prices = {};
+        var currency = (function() {
+          try { var s = JSON.parse(localStorage.getItem('kriptoSettings')); return (s && s.currency) || 'eur'; }
+          catch(e) { return 'eur'; }
+        })();
 
         function fmt(usd) {
-          var v = usd * eurRate;
-          if (v >= 1000)
-            return (
-              "€" + v.toLocaleString("hr-HR", { maximumFractionDigits: 0 })
-            );
-          if (v >= 1)
-            return (
-              "€" +
-              v.toLocaleString("hr-HR", {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })
-            );
-          return "€" + v.toPrecision(4);
+          var v = currency === 'eur' ? usd * eurRate : usd;
+          var sym = currency === 'eur' ? '€' : '$';
+          if (v >= 1000) return sym + v.toLocaleString("hr-HR", { maximumFractionDigits: 0 });
+          if (v >= 1)    return sym + v.toLocaleString("hr-HR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+          return sym + v.toPrecision(4);
         }
+
+        window.addEventListener('kriptoCurrencyChanged', function(e) {
+          currency = e.detail.currency;
+          render();
+        });
 
         function render() {
           var el = document.getElementById("kripto-price-coins");
