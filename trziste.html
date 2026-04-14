@@ -1775,6 +1775,11 @@
 			function renderMarketMobile(coins) {
 				var el = $id('trziste-mobile-list');
 				if (!el) return;
+				// Zapamti otvorene kartice prije re-rendera
+				var expanded = {};
+				el.querySelectorAll('.tm-card.expanded').forEach(function(c) {
+					expanded[c.dataset.id] = true;
+				});
 				el.innerHTML = coins.map(function(coin) {
 					var p24   = coin.price_change_percentage_24h;
 					var isFav = S.favorites.indexOf(coin.id) > -1;
@@ -1825,6 +1830,11 @@
 						'</div>' +
 					'</div>';
 				}).join('');
+				// Vrati otvorene kartice
+				Object.keys(expanded).forEach(function(id) {
+					var card = el.querySelector('.tm-card[data-id="' + CSS.escape(id) + '"]');
+					if (card) card.classList.add('expanded');
+				});
 			}
 
 			/* ── MOBILE RENDER — Portfolio ────────────────────────── */
