@@ -1890,6 +1890,9 @@
 			/* Expand/collapse toggle za mobilne kartice */
 			window.tmToggle = function(card) {
 				if (!card) return;
+				if (card._toggling) return;
+				card._toggling = true;
+				setTimeout(function() { card._toggling = false; }, 350);
 				card.classList.toggle('expanded');
 			};
 
