@@ -294,9 +294,14 @@
 
   // ── Init ─────────────────────────────────────────────────────
   function init() {
+    // Očisti stari localStorage key (migracija s trziste_currency)
+    localStorage.removeItem('trziste_currency');
+
     var s = getSettings();
-    // Primijeni spremljenu valutu
-    applyCurrency(s.currency);
+    // Primijeni spremljenu valutu na trziste nakon što se stranica učita
+    window.addEventListener('load', function() {
+      applyCurrency(s.currency);
+    });
     // Ažuriraj avatar nakon što se auth inicijalizira
     window.addEventListener('kriptoAuthReady', function() {
       refreshNavAvatar(s.avatar);
