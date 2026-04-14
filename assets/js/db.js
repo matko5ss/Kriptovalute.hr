@@ -119,21 +119,29 @@
     // ── Postavke ─────────────────────────────────────────────
     var dbSettings = await loadSettings(userId);
     if (dbSettings) {
-      // Spoji s lokalnim postavkama (DB ima prednost)
+      // Lokalne postavke imaju prednost — DB se koristi samo za
+      // inicijalizaciju na novom uređaju (kad nema lokalnih podataka)
       var local = {};
-      try { local = JSON.parse(localStorage.getItem('kriptoSettings')) || {}; } catch(e) {}
+      var hadLocal = false;
+      try {
+        var raw = localStorage.getItem('kriptoSettings');
+        if (raw) { hadLocal = true; local = JSON.parse(raw) || {}; }
+      } catch(e) {}
+
       var merged = {
-        avatar:   dbSettings.avatar   || local.avatar   || 'satoshi',
-        currency: dbSettings.currency || local.currency || 'eur',
-        theme:    dbSettings.theme    || local.theme    || 'dark'
+        avatar:   hadLocal ? (local.avatar   || 'satoshi') : (dbSettings.avatar   || 'satoshi'),
+        currency: hadLocal ? (local.currency || 'eur')     : (dbSettings.currency || 'eur'),
+        theme:    hadLocal ? (local.theme    || 'dark')    : (dbSettings.theme    || 'dark')
       };
       localStorage.setItem('kriptoSettings', JSON.stringify(merged));
 
-      // Primijeni temu
-      if (merged.theme === 'light') {
-        document.documentElement.classList.add('light');
-      } else {
-        document.documentElement.classList.remove('light');
+      // Primijeni temu samo ako nije bilo lokalnih postavki (novi uređaj)
+      if (!hadLocal) {
+        if (merged.theme === 'light') {
+          document.documentElement.classList.add('light');
+        } else {
+          document.documentElement.classList.remove('light');
+        }
       }
 
       // Primijeni valutu
