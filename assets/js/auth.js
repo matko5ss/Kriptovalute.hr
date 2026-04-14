@@ -92,7 +92,6 @@
 
     if (user) {
       // Prijavljeni korisnik — prikaži avatar i dropdown
-      var avatarUrl = (user.user_metadata && user.user_metadata.avatar_url) || '';
       var displayName = (user.user_metadata && (user.user_metadata.full_name || user.user_metadata.name))
         || user.email || '';
       // DiceBear Bottts robot avatar kao default (unikatan po emailu)
@@ -105,7 +104,7 @@
         var avatar = document.getElementById('nav-user-avatar');
         var name = document.getElementById('nav-user-name');
         if (avatar) {
-          var src = avatarUrl || defaultAvatar;
+          var src = defaultAvatar;
           avatar.innerHTML = '<img src="' + src + '" alt="Avatar" style="width:30px;height:30px;border-radius:50%;object-fit:cover;background:#1a1a2e;">';
         }
         if (name) name.textContent = displayName.split('@')[0];
