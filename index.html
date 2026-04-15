@@ -268,7 +268,8 @@
 			]
 		}
 		</script>
-	</head>
+		<style>.grecaptcha-badge{visibility:hidden!important}</style>
+</head>
 	
     <body data-spy="scroll" data-offset="80">
 	
@@ -501,7 +502,7 @@
 								<div class="kripto-contact-form-wrapper">
 									<h2 class="kripto-contact-title kripto-contact-title-desktop">Kontaktirajte nas</h2>
 									<div id="kripto-form-message" class="kripto-form-message" role="alert" style="display:none;"></div>
-							<form class="kripto-contact-form" method="post" action="send-contact.php">
+							<form class="kripto-contact-form" method="post" action="send-contact.php" id="kripto-contact-form">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
@@ -534,8 +535,10 @@
 											<textarea id="kripto-message" name="message" class="form-control" rows="6" placeholder="Upišite Vašu poruku" required></textarea>
 										</div>
 									</div>
-									<div class="col-12 text-center">
+									<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+										<div class="col-12 text-center">
 										<button type="submit" class="btn_one">Pošalji</button>
+								<p class="kripto-recaptcha-notice">Zaštićeno s <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google reCAPTCHA</a>.</p>
 									</div>
 								</div>
 							</form>
@@ -759,5 +762,21 @@
 		})();
 		</script>
     <script src="assets/js/email-protect.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdBZLksAAAAACLqFJacvdpviwKv7gVNTosWxZnc" async defer></script>
+	<script>
+	(function() {
+		var form = document.getElementById('kripto-contact-form');
+		if (!form) return;
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+			grecaptcha.ready(function() {
+				grecaptcha.execute('6LdBZLksAAAAACLqFJacvdpviwKv7gVNTosWxZnc', {action: 'contact'}).then(function(token) {
+					document.getElementById('g-recaptcha-response').value = token;
+					form.submit();
+				});
+			});
+		});
+	})();
+	</script>
 </body>
 </html>
