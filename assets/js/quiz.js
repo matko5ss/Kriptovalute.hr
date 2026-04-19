@@ -397,8 +397,10 @@ document.addEventListener('DOMContentLoaded', function() {
         questionElement.appendChild(optionsList);
         questionContainer.appendChild(questionElement);
         
-        // Update question number
+        // Update question number and progress bar
         questionNumber.textContent = `Pitanje ${index + 1} od ${shuffledQuestions.length}`;
+        const progressFill = document.getElementById('kviz-progress-fill');
+        if (progressFill) progressFill.style.width = ((index + 1) / shuffledQuestions.length * 100) + '%';
         
         // Update local reference
         currentQuestionIndex = index;
