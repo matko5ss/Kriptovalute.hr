@@ -5,62 +5,60 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var PASSING_SCORE = 16;
   var QUIZ_QUESTION_COUNT = 20;
-  var ICON_BASE = 'https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons@master/svg/color/';
 
   var cryptoPool = [
-    { name: 'Bitcoin',              symbol: 'BTC'   },
-    { name: 'Ethereum',             symbol: 'ETH'   },
-    { name: 'XRP',                  symbol: 'XRP'   },
-    { name: 'BNB',                  symbol: 'BNB'   },
-    { name: 'Solana',               symbol: 'SOL'   },
-    { name: 'Dogecoin',             symbol: 'DOGE'  },
-    { name: 'Cardano',              symbol: 'ADA'   },
-    { name: 'TRON',                 symbol: 'TRX'   },
-    { name: 'Polkadot',             symbol: 'DOT'   },
-    { name: 'Chainlink',            symbol: 'LINK'  },
-    { name: 'Litecoin',             symbol: 'LTC'   },
-    { name: 'Polygon',              symbol: 'MATIC' },
-    { name: 'Uniswap',              symbol: 'UNI'   },
-    { name: 'Bitcoin Cash',         symbol: 'BCH'   },
-    { name: 'Stellar',              symbol: 'XLM'   },
-    { name: 'Monero',               symbol: 'XMR'   },
-    { name: 'Cosmos',               symbol: 'ATOM'  },
-    { name: 'Avalanche',            symbol: 'AVAX'  },
-    { name: 'Near Protocol',        symbol: 'NEAR'  },
-    { name: 'Algorand',             symbol: 'ALGO'  },
-    { name: 'Aave',                 symbol: 'AAVE'  },
-    { name: 'Compound',             symbol: 'COMP'  },
-    { name: 'MakerDAO',             symbol: 'MKR'   },
-    { name: 'Synthetix',            symbol: 'SNX'   },
-    { name: 'Yearn Finance',        symbol: 'YFI'   },
-    { name: 'SushiSwap',            symbol: 'SUSHI' },
-    { name: 'Curve DAO Token',      symbol: 'CRV'   },
-    { name: 'Fantom',               symbol: 'FTM'   },
-    { name: 'Theta Network',        symbol: 'THETA' },
-    { name: 'Decentraland',         symbol: 'MANA'  },
-    { name: 'Axie Infinity',        symbol: 'AXS'   },
-    { name: 'The Sandbox',          symbol: 'SAND'  },
-    { name: 'Ethereum Classic',     symbol: 'ETC'   },
-    { name: 'EOS',                  symbol: 'EOS'   },
-    { name: 'NEO',                  symbol: 'NEO'   },
-    { name: 'IOTA',                 symbol: 'IOTA'  },
-    { name: 'VeChain',              symbol: 'VET'   },
-    { name: 'Waves',                symbol: 'WAVES' },
-    { name: 'Basic Attention Token',symbol: 'BAT'   },
-    { name: 'Enjin Coin',           symbol: 'ENJ'   },
-    { name: 'Zcash',                symbol: 'ZEC'   },
-    { name: 'Dash',                 symbol: 'DASH'  },
-    { name: 'OmiseGO',              symbol: 'OMG'   },
-    { name: 'Loopring',             symbol: 'LRC'   },
-    { name: 'Ren',                  symbol: 'REN'   },
-    { name: 'Filecoin',             symbol: 'FIL'   },
-    { name: '1inch',                symbol: '1INCH' },
-    { name: 'Kyber Network',        symbol: 'KNC'   },
-    { name: '0x Protocol',          symbol: 'ZRX'   },
-    { name: 'Shiba Inu',            symbol: 'SHIB'  },
-  ].map(function (c) {
-    return { name: c.name, symbol: c.symbol, img: ICON_BASE + c.symbol.toLowerCase() + '.svg' };
-  });
+    { name: 'Bitcoin',               symbol: 'BTC',   img: 'https://assets.coingecko.com/coins/images/1/large/bitcoin.png' },
+    { name: 'Ethereum',              symbol: 'ETH',   img: 'https://assets.coingecko.com/coins/images/279/large/ethereum.png' },
+    { name: 'XRP',                   symbol: 'XRP',   img: 'https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png' },
+    { name: 'BNB',                   symbol: 'BNB',   img: 'https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png' },
+    { name: 'Solana',                symbol: 'SOL',   img: 'https://assets.coingecko.com/coins/images/4128/large/solana.png' },
+    { name: 'Dogecoin',              symbol: 'DOGE',  img: 'https://assets.coingecko.com/coins/images/5/large/dogecoin.png' },
+    { name: 'Cardano',               symbol: 'ADA',   img: 'https://assets.coingecko.com/coins/images/975/large/cardano.png' },
+    { name: 'TRON',                  symbol: 'TRX',   img: 'https://assets.coingecko.com/coins/images/1094/large/tron-logo.png' },
+    { name: 'Polkadot',              symbol: 'DOT',   img: 'https://assets.coingecko.com/coins/images/12171/large/polkadot.png' },
+    { name: 'Chainlink',             symbol: 'LINK',  img: 'https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png' },
+    { name: 'Litecoin',              symbol: 'LTC',   img: 'https://assets.coingecko.com/coins/images/2/large/litecoin.png' },
+    { name: 'Polygon',               symbol: 'MATIC', img: 'https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png' },
+    { name: 'Uniswap',               symbol: 'UNI',   img: 'https://assets.coingecko.com/coins/images/12504/large/uniswap-uni.png' },
+    { name: 'Bitcoin Cash',          symbol: 'BCH',   img: 'https://assets.coingecko.com/coins/images/780/large/bitcoin-cash-circle.png' },
+    { name: 'Stellar',               symbol: 'XLM',   img: 'https://assets.coingecko.com/coins/images/100/large/Stellar_symbol_black_RGB.png' },
+    { name: 'Monero',                symbol: 'XMR',   img: 'https://assets.coingecko.com/coins/images/69/large/monero_logo.png' },
+    { name: 'Cosmos',                symbol: 'ATOM',  img: 'https://assets.coingecko.com/coins/images/1481/large/cosmos_hub.png' },
+    { name: 'Avalanche',             symbol: 'AVAX',  img: 'https://assets.coingecko.com/coins/images/12559/large/Avalanche_Circle_RedWhite_Trans.png' },
+    { name: 'Near Protocol',         symbol: 'NEAR',  img: 'https://assets.coingecko.com/coins/images/10365/large/near.jpg' },
+    { name: 'Algorand',              symbol: 'ALGO',  img: 'https://assets.coingecko.com/coins/images/4030/large/32x32.png' },
+    { name: 'Aave',                  symbol: 'AAVE',  img: 'https://assets.coingecko.com/coins/images/12645/large/AAVE.png' },
+    { name: 'Compound',              symbol: 'COMP',  img: 'https://assets.coingecko.com/coins/images/10775/large/COMP.png' },
+    { name: 'MakerDAO',              symbol: 'MKR',   img: 'https://assets.coingecko.com/coins/images/1364/large/Mark_Maker.png' },
+    { name: 'Synthetix',             symbol: 'SNX',   img: 'https://assets.coingecko.com/coins/images/3406/large/SNX.png' },
+    { name: 'Yearn Finance',         symbol: 'YFI',   img: 'https://assets.coingecko.com/coins/images/11849/large/yfi-192x192.png' },
+    { name: 'SushiSwap',             symbol: 'SUSHI', img: 'https://assets.coingecko.com/coins/images/12271/large/512x512_Logo_no_chop.png' },
+    { name: 'Curve DAO Token',       symbol: 'CRV',   img: 'https://assets.coingecko.com/coins/images/12124/large/Curve.png' },
+    { name: 'Fantom',                symbol: 'FTM',   img: 'https://assets.coingecko.com/coins/images/4001/large/Fantom_round.png' },
+    { name: 'Theta Network',         symbol: 'THETA', img: 'https://assets.coingecko.com/coins/images/2538/large/theta-token-logo.png' },
+    { name: 'Decentraland',          symbol: 'MANA',  img: 'https://assets.coingecko.com/coins/images/878/large/decentraland-mana.png' },
+    { name: 'Axie Infinity',         symbol: 'AXS',   img: 'https://assets.coingecko.com/coins/images/13029/large/axie_infinity_logo.png' },
+    { name: 'The Sandbox',           symbol: 'SAND',  img: 'https://assets.coingecko.com/coins/images/12129/large/sandbox_logo.jpg' },
+    { name: 'Ethereum Classic',      symbol: 'ETC',   img: 'https://assets.coingecko.com/coins/images/453/large/ethereum-classic-logo.png' },
+    { name: 'EOS',                   symbol: 'EOS',   img: 'https://assets.coingecko.com/coins/images/738/large/eos-eos-logo.png' },
+    { name: 'NEO',                   symbol: 'NEO',   img: 'https://assets.coingecko.com/coins/images/480/large/NEO_512_512.png' },
+    { name: 'IOTA',                  symbol: 'IOTA',  img: 'https://assets.coingecko.com/coins/images/692/large/IOTA_Swirl.png' },
+    { name: 'VeChain',               symbol: 'VET',   img: 'https://assets.coingecko.com/coins/images/1167/large/VeChain-Logo-768x725.png' },
+    { name: 'Waves',                 symbol: 'WAVES', img: 'https://assets.coingecko.com/coins/images/425/large/waves.png' },
+    { name: 'Basic Attention Token', symbol: 'BAT',   img: 'https://assets.coingecko.com/coins/images/677/large/basic-attention-token.png' },
+    { name: 'Enjin Coin',            symbol: 'ENJ',   img: 'https://assets.coingecko.com/coins/images/1102/large/enjin-coin-logo.png' },
+    { name: 'Zcash',                 symbol: 'ZEC',   img: 'https://assets.coingecko.com/coins/images/486/large/circle-zcash-color.png' },
+    { name: 'Dash',                  symbol: 'DASH',  img: 'https://assets.coingecko.com/coins/images/19/large/dash-logo.png' },
+    { name: 'OmiseGO',               symbol: 'OMG',   img: 'https://assets.coingecko.com/coins/images/776/large/OMG_Network.jpg' },
+    { name: 'Loopring',              symbol: 'LRC',   img: 'https://assets.coingecko.com/coins/images/913/large/LRC.png' },
+    { name: 'Ren',                   symbol: 'REN',   img: 'https://assets.coingecko.com/coins/images/11232/large/Ren.png' },
+    { name: 'Filecoin',              symbol: 'FIL',   img: 'https://assets.coingecko.com/coins/images/12817/large/filecoin.png' },
+    { name: '1inch',                 symbol: '1INCH', img: 'https://assets.coingecko.com/coins/images/13469/large/1inch-token.png' },
+    { name: '0x Protocol',           symbol: 'ZRX',   img: 'https://assets.coingecko.com/coins/images/863/large/0x.png' },
+    { name: 'Shiba Inu',             symbol: 'SHIB',  img: 'https://assets.coingecko.com/coins/images/11939/large/shiba.png' },
+    { name: 'Kyber Network',         symbol: 'KNC',   img: 'https://assets.coingecko.com/coins/images/14899/large/RwdVsGcw_400x400.jpg' },
+    { name: 'Toncoin',               symbol: 'TON',   img: 'https://assets.coingecko.com/coins/images/17980/large/ton_symbol.png' },
+  ];
 
   function shuffle(arr) {
     return arr.slice().sort(function () { return Math.random() - 0.5; });
@@ -110,6 +108,19 @@ document.addEventListener('DOMContentLoaded', function () {
     showQuestion(0);
   }
 
+  function makeLogoImg(src, altText, cssClass, size) {
+    var img = document.createElement('img');
+    img.src = src;
+    img.alt = altText;
+    img.className = cssClass;
+    img.width = size;
+    img.height = size;
+    img.style.width = size + 'px';
+    img.style.height = size + 'px';
+    img.onerror = function () { this.style.opacity = '0.15'; };
+    return img;
+  }
+
   window.showQuestion = function (index) {
     var question = shuffledQuestions[index];
     questionContainer.innerHTML = '';
@@ -119,17 +130,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var logoWrap = document.createElement('div');
     logoWrap.className = 'kviz-logo-question';
-    var img = document.createElement('img');
-    img.src = question.crypto.img;
-    img.alt = '?';
-    img.className = 'kviz-logo-img';
-    img.width = 120;
-    img.height = 120;
-    img.onerror = function () { this.style.opacity = '0.15'; };
+    logoWrap.appendChild(makeLogoImg(question.crypto.img, '?', 'kviz-logo-img', 120));
     var logoText = document.createElement('p');
     logoText.className = 'kviz-logo-question-text';
     logoText.textContent = 'Koja je ovo kriptovaluta?';
-    logoWrap.appendChild(img);
     logoWrap.appendChild(logoText);
     questionEl.appendChild(logoWrap);
 
@@ -229,12 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var reviewLogoWrap = document.createElement('div');
       reviewLogoWrap.className = 'kviz-review-logo';
-      var reviewImg = document.createElement('img');
-      reviewImg.src = q.crypto.img;
-      reviewImg.alt = q.crypto.name;
-      reviewImg.className = 'kviz-review-logo-img';
-      reviewImg.onerror = function () { this.style.opacity = '0.15'; };
-      reviewLogoWrap.appendChild(reviewImg);
+      reviewLogoWrap.appendChild(makeLogoImg(q.crypto.img, q.crypto.name, 'kviz-review-logo-img', 44));
       qReview.appendChild(reviewLogoWrap);
 
       var qText = document.createElement('p');
