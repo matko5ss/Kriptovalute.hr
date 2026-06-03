@@ -15,18 +15,18 @@
   --kripto-border: #e0d9d0;
   --kripto-btn-text: #ffffff;
   --kripto-nav-link: #1e1b17;
-  --kripto-nav-sticky-bg: rgba(253,250,247,0.97);
-  --kripto-card-shadow: 0 2px 16px rgba(96,23,255,0.06);
+  --kripto-nav-sticky-bg: rgba(253, 250, 247, 0.97);
+  --kripto-card-shadow: 0 2px 16px rgba(96, 23, 255, 0.06);
   --kripto-ticker-bg: #ede8f5;
   --kripto-ticker-border: #d8cff5;
 }
 html[data-theme="dark"] {
   /* Dark mode */
   --kripto-bg: #050530;
-  --kripto-body-bg: rgba(5,5,48,0.4);
+  --kripto-body-bg: rgba(5, 5, 48, 0.4);
   --kripto-bg-card: #0a0d42;
   --kripto-bg-card-hover: #121652;
-  --kripto-bg-stats: rgba(10,13,66,0.5);
+  --kripto-bg-stats: rgba(10, 13, 66, 0.5);
   --kripto-text: #abb8c3;
   --kripto-heading: #ffffff;
   --kripto-accent: #a78bfa;
@@ -34,7 +34,7 @@ html[data-theme="dark"] {
   --kripto-border: #1a2066;
   --kripto-btn-text: #1a0066;
   --kripto-nav-link: #ffffff;
-  --kripto-nav-sticky-bg: rgba(10,13,66,0.97);
+  --kripto-nav-sticky-bg: rgba(10, 13, 66, 0.97);
   --kripto-card-shadow: none;
   --kripto-ticker-bg: #0a0d42;
   --kripto-ticker-border: #1a2066;
@@ -43,16 +43,19 @@ html {
   background: var(--kripto-bg);
 }
 body {
-color: var(--kripto-text);
-font-family: 'Quicksand', sans-serif;
-font-size: 16px;
-font-weight: 400;
-line-height: 26px;
-background: var(--kripto-body-bg);
-overflow-x:hidden;
+  color: var(--kripto-text);
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  background: var(--kripto-body-bg);
+  overflow-x: hidden;
 }
 html,
-body { height: 100%;position:relative;  }
+body {
+  height: 100%;
+  position: relative;
+}
 h1,
 h2,
 h3,
@@ -60,83 +63,88 @@ h4,
 h5,
 h6 {
   letter-spacing: 0px;
-  margin-top: 0px; 
-  font-family: 'Quicksand', sans-serif;
+  margin-top: 0px;
+  font-family: "Quicksand", sans-serif;
   color: var(--kripto-heading);
   font-weight: 400;
   position: relative;
 }
 a {
-font-family: 'Quicksand', sans-serif;
-text-decoration: none;
--webkit-transition: all 0.2s ease 0s;
-transition: all 0.2s ease 0s;
+  font-family: "Quicksand", sans-serif;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
 }
 a:hover {
-    color: var(--kripto-accent);
-    text-decoration: none;
+  color: var(--kripto-accent);
+  text-decoration: none;
 }
 a:focus {
-    outline: none;
-    text-decoration: none;
+  outline: none;
+  text-decoration: none;
 }
 p {
-    margin-bottom: 0;
-	position: relative;
+  margin-bottom: 0;
+  position: relative;
 }
 ul,
 li {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 ::-webkit-input-placeholder {
   font-weight: 400;
-font-family: 'Quicksand', sans-serif; }
+  font-family: "Quicksand", sans-serif;
+}
 
 :-moz-placeholder {
   font-weight: 400;
-font-family: 'Quicksand', sans-serif;}
+  font-family: "Quicksand", sans-serif;
+}
 
 ::-moz-placeholder {
   font-weight: 400;
-font-family: 'Quicksand', sans-serif;}
+  font-family: "Quicksand", sans-serif;
+}
 
 :-ms-input-placeholder {
   font-weight: 400;
-font-family: 'Quicksand', sans-serif;}
+  font-family: "Quicksand", sans-serif;
+}
 .form-control::placeholder {
-	color: var(--kripto-text);
-	opacity: 0.7;
+  color: var(--kripto-text);
+  opacity: 0.7;
 }
 fieldset {
-    border: 0 none;
-    margin: 0 auto;
-    padding: 0;
+  border: 0 none;
+  margin: 0 auto;
+  padding: 0;
 }
 .preloader {
-	background: var(--kripto-bg);
-	transition: background 0.2s;
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 99999;	
+  background: var(--kripto-bg);
+  transition: background 0.2s;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99999;
 }
 .spinner {
-	width: 50px;
-	height: 50px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -25px 0 0 -25px;
-	font-size: 10px;
-	text-indent: -12345px;
-	z-index: 10000;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  font-size: 10px;
+  text-indent: -12345px;
+  z-index: 10000;
 }
 
-.double-bounce1, .double-bounce2 {
+.double-bounce1,
+.double-bounce2 {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -145,167 +153,194 @@ fieldset {
   position: absolute;
   top: 0;
   left: 0;
-  
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
+
+  -webkit-animation: sk-bounce 2s infinite ease-in-out;
+  animation: sk-bounce 2s infinite ease-in-out;
 }
 
 .double-bounce2 {
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
 }
 
 @-webkit-keyframes sk-bounce {
-  0%, 100% { -webkit-transform: scale(0.0) }
-  50% { -webkit-transform: scale(1.0) }
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
 }
 
 @keyframes sk-bounce {
-  0%, 100% { 
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 50% { 
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
   }
 }
 .status-mes h4 {
-color: #f7f7f7;
-position:relative;
-font-size:24px;
-margin-top: 30px;
-text-transform: capitalize;
-letter-spacing: 1px;
+  color: #f7f7f7;
+  position: relative;
+  font-size: 24px;
+  margin-top: 30px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
 }
-.no-padding { padding: 0 }
+.no-padding {
+  padding: 0;
+}
 /*END PRELOADER DESIGN*/
-.section-padding {padding:100px 0;}
-.section-title{margin-bottom:60px;}
-.section-title  h1 {
-font-size:40px;
-font-weight:600;
-margin-top: 0;
-position: relative;
-text-transform: capitalize;
+.section-padding {
+  padding: 100px 0;
 }
-h1.section-title-white{
-color:#fff;
-font-size: 40px;
-line-height: 70px;
-font-weight:600;
-margin-top: 0;
-position: relative;
+.section-title {
+  margin-bottom: 60px;
 }
-p.section-title-white{color:#fff;}
-@media only screen and (max-width:768px) { 
-.section-title  h1  {font-size:40px;}
+.section-title h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 0;
+  position: relative;
+  text-transform: capitalize;
 }
-@media only screen and (max-width:480px) { 
-.section-title  h1  {font-size:30px;}
+h1.section-title-white {
+  color: #fff;
+  font-size: 40px;
+  line-height: 70px;
+  font-weight: 600;
+  margin-top: 0;
+  position: relative;
 }
-.section-title span{
-background: var(--kripto-accent) none repeat scroll 0 0;
-display: block;
-height: 2px;
-margin: 10px auto;
-width: 100px;
+p.section-title-white {
+  color: #fff;
+}
+@media only screen and (max-width: 768px) {
+  .section-title h1 {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .section-title h1 {
+    font-size: 30px;
+  }
+}
+.section-title span {
+  background: var(--kripto-accent) none repeat scroll 0 0;
+  display: block;
+  height: 2px;
+  margin: 10px auto;
+  width: 100px;
 }
 
-.section-title-white{color:#fff;position:relative;}
-.section-title  p{
-padding: 0 10px;
-width: 60%;
-margin: auto;	
+.section-title-white {
+  color: #fff;
+  position: relative;
 }
-@media only screen and (max-width:480px) { 
-.section-title  p{
-padding: 0 10px;
-width: 90%;
-margin: auto;	
+.section-title p {
+  padding: 0 10px;
+  width: 60%;
+  margin: auto;
 }
+@media only screen and (max-width: 480px) {
+  .section-title p {
+    padding: 0 10px;
+    width: 90%;
+    margin: auto;
+  }
 }
 /*END SECTION TITLE DESIGN*/
 .topcontrol {
-background: var(--kripto-bg-card-hover);
-border: 1px solid rgba(255, 255, 255, 0.15);
-border-radius: 30px;
-bottom: 15px;
-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-color: rgba(255, 255, 255, 0.7);
-cursor: pointer;
-font-size: 22px;
-height: 50px;
-line-height: 47px;
-opacity: 1;
--ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-filter: alpha(opacity=100);
-position: fixed;
-right: 15px;
-text-align: center;
--webkit-transition: all 0.2s ease 0s;
-transition: all 0.2s ease 0s;
-width: 50px;
-z-index: 9990;
+  background: var(--kripto-bg-card-hover);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  bottom: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 22px;
+  height: 50px;
+  line-height: 47px;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  position: fixed;
+  right: 15px;
+  text-align: center;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  width: 50px;
+  z-index: 9990;
 }
-@media only screen and (max-width:768px) { 
-.topcontrol {display:none;}
+@media only screen and (max-width: 768px) {
+  .topcontrol {
+    display: none;
+  }
 }
 .topcontrol:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
 }
 /*END SCROLL TO TOP*/
 
 .btn_one {
-	background: var(--kripto-accent);
-	padding: 10px 36px;
-	border: 2px solid var(--kripto-accent);
-	color: var(--kripto-btn-text);
-	border-radius:30px;
-	font-size: 16px;
-	display: inline-block;
-	font-weight: 500;
-	position:relative;
-	text-transform: capitalize;
-	transition: 0.3s;
+  background: var(--kripto-accent);
+  padding: 10px 36px;
+  border: 2px solid var(--kripto-accent);
+  color: var(--kripto-btn-text);
+  border-radius: 30px;
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 500;
+  position: relative;
+  text-transform: capitalize;
+  transition: 0.3s;
 }
 
-.btn_one:hover, .btn_one:focus{
-background:none;
-color: var(--kripto-accent);
-border:2px solid var(--kripto-accent);
+.btn_one:hover,
+.btn_one:focus {
+  background: none;
+  color: var(--kripto-accent);
+  border: 2px solid var(--kripto-accent);
 }
 .btn_one-outline {
-	background: none;
-	color: var(--kripto-accent);
-	border: 2px solid var(--kripto-accent);
+  background: none;
+  color: var(--kripto-accent);
+  border: 2px solid var(--kripto-accent);
 }
-.btn_one-outline:hover, .btn_one-outline:focus {
-	background: var(--kripto-accent);
-	color: var(--kripto-btn-text);
-	border: 2px solid var(--kripto-accent);
+.btn_one-outline:hover,
+.btn_one-outline:focus {
+  background: var(--kripto-accent);
+  color: var(--kripto-btn-text);
+  border: 2px solid var(--kripto-accent);
 }
 .btn_two {
-	background: rgba(255, 0, 102, 0.85);
-	padding: 10px 36px;
-	border: 2px solid rgba(255, 0, 102, 0.85);
-	color: #fff;
-	border-radius:30px;
-	position:relative;
-	display: inline-block;
-	font-weight: 500;
-	font-size: 16px;
-	text-transform: capitalize;
-	transition: 0.3s;
+  background: rgba(255, 0, 102, 0.85);
+  padding: 10px 36px;
+  border: 2px solid rgba(255, 0, 102, 0.85);
+  color: #fff;
+  border-radius: 30px;
+  position: relative;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: capitalize;
+  transition: 0.3s;
 }
-.btn_two:hover, .btn_two:focus{
-background:#fff;
-color:#1d1e20;
-border:2px solid #fff;
+.btn_two:hover,
+.btn_two:focus {
+  background: #fff;
+  color: #1d1e20;
+  border: 2px solid #fff;
 }
 /*END BUTTON DESING*/
-#particles-js{
+#particles-js {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -325,212 +360,219 @@ border:2px solid #fff;
 /*
 * ----------------------------------------------------------------------------------------
 /* Navigacija */
-* ----------------------------------------------------------------------------------------
-*/
-.navbar-brand img{
-	width: 182px;
-	height: auto;
+*
+  ----------------------------------------------------------------------------------------
+  */
+  .navbar-brand
+  img {
+  width: 182px;
+  height: auto;
 }
 .kripto-nav-logo {
-	max-height: 65px;
-	width: auto;
+  max-height: 65px;
+  width: auto;
 }
 .btn-nav {
-	padding: 8px 24px;
-	font-size: 14px;
+  padding: 8px 24px;
+  font-size: 14px;
 }
 
 /* Ticker ispod headera, malo razmaknut – u flowu, skrola s stranicom */
 .kripto-ticker-wrap {
-	margin-top: 88px;
-	background: var(--kripto-ticker-bg);
-	border-bottom: 1px solid var(--kripto-ticker-border);
-	padding: 12px 0;
-	overflow: hidden;
-	width: 100%;
+  margin-top: 88px;
+  background: var(--kripto-ticker-bg);
+  border-bottom: 1px solid var(--kripto-ticker-border);
+  padding: 12px 0;
+  overflow: hidden;
+  width: 100%;
 }
 .kripto-ticker {
-	overflow: hidden;
-	width: 100%;
+  overflow: hidden;
+  width: 100%;
 }
 .kripto-ticker-inner {
-	display: inline-flex;
-	align-items: center;
-	white-space: nowrap;
-	animation: kripto-ticker-scroll 50s linear infinite;
-	will-change: transform;
-	backface-visibility: hidden;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: kripto-ticker-scroll 50s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 .kripto-ticker-inner span {
-	color: var(--kripto-text);
-	font-size: 14px;
-	font-weight: 500;
+  color: var(--kripto-text);
+  font-size: 14px;
+  font-weight: 500;
 }
 .kripto-ticker-sep {
-	color: var(--kripto-border);
-	margin: 0 18px;
-	font-size: 10px;
-	user-select: none;
+  color: var(--kripto-border);
+  margin: 0 18px;
+  font-size: 10px;
+  user-select: none;
 }
 @media (min-width: 769px) {
-	.kripto-ticker-inner span {
-		font-size: 17px;
-	}
-	.kripto-ticker-sep {
-		font-size: 12px;
-		margin: 0 22px;
-	}
-	.kripto-ticker-wrap {
-		padding: 12px 0;
-	}
+  .kripto-ticker-inner span {
+    font-size: 17px;
+  }
+  .kripto-ticker-sep {
+    font-size: 12px;
+    margin: 0 22px;
+  }
+  .kripto-ticker-wrap {
+    padding: 12px 0;
+  }
 }
 /* 4 seta: drugi "Edukacija i radionice" na sredini, stalno puno teksta, nikad prazno */
 @keyframes kripto-ticker-scroll {
-	0% { transform: translateX(calc(50vw - 25%)); }
-	100% { transform: translateX(calc(50vw - 50%)); }
+  0% {
+    transform: translateX(calc(50vw - 25%));
+  }
+  100% {
+    transform: translateX(calc(50vw - 50%));
+  }
 }
 
 .navbar-custom {
-    background-color: transparent;
-    padding: 10px 0;
-    width: 100%;
-    border-radius: 0px;
-    z-index: 999;
-    margin-bottom: 0px;
-	border-bottom:0px;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+  background-color: transparent;
+  padding: 10px 0;
+  width: 100%;
+  border-radius: 0px;
+  z-index: 999;
+  margin-bottom: 0px;
+  border-bottom: 0px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .navbar-custom .container {
-	padding-left: 0;
-	padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 .navbar-custom .navbar-toggler {
-    color: #fff;
-    font-size: 30px;
-    padding: 0px;
+  color: #fff;
+  font-size: 30px;
+  padding: 0px;
 }
 .navbar-custom .navbar-brand {
-    color: var(--kripto-nav-link) !important;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 1.5px;
+  color: var(--kripto-nav-link) !important;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1.5px;
 }
 .navbar-custom .navbar-nav li a {
-    color: var(--kripto-nav-link) !important;
-    font-size: 16px;
-    background-color: transparent !important;
-    margin: 0 5px;
-    letter-spacing: 0.5px;
-    line-height: 24px;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    text-transform: capitalize;
-    font-weight: 500;
+  color: var(--kripto-nav-link) !important;
+  font-size: 16px;
+  background-color: transparent !important;
+  margin: 0 5px;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  text-transform: capitalize;
+  font-weight: 500;
 }
 .navbar-custom .navbar-nav li a:hover,
 .navbar-custom .navbar-nav li a:active,
 .navbar-custom .navbar-nav li a.active {
-    color: var(--kripto-accent) !important;
+  color: var(--kripto-accent) !important;
 }
 .navbar-custom .navbar-toggler {
-    color: var(--kripto-nav-link);
+  color: var(--kripto-nav-link);
 }
 .navbar-custom .navbar-nav .nav-item:last-child .nav-link {
-    margin-right: 0;
-    padding-right: 0;
+  margin-right: 0;
+  padding-right: 0;
 }
 .kripto-nav-dropdown.dropdown-menu {
-	background: var(--kripto-bg-card);
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
-	border: 1px solid var(--kripto-border);
-	border-radius: 10px;
-	padding: 8px 0;
-	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  background: var(--kripto-bg-card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--kripto-border);
+  border-radius: 10px;
+  padding: 8px 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
 }
 .kripto-nav-dropdown .dropdown-item {
-	color: var(--kripto-text);
-	padding: 10px 20px;
-	text-transform: lowercase !important;
+  color: var(--kripto-text);
+  padding: 10px 20px;
+  text-transform: lowercase !important;
 }
 .kripto-nav-dropdown .dropdown-item::first-letter {
-	text-transform: uppercase !important;
+  text-transform: uppercase !important;
 }
 .kripto-nav-dropdown .dropdown-item:hover,
 .kripto-nav-dropdown .dropdown-item:focus {
-	background: rgba(18, 22, 82, 0.8);
-	color: var(--kripto-heading);
+  background: rgba(18, 22, 82, 0.8);
+  color: var(--kripto-heading);
 }
 .navbar-custom.nav-sticky {
+  background-color: var(--kripto-nav-sticky-bg) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--kripto-border);
+  box-shadow: var(--kripto-card-shadow);
+}
+@media (max-width: 1023px) {
+  .navbar-custom .nav-social {
+    display: none;
+  }
+}
+@media (max-height: 480px) {
+  .navbar-nav {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+@media (min-width: 200px) and (max-width: 812px) {
+  .navbar-custom {
+    background-color: transparent !important;
+    padding: 10px 16px !important;
+  }
+  .navbar-brand img,
+  .kripto-nav-logo {
+    max-height: 42px !important;
+    width: auto !important;
+  }
+  nav:has(.navbar-collapse.show) + section {
+    padding-top: 280px !important;
+  }
+}
+@media (min-width: 200px) and (max-width: 768px) {
+  .navbar-custom {
+    background-color: transparent !important;
+    padding: 10px 16px !important;
+  }
+  .navbar-brand img,
+  .kripto-nav-logo {
+    max-height: 42px !important;
+    width: auto !important;
+  }
+  nav:has(.navbar-collapse.show) + section {
+    padding-top: 280px !important;
+  }
+  .navbar-nav .nav-item:has(.kripto-theme-toggle) {
+    margin-top: 16px;
+  }
+  .navbar-nav .nav-item:has(.btn-nav) {
+    margin-top: 8px;
+  }
+  .navbar-custom:has(.navbar-collapse.show) {
     background-color: var(--kripto-nav-sticky-bg) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 10px 0;
-    border-bottom: 1px solid var(--kripto-border);
-    box-shadow: var(--kripto-card-shadow);
-}
-@media (max-width: 1023px) {
-    .navbar-custom .nav-social {
-        display: none;
-    }
-}
-@media (max-height: 480px) {
-    .navbar-nav {
-        max-height: 200px;
-        overflow-y: auto;
-    }
-}
-@media (min-width: 200px) and (max-width: 812px) {
-.navbar-custom {
-	background-color: transparent !important;
-	padding: 10px 16px !important;
-}
-.navbar-brand img,
-.kripto-nav-logo {
-	max-height: 42px !important;
-	width: auto !important;
-}
-nav:has(.navbar-collapse.show) + section {
-	padding-top: 280px !important;
-}
-}
-@media (min-width: 200px) and (max-width: 768px) {
-.navbar-custom {
-	background-color: transparent !important;
-	padding: 10px 16px !important;
-}
-.navbar-brand img,
-.kripto-nav-logo {
-	max-height: 42px !important;
-	width: auto !important;
-}
-nav:has(.navbar-collapse.show) + section {
-	padding-top: 280px !important;
-}
-.navbar-nav .nav-item:has(.kripto-theme-toggle) {
-	margin-top: 16px;
-}
-.navbar-nav .nav-item:has(.btn-nav) {
-	margin-top: 8px;
-}
-.navbar-custom:has(.navbar-collapse.show) {
-	background-color: var(--kripto-nav-sticky-bg) !important;
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
-}
+  }
 }
 .mdi-menu::before {
-	content: "\F035C";
+  content: "\F035C";
 }
-.mdi::before, .mdi-set {
-	display: inline-block;
-	font: normal normal normal 24px/1 "Material Design Icons";
-	font-size: inherit;
-	text-rendering: auto;
-	line-height: inherit;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+.mdi::before,
+.mdi-set {
+  display: inline-block;
+  font: normal normal normal 24px/1 "Material Design Icons";
+  font-size: inherit;
+  text-rendering: auto;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 /*
 * ----------------------------------------------------------------------------------------
@@ -542,62 +584,71 @@ nav:has(.navbar-collapse.show) + section {
 * ----------------------------------------------------------------------------------------
 */
 .home_bg {
-	position: relative;
-    padding-bottom: 60px;
+  position: relative;
+  padding-bottom: 60px;
 }
 .hero-text h2 {
-	color: #fff;
-	font-size: 52px;
-	font-weight: 700;
-	line-height: 68px;
-	padding-top: 230px;
-	margin-bottom: 20px;
+  color: #fff;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 68px;
+  padding-top: 230px;
+  margin-bottom: 20px;
 }
-@media only screen and (max-width:768px) { 
-.hero-text h2 {font-size:42px;line-height:52px;}
+@media only screen and (max-width: 768px) {
+  .hero-text h2 {
+    font-size: 42px;
+    line-height: 52px;
+  }
 }
-@media only screen and (max-width:480px) { 
-.hero-text h2 {font-size:32px;}
+@media only screen and (max-width: 480px) {
+  .hero-text h2 {
+    font-size: 32px;
+  }
 }
 .hero-text p {
-	margin-top: 20px;
-	color:#fff;
+  margin-top: 20px;
+  color: #fff;
 }
-.home_btn{margin-top:40px;}
+.home_btn {
+  margin-top: 40px;
+}
 .home_btn a {
-	margin-right: 10px;
+  margin-right: 10px;
 }
 
 .buy-icons {
-	overflow: hidden;
-	margin-top: 150px;
-	padding:40px;
-	border:2px solid var(--kripto-border);
+  overflow: hidden;
+  margin-top: 150px;
+  padding: 40px;
+  border: 2px solid var(--kripto-border);
 }
-@media only screen and (max-width:480px) { 
-.buy-icons{padding:20px;}
+@media only screen and (max-width: 480px) {
+  .buy-icons {
+    padding: 20px;
+  }
 }
 .ca-starts-in .timer-area {
   margin: 40px 0;
 }
 .ca-starts-in h3 {
-	margin-bottom: 30px;
-	font-weight: 700;
-	font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 36px;
 }
 .ca-starts-in .timer-area div {
-color:#fff;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 
 .ca-starts-in .timer-area div .cdown {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 25%;
-          flex: 1 1 25%;
+  -ms-flex: 1 1 25%;
+  flex: 1 1 25%;
   max-width: 25%;
   display: block;
   background: var(--kripto-bg-card);
@@ -606,41 +657,51 @@ color:#fff;
   margin-right: 16px;
   padding: 15px;
 }
-@media only screen and (max-width:480px) { 
-.ca-starts-in .timer-area div .cdown{padding: 10px;}
+@media only screen and (max-width: 480px) {
+  .ca-starts-in .timer-area div .cdown {
+    padding: 10px;
+  }
 }
 .ca-starts-in .timer-area div .cdown:last-child {
   margin-right: 0;
 }
 .ca-starts-in .timer-area div .cdown .time-count {
-	display: block;
-	font-size: 30px;
-	margin-bottom: 10px;
-	font-weight: 700;
+  display: block;
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
-@media only screen and (max-width:480px) { 
-.ca-starts-in .timer-area div .cdown .time-count {font-size:22px;}
+@media only screen and (max-width: 480px) {
+  .ca-starts-in .timer-area div .cdown .time-count {
+    font-size: 22px;
+  }
 }
 .ca-starts-in .timer-area div .cdown p {
-	display: block;
-	font-size: 14px;
-	color: #fff;
-	line-height: 14px;
-	font-weight: 600;
+  display: block;
+  font-size: 14px;
+  color: #fff;
+  line-height: 14px;
+  font-weight: 600;
 }
-.ca-starts-in a{
-margin-right:10px;
+.ca-starts-in a {
+  margin-right: 10px;
 }
 
-.payment_img{margin-top:30px;}
-.payment_img a img {
-	display: inline-block;
-	width: 60px;
-	padding:5px;
+.payment_img {
+  margin-top: 30px;
 }
-.buy-icons-img{padding-top:200px;}
-@media only screen and (max-width:768px) { 
-.buy-icons-img{padding-top:80px;}
+.payment_img a img {
+  display: inline-block;
+  width: 60px;
+  padding: 5px;
+}
+.buy-icons-img {
+  padding-top: 200px;
+}
+@media only screen and (max-width: 768px) {
+  .buy-icons-img {
+    padding-top: 80px;
+  }
 }
 /*END COUNTDOWN*/
 /*
@@ -648,1263 +709,1323 @@ margin-right:10px;
 * ----------------------------------------------------------------------------------------
 */
 
-
 /*
 * ----------------------------------------------------------------------------------------
 * ----------------------------------------------------------------------------------------
 */
 .about_us {
-	padding-bottom: 50px;
-	position: relative;
-	z-index: 1;
+  padding-bottom: 50px;
+  position: relative;
+  z-index: 1;
 }
 .single_about {
-	padding: 0 10px;
-	margin-bottom: 30px;
-	border-radius: 5px;
-	position: relative;
-	-webkit-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
+  padding: 0 10px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  position: relative;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
-.single_about img{
-float: left;
-width: 60px;
-margin-right: 20px;
-margin-bottom: 20px;
+.single_about img {
+  float: left;
+  width: 60px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 .single_about h3 {
-	font-size: 20px;
-	font-weight: 600;
-	margin-bottom:15px;
-	overflow: hidden;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  overflow: hidden;
 }
-.single_about p{overflow: hidden;}
-.about-img{text-align: center;}
-.about-img img{margin-bottom:50px;}
+.single_about p {
+  overflow: hidden;
+}
+.about-img {
+  text-align: center;
+}
+.about-img img {
+  margin-bottom: 50px;
+}
 .about-text h2 {
-	margin-bottom: 30px;
-	font-size: 60px;
-	font-weight: 500;
+  margin-bottom: 30px;
+  font-size: 60px;
+  font-weight: 500;
 }
-@media only screen and (max-width:480px) { 
-.about-text h2 {font-size: 40px;}
+@media only screen and (max-width: 480px) {
+  .about-text h2 {
+    font-size: 40px;
+  }
 }
-.about-text p{margin-bottom:20px}
+.about-text p {
+  margin-bottom: 20px;
+}
 .about-bold {
-	font-weight: 600;
-	font-size: 20px;
-	line-height: 30px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
 }
-.about_btn {margin-top: 30px;}
+.about_btn {
+  margin-top: 30px;
+}
 
 /* Kriptovalute.hr services section - uniform spacing */
 .kriptovalute-services {
-	--kripto-gap: 30px;
+  --kripto-gap: 30px;
 }
 .kriptovalute-services .container {
-	padding-left: var(--kripto-gap);
-	padding-right: var(--kripto-gap);
+  padding-left: var(--kripto-gap);
+  padding-right: var(--kripto-gap);
 }
 .kriptovalute-services .section-title h1 {
-	margin-bottom: var(--kripto-gap);
-	text-transform: none;
+  margin-bottom: var(--kripto-gap);
+  text-transform: none;
 }
 .kripto-hero-title-wrap {
-	padding: 0 50px 100px 50px;
-	flex-shrink: 0;
+  padding: 0 50px 100px 50px;
+  flex-shrink: 0;
 }
 .kripto-hero-dekor-wrapper .section-title {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 .kripto-hero-dekor-wrapper > .kripto-hero-dekor {
-	flex: 1;
-	min-height: 0;
-	padding-top: 50px;
+  flex: 1;
+  min-height: 0;
+  padding-top: 50px;
 }
 /* Hero sekcija */
 .kripto-hero-dekor-wrapper {
-	min-height: 600px;
-	padding: 34px 16px 0 16px;
-	margin-top: 0;
-	overflow: visible;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	background: rgba(10, 13, 66, 0.35);
-	backdrop-filter: blur(6px);
-	-webkit-backdrop-filter: blur(6px);
-	position: relative;
-	z-index: 2;
-	border-radius: 15px;
-	margin-bottom: 4rem;
+  min-height: 600px;
+  padding: 34px 16px 0 16px;
+  margin-top: 0;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: rgba(10, 13, 66, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  position: relative;
+  z-index: 2;
+  border-radius: 15px;
+  margin-bottom: 4rem;
 }
 .kripto-hero-dekor {
-	display: flex;
-	flex-direction: row;
-	flex: 1;
-	min-height: 500px;
-	margin: 0 6rem;
-	align-items: flex-end;
-	flex-wrap: wrap;
-	gap: 0;
-	padding-top: 0;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-height: 500px;
+  margin: 0 6rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0;
+  padding-top: 0;
 }
 .kripto-hero-content {
-	display: flex;
-	flex-direction: column;
-	flex: 0 0 58%;
-	position: relative;
-	z-index: 1;
-	justify-content: flex-end;
-	align-items: flex-end;
-	padding-top: 0;
-	overflow: visible;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 58%;
+  position: relative;
+  z-index: 1;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-top: 0;
+  overflow: visible;
 }
 .kripto-hero-dekor > .kripto-crypto-wheel {
-	flex: 1;
-	min-width: 0;
-	margin-left: -4rem;
+  flex: 1;
+  min-width: 0;
+  margin-left: -4rem;
 }
 .kripto-hero-lik {
-	width: 100%;
-	max-width: 988px;
-	position: relative;
-	z-index: 1;
-	display: flex;
-	align-items: flex-end;
-	justify-content: flex-end;
-	padding-top: 0;
-	margin-top: 0;
-	overflow: visible;
-	isolation: isolate;
+  width: 100%;
+  max-width: 988px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-top: 0;
+  margin-top: 0;
+  overflow: visible;
+  isolation: isolate;
 }
 .kripto-hero-lik img {
-	max-width: 100%;
-	height: auto;
-	max-height: 1170px;
-	object-fit: contain;
-	object-position: right bottom;
-	mix-blend-mode: normal;
-	transform: scale(1.3);
-	transform-origin: right bottom;
-	vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+  max-height: 1170px;
+  object-fit: contain;
+  object-position: right bottom;
+  mix-blend-mode: normal;
+  transform: scale(1.3);
+  transform-origin: right bottom;
+  vertical-align: bottom;
 }
 /* Rotirajući kotač kriptovaluta oko Bitcoina */
 .kripto-crypto-wheel {
-	position: relative;
-	width: 280px;
-	height: 280px;
-	isolation: isolate;
-	z-index: 2;
+  position: relative;
+  width: 280px;
+  height: 280px;
+  isolation: isolate;
+  z-index: 2;
 }
 .kripto-hero-dekor-wrapper .kripto-crypto-wheel {
-	margin-top: 0;
-	padding-top: 0;
-	transform: translate(140px, -233px);
+  margin-top: 0;
+  padding-top: 0;
+  transform: translate(140px, -233px);
 }
 .kripto-crypto-wheel-orbit {
-	position: absolute;
-	inset: 0;
-	animation: kripto-crypto-orbit 20s linear infinite;
+  position: absolute;
+  inset: 0;
+  animation: kripto-crypto-orbit 20s linear infinite;
 }
 @keyframes kripto-crypto-orbit {
-	from { transform: rotate(0deg); }
-	to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 @keyframes kripto-crypto-coin-upright {
-	from { transform: rotate(0deg); }
-	to { transform: rotate(-360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
 .kripto-crypto-coin {
-	position: absolute;
-	width: 53px;
-	height: 53px;
-	top: 50%;
-	left: 50%;
-	margin-left: -27px;
-	margin-top: -27px;
-	transform: rotate(var(--angle)) translateY(-88px) rotate(calc(-1 * var(--angle)));
-	cursor: pointer;
-	z-index: 3;
-	transition: transform 0.3s ease;
+  position: absolute;
+  width: 53px;
+  height: 53px;
+  top: 50%;
+  left: 50%;
+  margin-left: -27px;
+  margin-top: -27px;
+  transform: rotate(var(--angle)) translateY(-88px)
+    rotate(calc(-1 * var(--angle)));
+  cursor: pointer;
+  z-index: 3;
+  transition: transform 0.3s ease;
 }
 .kripto-crypto-coin-inner {
-	display: block;
-	width: 100%;
-	height: 100%;
-	transition: transform 0.3s ease;
-	transform-origin: center center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
 }
 .kripto-crypto-coin:hover .kripto-crypto-coin-inner {
-	transform: scale(1.2);
+  transform: scale(1.2);
 }
 .kripto-crypto-coin img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-	background: transparent;
-	padding: 0;
-	box-shadow: none;
-	animation: kripto-crypto-coin-upright 20s linear infinite;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  animation: kripto-crypto-coin-upright 20s linear infinite;
 }
 .kripto-crypto-coin-ethereum {
-	width: 58px !important;
-	height: 58px !important;
-	margin-left: -29px !important;
-	margin-top: -29px !important;
+  width: 58px !important;
+  height: 58px !important;
+  margin-left: -29px !important;
+  margin-top: -29px !important;
 }
 .kripto-crypto-wheel-center {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 56px;
-	height: 56px;
-	z-index: 10;
-	cursor: pointer;
-	transition: transform 0.3s ease;
-	pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  z-index: 10;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  pointer-events: auto;
 }
 .kripto-crypto-wheel.bitcoin-hover .kripto-crypto-wheel-center {
-	transform: translate(-50%, -50%) scale(2);
+  transform: translate(-50%, -50%) scale(2);
 }
 .kripto-crypto-wheel.bitcoin-hover .kripto-crypto-coin {
-	transform: rotate(var(--angle)) translateY(-130px) rotate(calc(-1 * var(--angle)));
+  transform: rotate(var(--angle)) translateY(-130px)
+    rotate(calc(-1 * var(--angle)));
 }
 .kripto-crypto-wheel-center img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-	border-radius: 50%;
-	background: #f7931a;
-	padding: 5px;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #f7931a;
+  padding: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 1024px) {
-	.kripto-hero-dekor {
-		margin: 0 2rem;
-		flex-direction: column;
-		align-items: center;
-	}
-	.kripto-hero-content {
-		align-items: center;
-	}
-	.kripto-hero-lik {
-		max-width: 780px;
-		justify-content: center;
-		transform: translateX(30%);
-	}
-	.kripto-hero-lik img {
-		max-height: 832px;
-	}
-	.kripto-hero-dekor-wrapper .kripto-crypto-wheel {
-		transform: translate(-140px, 65px);
-	}
-	.kripto-crypto-wheel {
-		width: 224px;
-		height: 224px;
-	}
-	.kripto-crypto-coin {
-		width: 42px;
-		height: 42px;
-		margin-left: -21px;
-		margin-top: -21px;
-		transform: rotate(var(--angle)) translateY(-70px) rotate(calc(-1 * var(--angle)));
-	}
-	.kripto-crypto-coin-ethereum {
-		width: 46px !important;
-		height: 46px !important;
-		margin-left: -23px !important;
-		margin-top: -23px !important;
-	}
-	.kripto-crypto-wheel-center {
-		width: 45px;
-		height: 45px;
-	}
-	.kripto-crypto-wheel.bitcoin-hover .kripto-crypto-coin {
-		transform: rotate(var(--angle)) translateY(-105px) rotate(calc(-1 * var(--angle)));
-	}
+  .kripto-hero-dekor {
+    margin: 0 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .kripto-hero-content {
+    align-items: center;
+  }
+  .kripto-hero-lik {
+    max-width: 780px;
+    justify-content: center;
+    transform: translateX(30%);
+  }
+  .kripto-hero-lik img {
+    max-height: 832px;
+  }
+  .kripto-hero-dekor-wrapper .kripto-crypto-wheel {
+    transform: translate(-140px, 65px);
+  }
+  .kripto-crypto-wheel {
+    width: 224px;
+    height: 224px;
+  }
+  .kripto-crypto-coin {
+    width: 42px;
+    height: 42px;
+    margin-left: -21px;
+    margin-top: -21px;
+    transform: rotate(var(--angle)) translateY(-70px)
+      rotate(calc(-1 * var(--angle)));
+  }
+  .kripto-crypto-coin-ethereum {
+    width: 46px !important;
+    height: 46px !important;
+    margin-left: -23px !important;
+    margin-top: -23px !important;
+  }
+  .kripto-crypto-wheel-center {
+    width: 45px;
+    height: 45px;
+  }
+  .kripto-crypto-wheel.bitcoin-hover .kripto-crypto-coin {
+    transform: rotate(var(--angle)) translateY(-105px)
+      rotate(calc(-1 * var(--angle)));
+  }
 }
 @media (max-width: 767px) {
-	.kripto-hero-title-wrap .section-title h1 {
-		font-size: 20px;
-		margin-bottom: 0;
-	}
-	.kripto-hero-title-wrap {
-		padding: 0 20px 0 20px;
-	}
-	.kripto-hero-dekor-wrapper {
-		min-height: 0;
-		padding: 1rem 1rem 0 2rem;
-		padding-bottom: 0;
-		margin-bottom: 2rem;
-	}
-	.kripto-hero-dekor {
-		min-height: 0;
-		margin: 0;
-		padding: 0;
-		flex-direction: column;
-		align-items: center;
-	}
-	.kripto-hero-content {
-		order: 2;
-		width: 100%;
-		flex: 0 0 auto;
-		justify-content: flex-end;
-		align-items: flex-end;
-	}
-	.kripto-hero-dekor-wrapper > .kripto-hero-dekor {
-		padding-top: 0 !important;
-	}
-	.kripto-hero-dekor > .kripto-crypto-wheel {
-		order: 1;
-		width: auto;
-		flex: 0 0 auto;
-		min-height: 0;
-	}
-	.kripto-hero-lik {
-		max-width: 572px;
-		justify-content: flex-end;
-		align-items: flex-end;
-		width: 100%;
-		transform: translateX(10%);
-		padding-bottom: 0;
-	}
-	.kripto-hero-lik img {
-		max-height: 728px;
-		object-position: center bottom;
-		transform: scale(1.08);
-		transform-origin: center bottom;
-		padding-bottom: 0;
-	}
-	.kripto-hero-dekor-wrapper .kripto-crypto-wheel {
-		transform: translate(-60px, 72px) !important;
-		margin-left: -60px;
-	}
-	.kripto-crypto-wheel {
-		width: 120px;
-		height: 120px;
-	}
-	.kripto-crypto-wheel-orbit {
-		position: absolute;
-		inset: 0;
-	}
-	.kripto-crypto-wheel-center {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 34px;
-		height: 34px;
-		z-index: 10;
-	}
-	.kripto-crypto-wheel-center img {
-		padding: 2px;
-		object-fit: contain;
-		object-position: center center;
-	}
-	.kripto-crypto-coin {
-		width: 22px;
-		height: 22px;
-		margin-left: -11px;
-		margin-top: -11px;
-		transform: rotate(var(--angle)) translateY(-42px) rotate(calc(-1 * var(--angle)));
-	}
-	.kripto-crypto-coin-ethereum {
-		width: 24px !important;
-		height: 24px !important;
-		margin-left: -12px !important;
-		margin-top: -12px !important;
-	}
-	.kripto-crypto-wheel.bitcoin-hover .kripto-crypto-coin {
-		transform: rotate(var(--angle)) translateY(-61px) rotate(calc(-1 * var(--angle)));
-	}
+  .kripto-hero-title-wrap .section-title h1 {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  .kripto-hero-title-wrap {
+    padding: 0 20px 0 20px;
+  }
+  .kripto-hero-dekor-wrapper {
+    min-height: 0;
+    padding: 1rem 1rem 0 2rem;
+    padding-bottom: 0;
+    margin-bottom: 2rem;
+  }
+  .kripto-hero-dekor {
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .kripto-hero-content {
+    order: 2;
+    width: 100%;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .kripto-hero-dekor-wrapper > .kripto-hero-dekor {
+    padding-top: 0 !important;
+  }
+  .kripto-hero-dekor > .kripto-crypto-wheel {
+    order: 1;
+    width: auto;
+    flex: 0 0 auto;
+    min-height: 0;
+  }
+  .kripto-hero-lik {
+    max-width: 572px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    transform: translateX(10%);
+    padding-bottom: 0;
+  }
+  .kripto-hero-lik img {
+    max-height: 728px;
+    object-position: center bottom;
+    transform: scale(1.08);
+    transform-origin: center bottom;
+    padding-bottom: 0;
+  }
+  .kripto-hero-dekor-wrapper .kripto-crypto-wheel {
+    transform: translate(-60px, 72px) !important;
+    margin-left: -60px;
+  }
+  .kripto-crypto-wheel {
+    width: 120px;
+    height: 120px;
+  }
+  .kripto-crypto-wheel-orbit {
+    position: absolute;
+    inset: 0;
+  }
+  .kripto-crypto-wheel-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 34px;
+    height: 34px;
+    z-index: 10;
+  }
+  .kripto-crypto-wheel-center img {
+    padding: 2px;
+    object-fit: contain;
+    object-position: center center;
+  }
+  .kripto-crypto-coin {
+    width: 22px;
+    height: 22px;
+    margin-left: -11px;
+    margin-top: -11px;
+    transform: rotate(var(--angle)) translateY(-42px)
+      rotate(calc(-1 * var(--angle)));
+  }
+  .kripto-crypto-coin-ethereum {
+    width: 24px !important;
+    height: 24px !important;
+    margin-left: -12px !important;
+    margin-top: -12px !important;
+  }
+  .kripto-crypto-wheel.bitcoin-hover .kripto-crypto-coin {
+    transform: rotate(var(--angle)) translateY(-61px)
+      rotate(calc(-1 * var(--angle)));
+  }
 }
 /* Kviz banner */
 .kripto-quiz-row {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 .kripto-quiz-banner {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 24px;
-	background: linear-gradient(135deg, rgba(96, 23, 255, 0.25) 0%, rgba(10, 13, 66, 0.5) 100%);
-	border: 1px solid rgba(96, 23, 255, 0.5);
-	border-radius: 16px;
-	padding: 36px 44px;
-	position: relative;
-	overflow: hidden;
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(96, 23, 255, 0.25) 0%,
+    rgba(10, 13, 66, 0.5) 100%
+  );
+  border: 1px solid rgba(96, 23, 255, 0.5);
+  border-radius: 16px;
+  padding: 36px 44px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 .kripto-quiz-banner::before {
-	content: '?';
-	position: absolute;
-	right: 180px;
-	top: 50%;
-	transform: translateY(-50%);
-	font-size: 160px;
-	font-weight: 800;
-	color: rgba(96, 23, 255, 0.08);
-	line-height: 1;
-	pointer-events: none;
-	font-family: 'Sora', sans-serif;
+  content: "?";
+  position: absolute;
+  right: 180px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 160px;
+  font-weight: 800;
+  color: rgba(96, 23, 255, 0.08);
+  line-height: 1;
+  pointer-events: none;
+  font-family: "Sora", sans-serif;
 }
 .kripto-quiz-banner-left {
-	flex: 1;
+  flex: 1;
 }
 .kripto-quiz-tag {
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	background: rgba(96, 23, 255, 0.3);
-	color: #a78bfa;
-	border: 1px solid rgba(96, 23, 255, 0.4);
-	padding: 4px 14px;
-	border-radius: 20px;
-	font-size: 13px;
-	font-weight: 600;
-	margin-bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(96, 23, 255, 0.3);
+  color: #a78bfa;
+  border: 1px solid rgba(96, 23, 255, 0.4);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
 }
 .kripto-quiz-tag i {
-	font-size: 11px;
+  font-size: 11px;
 }
 .kripto-quiz-banner h3 {
-	font-size: 1.75rem;
-	font-weight: 700;
-	color: #fff;
-	margin-bottom: 10px;
-	line-height: 1.2;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.2;
 }
 .kripto-quiz-banner p {
-	color: rgba(255,255,255,0.7);
-	font-size: 15px;
-	margin: 0;
-	max-width: 500px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  margin: 0;
+  max-width: 500px;
 }
 .kripto-quiz-banner-right {
-	flex-shrink: 0;
+  flex-shrink: 0;
 }
 .kripto-quiz-btn {
-	display: inline-flex;
-	align-items: center;
-	gap: 10px;
-	background: var(--kripto-accent);
-	color: var(--kripto-btn-text);
-	padding: 10px 36px;
-	border: 2px solid var(--kripto-accent);
-	border-radius: 30px;
-	font-size: 14px;
-	font-weight: 500;
-	text-decoration: none;
-	transition: 0.3s;
-	white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--kripto-accent);
+  color: var(--kripto-btn-text);
+  padding: 10px 36px;
+  border: 2px solid var(--kripto-accent);
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+  white-space: nowrap;
 }
 .kripto-quiz-btn:hover {
-	background: none;
-	color: var(--kripto-accent);
-	border: 2px solid var(--kripto-accent);
+  background: none;
+  color: var(--kripto-accent);
+  border: 2px solid var(--kripto-accent);
 }
 .kripto-quiz-btn i {
-	transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 .kripto-quiz-btn:hover i {
-	transform: translateX(4px);
+  transform: translateX(4px);
 }
 .kviz-confirm-modal-btns {
-	display: flex;
-	gap: 12px;
-	justify-content: center;
-	flex-wrap: wrap;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .kviz-confirm-modal-btns .btn_one,
 .kviz-confirm-modal-btns .btn_one-outline {
-	flex: 1;
-	min-width: 120px;
-	white-space: nowrap;
+  flex: 1;
+  min-width: 120px;
+  white-space: nowrap;
 }
 @media (max-width: 768px) {
-	.kviz-confirm-modal-btns .btn_one,
-	.kviz-confirm-modal-btns .btn_one-outline {
-		font-size: 13px;
-		padding: 8px 18px;
-		min-width: 0;
-	}
+  .kviz-confirm-modal-btns .btn_one,
+  .kviz-confirm-modal-btns .btn_one-outline {
+    font-size: 13px;
+    padding: 8px 18px;
+    min-width: 0;
+  }
 }
 @media (max-width: 480px) {
-	.kviz-confirm-modal-btns .btn_one,
-	.kviz-confirm-modal-btns .btn_one-outline {
-		font-size: 12px;
-		padding: 7px 14px;
-	}
+  .kviz-confirm-modal-btns .btn_one,
+  .kviz-confirm-modal-btns .btn_one-outline {
+    font-size: 12px;
+    padding: 7px 14px;
+  }
 }
 @media (max-width: 768px) {
-	.kripto-quiz-banner {
-		flex-direction: column;
-		padding: 28px 24px;
-		text-align: center;
-	}
-	.kripto-quiz-banner::before {
-		display: none;
-	}
-	.kripto-quiz-banner h3 {
-		font-size: 1.4rem;
-	}
-	.kripto-quiz-btn {
-		width: 100%;
-		justify-content: center;
-	}
+  .kripto-quiz-banner {
+    flex-direction: column;
+    padding: 28px 24px;
+    text-align: center;
+  }
+  .kripto-quiz-banner::before {
+    display: none;
+  }
+  .kripto-quiz-banner h3 {
+    font-size: 1.4rem;
+  }
+  .kripto-quiz-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .kripto-services-row {
-	display: flex;
-	flex-wrap: wrap;
-	content-visibility: auto;
-	gap: var(--kripto-gap);
-	margin-left: 0;
-	margin-right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  content-visibility: auto;
+  gap: var(--kripto-gap);
+  margin-left: 0;
+  margin-right: 0;
 }
 .kripto-services-row [class*="col-"] {
-	padding-left: 0;
-	padding-right: 0;
-	flex: 0 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+  flex: 0 0 auto;
 }
 @media (min-width: 992px) {
-	.kripto-services-row .col-lg-4 { width: calc((100% - 2 * var(--kripto-gap)) / 3); }
+  .kripto-services-row .col-lg-4 {
+    width: calc((100% - 2 * var(--kripto-gap)) / 3);
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-	.kripto-services-row .col-md-6 { width: calc((100% - var(--kripto-gap)) / 2); }
+  .kripto-services-row .col-md-6 {
+    width: calc((100% - var(--kripto-gap)) / 2);
+  }
 }
 @media (max-width: 767px) {
-	.kripto-services-row .col-sm-12 { width: 100%; }
+  .kripto-services-row .col-sm-12 {
+    width: 100%;
+  }
 }
 /* Stranice usluga – isti raspon i stil kao kontakt blok na početnoj (puna širina containera) */
 .kripto-service-page-content {
-	width: 100%;
-	max-width: none;
-	margin: 0;
-	padding: 56px;
-	border-radius: 15px;
-	overflow: hidden;
-	background: var(--kripto-bg-card);
-	border: 1px solid var(--kripto-border);
-	box-shadow: var(--kripto-card-shadow);
-	backdrop-filter: none;
-	-webkit-backdrop-filter: none;
-	box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 56px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: var(--kripto-bg-card);
+  border: 1px solid var(--kripto-border);
+  box-shadow: var(--kripto-card-shadow);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-sizing: border-box;
 }
 html[data-theme="dark"] .kripto-service-page-content {
-	background: rgba(10, 13, 66, 0.35);
-	border-color: transparent;
-	backdrop-filter: blur(6px);
-	-webkit-backdrop-filter: blur(6px);
-	box-shadow: none;
+  background: rgba(10, 13, 66, 0.35);
+  border-color: transparent;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: none;
 }
 @media (max-width: 991px) {
-	.kripto-service-page-content {
-		padding: 32px 24px;
-	}
+  .kripto-service-page-content {
+    padding: 32px 24px;
+  }
 }
 @media (max-width: 767px) {
-	.kripto-service-page-content {
-		padding: 24px 20px;
-		border-radius: 12px;
-	}
+  .kripto-service-page-content {
+    padding: 24px 20px;
+    border-radius: 12px;
+  }
 }
 .kripto-service-page-content h1 {
-	font-size: 2.25rem;
-	margin-bottom: 1.5rem;
-	font-weight: 600;
-	color: var(--kripto-heading);
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: var(--kripto-heading);
 }
 .kripto-service-page-content .kripto-service-page-subtitle {
-	font-size: 1.35rem;
-	font-weight: 600;
-	line-height: 1.45;
-	margin: 0 0 1.25rem;
-	color: var(--kripto-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin: 0 0 1.25rem;
+  color: var(--kripto-heading);
 }
 .kripto-service-page-content .kripto-service-page-list {
-	margin: 0 0 1.25rem;
-	padding-left: 1.35rem;
+  margin: 0 0 1.25rem;
+  padding-left: 1.35rem;
 }
 .kripto-service-page-content .kripto-service-page-list li {
-	margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .kripto-service-page-content .kripto-service-page-text {
-	font-size: 1.15rem;
-	line-height: 1.8;
-	color: var(--kripto-text);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--kripto-text);
 }
 .kripto-service-page-content .kripto-service-page-text p {
-	margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 .kripto-service-page-content .kripto-service-page-text p:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 .kripto-service-page-content .kripto-service-page-text a {
-	color: var(--kripto-accent);
+  color: var(--kripto-accent);
 }
 
 a.kripto-service-card-link {
-	display: block;
-	text-decoration: none;
-	color: inherit;
-	height: 100%;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
 }
 a.kripto-service-card-link:hover .kripto-service-card {
-	background: var(--kripto-bg-card-hover);
-	-webkit-transform: translateY(-3px);
-	transform: translateY(-3px);
+  background: var(--kripto-bg-card-hover);
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 .kripto-service-card {
-	position: relative;
-	overflow: hidden;
-	background: var(--kripto-bg-card);
-	border: 1px solid var(--kripto-border);
-	box-shadow: var(--kripto-card-shadow);
-	backdrop-filter: none;
-	-webkit-backdrop-filter: none;
-	padding: 30px;
-	border-radius: 12px;
-	margin-bottom: 0;
-	height: 100%;
-	-webkit-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
+  position: relative;
+  overflow: hidden;
+  background: var(--kripto-bg-card);
+  border: 1px solid var(--kripto-border);
+  box-shadow: var(--kripto-card-shadow);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 0;
+  height: 100%;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 html[data-theme="dark"] .kripto-service-card {
-	background: rgba(10, 13, 66, 0.35);
-	border-color: rgba(26,32,102,0.6);
-	backdrop-filter: blur(6px);
-	-webkit-backdrop-filter: blur(6px);
-	box-shadow: none;
+  background: rgba(10, 13, 66, 0.35);
+  border-color: rgba(26, 32, 102, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: none;
 }
 .kripto-service-card::before {
-	display: none;
+  display: none;
 }
 .kripto-service-card:hover {
-	background: var(--kripto-bg-card-hover);
-	-webkit-transform: translateY(-3px);
-	transform: translateY(-3px);
+  background: var(--kripto-bg-card-hover);
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 html[data-theme="dark"] .kripto-service-card:hover {
-	background: rgba(18, 22, 82, 0.45);
+  background: rgba(18, 22, 82, 0.45);
 }
 .kripto-service-card:hover::before {
-	transform: scaleX(1);
+  transform: scaleX(1);
 }
 .kripto-service-card h3 {
-	font-size: 20px;
-	font-weight: 600;
-	margin-bottom: 15px;
-	color: var(--kripto-heading);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--kripto-heading);
 }
 .kripto-service-card p {
-	color: var(--kripto-text);
-	font-size: 15px;
-	line-height: 26px;
-	margin: 0;
+  color: var(--kripto-text);
+  font-size: 15px;
+  line-height: 26px;
+  margin: 0;
 }
 .kripto-service-card p.kripto-service-card-more {
-	margin-top: 16px;
-	margin-bottom: 0;
-	font-weight: 600;
-	color: var(--kripto-accent);
+  margin-top: 16px;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--kripto-accent);
 }
 .kripto-connect-row {
-	margin-top: var(--kripto-gap);
-	margin-bottom: var(--kripto-gap);
+  margin-top: var(--kripto-gap);
+  margin-bottom: var(--kripto-gap);
 }
 .kripto-connect-title {
-	font-size: 32px;
-	margin-bottom: 25px;
-	color: var(--kripto-heading);
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: var(--kripto-heading);
 }
 .kripto-social-icons {
-	display: flex;
-	justify-content: center;
-	gap: 20px;
-	flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 .kripto-social-icons a {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 50px;
-	height: 50px;
-	background: rgba(10, 13, 66, 0.35);
-	backdrop-filter: blur(6px);
-	-webkit-backdrop-filter: blur(6px);
-	border-radius: 50%;
-	color: var(--kripto-text);
-	font-size: 22px;
-	cursor: pointer;
-	-webkit-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(10, 13, 66, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 50%;
+  color: var(--kripto-text);
+  font-size: 22px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 .kripto-social-icons a:hover {
-	background: rgba(18, 22, 82, 0.35);
-	color: #d0d6e0;
-	transform: scale(1.1);
-	box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+  background: rgba(18, 22, 82, 0.35);
+  color: #d0d6e0;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
 }
 .kripto-social-icons .tiktok-icon {
-	width: 22px;
-	height: 22px;
-	vertical-align: middle;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
 }
 .kripto-contact-row {
-	margin-top: var(--kripto-gap);
-	margin-bottom: var(--kripto-gap);
-	content-visibility: auto;
-	contain-intrinsic-size: 0 600px;
+  margin-top: var(--kripto-gap);
+  margin-bottom: var(--kripto-gap);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
 }
 /* kriptovalute.hr style contact section */
 .kripto-contact-kvhr-style {
-	display: flex;
-	flex-wrap: wrap;
-	content-visibility: auto;
-	align-items: stretch;
-	border-radius: 15px;
-	overflow: hidden;
-	background: var(--kripto-bg-card);
-	border: 1px solid var(--kripto-border);
-	box-shadow: var(--kripto-card-shadow);
-	backdrop-filter: none;
-	-webkit-backdrop-filter: none;
-	margin-left: 0;
-	margin-right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  content-visibility: auto;
+  align-items: stretch;
+  border-radius: 15px;
+  overflow: hidden;
+  background: var(--kripto-bg-card);
+  border: 1px solid var(--kripto-border);
+  box-shadow: var(--kripto-card-shadow);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  margin-left: 0;
+  margin-right: 0;
 }
 html[data-theme="dark"] .kripto-contact-kvhr-style {
-	background: rgba(10, 13, 66, 0.35);
-	border-color: transparent;
-	backdrop-filter: blur(6px);
-	-webkit-backdrop-filter: blur(6px);
-	box-shadow: none;
+  background: rgba(10, 13, 66, 0.35);
+  border-color: transparent;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: none;
 }
 .kripto-contact-kvhr-style .kripto-contact-image-col,
 .kripto-contact-kvhr-style .kripto-contact-form-col {
-	padding: 0;
-	max-width: 50%;
-	flex: 0 0 50%;
+  padding: 0;
+  max-width: 50%;
+  flex: 0 0 50%;
 }
 .kripto-contact-title-col {
-	display: none;
+  display: none;
 }
 @media (min-width: 992px) {
-	.kripto-contact-title-desktop {
-		display: block;
-	}
-	.kripto-contact-kvhr-style .kripto-contact-image-col {
-		padding: 56px;
-	}
+  .kripto-contact-title-desktop {
+    display: block;
+  }
+  .kripto-contact-kvhr-style .kripto-contact-image-col {
+    padding: 56px;
+  }
 }
 .kripto-contact-image-col {
-	display: flex;
-	align-items: stretch;
-	border-radius: 15px;
-	overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  border-radius: 15px;
+  overflow: hidden;
 }
 .kripto-contact-image-wrap {
-	width: 100%;
-	aspect-ratio: 4 / 3;
-	min-height: 200px;
-	background-image: url("../img/kontakt-slika.webp");
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-	position: relative;
-	transform-origin: center center;
-	animation: kripto-contact-image-rasiri 0.7s ease-out forwards;
-	border-radius: 15px;
-	overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: 200px;
+  background-image: url("../img/kontakt-slika.webp");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transform-origin: center center;
+  animation: kripto-contact-image-rasiri 0.7s ease-out forwards;
+  border-radius: 15px;
+  overflow: hidden;
 }
 @keyframes kripto-contact-image-rasiri {
-	from {
-		transform: scale(0.4);
-		opacity: 0.5;
-	}
-	to {
-		transform: scale(1);
-		opacity: 1;
-	}
+  from {
+    transform: scale(0.4);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 .kripto-contact-image-wrap::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	background: rgba(5, 5, 48, 0.25);
-	pointer-events: none;
-	border-radius: 15px;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 48, 0.25);
+  pointer-events: none;
+  border-radius: 15px;
 }
 /* Kontakt forma */
 .kripto-contact-form-wrapper {
-	padding: 56px;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .kripto-contact-title {
-	font-family: "Sora", sans-serif;
-	font-size: 28px;
-	font-weight: 600;
-	margin-bottom: 30px;
-	color: var(--kripto-heading);
-	text-align: center;
+  font-family: "Sora", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: var(--kripto-heading);
+  text-align: center;
 }
 .kripto-form-message {
-	padding: 14px 18px;
-	border-radius: 10px;
-	margin-bottom: 24px;
-	font-family: "Sora", sans-serif;
-	font-size: 15px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
 }
 .kripto-form-message-success {
-	background: rgba(34, 197, 94, 0.2);
-	border: 1px solid rgba(34, 197, 94, 0.5);
-	color: #86efac;
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.5);
+  color: #86efac;
 }
 .kripto-form-message-error {
-	background: rgba(239, 68, 68, 0.2);
-	border: 1px solid rgba(239, 68, 68, 0.5);
-	color: #fca5a5;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  color: #fca5a5;
 }
 .kripto-contact-form .form-group {
-	margin-bottom: 43px;
+  margin-bottom: 43px;
 }
 .kripto-contact-form .col-12.text-center {
-	margin-bottom: 0;
-	margin-top: 0;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 .kripto-contact-form label {
-	display: block;
-	margin-bottom: 0;
-	padding-bottom: 17px;
-	color: var(--kripto-heading);
-	font-family: "Sora", sans-serif;
-	font-weight: 400;
-	text-align: left;
+  display: block;
+  margin-bottom: 0;
+  padding-bottom: 17px;
+  color: var(--kripto-heading);
+  font-family: "Sora", sans-serif;
+  font-weight: 400;
+  text-align: left;
 }
 .kripto-contact-form .form-control {
-	background: var(--kripto-bg);
-	border: 1px solid var(--kripto-border);
-	color: var(--kripto-heading);
-	border-radius: 10px;
-	padding: 12px 18px;
-	transition: border-color 0.3s, box-shadow 0.3s;
-	font-family: "Sora", sans-serif;
-	font-weight: 400;
+  background: var(--kripto-bg);
+  border: 1px solid var(--kripto-border);
+  color: var(--kripto-heading);
+  border-radius: 10px;
+  padding: 12px 18px;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+  font-family: "Sora", sans-serif;
+  font-weight: 400;
 }
 html[data-theme="dark"] .kripto-contact-form .form-control {
-	background: transparent;
-	border-color: rgba(255,255,255,0.3);
-	color: #ffffff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
 }
 .kripto-contact-form .form-control::placeholder {
-	color: var(--kripto-text);
-	opacity: 0.7;
+  color: var(--kripto-text);
+  opacity: 0.7;
 }
 html[data-theme="dark"] .kripto-contact-form .form-control::placeholder {
-	color: rgba(255,255,255,0.5);
-	opacity: 1;
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
 }
 .kripto-contact-form .form-control:focus {
-	background: var(--kripto-bg-card);
-	border-color: var(--kripto-accent);
-	color: var(--kripto-heading);
-	outline: none;
-	box-shadow: 0 0 0 3px rgba(96,23,255,0.1);
+  background: var(--kripto-bg-card);
+  border-color: var(--kripto-accent);
+  color: var(--kripto-heading);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(96, 23, 255, 0.1);
 }
 html[data-theme="dark"] .kripto-contact-form .form-control:focus {
-	background: transparent;
-	color: #ffffff;
-	box-shadow: none;
+  background: transparent;
+  color: #ffffff;
+  box-shadow: none;
 }
 .kripto-contact-form select.form-control {
-	cursor: pointer;
-	appearance: none;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='rgba(255,255,255,0.6)' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-	background-repeat: no-repeat;
-	background-position: right 16px center;
-	padding-right: 40px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='rgba(255,255,255,0.6)' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
 }
 .kripto-contact-form select.form-control option {
-	background: var(--kripto-bg-card);
-	color: var(--kripto-heading);
+  background: var(--kripto-bg-card);
+  color: var(--kripto-heading);
 }
 .kripto-contact-form .btn_one {
-	background: #6017FF;
-	border-color: #6017FF;
-	color: #ffffff;
-	width: 100%;
-	border-radius: 10px;
-	font-family: "Sora", sans-serif;
-	font-weight: 500;
-	padding: 14px 24px;
-	margin-top: 0;
+  background: #6017ff;
+  border-color: #6017ff;
+  color: #ffffff;
+  width: 100%;
+  border-radius: 10px;
+  font-family: "Sora", sans-serif;
+  font-weight: 500;
+  padding: 14px 24px;
+  margin-top: 0;
 }
 .kripto-contact-form .btn_one:hover,
 .kripto-contact-form .btn_one:focus {
-	background: transparent;
-	color: #ffffff;
-	border-color: #6017FF;
+  background: transparent;
+  color: #ffffff;
+  border-color: #6017ff;
 }
 @media (max-width: 991px) {
-	.kripto-contact-kvhr-style .kripto-contact-image-col,
-	.kripto-contact-kvhr-style .kripto-contact-form-col {
-		flex: 0 0 100%;
-		max-width: 100%;
-	}
-	.kripto-contact-title-col {
-		display: block;
-		order: 1;
-		width: 100%;
-		flex: 0 0 100%;
-		padding: 32px 24px 0 24px;
-	}
-	.kripto-contact-kvhr-style .kripto-contact-image-col {
-		order: 2;
-		padding: 0;
-	}
-	.kripto-contact-kvhr-style .kripto-contact-form-col {
-		order: 3;
-	}
-	.kripto-contact-title-desktop {
-		display: none;
-	}
-	.kripto-contact-image-col {
-		width: 100%;
-	}
-	.kripto-contact-image-wrap {
-		width: 100%;
-		aspect-ratio: auto;
-		min-height: 60vh;
-		background-size: contain;
-		background-position: center;
-	}
-	.kripto-contact-form-wrapper {
-		padding: 32px 24px;
-	}
+  .kripto-contact-kvhr-style .kripto-contact-image-col,
+  .kripto-contact-kvhr-style .kripto-contact-form-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .kripto-contact-title-col {
+    display: block;
+    order: 1;
+    width: 100%;
+    flex: 0 0 100%;
+    padding: 32px 24px 0 24px;
+  }
+  .kripto-contact-kvhr-style .kripto-contact-image-col {
+    order: 2;
+    padding: 0;
+  }
+  .kripto-contact-kvhr-style .kripto-contact-form-col {
+    order: 3;
+  }
+  .kripto-contact-title-desktop {
+    display: none;
+  }
+  .kripto-contact-image-col {
+    width: 100%;
+  }
+  .kripto-contact-image-wrap {
+    width: 100%;
+    aspect-ratio: auto;
+    min-height: 60vh;
+    background-size: contain;
+    background-position: center;
+  }
+  .kripto-contact-form-wrapper {
+    padding: 32px 24px;
+  }
 }
 @media (max-width: 767px) {
-	.kripto-contact-title-col {
-		padding: 24px 20px 0 20px;
-	}
-	.kripto-contact-image-wrap {
-		aspect-ratio: auto;
-		min-height: 55vh;
-		background-size: contain;
-		background-position: center;
-	}
-	.kripto-contact-form-wrapper {
-		padding: 24px 20px;
-	}
+  .kripto-contact-title-col {
+    padding: 24px 20px 0 20px;
+  }
+  .kripto-contact-image-wrap {
+    aspect-ratio: auto;
+    min-height: 55vh;
+    background-size: contain;
+    background-position: center;
+  }
+  .kripto-contact-form-wrapper {
+    padding: 24px 20px;
+  }
 }
 
 /* Kriptovalute.hr footer */
 .kripto-footer {
-	background: var(--kripto-bg-card);
-	padding: 60px 0 40px;
-	border-top: 1px solid var(--kripto-border);
-	content-visibility: auto;
-	contain-intrinsic-size: 0 280px;
+  background: var(--kripto-bg-card);
+  padding: 60px 0 40px;
+  border-top: 1px solid var(--kripto-border);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 280px;
 }
 .kripto-footer-logo img {
-	max-width: 200px;
-	height: auto;
-	margin-bottom: 20px;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
 }
 .kripto-footer-desc {
-	color: var(--kripto-text);
-	font-size: 15px;
-	line-height: 26px;
-	margin-bottom: 25px;
-	max-width: 400px;
+  color: var(--kripto-text);
+  font-size: 15px;
+  line-height: 26px;
+  margin-bottom: 25px;
+  max-width: 400px;
 }
 .kripto-footer-social {
-	display: flex;
-	gap: 12px;
+  display: flex;
+  gap: 12px;
 }
 .kripto-footer-social a {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 40px;
-	height: 40px;
-	background: var(--kripto-bg);
-	border-radius: 50%;
-	color: var(--kripto-text);
-	font-size: 18px;
-	cursor: pointer;
-	transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--kripto-bg);
+  border-radius: 50%;
+  color: var(--kripto-text);
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 .kripto-footer-social a:hover {
-	background: var(--kripto-bg-card-hover);
-	color: #d0d6e0;
-	transform: scale(1.1);
-	box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+  background: var(--kripto-bg-card-hover);
+  color: #d0d6e0;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
 }
 .kripto-footer-social .tiktok-icon {
-	width: 18px;
-	height: 18px;
+  width: 18px;
+  height: 18px;
 }
 
 /* Cookie bar */
 .kripto-cookie-bar {
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 9999;
-	background: rgba(5, 5, 48, 0.96);
-	border-top: 1px solid var(--kripto-border);
-	box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.55);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	color: var(--kripto-text);
-	font-size: 14px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: rgba(5, 5, 48, 0.96);
+  border-top: 1px solid var(--kripto-border);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--kripto-text);
+  font-size: 14px;
 }
 .kripto-cookie-inner {
-	max-width: 1140px;
-	margin: 0 auto;
-	padding: 14px 20px;
-	display: flex;
-	align-items: center;
-	gap: 12px;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 .kripto-cookie-text {
-	flex: 1;
+  flex: 1;
 }
 .kripto-cookie-text strong {
-	color: var(--kripto-heading);
+  color: var(--kripto-heading);
 }
 .kripto-cookie-actions {
-	display: flex;
-	align-items: center;
-	gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .kripto-cookie-link {
-	color: var(--kripto-accent);
-	text-decoration: underline;
-	font-size: 13px;
+  color: var(--kripto-accent);
+  text-decoration: underline;
+  font-size: 13px;
 }
 .kripto-cookie-btn {
-	border-radius: 999px;
-	font-size: 14px;
-	padding: 8px 20px;
-	white-space: nowrap;
+  border-radius: 999px;
+  font-size: 14px;
+  padding: 8px 20px;
+  white-space: nowrap;
 }
 .kripto-cookie-btn-icon {
-	padding: 10px 14px;
-	min-width: 44px;
+  padding: 10px 14px;
+  min-width: 44px;
 }
 .kripto-cookie-btn-icon .fa {
-	font-size: 18px;
+  font-size: 18px;
 }
 /* Cookie bar – detaljne postavke */
 .kripto-cookie-panel {
-	max-width: 1140px;
-	margin: 0 auto;
-	padding: 10px 20px 14px;
-	border-top: 1px solid var(--kripto-border);
-	font-size: 13px;
-	display: none;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 10px 20px 14px;
+  border-top: 1px solid var(--kripto-border);
+  font-size: 13px;
+  display: none;
 }
 .kripto-cookie-panel h3 {
-	font-size: 15px;
-	margin: 0 0 6px;
-	color: var(--kripto-heading);
+  font-size: 15px;
+  margin: 0 0 6px;
+  color: var(--kripto-heading);
 }
 .kripto-cookie-panel p {
-	margin: 0 0 10px;
-	color: var(--kripto-text);
-	line-height: 1.5;
+  margin: 0 0 10px;
+  color: var(--kripto-text);
+  line-height: 1.5;
 }
 .kripto-cookie-row {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 16px;
-	padding: 8px 0;
-	border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 .kripto-cookie-row:first-of-type {
-	border-top: none;
+  border-top: none;
 }
 .kripto-cookie-row-text strong {
-	color: var(--kripto-heading);
-	display: block;
-	margin-bottom: 4px;
+  color: var(--kripto-heading);
+  display: block;
+  margin-bottom: 4px;
 }
 .kripto-cookie-row-text p {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 .kripto-cookie-row-control {
-	flex-shrink: 0;
+  flex-shrink: 0;
 }
 .kripto-cookie-badge {
-	display: inline-block;
-	padding: 4px 10px;
-	border-radius: 999px;
-	background: rgba(255,255,255,0.08);
-	color: rgba(255,255,255,0.8);
-	font-size: 11px;
-	text-transform: uppercase;
-	letter-spacing: 0.06em;
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 .kripto-cookie-panel-footer {
-	margin-top: 10px;
-	text-align: right;
+  margin-top: 10px;
+  text-align: right;
 }
 .kripto-cookie-panel-footer .kripto-cookie-btn {
-	font-size: 13px;
+  font-size: 13px;
 }
 .kripto-switch {
-	position: relative;
-	display: inline-block;
-	width: 40px;
-	height: 22px;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
 }
 .kripto-switch input {
-	opacity: 0;
-	width: 0;
-	height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 .kripto-switch-slider {
-	position: absolute;
-	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: var(--kripto-border);
-	transition: 0.3s;
-	border-radius: 999px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--kripto-border);
+  transition: 0.3s;
+  border-radius: 999px;
 }
 .kripto-switch-slider:before {
-	position: absolute;
-	content: "";
-	height: 16px;
-	width: 16px;
-	left: 3px;
-	top: 3px;
-	background-color: #ffffff;
-	border-radius: 50%;
-	transition: 0.3s;
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  top: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: 0.3s;
 }
 .kripto-switch input:checked + .kripto-switch-slider {
-	background-color: var(--kripto-accent);
+  background-color: var(--kripto-accent);
 }
 .kripto-switch input:checked + .kripto-switch-slider:before {
-	transform: translateX(16px);
+  transform: translateX(16px);
 }
 @media (max-width: 768px) {
-	.kripto-cookie-inner {
-		flex-direction: column;
-		align-items: stretch;
-		text-align: left;
-	}
-	.kripto-cookie-actions {
-		justify-content: flex-end;
-	}
-	.kripto-cookie-row {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-	.kripto-cookie-panel-footer {
-		text-align: left;
-	}
+  .kripto-cookie-inner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+  }
+  .kripto-cookie-actions {
+    justify-content: flex-end;
+  }
+  .kripto-cookie-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .kripto-cookie-panel-footer {
+    text-align: left;
+  }
 }
 .kripto-footer-heading {
-	color: var(--kripto-heading);
-	font-size: 16px;
-	font-weight: 600;
-	margin-bottom: 20px;
-	text-transform: uppercase;
-	letter-spacing: 0.5px;
+  color: var(--kripto-heading);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 .kripto-footer-links,
 .kripto-footer-contact {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .kripto-footer-links {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 8px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 24px;
 }
 .kripto-footer-links li,
 .kripto-footer-contact li {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .kripto-footer-links li {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 .kripto-footer-contact li:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 .kripto-footer-links a,
 .kripto-footer-contact a {
-	color: var(--kripto-text);
-	transition: color 0.3s ease;
+  color: var(--kripto-text);
+  transition: color 0.3s ease;
 }
 .kripto-footer-links a:hover,
 .kripto-footer-contact a:hover {
-	color: var(--kripto-accent);
+  color: var(--kripto-accent);
 }
 .kripto-footer-contact a i {
-	margin-right: 8px;
+  margin-right: 8px;
 }
 .btn-footer {
-	margin-top: 15px;
-	display: inline-block;
+  margin-top: 15px;
+  display: inline-block;
 }
 
 /* Stranice Politika privatnosti / Kolačići */
-.kripto-legal-prose { color: var(--kripto-text); }
-.kripto-legal-prose h2 { color: var(--kripto-heading); font-size: 1.35rem; margin-top: 2rem; margin-bottom: 0.75rem; }
-.kripto-legal-prose h2:first-of-type { margin-top: 0; }
-.kripto-legal-prose p { margin-bottom: 1rem; }
-.kripto-legal-prose ul { margin-bottom: 1rem; padding-left: 1.5rem; }
-.kripto-legal-prose li { margin-bottom: 0.35rem; }
-.kripto-legal-prose h3 { color: var(--kripto-heading); font-size: 1.1rem; margin-top: 1.25rem; margin-bottom: 0.5rem; }
-.kripto-legal-prose a { color: var(--kripto-accent); }
+.kripto-legal-prose {
+  color: var(--kripto-text);
+}
+.kripto-legal-prose h2 {
+  color: var(--kripto-heading);
+  font-size: 1.35rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.kripto-legal-prose h2:first-of-type {
+  margin-top: 0;
+}
+.kripto-legal-prose p {
+  margin-bottom: 1rem;
+}
+.kripto-legal-prose ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+.kripto-legal-prose li {
+  margin-bottom: 0.35rem;
+}
+.kripto-legal-prose h3 {
+  color: var(--kripto-heading);
+  font-size: 1.1rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.kripto-legal-prose a {
+  color: var(--kripto-accent);
+}
 
 /* FAQ sekcija na stranicama usluga */
 .kripto-faq-section {
-	max-width: 800px;
-	margin: 0 auto 3rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
 }
 .kripto-faq-section > h2 {
-	font-size: 1.5rem;
-	font-weight: 600;
-	color: var(--kripto-heading);
-	margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--kripto-heading);
+  margin-bottom: 1.5rem;
 }
 .kripto-faq-list {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .kripto-faq-item {
-	background: rgba(10, 13, 66, 0.45);
-	border: 1px solid var(--kripto-border);
-	border-radius: 8px;
-	padding: 20px 24px;
+  background: rgba(10, 13, 66, 0.45);
+  border: 1px solid var(--kripto-border);
+  border-radius: 8px;
+  padding: 20px 24px;
 }
 .kripto-faq-q {
-	font-size: 1rem;
-	font-weight: 600;
-	color: var(--kripto-heading);
-	margin-bottom: 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--kripto-heading);
+  margin-bottom: 0.6rem;
 }
 .kripto-faq-a {
-	font-size: 0.95rem;
-	color: var(--kripto-text);
-	line-height: 1.7;
-	margin: 0;
+  font-size: 0.95rem;
+  color: var(--kripto-text);
+  line-height: 1.7;
+  margin: 0;
 }
 
 /*
@@ -1918,41 +2039,43 @@ html[data-theme="dark"] .kripto-contact-form .form-control:focus {
 * ----------------------------------------------------------------------------------------
 */
 .buy_sell_list {
-	margin-bottom: 30px;
-	background: var(--kripto-bg-card);
-	padding: 30px;
-	border-radius: 2px;
+  margin-bottom: 30px;
+  background: var(--kripto-bg-card);
+  padding: 30px;
+  border-radius: 2px;
 }
-.buy_sell_list h4{
-font-weight: 600;
-font-size: 20px;
+.buy_sell_list h4 {
+  font-weight: 600;
+  font-size: 20px;
 }
-.buy_sell_list img{
-	float: left;
-	margin-right: 20px;
-	width: 60px;
-	margin-bottom: 20px;
+.buy_sell_list img {
+  float: left;
+  margin-right: 20px;
+  width: 60px;
+  margin-bottom: 20px;
 }
-.buy_sell_list p{overflow: hidden;}
-@media only screen and (max-width:768px) { 
-.portfolio_list_img {
-margin-top:40px;
-margin-bottom:40px;
-text-align:center;
+.buy_sell_list p {
+  overflow: hidden;
 }
+@media only screen and (max-width: 768px) {
+  .portfolio_list_img {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
 }
 
 .single_how_to_buy {
-	padding: 40px;
-	padding-top: 0;
+  padding: 40px;
+  padding-top: 0;
 }
-.single_how_to_buy img{
-width: 60px;
-margin-bottom: 20px;
+.single_how_to_buy img {
+  width: 60px;
+  margin-bottom: 20px;
 }
-.single_how_to_buy h4{
-font-weight: 600;
-font-size: 20px;
+.single_how_to_buy h4 {
+  font-weight: 600;
+  font-size: 20px;
 }
 /*
 * ----------------------------------------------------------------------------------------
@@ -1964,76 +2087,100 @@ font-size: 20px;
 * ----------------------------------------------------------------------------------------
 * ----------------------------------------------------------------------------------------
 */
-.token_content{margin-bottom:50px;}
+.token_content {
+  margin-bottom: 50px;
+}
 .token_content h2 {
-	margin-bottom: 15px;
-	font-weight: 600;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 .single_token {
-	margin-bottom: 30px;
-	padding: 25px 10px;
-	border-radius: 500px;
+  margin-bottom: 30px;
+  padding: 25px 10px;
+  border-radius: 500px;
 }
 .single_token h4 {
-	font-weight: 600;
-	font-size:18px;
+  font-weight: 600;
+  font-size: 18px;
 }
-.single_token p{color: #fff;}
-.single_token_bg_one{background:#5fc0d8;}
-.single_token_bg_two{background:#6f4cf2;}
-.single_token_bg_three{background:#c660e8;}
-.single_token_bg_four{background:#05b169;}
-.single_token_bg_five{background:#f2924c;}
-.single_token_bg_six{background:#e8606f;}
-.single_token_bg_seven{background:#1652f0;}
-.single_token_bg_eight{background:#3DB2FF;}
-.currency_content{
-background:var(--kripto-bg-card);
-padding:60px;
-border-radius:5px;
+.single_token p {
+  color: #fff;
 }
-.currency_content h3{
-	color:#fff;
-	font-size: 56px;
-	font-weight: 700;
+.single_token_bg_one {
+  background: #5fc0d8;
+}
+.single_token_bg_two {
+  background: #6f4cf2;
+}
+.single_token_bg_three {
+  background: #c660e8;
+}
+.single_token_bg_four {
+  background: #05b169;
+}
+.single_token_bg_five {
+  background: #f2924c;
+}
+.single_token_bg_six {
+  background: #e8606f;
+}
+.single_token_bg_seven {
+  background: #1652f0;
+}
+.single_token_bg_eight {
+  background: #3db2ff;
+}
+.currency_content {
+  background: var(--kripto-bg-card);
+  padding: 60px;
+  border-radius: 5px;
+}
+.currency_content h3 {
+  color: #fff;
+  font-size: 56px;
+  font-weight: 700;
 }
 .currency_content p {
-	color:#fff;
-	margin-top: 20px;
-	margin-bottom: 30px;
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 .cryptonatorwidget {
-	border: 0 !important;
-	padding: 0 !important;
-	margin-bottom: 20px;
+  border: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 20px;
 }
 .cryptonatorwidget input {
-	border: 2px solid rgba(255,255,255,0.2);
-	height: 52px !important;
-	margin-bottom: 5px;
-	text-transform: capitalize;
-	background: none;
-	color: #fff;
-	padding: 0 10px;
-	border-radius: 2px;
-	font-family: 'Poppins', sans-serif !important;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  height: 52px !important;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  background: none;
+  color: #fff;
+  padding: 0 10px;
+  border-radius: 2px;
+  font-family: "Poppins", sans-serif !important;
 }
 .cryptonatorwidget select {
-	border: 2px solid rgba(255,255,255,0.2);
-	height: 52px !important;
-	margin-bottom: 5px;
-	text-transform: capitalize;
-	background: none;
-	color: #fff;
-	padding: 0 10px;
-	font-family: 'Poppins', sans-serif !important;
-	border-radius: 2px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  height: 52px !important;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  background: none;
+  color: #fff;
+  padding: 0 10px;
+  font-family: "Poppins", sans-serif !important;
+  border-radius: 2px;
 }
 .cryptonatorwidget > div {
   display: none;
 }
-.token-img h4{font-weight: 600;}
-.fund-img h4{font-weight: 600;}
+.token-img h4 {
+  font-weight: 600;
+}
+.fund-img h4 {
+  font-weight: 600;
+}
 /*
 * ----------------------------------------------------------------------------------------
 * 06.END TOKEN SALE DESIGN
@@ -2044,9 +2191,11 @@ border-radius:5px;
  * ----------------------------------------------------------------------------------------
  * ----------------------------------------------------------------------------------------
 */
-.timeline {position: relative;}
+.timeline {
+  position: relative;
+}
 .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 6px;
   background-color: white;
@@ -2063,24 +2212,24 @@ border-radius:5px;
   width: 50%;
 }
 .time_contain h2 {
-	font-weight: 600;
-	font-size: 22px;
-	margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 .time_contain h2 span {
-	color: var(--kripto-accent);
+  color: var(--kripto-accent);
 }
 .time_contain::after {
-	content: '';
-	position: absolute;
-	width: 25px;
-	height: 25px;
-	right: -13px;
-	background-color: #fff;
-	border: 4px solid var(--kripto-accent);
-	top: 15px;
-	border-radius: 50%;
-	z-index: 1;
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -13px;
+  background-color: #fff;
+  border: 4px solid var(--kripto-accent);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .time_left {
@@ -2117,15 +2266,14 @@ border-radius:5px;
   border-color: transparent white transparent transparent;
 }
 
-
 .time_right::after {
   left: -12px;
 }
 .time_content {
-	padding: 30px;
-	background: var(--kripto-bg-card);
-	position: relative;
-	border-radius: 6px;
+  padding: 30px;
+  background: var(--kripto-bg-card);
+  position: relative;
+  border-radius: 6px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -2144,11 +2292,12 @@ border-radius:5px;
     border-width: 10px 10px 10px 0;
     border-color: transparent white transparent transparent;
   }
-  
-  .time_left::after, .time_right::after {
+
+  .time_left::after,
+  .time_right::after {
     left: 15px;
   }
-  
+
   .time_right {
     left: 0%;
   }
@@ -2163,52 +2312,66 @@ border-radius:5px;
  * ----------------------------------------------------------------------------------------
  * ----------------------------------------------------------------------------------------
  */
-.app-text {overflow: hidden;}
+.app-text {
+  overflow: hidden;
+}
 
 .app-text h2 {
-	color:#fff;
-	font-size: 40px;
-	margin-bottom:20px;
-	font-weight: 600;
-	text-transform: capitalize;
+  color: #fff;
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
 }
-.app-text p{margin-bottom: 50px;color:#fff;}
-.app-text ul{list-style:none;margin-top: 30px;}
+.app-text p {
+  margin-bottom: 50px;
+  color: #fff;
+}
+.app-text ul {
+  list-style: none;
+  margin-top: 30px;
+}
 .app-text ul li {
-	font-size: 20px;
-	line-height: 36px;
-	float:left;
-	margin-right:20px;
-	position: relative;
-	color:#fff;
-	width: 250px;
-	margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 36px;
+  float: left;
+  margin-right: 20px;
+  position: relative;
+  color: #fff;
+  width: 250px;
+  margin-bottom: 20px;
 }
 .app-text ul li span {
-	font-size: 16px;
-	color: #fff;
-	width: 40px;
-	height: 40px;
-	line-height: 36px;
-	text-align: center;
-	border-radius: 30px;
-	margin-right: 10px;
-	display: inline-block;
-	border: 2px solid var(--kripto-bg-card);
+  font-size: 16px;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 30px;
+  margin-right: 10px;
+  display: inline-block;
+  border: 2px solid var(--kripto-bg-card);
 }
 .app_btn {
-	margin-top:30px;
+  margin-top: 30px;
 }
-.app_btn a {margin-right:15px;}
-@media only screen and (max-width:480px) { 
-.app_btn a {margin-bottom:15px;}
+.app_btn a {
+  margin-right: 15px;
 }
-.app_btn a i{margin-right:8px;}
-@media only screen and (max-width:768px) { 
-.app_img {
-margin-top:40px;
-text-align:center;
+@media only screen and (max-width: 480px) {
+  .app_btn a {
+    margin-bottom: 15px;
+  }
 }
+.app_btn a i {
+  margin-right: 8px;
+}
+@media only screen and (max-width: 768px) {
+  .app_img {
+    margin-top: 40px;
+    text-align: center;
+  }
 }
 /*
  * ----------------------------------------------------------------------------------------
@@ -2220,41 +2383,45 @@ text-align:center;
 * ----------------------------------------------------------------------------------------
 */
 .team_member {
-	padding-bottom: 50px;
-	overflow: hidden;
+  padding-bottom: 50px;
+  overflow: hidden;
 }
-.our-team{
-background:var(--kripto-bg-card);
-padding:30px;
-margin-bottom:30px;
+.our-team {
+  background: var(--kripto-bg-card);
+  padding: 30px;
+  margin-bottom: 30px;
 }
 .our-team img {
-	width: 160px;
-	height: 160px;
-	border-radius: 500px;
-	margin-bottom: 30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 500px;
+  margin-bottom: 30px;
 }
 .our-team h3 {
-	font-weight: 600;
-	font-size: 20px;
-	margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 15px;
 }
-.our-team ul{
-margin-bottom: 10px;
-list-style:none;
+.our-team ul {
+  margin-bottom: 10px;
+  list-style: none;
 }
-.our-team ul li{
-display: inline-block;
+.our-team ul li {
+  display: inline-block;
 }
 .our-team ul li a {
-	margin: 0 10px;
-	color: #fff;
-	transition: 0.3s;
-	display: inline-block;
-	position: relative;
+  margin: 0 10px;
+  color: #fff;
+  transition: 0.3s;
+  display: inline-block;
+  position: relative;
 }
-.our-team ul li a:hover{color:var(--kripto-accent);}
-.our-team span{position: relative;}
+.our-team ul li a:hover {
+  color: var(--kripto-accent);
+}
+.our-team span {
+  position: relative;
+}
 /*
 * ----------------------------------------------------------------------------------------
 * 09.END TEAM DESIGN
@@ -2264,35 +2431,43 @@ display: inline-block;
 * ----------------------------------------------------------------------------------------
 * ----------------------------------------------------------------------------------------
 */
-.board_member{padding-bottom:50px;}
-.our-board{margin-bottom:30px;}
+.board_member {
+  padding-bottom: 50px;
+}
+.our-board {
+  margin-bottom: 30px;
+}
 .our-board img {
-	width: 160px;
-	height: 160px;
-	border-radius: 500px;
-	margin-bottom: 30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 500px;
+  margin-bottom: 30px;
 }
 .our-board h3 {
-	font-weight: 600;
-	font-size: 20px;
-	margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 15px;
 }
-.our-board ul{
-margin-bottom: 10px;
-list-style:none;
+.our-board ul {
+  margin-bottom: 10px;
+  list-style: none;
 }
-.our-board ul li{
-display: inline-block;
+.our-board ul li {
+  display: inline-block;
 }
 .our-board ul li a {
-	margin: 0 10px;
-	color: #fff;
-	transition: 0.3s;
-	display: inline-block;
-	position: relative;
+  margin: 0 10px;
+  color: #fff;
+  transition: 0.3s;
+  display: inline-block;
+  position: relative;
 }
-.our-board ul li a:hover{color:var(--kripto-accent);}
-.our-board span{position: relative;}
+.our-board ul li a:hover {
+  color: var(--kripto-accent);
+}
+.our-board span {
+  position: relative;
+}
 /*
 * ----------------------------------------------------------------------------------------
 * 10.END BOARD ADVISOR DESIGN
@@ -2303,10 +2478,12 @@ display: inline-block;
 * ----------------------------------------------------------------------------------------
 * ----------------------------------------------------------------------------------------
 */
-.partner_area{padding-bottom:50px;}
-.partner-logo img{
-margin-bottom:30px;
-width:100px;
+.partner_area {
+  padding-bottom: 50px;
+}
+.partner-logo img {
+  margin-bottom: 30px;
+  width: 100px;
 }
 /*
 * ----------------------------------------------------------------------------------------
@@ -2318,53 +2495,60 @@ width:100px;
 * ----------------------------------------------------------------------------------------
 */
 .accordion-item {
-	background-color: var(--kripto-bg-card);
-	border: 0px solid #4a516b;
-	margin-bottom: 30px;
+  background-color: var(--kripto-bg-card);
+  border: 0px solid #4a516b;
+  margin-bottom: 30px;
 }
 .accordion-button {
-	position: relative;
-	display: flex;
-	align-items: center;
-	width: 100%;
-	padding: 1rem 1.25rem;
-	font-size: 20px;
-	color: #fff;
-	text-align: left;
-	background-color: #fff;
-	border: 0;
-	border-radius: 0;
-	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,border-radius .15s ease;
-	background: var(--kripto-bg-card);
-	font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 20px;
+  color: #fff;
+  text-align: left;
+  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out,
+    border-radius 0.15s ease;
+  background: var(--kripto-bg-card);
+  font-weight: 600;
 }
 .accordion-button:not(.collapsed) {
-	color: #fff;
-	background-color: var(--kripto-bg-card);
-	box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+  color: #fff;
+  background-color: var(--kripto-bg-card);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
 }
 .accordion-button:not(.collapsed)::after {
-	transform: rotate(-180deg);
-	content: "\f077";
-	font-family: fontAwesome;
-	font-size: 14px;
+  transform: rotate(-180deg);
+  content: "\f077";
+  font-family: fontAwesome;
+  font-size: 14px;
 }
 .accordion-button::after {
-	flex-shrink: 0;
-	width: 1.02rem;
-	margin-left: auto;
-	content: "";
-	transition: transform .2s ease-in-out;
-	content: "\f077";
-	font-family: fontAwesome;
-	font-size: 14px;
+  flex-shrink: 0;
+  width: 1.02rem;
+  margin-left: auto;
+  content: "";
+  transition: transform 0.2s ease-in-out;
+  content: "\f077";
+  font-family: fontAwesome;
+  font-size: 14px;
 }
-.faq-img{margin-top:30px;}
-@media only screen and (max-width:768px) { 
 .faq-img {
-margin-top:40px;
-text-align:center;
+  margin-top: 30px;
 }
+@media only screen and (max-width: 768px) {
+  .faq-img {
+    margin-top: 40px;
+    text-align: center;
+  }
 }
 /* ----------------------------------------------------------------------------------------
 * 12.END FAQ DESIGN
@@ -2374,30 +2558,32 @@ text-align:center;
  * ----------------------------------------------------------------------------------------
  * ----------------------------------------------------------------------------------------
  */
-.promotion_area{
-background:var(--kripto-bg-card);
-padding:80px 0;
+.promotion_area {
+  background: var(--kripto-bg-card);
+  padding: 80px 0;
 }
 .newsletter_form h4 {
-	margin-bottom: 30px;
-	font-size: 32px;
-	line-height: 42px;
-	font-weight: 500;
+  margin-bottom: 30px;
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 500;
 }
 .newsletter_form input {
-	height: 55px;
-	position: relative;
-	padding: 10px 20px;
-	width: 60%;
-	margin-right: 10px;
-	border-radius: 30px;
-	border: 1px solid #fff;
+  height: 55px;
+  position: relative;
+  padding: 10px 20px;
+  width: 60%;
+  margin-right: 10px;
+  border-radius: 30px;
+  border: 1px solid #fff;
 }
-@media only screen and (max-width:480px) { 
-.newsletter_form input {margin-bottom:15px;}
+@media only screen and (max-width: 480px) {
+  .newsletter_form input {
+    margin-bottom: 15px;
+  }
 }
 .newsletter_form input:focus {
-	border: 1px solid var(--kripto-accent);
+  border: 1px solid var(--kripto-accent);
 }
 /*
  * ----------------------------------------------------------------------------------------
@@ -2408,115 +2594,128 @@ padding:80px 0;
 * ----------------------------------------------------------------------------------------
 * ----------------------------------------------------------------------------------------
 */
-.contact {margin-right:30px;}
-@media only screen and (max-width:768px) { 
-.contact {margin-bottom:60px;margin-right:0px;}
+.contact {
+  margin-right: 30px;
 }
-.contact h4 {font-weight: 700;font-size: 40px;}
+@media only screen and (max-width: 768px) {
+  .contact {
+    margin-bottom: 60px;
+    margin-right: 0px;
+  }
+}
+.contact h4 {
+  font-weight: 700;
+  font-size: 40px;
+}
 .contact p {
-margin-bottom:40px;
+  margin-bottom: 40px;
 }
 .contact input {
-	background: var(--kripto-bg-card);
-	border-radius: 0px;
-	box-shadow: none;
-	color: #fff;
-	font-size: 16px;
-	font-weight: 400;
-	margin-bottom: 30px;
-	height: 70px;
-	padding: 10px 10px 10px 30px;
-	width: 100%;
-	border: 1px solid var(--kripto-bg-card);
-	position: relative;
+  background: var(--kripto-bg-card);
+  border-radius: 0px;
+  box-shadow: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  height: 70px;
+  padding: 10px 10px 10px 30px;
+  width: 100%;
+  border: 1px solid var(--kripto-bg-card);
+  position: relative;
 }
 .contact textarea {
-	background: var(--kripto-bg-card);
-	border-radius: 0px;
-	margin-bottom:30px;
-	box-shadow: none;
-	color: #fff;
-	font-size: 16px;
-	font-weight: 400;
-	padding: 10px 10px 10px 30px;
-	width: 100%;
-	border: 1px solid var(--kripto-bg-card);
-	position: relative;
+  background: var(--kripto-bg-card);
+  border-radius: 0px;
+  margin-bottom: 30px;
+  box-shadow: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px 10px 10px 30px;
+  width: 100%;
+  border: 1px solid var(--kripto-bg-card);
+  position: relative;
 }
 .contact input:focus {
-	border: 1px solid var(--kripto-accent);
-	background: var(--kripto-bg-card);
-	color: #fff;
-    box-shadow: none;
-    outline: 0 none;
+  border: 1px solid var(--kripto-accent);
+  background: var(--kripto-bg-card);
+  color: #fff;
+  box-shadow: none;
+  outline: 0 none;
 }
 .contact textarea:focus {
-border: 1px solid var(--kripto-accent);
-background: var(--kripto-bg-card);
-color: #fff;
-    box-shadow: none;
-    outline: 0 none;
+  border: 1px solid var(--kripto-accent);
+  background: var(--kripto-bg-card);
+  color: #fff;
+  box-shadow: none;
+  outline: 0 none;
 }
 .contact button {
-	width: 100%;
-	font-size: 16px;
+  width: 100%;
+  font-size: 16px;
 }
 
 .address_bg {
-	background: var(--kripto-bg-card);
-	padding: 40px;
-	position: relative;
-	box-shadow: 0 10px 40px -10px rgba(0,64,128,.1);
-	border-radius: 3px;
+  background: var(--kripto-bg-card);
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 10px 40px -10px rgba(0, 64, 128, 0.1);
+  border-radius: 3px;
 }
 .single_address {
-	margin-bottom: 30px;
-	border-bottom: 1px solid #3d4460;
-	padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #3d4460;
+  padding-bottom: 30px;
 }
 .single_address:last-child {
-	border-bottom: 0px;
-	margin-bottom: 0;
-	padding-bottom: 0px;
+  border-bottom: 0px;
+  margin-bottom: 0;
+  padding-bottom: 0px;
 }
-@media only screen and (max-width:768px) { 
-.single_address{margin-bottom: 70px;}
+@media only screen and (max-width: 768px) {
+  .single_address {
+    margin-bottom: 70px;
+  }
 }
-.address_br{
-float:left;
+.address_br {
+  float: left;
 }
 .single_address span {
-	color: var(--kripto-accent);
-	font-size: 30px;
-	margin-bottom: 20px;
-	display: block;
-	margin-right: 20px;
-	position: relative;
+  color: var(--kripto-accent);
+  font-size: 30px;
+  margin-bottom: 20px;
+  display: block;
+  margin-right: 20px;
+  position: relative;
 }
 .single_address h4 {
-	font-weight: 600;
-	font-size: 18px;
-	overflow: hidden;
-	
+  font-weight: 600;
+  font-size: 18px;
+  overflow: hidden;
 }
-.single_address p{overflow: hidden;}
+.single_address p {
+  overflow: hidden;
+}
 .contact_btn {
-	background: var(--kripto-accent);
-	padding: 10px;
-	color: #fff;
-	position: relative;
-	text-transform: capitalize;
-	font-weight: 600;
-	-webkit-transition: 0.3s;
-	transition: 0.3s;
+  background: var(--kripto-accent);
+  padding: 10px;
+  color: #fff;
+  position: relative;
+  text-transform: capitalize;
+  font-weight: 600;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
-.contact_btn:hover{background:var(--kripto-bg-card);color: #fff;}
+.contact_btn:hover {
+  background: var(--kripto-bg-card);
+  color: #fff;
+}
 
-
-.map iframe{
-width:100%;
-height:500px;
-margin-bottom: -8px;
+.map iframe {
+  width: 100%;
+  height: 500px;
+  margin-bottom: -8px;
 }
 /*
 * ----------------------------------------------------------------------------------------
@@ -2528,291 +2727,368 @@ margin-bottom: -8px;
 * ----------------------------------------------------------------------------------------
 * ----------------------------------------------------------------------------------------
 */
-.blog_bg{background:#f4f5f7;}
-.blog_area{padding-bottom:50px;}
+.blog_bg {
+  background: #f4f5f7;
+}
+.blog_area {
+  padding-bottom: 50px;
+}
 .single_blog {
-	background: var(--kripto-bg-card);
-	margin-bottom: 30px;
+  background: var(--kripto-bg-card);
+  margin-bottom: 30px;
 }
-@media only screen and (max-width:768px) { 
-.single_blog {margin-bottom:30px;}
+@media only screen and (max-width: 768px) {
+  .single_blog {
+    margin-bottom: 30px;
+  }
 }
-.blog-img img{position: relative;}
-@media only screen and (max-width:768px) { 
-.blog-img img{width:100%;}
+.blog-img img {
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .blog-img img {
+    width: 100%;
+  }
 }
 .blog-img a {
-	color: #fff;
-	font-weight: 600;
-	font-size: 16px;
-	display: inline-block;
-	margin-top: 20px;
-	position: relative;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 20px;
+  position: relative;
 }
 .single_blog h2 {
-	font-weight: 700;
-	line-height: 30px;
-	font-size: 20px;
-	margin: 0 20px;
+  font-weight: 700;
+  line-height: 30px;
+  font-size: 20px;
+  margin: 0 20px;
 }
-.single_blog h2 a{color:#fff;}
-.single_blog h2 a:hover{color:var(--kripto-accent);}
+.single_blog h2 a {
+  color: #fff;
+}
+.single_blog h2 a:hover {
+  color: var(--kripto-accent);
+}
 .single_blog span {
-	text-transform: capitalize;
-	padding: 0 10px;
-	margin-bottom: 15px;
-	display: inline-block;
-	font-weight: 600;
-	margin-top: 10px;
+  text-transform: capitalize;
+  padding: 0 10px;
+  margin-bottom: 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 10px;
 }
 .single_blog span a {
-	color: var(--kripto-accent);
-	position: relative;
+  color: var(--kripto-accent);
+  position: relative;
 }
 .single_blog > a {
-	margin: 20px 0;
-	margin-bottom: 30px;
+  margin: 20px 0;
+  margin-bottom: 30px;
 }
 
 /*BLOG PAGES DESIGN*/
-.post-slide-blog{
-background: var(--kripto-bg-card) none repeat scroll 0 0;
-border-radius:10px;
-box-shadow: 0 10px 40px -10px rgba(0,64,128,.08);
-margin-bottom: 30px;
-overflow: hidden;
-position: relative;
-padding: 40px;
+.post-slide-blog {
+  background: var(--kripto-bg-card) none repeat scroll 0 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px -10px rgba(0, 64, 128, 0.08);
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+  padding: 40px;
 }
-.blog-img img{position: relative;}
-@media only screen and (max-width:768px) { 
-.blog-img img{width:100%;}
+.blog-img img {
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .blog-img img {
+    width: 100%;
+  }
 }
 .post-slide-blog h2 {
-	font-weight: 700;
-	font-size: 20px;
-	margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
-.post-slide-blog h2 a{color:#fff;}
-.post-slide-blog h2 a:hover{color:var(--kripto-accent);}
+.post-slide-blog h2 a {
+  color: #fff;
+}
+.post-slide-blog h2 a:hover {
+  color: var(--kripto-accent);
+}
 .post-slide-blog span {
-	text-transform: capitalize;
-	padding-right: 10px;
-	margin-bottom: 15px;
-	display: inline-block;
-	font-weight: 600;
-	margin-top: 20px;
+  text-transform: capitalize;
+  padding-right: 10px;
+  margin-bottom: 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 20px;
 }
-.post-slide-blog span a{color:var(--kripto-accent);}
-.post-slide-blog > a{margin-bottom: 0px;}
-.post-slide-blog p{margin-bottom: 30px;}
-
-
+.post-slide-blog span a {
+  color: var(--kripto-accent);
+}
+.post-slide-blog > a {
+  margin-bottom: 0px;
+}
+.post-slide-blog p {
+  margin-bottom: 30px;
+}
 
 ul.blog_pagination li a {
-	border: 1px solid var(--kripto-bg-card);
-	border-radius: 30px;
-	color: #fff;
-	display: block;
-	font-size: 22px;
-	font-weight: 500;
-	background: var(--kripto-bg-card);
-	height: 60px;
-	line-height: 60px;
-	position: relative;
-	margin: 5px;
-	text-align: center;
-	width: 60px;
+  border: 1px solid var(--kripto-bg-card);
+  border-radius: 30px;
+  color: #fff;
+  display: block;
+  font-size: 22px;
+  font-weight: 500;
+  background: var(--kripto-bg-card);
+  height: 60px;
+  line-height: 60px;
+  position: relative;
+  margin: 5px;
+  text-align: center;
+  width: 60px;
 }
 ul.blog_pagination li a:hover {
-    color: #fff;
-    background: var(--kripto-accent);
-    border: 1px solid var(--kripto-accent);
+  color: #fff;
+  background: var(--kripto-accent);
+  border: 1px solid var(--kripto-accent);
 }
 /*END PAGINATION*/
-.contact_form_blog{padding-top:0px!important;}
+.contact_form_blog {
+  padding-top: 0px !important;
+}
 .blog_sidebar_title {
-	border-bottom: 1px solid #303a4f;
-	color: #fff;
-	font-size: 18px;
-	font-weight: 600;
-	letter-spacing: x;
-	margin-bottom: 15px;
-	margin-top: 0;
-	padding-bottom: 10px;
-	text-transform: capitalize;
+  border-bottom: 1px solid #303a4f;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: x;
+  margin-bottom: 15px;
+  margin-top: 0;
+  padding-bottom: 10px;
+  text-transform: capitalize;
 }
-.blog_search, .latest_blog, .advertisement_post, .video_post, .categories, .tag, .banner {
-	margin-bottom: 30px;
-	background: var(--kripto-bg-card);
-	padding: 30px 30px;
-	position: relative;
-	border-radius:10px;
-	border-top: 3px solid var(--kripto-accent);
-	box-shadow:0 10px 40px -10px rgba(0,64,128,.2);
+.blog_search,
+.latest_blog,
+.advertisement_post,
+.video_post,
+.categories,
+.tag,
+.banner {
+  margin-bottom: 30px;
+  background: var(--kripto-bg-card);
+  padding: 30px 30px;
+  position: relative;
+  border-radius: 10px;
+  border-top: 3px solid var(--kripto-accent);
+  box-shadow: 0 10px 40px -10px rgba(0, 64, 128, 0.2);
 }
-.tag{overflow: hidden;}
-@media only screen and (max-width:768px) { 
-    .blog_search { margin-top: 60px }
+.tag {
+  overflow: hidden;
+}
+@media only screen and (max-width: 768px) {
+  .blog_search {
+    margin-top: 60px;
+  }
 }
 .blog_search input {
-	background: none;
-	border: 1px solid #303a4f;
-	border-radius: 0;
-	color: #fff;
-	-webkit-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
-	height: 50px;
+  background: none;
+  border: 1px solid #303a4f;
+  border-radius: 0;
+  color: #fff;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  height: 50px;
 }
-.blog_search input:focus{background: none;border: 1px solid var(--kripto-accent);color: #fff;}
+.blog_search input:focus {
+  background: none;
+  border: 1px solid var(--kripto-accent);
+  color: #fff;
+}
 .single_latest_blog {
-	overflow: hidden;
-	border-bottom: 1px solid #303a4f;
-	padding-bottom: 15px;
-	margin-bottom: 20px;
+  overflow: hidden;
+  border-bottom: 1px solid #303a4f;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
 }
 .single_latest_blog h4 {
-	color: var(--kripto-text);
-	font-size: 15px;
-	font-weight: 500;
-	line-height: 28px;
-	margin: 0;
-	-webkit-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
+  color: var(--kripto-text);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 28px;
+  margin: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
-.single_latest_blog:hover h4 { color: var(--kripto-accent) }
-.single_latest_blog span { color: #161616 }
-.single_upcoming_event {margin-bottom: 20px;}
+.single_latest_blog:hover h4 {
+  color: var(--kripto-accent);
+}
+.single_latest_blog span {
+  color: #161616;
+}
+.single_upcoming_event {
+  margin-bottom: 20px;
+}
 .single_upcoming_event h4 {
-	color: #fff;
-	font-size: 17px;
-	font-weight: 600;
-	line-height: 28px;
-	margin: 10px 0 0;
-	-webkit-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 10px 0 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
-.single_upcoming_event:hover h4 { color: var(--kripto-accent) }
-.single_upcoming_event span i{margin-right:5px;color: var(--kripto-accent) }
-.single_upcoming_event span { color: #777 }
+.single_upcoming_event:hover h4 {
+  color: var(--kripto-accent);
+}
+.single_upcoming_event span i {
+  margin-right: 5px;
+  color: var(--kripto-accent);
+}
+.single_upcoming_event span {
+  color: #777;
+}
 .categories ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 .categories ul li a {
-	color: var(--kripto-text);
-	display: block;
-	font-size: 14px;
-	padding: 5px 0;
-	font-family: poppins;
-	font-weight: 400;
+  color: var(--kripto-text);
+  display: block;
+  font-size: 14px;
+  padding: 5px 0;
+  font-family: poppins;
+  font-weight: 400;
 }
-.categories ul li a:hover { color: var(--kripto-accent) }
-.categories ul li a i { margin-right: 10px }
+.categories ul li a:hover {
+  color: var(--kripto-accent);
+}
+.categories ul li a i {
+  margin-right: 10px;
+}
 .video_post iframe {
-    width: 100%;
-    height: 100%;
-    border: medium none;
+  width: 100%;
+  height: 100%;
+  border: medium none;
 }
 .tag a {
-	border: 2px solid #303a4f;
-	border-radius: 30px;
-	color: #fff;
-	display: block;
-	float: left;
-	font-size: 14px;
-	font-weight: 600;
-	margin: 6px 4px;
-	padding: 3px 15px;
-	text-transform: capitalize;
-	-webkit-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
-	background: none;
+  border: 2px solid #303a4f;
+  border-radius: 30px;
+  color: #fff;
+  display: block;
+  float: left;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 6px 4px;
+  padding: 3px 15px;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background: none;
 }
 .tag a:hover {
-    background: var(--kripto-accent);
-    color: #fff;
-    border: 2px solid var(--kripto-accent);
+  background: var(--kripto-accent);
+  color: #fff;
+  border: 2px solid var(--kripto-accent);
 }
 /*END BLOG SIDEBAR DESIGN*/
 .bc_left {
-	padding-left: 30px;
-	font-style: italic;
-	font-weight: 600;
+  padding-left: 30px;
+  font-style: italic;
+  font-weight: 600;
 }
-.bc_bottom{margin-bottom:30px;}
-.single_blog_post { margin-bottom: 60px }
+.bc_bottom {
+  margin-bottom: 30px;
+}
+.single_blog_post {
+  margin-bottom: 60px;
+}
 .single_blog_post img {
-    width: 750px;
-    height: 455px;
+  width: 750px;
+  height: 455px;
 }
-.blog_post_text h4 { margin: 30px 0 }
+.blog_post_text h4 {
+  margin: 30px 0;
+}
 .author_part {
-	margin-bottom: 30px;
-	overflow: hidden;
-	margin-top: 60px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  margin-top: 60px;
 }
 .single_author {
-	background: var(--kripto-bg-card) none repeat scroll 0 0;
-	padding: 40px;
-	border-radius: 10px;
-	box-shadow: 0 10px 40px -10px rgba(0,64,128,.08);
-	overflow: hidden;
+  background: var(--kripto-bg-card) none repeat scroll 0 0;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px -10px rgba(0, 64, 128, 0.08);
+  overflow: hidden;
 }
 .author_part img {
-	border: 4px solid var(--kripto-accent);
-	border-radius: 100px;
-	float: left;
-	height: 120px;
-	margin-right: 20px;
-	width: 120px;
+  border: 4px solid var(--kripto-accent);
+  border-radius: 100px;
+  float: left;
+  height: 120px;
+  margin-right: 20px;
+  width: 120px;
 }
-.author_part h4 {text-transform: uppercase;
-font-size: 16px;
-font-weight:700;
-letter-spacing: 1px; }
-.author_part p { margin-bottom: 0 }
+.author_part h4 {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.author_part p {
+  margin-bottom: 0;
+}
 .blog_head_title {
-border-bottom: 1px solid #303a4f;
-margin: 0 0 30px;
-padding-bottom: 10px;
-font-weight: 700;
-text-transform: uppercase;
-font-size: 18px;
+  border-bottom: 1px solid #303a4f;
+  margin: 0 0 30px;
+  padding-bottom: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 18px;
 }
 .comments_part {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 .single_comment {
-    margin-bottom: 30px;
-    background: var(--kripto-bg-card);
-    padding: 40px;
-	border-radius: 10px;
-	box-shadow: 0 10px 40px -10px rgba(0,64,128,.08);
-	overflow: hidden;
+  margin-bottom: 30px;
+  background: var(--kripto-bg-card);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px -10px rgba(0, 64, 128, 0.08);
+  overflow: hidden;
 }
-.single_comment_mbnone { margin-bottom: 0px }
+.single_comment_mbnone {
+  margin-bottom: 0px;
+}
 .single_comment img {
-    border: 4px solid var(--kripto-accent);
-    border-radius: 100px;
-    float: left;
-    height: 120px;
-    margin-right: 20px;
-    width: 120px;
+  border: 4px solid var(--kripto-accent);
+  border-radius: 100px;
+  float: left;
+  height: 120px;
+  margin-right: 20px;
+  width: 120px;
 }
-.single_comment h4 { font-size: 16px;
-font-weight:700;
-letter-spacing: 1px;
-text-transform: uppercase;}
-.single_comment p { margin-bottom: 0 }
+.single_comment h4 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.single_comment p {
+  margin-bottom: 0;
+}
 .comment-box {
-	padding: 40px;
-	border-radius: 10px;
+  padding: 40px;
+  border-radius: 10px;
 }
 
-@media only screen and (max-width:768px) { 
-    .comment_form textarea { width: 100% }
+@media only screen and (max-width: 768px) {
+  .comment_form textarea {
+    width: 100%;
+  }
 }
 /*END BLOG SINGLE PAGE DESIGN*/
 /*
@@ -2825,65 +3101,78 @@ text-transform: uppercase;}
 * ----------------------------------------------------------------------------------------
 */
 .footer {
-	padding-bottom: 50px;
-	padding-top: 80px;
+  padding-bottom: 50px;
+  padding-top: 80px;
 }
 .footer_menu {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 .footer_menu ul {
-	list-style: none;
-	text-align: center;
+  list-style: none;
+  text-align: center;
 }
-.footer_menu ul li{display: inline-block;}
+.footer_menu ul li {
+  display: inline-block;
+}
 .footer_menu ul li a {
-	color:#fff;
-	padding: 0 10px;
-	position: relative;
-	-webkit-transition: 0.3s;
-	transition: 0.3s;
+  color: #fff;
+  padding: 0 10px;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
-.footer_menu ul li a:hover{color:var(--kripto-accent);text-decoration:underline;}
+.footer_menu ul li a:hover {
+  color: var(--kripto-accent);
+  text-decoration: underline;
+}
 
-.footer_profile{margin-bottom:40px;}
-.footer_profile ul{
-list-style: outside none none;
-margin: 0;
-padding: 0
+.footer_profile {
+  margin-bottom: 40px;
 }
-.footer_profile ul li{
-display: inline-block;
+.footer_profile ul {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
 }
-@media only screen and (max-width:480px) { 
-.footer_profile ul li{margin:2px;}
+.footer_profile ul li {
+  display: inline-block;
 }
-.footer_profile ul li a img{width:60px;}
+@media only screen and (max-width: 480px) {
+  .footer_profile ul li {
+    margin: 2px;
+  }
+}
+.footer_profile ul li a img {
+  width: 60px;
+}
 
 .footer_profile ul li a {
-	background: var(--kripto-bg-card);
-	width: 40px;
-	height: 40px;
-	display: block;
-	text-align: center;
-	position: relative;
-	margin-right: 5px;
-	border-radius: 50%;
-	line-height: 40px;
-	box-sizing: border-box;
-	text-decoration: none;
-	-webkit-transition: .3s;
-	transition: .3s;
-	color: #fff;
+  background: var(--kripto-bg-card);
+  width: 40px;
+  height: 40px;
+  display: block;
+  text-align: center;
+  position: relative;
+  margin-right: 5px;
+  border-radius: 50%;
+  line-height: 40px;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #fff;
 }
-.footer_profile ul li a:hover{background: var(--kripto-accent);}
+.footer_profile ul li a:hover {
+  background: var(--kripto-accent);
+}
 /*END FOOTER SOCIAL DESIGN*/
 .footer_copyright {
-margin-bottom: 20px;
-	text-transform: uppercase;
-	position: relative;
-	font-size: 12px;
-	font-weight: 600;
-	color: #fff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
 }
 /*
 * ----------------------------------------------------------------------------------------
@@ -2891,19 +3180,18 @@ margin-bottom: 20px;
 * ----------------------------------------------------------------------------------------
 */
 
-
 /*
 * ----------------------------------------------------------------------------------------
 * ----------------------------------------------------------------------------------------
 */
 .section-top {
-    padding-bottom: 100px;
-    padding-top: 160px;
-	position: relative;
+  padding-bottom: 100px;
+  padding-top: 160px;
+  position: relative;
 }
 .section-top-title h1 {
-color: #fff;
-font-weight: 600;
+  color: #fff;
+  font-weight: 600;
 }
 /*
 * ----------------------------------------------------------------------------------------
@@ -2913,40 +3201,40 @@ font-weight: 600;
 
 /* About article block */
 .kripto-about-article {
-    max-width: 820px;
-    margin: 0 auto 2.5rem;
-    padding: 28px 32px;
-    background: var(--kripto-bg-card);
-    border: 1px solid var(--kripto-border);
-    border-radius: 12px;
-    box-shadow: var(--kripto-card-shadow);
+  max-width: 820px;
+  margin: 0 auto 2.5rem;
+  padding: 28px 32px;
+  background: var(--kripto-bg-card);
+  border: 1px solid var(--kripto-border);
+  border-radius: 12px;
+  box-shadow: var(--kripto-card-shadow);
 }
 html[data-theme="dark"] .kripto-about-article {
-    background: rgba(10, 13, 66, 0.3);
-    box-shadow: none;
+  background: rgba(10, 13, 66, 0.3);
+  box-shadow: none;
 }
 .kripto-about-article h2 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--kripto-heading);
-    margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--kripto-heading);
+  margin-bottom: 1rem;
 }
 .kripto-about-article p {
-    font-size: 0.97rem;
-    color: var(--kripto-text);
-    line-height: 1.8;
-    margin-bottom: 0.85rem;
+  font-size: 0.97rem;
+  color: var(--kripto-text);
+  line-height: 1.8;
+  margin-bottom: 0.85rem;
 }
 .kripto-about-article p:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 .kripto-about-article strong {
-    color: var(--kripto-heading);
+  color: var(--kripto-heading);
 }
 @media (max-width: 576px) {
-    .kripto-about-article {
-        padding: 20px 18px;
-    }
+  .kripto-about-article {
+    padding: 20px 18px;
+  }
 }
 
 /* ============================================================
@@ -2954,8 +3242,12 @@ html[data-theme="dark"] .kripto-about-article {
    ============================================================ */
 
 /* particles-js: samo u dark modu */
-#particles-js { display: none; }
-html[data-theme="dark"] #particles-js { display: block; }
+#particles-js {
+  display: none;
+}
+html[data-theme="dark"] #particles-js {
+  display: block;
+}
 
 /* ---- Theme Toggle Button ---- */
 .kripto-theme-toggle {
@@ -2975,7 +3267,7 @@ html[data-theme="dark"] #particles-js { display: block; }
   margin-left: 8px;
 }
 .kripto-theme-toggle:hover {
-  background: rgba(96,23,255,0.08);
+  background: rgba(96, 23, 255, 0.08);
   border-color: var(--kripto-accent);
   color: var(--kripto-accent);
 }
@@ -2984,28 +3276,50 @@ html[data-theme="dark"] #particles-js { display: block; }
   height: 18px;
   pointer-events: none;
 }
-.kripto-icon-sun { display: none; }
-.kripto-icon-moon { display: block; }
-html[data-theme="dark"] .kripto-icon-sun { display: block; }
-html[data-theme="dark"] .kripto-icon-moon { display: none; }
+.kripto-icon-sun {
+  display: none;
+}
+.kripto-icon-moon {
+  display: block;
+}
+html[data-theme="dark"] .kripto-icon-sun {
+  display: block;
+}
+html[data-theme="dark"] .kripto-icon-moon {
+  display: none;
+}
 
 /* ---- Logo light/dark switch ---- */
-.kripto-logo-light { display: block; }
-.kripto-logo-dark  { display: none; }
-html[data-theme="dark"] .kripto-logo-light { display: none; }
-html[data-theme="dark"] .kripto-logo-dark  { display: block; }
+.kripto-logo-light {
+  display: block;
+}
+.kripto-logo-dark {
+  display: none;
+}
+html[data-theme="dark"] .kripto-logo-light {
+  display: none;
+}
+html[data-theme="dark"] .kripto-logo-dark {
+  display: block;
+}
 
 /* ---- Hero Section (novi dizajn) ---- */
 .kripto-hero-new {
   padding: 110px 0 72px;
   position: relative;
-  background: linear-gradient(160deg, rgba(96,23,255,0.04) 0%, transparent 55%);
+  background: linear-gradient(
+    160deg,
+    rgba(96, 23, 255, 0.04) 0%,
+    transparent 55%
+  );
 }
 html[data-theme="dark"] .kripto-hero-new {
   background: transparent;
 }
 @media (max-width: 767px) {
-  .kripto-hero-new { padding: 90px 0 52px; }
+  .kripto-hero-new {
+    padding: 90px 0 52px;
+  }
 }
 .kripto-hero-content-new {
   max-width: 740px;
@@ -3016,8 +3330,8 @@ html[data-theme="dark"] .kripto-hero-new {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(96,23,255,0.08);
-  border: 1px solid rgba(96,23,255,0.2);
+  background: rgba(96, 23, 255, 0.08);
+  border: 1px solid rgba(96, 23, 255, 0.2);
   color: #6017ff;
   font-size: 11px;
   font-weight: 700;
@@ -3028,8 +3342,8 @@ html[data-theme="dark"] .kripto-hero-new {
   margin-bottom: 28px;
 }
 html[data-theme="dark"] .kripto-hero-badge-tag {
-  background: rgba(167,139,250,0.12);
-  border-color: rgba(167,139,250,0.3);
+  background: rgba(167, 139, 250, 0.12);
+  border-color: rgba(167, 139, 250, 0.3);
   color: #a78bfa;
 }
 .kripto-hero-badge-tag svg {
@@ -3046,10 +3360,14 @@ html[data-theme="dark"] .kripto-hero-badge-tag {
   text-transform: none;
 }
 @media (max-width: 768px) {
-  .kripto-hero-content-new h1 { font-size: 34px; }
+  .kripto-hero-content-new h1 {
+    font-size: 34px;
+  }
 }
 @media (max-width: 480px) {
-  .kripto-hero-content-new h1 { font-size: 28px; }
+  .kripto-hero-content-new h1 {
+    font-size: 28px;
+  }
 }
 .kripto-hero-subtitle {
   font-size: 17px;
@@ -3112,7 +3430,7 @@ html[data-theme="dark"] .kripto-hero-badge-tag {
   color: var(--kripto-heading);
   line-height: 1;
   margin-bottom: 8px;
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
 }
 .kripto-stat-item span {
   font-size: 13px;
@@ -3126,8 +3444,12 @@ html[data-theme="dark"] .kripto-hero-badge-tag {
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
-  .kripto-stat-divider { display: none; }
-  .kripto-stat-item { min-width: 44%; }
+  .kripto-stat-divider {
+    display: none;
+  }
+  .kripto-stat-item {
+    min-width: 44%;
+  }
 }
 
 /* ---- Services Section (novi) ---- */
@@ -3137,7 +3459,7 @@ html[data-theme="dark"] .kripto-hero-badge-tag {
 }
 .kripto-section-label {
   display: inline-block;
-  font-size: 11px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -3177,8 +3499,13 @@ html[data-theme="dark"] .kripto-hero-badge-tag {
     gap: 14px;
     margin-bottom: 32px;
   }
-  .kripto-services-header-left h2 { font-size: 26px; max-width: 100%; }
-  .kripto-services-header-right { max-width: 100%; }
+  .kripto-services-header-left h2 {
+    font-size: 26px;
+    max-width: 100%;
+  }
+  .kripto-services-header-right {
+    max-width: 100%;
+  }
 }
 
 /* Service card icon */
@@ -3186,8 +3513,8 @@ html[data-theme="dark"] .kripto-hero-badge-tag {
   width: 46px;
   height: 46px;
   border-radius: 11px;
-  background: rgba(96,23,255,0.08);
-  border: 1px solid rgba(96,23,255,0.15);
+  background: rgba(96, 23, 255, 0.08);
+  border: 1px solid rgba(96, 23, 255, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3197,12 +3524,12 @@ html[data-theme="dark"] .kripto-hero-badge-tag {
   transition: background 0.2s;
 }
 html[data-theme="dark"] .kripto-service-icon-wrap {
-  background: rgba(167,139,250,0.12);
-  border-color: rgba(167,139,250,0.2);
+  background: rgba(167, 139, 250, 0.12);
+  border-color: rgba(167, 139, 250, 0.2);
   color: #a78bfa;
 }
 a.kripto-service-card-link:hover .kripto-service-icon-wrap {
-  background: rgba(96,23,255,0.15);
+  background: rgba(96, 23, 255, 0.15);
 }
 /* Service link arrow */
 .kripto-service-link {
@@ -3237,7 +3564,7 @@ a.kripto-service-card-link:hover .kripto-service-link {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   margin-bottom: 14px;
 }
 .kripto-quiz-cta-inner h2 {
@@ -3249,16 +3576,16 @@ a.kripto-service-card-link:hover .kripto-service-link {
   text-transform: none;
 }
 .kripto-quiz-cta-inner p {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 15px;
 }
 .kripto-quiz-cta-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
-  border: 2px solid rgba(255,255,255,0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
   padding: 12px 36px;
   border-radius: 30px;
   font-size: 15px;
@@ -3268,15 +3595,24 @@ a.kripto-service-card-link:hover .kripto-service-link {
   text-decoration: none;
 }
 .kripto-quiz-cta-btn:hover {
-  background: rgba(255,255,255,0.28);
+  background: rgba(255, 255, 255, 0.28);
   color: #ffffff;
-  border-color: rgba(255,255,255,0.8);
+  border-color: rgba(255, 255, 255, 0.8);
 }
-.kripto-quiz-cta-btn i { transition: transform 0.3s; }
-.kripto-quiz-cta-btn:hover i { transform: translateX(4px); }
+.kripto-quiz-cta-btn i {
+  transition: transform 0.3s;
+}
+.kripto-quiz-cta-btn:hover i {
+  transform: translateX(4px);
+}
 @media (max-width: 768px) {
-  .kripto-quiz-cta-inner { flex-direction: column; text-align: center; }
-  .kripto-quiz-cta-inner h2 { font-size: 24px; }
+  .kripto-quiz-cta-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .kripto-quiz-cta-inner h2 {
+    font-size: 24px;
+  }
 }
 
 /* ---- Contact section wrapper ---- */
@@ -3290,30 +3626,41 @@ a.kripto-service-card-link:hover .kripto-service-link {
   padding: 64px 0 0;
   border-top: none;
 }
-.kripto-footer-logo img { margin-bottom: 16px; }
-.kripto-footer-desc { color: #8b96a5; }
-.kripto-footer-heading { color: #ffffff; letter-spacing: 0.5px; }
+.kripto-footer-logo img {
+  margin-bottom: 16px;
+}
+.kripto-footer-desc {
+  color: #8b96a5;
+}
+.kripto-footer-heading {
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
 .kripto-footer-links a,
-.kripto-footer-contact a { color: #8b96a5; }
+.kripto-footer-contact a {
+  color: #8b96a5;
+}
 .kripto-footer-links a:hover,
-.kripto-footer-contact a:hover { color: #a78bfa; }
+.kripto-footer-contact a:hover {
+  color: #a78bfa;
+}
 .kripto-footer-social a {
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   color: #8b96a5;
 }
 .kripto-footer-social a:hover {
-  background: rgba(167,139,250,0.2);
+  background: rgba(167, 139, 250, 0.2);
   color: #a78bfa;
 }
 .kripto-footer-bottom {
   margin-top: 48px;
   padding: 20px 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 13px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255, 255, 255, 0.4);
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -3322,7 +3669,7 @@ a.kripto-service-card-link:hover .kripto-service-link {
 .kripto-cookie-bar {
   background: var(--kripto-bg-card);
   border-top: 1px solid var(--kripto-border);
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.1);
   color: var(--kripto-text);
 }
 html[data-theme="dark"] .kripto-cookie-bar {
@@ -3330,10 +3677,18 @@ html[data-theme="dark"] .kripto-cookie-bar {
   border-top-color: var(--kripto-border);
   box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.55);
 }
-.kripto-cookie-text strong { color: var(--kripto-heading); }
-.kripto-cookie-panel h3 { color: var(--kripto-heading); }
-.kripto-cookie-panel p { color: var(--kripto-text); }
-.kripto-cookie-row-text strong { color: var(--kripto-heading); }
+.kripto-cookie-text strong {
+  color: var(--kripto-heading);
+}
+.kripto-cookie-panel h3 {
+  color: var(--kripto-heading);
+}
+.kripto-cookie-panel p {
+  color: var(--kripto-text);
+}
+.kripto-cookie-row-text strong {
+  color: var(--kripto-heading);
+}
 
 /* ---- #particles-js only in dark ---- */
 html:not([data-theme="dark"]) #particles-js {
@@ -3347,6 +3702,6 @@ html:not([data-theme="dark"]) #particles-js {
   color: var(--kripto-text);
 }
 .topcontrol:hover {
-  background: rgba(96,23,255,0.1);
+  background: rgba(96, 23, 255, 0.1);
   color: var(--kripto-accent);
 }
