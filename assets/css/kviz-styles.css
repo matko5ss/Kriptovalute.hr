@@ -1,16 +1,16 @@
-/* Base styles */
+/* Base styles — varijable nasljeđuju site temu */
 :root {
-  --primary-color: #0077b6;
-  --secondary-color: #48cae4;
-  --accent-color: #00b4d8;
-  --text-color: #2d3436;
-  --light-bg: #ffffff;
-  --dark-bg: #2d3436;
+  --primary-color: var(--kripto-accent, #6017ff);
+  --secondary-color: var(--kripto-accent-hover, #4d12d9);
+  --accent-color: var(--kripto-accent-hover, #4d12d9);
+  --text-color: var(--kripto-text, #4a5568);
+  --light-bg: var(--kripto-bg-card, #ffffff);
+  --dark-bg: #0d0d2b;
   --border-radius: 8px;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --main-bg-color: #ffffff; /* Main background color for consistency */
-  --section-bg-color: #ffffff; /* Section background color */
-  --concept-box-border-color: var(--primary-color); /* Color for concept box borders */
+  --box-shadow: var(--kripto-card-shadow, 0 4px 6px rgba(0,0,0,0.1));
+  --main-bg-color: var(--kripto-bg, #f8f9fc);
+  --section-bg-color: var(--kripto-bg-card, #ffffff);
+  --concept-box-border-color: var(--kripto-accent, #6017ff);
 }
 
 /* Responsive breakpoints */
