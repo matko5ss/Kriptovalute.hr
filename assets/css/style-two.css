@@ -484,7 +484,7 @@ border:2px solid #fff;
 @media (min-width: 200px) and (max-width: 812px) {
 .navbar-custom {
 	background-color: transparent !important;
-	padding: 10px 15% !important;
+	padding: 10px 16px !important;
 }
 .navbar-brand img,
 .kripto-nav-logo {
@@ -498,7 +498,7 @@ nav:has(.navbar-collapse.show) + section {
 @media (min-width: 200px) and (max-width: 768px) {
 .navbar-custom {
 	background-color: transparent !important;
-	padding: 10px 15% !important;
+	padding: 10px 16px !important;
 }
 .navbar-brand img,
 .kripto-nav-logo {
@@ -507,6 +507,17 @@ nav:has(.navbar-collapse.show) + section {
 }
 nav:has(.navbar-collapse.show) + section {
 	padding-top: 280px !important;
+}
+.navbar-nav .nav-item:has(.kripto-theme-toggle) {
+	margin-top: 16px;
+}
+.navbar-nav .nav-item:has(.btn-nav) {
+	margin-top: 8px;
+}
+.navbar-custom:has(.navbar-collapse.show) {
+	background-color: var(--kripto-nav-sticky-bg) !important;
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 }
 }
 .mdi-menu::before {

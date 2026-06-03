@@ -18,10 +18,34 @@
 		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
 		<link rel="stylesheet" href="assets/css/style-two.css?v=25">
 	<script>
-		(function(){try{var t=localStorage.getItem('kripto_theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
+		(function(){try{var t=localStorage.getItem('kripto_theme');if(t!=='light')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
 		</script>
 	</head>
 	<body>
+		<!-- Cookie bar -->
+		<div class="kripto-cookie-bar" id="kripto-cookie-bar" style="display:none" role="dialog" aria-live="polite" aria-label="Postavke kolačića">
+			<div class="kripto-cookie-inner">
+				<div class="kripto-cookie-text"><strong>Koristimo kolačiće</strong> za poboljšanje korisničkog iskustva, analitiku posjećenosti i prikaz relevantnog sadržaja. Možete prilagoditi postavke ili prihvatiti sve kolačiće.</div>
+				<div class="kripto-cookie-actions">
+					<button type="button" class="btn_one btn_one-outline kripto-cookie-btn" id="kripto-cookie-reject">Samo nužni</button>
+					<button type="button" class="btn_one kripto-cookie-btn" id="kripto-cookie-accept-all">Prihvaćam sve</button>
+					<button type="button" class="btn_one btn_one-outline kripto-cookie-btn kripto-cookie-btn-icon" id="kripto-cookie-settings-toggle" aria-label="Postavke kolačića"><i class="fa fa-cog"></i></button>
+				</div>
+			</div>
+			<div class="kripto-cookie-panel" id="kripto-cookie-panel">
+				<h3>Postavke kolačića</h3>
+				<p>Poštujemo Vašu privatnost. Nužni kolačići su potrebni za osnovno funkcioniranje stranice i ne mogu se isključiti. Analitički kolačići pomažu nam razumjeti kako se stranica koristi.</p>
+				<div class="kripto-cookie-row">
+					<div class="kripto-cookie-row-text"><strong>Nužni kolačići</strong><p>Potrebni za ispravan rad stranice (sigurnost, osnovne postavke). Uvijek su aktivni.</p></div>
+					<div class="kripto-cookie-row-control"><span class="kripto-cookie-badge">Uvijek aktivni</span></div>
+				</div>
+				<div class="kripto-cookie-row">
+					<div class="kripto-cookie-row-text"><strong>Analitički kolačići</strong><p>Koristimo Google Analytics (anonimizirano) za mjerenje posjećenosti i poboljšanje sadržaja.</p></div>
+					<div class="kripto-cookie-row-control"><label class="kripto-switch"><input type="checkbox" id="kripto-cookie-analytics" /><span class="kripto-switch-slider"></span></label></div>
+				</div>
+				<div class="kripto-cookie-panel-footer"><button type="button" class="btn_one btn_one-outline kripto-cookie-btn" id="kripto-cookie-save">Spremi odabir</button></div>
+			</div>
+		</div>
 		<nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
 			<div class="container">
 				<a class="navbar-brand" href="index.html">
@@ -129,7 +153,7 @@
 							<li><a href="index.html#kontakt">Kontakt</a></li>
 							<li><a href="politika-privatnosti.html">Politika privatnosti</a></li>
 							<li><a href="politika-kolacici.html">Kolačići</a></li>
-							<li><a href="index.html">Postavke kolačića</a></li>
+							<li><a href="#" id="kripto-footer-cookie-settings">Postavke kolačića</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-3 col-md-6">
@@ -166,6 +190,38 @@
 					localStorage.setItem(THEME_KEY, 'dark');
 				}
 			});
+		})();
+		</script>
+		<!-- Cookie consent -->
+		<script>
+		(function() {
+			var STORAGE_KEY = 'kripto_cookie_consent_v1';
+			function loadConsent() { try { var r = localStorage.getItem(STORAGE_KEY); if (!r) return {necessary:true,analytics:false}; var p = JSON.parse(r); return {necessary:true,analytics:!!p.analytics}; } catch(e) { return {necessary:true,analytics:false}; } }
+			function saveConsent(c) { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(c)); } catch(e) {} }
+			function loadAnalytics() { if (window.kriptoGaLoaded) return; window.kriptoGaLoaded = true; window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} window.gtag = window.gtag || gtag; var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JLBXS6BRQX'; s.onload = function(){ gtag('js', new Date()); gtag('config','G-JLBXS6BRQX',{anonymize_ip:true}); }; document.head.appendChild(s); }
+			function revokeAnalytics() { if (window.gtag) window.gtag('consent','update',{analytics_storage:'denied'}); document.cookie.split(';').forEach(function(c){ var n = c.split('=')[0].trim(); if (n.indexOf('_ga')===0||n.indexOf('_gid')===0){ document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.'+location.hostname; document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'; } }); }
+			function applyConsent(c) { if (c.analytics) loadAnalytics(); else revokeAnalytics(); }
+			try {
+				var bar = document.getElementById('kripto-cookie-bar');
+				if (!bar) return;
+				var panel = document.getElementById('kripto-cookie-panel');
+				var btnAcceptAll = document.getElementById('kripto-cookie-accept-all');
+				var btnReject = document.getElementById('kripto-cookie-reject');
+				var btnToggle = document.getElementById('kripto-cookie-settings-toggle');
+				var chkAnalytics = document.getElementById('kripto-cookie-analytics');
+				var btnSave = document.getElementById('kripto-cookie-save');
+				var consent = loadConsent();
+				applyConsent(consent);
+				if (!localStorage.getItem(STORAGE_KEY)) bar.style.display = 'block';
+				function openPanel() { if (panel) { panel.style.display='block'; if (chkAnalytics) chkAnalytics.checked=!!consent.analytics; } }
+				function closePanel() { if (panel) panel.style.display='none'; }
+				if (btnToggle) btnToggle.addEventListener('click', function(){ panel && panel.style.display==='block' ? closePanel() : openPanel(); });
+				if (btnAcceptAll) btnAcceptAll.addEventListener('click', function(){ consent.analytics=true; saveConsent(consent); applyConsent(consent); bar.style.display='none'; });
+				if (btnReject) btnReject.addEventListener('click', function(){ consent.analytics=false; saveConsent(consent); bar.style.display='none'; });
+				if (btnSave && chkAnalytics) btnSave.addEventListener('click', function(){ consent.analytics=!!chkAnalytics.checked; saveConsent(consent); applyConsent(consent); bar.style.display='none'; });
+				var footerLink = document.getElementById('kripto-footer-cookie-settings');
+				if (footerLink) footerLink.addEventListener('click', function(e){ e.preventDefault(); consent=loadConsent(); bar.style.display='block'; openPanel(); bar.scrollIntoView({behavior:'smooth'}); });
+			} catch(e) {}
 		})();
 		</script>
 	</body>
