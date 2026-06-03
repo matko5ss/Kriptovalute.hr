@@ -1029,4 +1029,42 @@ footer {
   }
 }
 
+/* ── Logo Quiz ─────────────────────────────────────── */
+.kviz-logo-question {
+  text-align: center;
+  padding: 24px 0 12px;
+}
+.kviz-logo-img {
+  display: block;
+  margin: 0 auto 16px;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 2px solid var(--kripto-border, #e2e8f0);
+  padding: 14px;
+}
+html:not([data-theme="dark"]) .kviz-logo-img {
+  background: #f5f2ee;
+}
+.kviz-logo-question-text {
+  color: var(--kripto-text);
+  font-size: 15px;
+  margin-bottom: 4px;
+  opacity: 0.75;
+}
+.kviz-review-logo {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.kviz-review-logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--kripto-border, #e2e8f0);
+  padding: 6px;
+}
 

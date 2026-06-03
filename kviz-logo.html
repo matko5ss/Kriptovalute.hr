@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="hr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Kviz Logotipa – Prepoznaj Kripto po Ikoni | Kriptovalute.hr</title>
+		<meta name="description" content="Besplatni interaktivni kviz prepoznavanja kriptovaluta po logotipu. 20 nasumičnih pitanja iz top 100 kriptovaluta — Bitcoin, Ethereum, Solana i još mnogo više.">
+		<meta name="keywords" content="kripto logo kviz, prepoznaj kriptovalutu, kripto ikonice, bitcoin logo, ethereum logo, kripto simboli, blockchain kviz, kriptovalute logotipi">
+		<meta name="author" content="Kriptovalute.hr">
+		<meta name="robots" content="index, follow">
+		<meta name="theme-color" content="#6c5ce7">
+		<link rel="canonical" href="https://kriptovalute.hr/kviz-logo.html">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+		<!-- Open Graph -->
+		<meta property="og:locale" content="hr_HR">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Kviz Logotipa – Prepoznaj Kripto po Ikoni | Kriptovalute.hr">
+		<meta property="og:description" content="Besplatni interaktivni kviz prepoznavanja kriptovaluta po logotipu. 20 nasumičnih pitanja iz top 100 kriptovaluta.">
+		<meta property="og:url" content="https://kriptovalute.hr/kviz-logo.html">
+		<meta property="og:site_name" content="Kriptovalute.hr">
+		<meta property="og:image" content="https://kriptovalute.hr/assets/img/kriptovalute-logo-blue.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/materialdesignicons-min.css">
+		<link rel="stylesheet" href="assets/css/style-two.css?v=25">
+		<link rel="stylesheet" href="assets/css/kviz-styles.css">
+		<link rel="stylesheet" href="assets/css/edukacija-inner.css?v=4">
+		<script src="assets/js/quiz-logo.js" defer></script>
+		<script>
+			(function(){try{var t=localStorage.getItem('kripto_theme');if(t!=='light')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
+		</script>
+	</head>
+	<body>
+		<div class="kripto-cookie-bar" id="kripto-cookie-bar" style="display:none;" role="dialog" aria-live="polite" aria-label="Postavke kolačića">
+			<div class="kripto-cookie-inner">
+				<div class="kripto-cookie-text">
+					<strong>Koristimo kolačiće</strong> za poboljšanje korisničkog iskustva, analitiku posjećenosti i prikaz relevantnog sadržaja. Možete prilagoditi postavke ili prihvatiti sve kolačiće.
+				</div>
+				<div class="kripto-cookie-actions">
+					<button type="button" class="btn_one btn_one-outline kripto-cookie-btn" id="kripto-cookie-reject">Samo nužni</button>
+					<button type="button" class="btn_one kripto-cookie-btn" id="kripto-cookie-accept-all">Prihvaćam sve</button>
+					<button type="button" class="btn_one btn_one-outline kripto-cookie-btn kripto-cookie-btn-icon" id="kripto-cookie-settings-toggle" aria-label="Postavke kolačića"><i class="fa fa-cog"></i></button>
+				</div>
+			</div>
+			<div class="kripto-cookie-panel" id="kripto-cookie-panel">
+				<h3>Postavke kolačića</h3>
+				<p>Poštujemo Vašu privatnost. Nužni kolačići su potrebni za osnovno funkcioniranje stranice i ne mogu se isključiti. Analitički kolačići pomažu nam razumjeti kako se stranica koristi.</p>
+				<div class="kripto-cookie-row">
+					<div class="kripto-cookie-row-text"><strong>Nužni kolačići</strong><p>Potrebni za ispravan rad stranice (sigurnost, osnovne postavke). Uvijek su aktivni.</p></div>
+					<div class="kripto-cookie-row-control"><span class="kripto-cookie-badge">Uvijek aktivni</span></div>
+				</div>
+				<div class="kripto-cookie-row">
+					<div class="kripto-cookie-row-text"><strong>Analitički kolačići</strong><p>Koristimo Google Analytics (anonimizirano) za mjerenje posjećenosti i poboljšanje sadržaja.</p></div>
+					<div class="kripto-cookie-row-control">
+						<label class="kripto-switch"><input type="checkbox" id="kripto-cookie-analytics"><span class="kripto-switch-slider"></span></label>
+					</div>
+				</div>
+				<div class="kripto-cookie-panel-footer">
+					<button type="button" class="btn_one btn_one-outline kripto-cookie-btn" id="kripto-cookie-save">Spremi odabir</button>
+				</div>
+			</div>
+		</div>
+		<div id="particles-js"></div>
+		<nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<picture class="kripto-logo-light">
+						<source srcset="assets/img/kriptovalute-logo-black.webp" type="image/webp">
+						<img src="assets/img/kriptovalute-logo-black.png" alt="Kriptovalute.hr" class="kripto-nav-logo" width="182" height="50" fetchpriority="high">
+					</picture>
+					<picture class="kripto-logo-dark">
+						<source srcset="assets/img/kriptovalute-logo.webp" type="image/webp">
+						<img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="kripto-nav-logo" width="182" height="50" loading="lazy">
+					</picture>
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation"><span class="mdi mdi-menu"></span></button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav ms-auto align-items-center">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usluge</a>
+							<ul class="dropdown-menu dropdown-menu-end kripto-nav-dropdown">
+								<li><a class="dropdown-item" href="https://www.kriptovalute.hr/edukacija-i-radionice.html">Edukacija i radionice</a></li>
+								<li><a class="dropdown-item" href="https://www.kriptovalute.hr/kripto-rjesenja-za-poslovanje.html">Kripto rješenja za poslovanje</a></li>
+								<li><a class="dropdown-item" href="https://www.kriptovalute.hr/alati-i-platforme-za-trgovanje.html">Alati i platforme za trgovanje</a></li>
+								<li><a class="dropdown-item" href="https://www.kriptovalute.hr/pravni-i-porezni-savjeti.html">Pravni i porezni savjeti</a></li>
+								<li><a class="dropdown-item" href="https://www.kriptovalute.hr/blockchain-rjesenja.html">Blockchain rješenja</a></li>
+								<li><a class="dropdown-item" href="https://www.kriptovalute.hr/savjetovanje-i-podrska.html">Savjetovanje i podrška</a></li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kviz</a>
+							<ul class="dropdown-menu dropdown-menu-end kripto-nav-dropdown">
+								<li><a class="dropdown-item" href="kviz.html">Kviz znanja</a></li>
+								<li><a class="dropdown-item active" href="kviz-logo.html">Kviz logotipa</a></li>
+							</ul>
+						</li>
+						<li class="nav-item d-flex align-items-center ms-lg-2">
+							<button class="kripto-theme-toggle" id="kripto-theme-toggle" aria-label="Prebaci temu">
+								<svg class="kripto-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+								<svg class="kripto-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+							</button>
+						</li>
+						<li class="nav-item ms-lg-2"><a href="index.html#kontakt" class="btn_one btn-nav">Kontaktirajte nas</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Custom confirm modal -->
+		<div id="kviz-confirm-modal" style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center;">
+			<div style="position:absolute; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px);"></div>
+			<div style="position:relative; background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:40px 36px; max-width:440px; width:92%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+				<div style="font-size:36px; margin-bottom:12px;">🔄</div>
+				<h4 style="color:#fff; font-size:17px; margin-bottom:8px; font-weight:600;">Pokreni kviz iznova?</h4>
+				<p style="color:rgba(255,255,255,0.6); font-size:14px; margin-bottom:24px;">Tvoj trenutni napredak bit će izgubljen.</p>
+				<div class="kviz-confirm-modal-btns">
+					<button type="button" id="kviz-confirm-cancel" class="btn_one btn_one-outline">Odustani</button>
+					<button type="button" id="kviz-confirm-ok" class="btn_one btn_one-outline">Pokreni ponovo</button>
+				</div>
+			</div>
+		</div>
+
+		<section class="about_us section-padding kriptovalute-services kripto-edukacija-inner kviz-page" style="padding-top: 120px;">
+			<div class="container">
+				<div class="quiz-container" id="quiz">
+					<div id="quiz-inner">
+
+						<!-- START SCREEN -->
+						<div id="quiz-start-screen" class="quiz-step">
+							<div class="kviz-start-hero">
+								<div class="kviz-start-icon"><i class="fa fa-picture-o"></i></div>
+								<h2 class="kviz-start-title">Prepoznaj logotip</h2>
+								<p class="kviz-start-desc">Prepoznaj kriptovalute po njihovim logotipima i ikonama. 20 nasumičnih pitanja iz top 100 kriptovaluta — svaki put drugačiji raspored.</p>
+								<div class="kviz-start-stats">
+									<div class="kviz-stat">
+										<span class="kviz-stat-num">20</span>
+										<span class="kviz-stat-label">pitanja</span>
+									</div>
+									<div class="kviz-stat-divider"></div>
+									<div class="kviz-stat">
+										<span class="kviz-stat-num">16</span>
+										<span class="kviz-stat-label">za prolaz</span>
+									</div>
+									<div class="kviz-stat-divider"></div>
+									<div class="kviz-stat">
+										<span class="kviz-stat-num">∞</span>
+										<span class="kviz-stat-label">pokušaja</span>
+									</div>
+								</div>
+								<button type="button" id="start-quiz-btn" class="btn_one kviz-start-btn">Započni kviz &nbsp;<i class="fa fa-arrow-right"></i></button>
+							</div>
+						</div>
+
+						<!-- QUESTIONS SCREEN -->
+						<div id="quiz-questions" class="quiz-step" style="display: none;">
+							<div class="kviz-restart-above-progress" id="restart-quiz-mid-wrap" style="display: none;">
+								<span style="position: relative; display: inline-block;">
+									<button id="restart-quiz-mid-btn" style="background: transparent; border: none; cursor: pointer; color: rgba(255,255,255,0.4); font-size: 18px; line-height: 1; padding: 4px; transition: color 0.2s ease;" onmouseover="this.style.color='rgba(255,255,255,0.9)';document.getElementById('restart-tooltip').style.opacity='1'" onmouseout="this.style.color='rgba(255,255,255,0.4)';document.getElementById('restart-tooltip').style.opacity='0'"><i class="fa fa-refresh"></i></button>
+									<span id="restart-tooltip" style="position: absolute; right: 0; top: 32px; background: rgba(20,20,40,0.95); color: #fff; font-size: 12px; white-space: nowrap; padding: 5px 10px; border-radius: 6px; pointer-events: none; opacity: 0; transition: opacity 0.2s ease; border: 1px solid rgba(255,255,255,0.15); z-index: 10;">Pokreni ponovo</span>
+								</span>
+							</div>
+							<div class="kviz-progress-wrap">
+								<div class="kviz-progress-bar-bg">
+									<div class="kviz-progress-bar-fill" id="kviz-progress-fill"></div>
+								</div>
+								<span class="kviz-progress-label" id="question-number">1 / 20</span>
+							</div>
+							<div id="question-container"></div>
+						</div>
+
+						<!-- RESULTS SCREEN -->
+						<div id="quiz-results" class="quiz-step" style="display: none;">
+							<div class="kviz-results-top-btn">
+								<button type="button" id="restart-quiz-btn" class="btn_one kviz-start-btn"><i class="fa fa-refresh"></i>&nbsp; Pokušaj ponovno</button>
+							</div>
+							<div class="kviz-results-header">
+								<div class="kviz-results-icon" id="kviz-results-icon">🏆</div>
+								<h3 class="kviz-results-title">Rezultati kviza</h3>
+							</div>
+							<div class="kviz-score-display">
+								<div class="kviz-score-main">
+									<span id="correct-answers">0</span><span class="kviz-score-slash">/</span><span id="total-questions">0</span>
+								</div>
+								<div class="kviz-score-label">točnih odgovora</div>
+								<div id="score-percentage"></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="kripto-footer">
+			<div class="container">
+				<div class="row align-items-start">
+					<div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+						<a href="index.html" class="kripto-footer-logo">
+							<picture><source srcset="assets/img/kriptovalute-logo.webp" type="image/webp"><img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="img-fluid" width="200" height="55" loading="lazy"></picture>
+						</a>
+						<p class="kripto-footer-desc">Pomažemo vam razumjeti kripto svijet i pretvoriti znanje u stvarne prilike.</p>
+						<div class="kripto-footer-social">
+							<a href="https://www.linkedin.com/company/111132384" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+							<a href="https://www.facebook.com/kriptovalute.hr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+							<a href="https://www.instagram.com/kriptovalute.hr/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+							<a href="https://www.tiktok.com/@kriptovalutehr" target="_blank" rel="noopener" aria-label="TikTok"><svg class="tiktok-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" fill="currentColor"></path></svg></a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+						<h6 class="kripto-footer-heading">Poveznice</h6>
+						<ul class="kripto-footer-links">
+							<li><a href="index.html">Početna</a></li>
+							<li><a href="index.html#kontakt">Kontakt</a></li>
+							<li><a href="politika-privatnosti.html">Politika privatnosti</a></li>
+							<li><a href="politika-kolacici.html">Kolačići</a></li>
+							<li><a href="#" id="kripto-footer-cookie-settings">Postavke kolačića</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h6 class="kripto-footer-heading">Kontakt</h6>
+						<ul class="kripto-footer-contact">
+							<li><a href="#" class="ep-link" data-em="aW5mb0BrcmlwdG92YWx1dGUuaHI="><i class="fa fa-envelope"></i> <span class="ep-addr"></span></a></li>
+						</ul>
+						<a href="index.html#kontakt" class="btn_one btn-footer">Kontaktirajte nas</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="assets/js/jquery-1.12.4.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<script src="assets/js/particles.min.js"></script>
+		<script src="assets/js/app.js"></script>
+		<script src="assets/js/scrolltopcontrol.js"></script>
+		<script src="assets/js/scripts-index.js"></script>
+		<script src="assets/js/email-protect.js"></script>
+		<script>
+		(function() {
+			var STORAGE_KEY = 'kripto_cookie_consent_v1';
+			function loadConsent() { try { var r = localStorage.getItem(STORAGE_KEY); if (!r) return {necessary:true,analytics:false}; var p = JSON.parse(r); return {necessary:true,analytics:!!p.analytics}; } catch(e) { return {necessary:true,analytics:false}; } }
+			function saveConsent(c) { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(c)); } catch(e) {} }
+			function loadAnalytics() { if (window.kriptoGaLoaded) return; window.kriptoGaLoaded = true; window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} window.gtag = window.gtag || gtag; var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JLBXS6BRQX'; s.onload = function(){ gtag('js', new Date()); gtag('config','G-JLBXS6BRQX',{anonymize_ip:true}); }; document.head.appendChild(s); }
+			function revokeAnalytics() { if (window.gtag) window.gtag('consent','update',{analytics_storage:'denied'}); document.cookie.split(';').forEach(function(c){ var n=c.split('=')[0].trim(); if(n.indexOf('_ga')===0||n.indexOf('_gid')===0){ document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.'+location.hostname; document.cookie=n+'=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'; } }); }
+			function applyConsent(c) { if (c.analytics) loadAnalytics(); else revokeAnalytics(); }
+			try {
+				var bar = document.getElementById('kripto-cookie-bar');
+				if (!bar) return;
+				var panel = document.getElementById('kripto-cookie-panel');
+				var btnAcceptAll = document.getElementById('kripto-cookie-accept-all');
+				var btnReject = document.getElementById('kripto-cookie-reject');
+				var btnToggle = document.getElementById('kripto-cookie-settings-toggle');
+				var chkAnalytics = document.getElementById('kripto-cookie-analytics');
+				var btnSave = document.getElementById('kripto-cookie-save');
+				var consent = loadConsent();
+				applyConsent(consent);
+				if (!localStorage.getItem(STORAGE_KEY)) bar.style.display = 'block';
+				function openPanel() { if (panel) { panel.style.display='block'; if (chkAnalytics) chkAnalytics.checked=!!consent.analytics; } }
+				function closePanel() { if (panel) panel.style.display='none'; }
+				if (btnToggle) btnToggle.addEventListener('click', function(){ panel&&panel.style.display==='block'?closePanel():openPanel(); });
+				if (btnAcceptAll) btnAcceptAll.addEventListener('click', function(){ consent.analytics=true; saveConsent(consent); applyConsent(consent); bar.style.display='none'; });
+				if (btnReject) btnReject.addEventListener('click', function(){ consent.analytics=false; saveConsent(consent); bar.style.display='none'; });
+				if (btnSave&&chkAnalytics) btnSave.addEventListener('click', function(){ consent.analytics=!!chkAnalytics.checked; saveConsent(consent); applyConsent(consent); bar.style.display='none'; });
+				var footerLink = document.getElementById('kripto-footer-cookie-settings');
+				if (footerLink) footerLink.addEventListener('click', function(e){ e.preventDefault(); consent=loadConsent(); bar.style.display='block'; openPanel(); bar.scrollIntoView({behavior:'smooth'}); });
+			} catch(e) {}
+		})();
+		</script>
+		<!-- Theme Toggle -->
+		<script>
+		(function() {
+			var THEME_KEY = 'kripto_theme';
+			var html = document.documentElement;
+			var btn = document.getElementById('kripto-theme-toggle');
+			if (!btn) return;
+			btn.addEventListener('click', function() {
+				var isDark = html.getAttribute('data-theme') === 'dark';
+				if (isDark) { html.removeAttribute('data-theme'); localStorage.setItem(THEME_KEY, 'light'); }
+				else { html.setAttribute('data-theme', 'dark'); localStorage.setItem(THEME_KEY, 'dark'); }
+			});
+		})();
+		</script>
+	</body>
+</html>
