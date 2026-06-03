@@ -677,3 +677,144 @@ body:has(.kripto-edukacija-inner) a {
 	padding: 20px;
 	margin: 1rem 0;
 }
+
+/* =========================================
+   LIGHT MODE OVERRIDES (edukacija & kviz)
+   ========================================= */
+
+html:not([data-theme="dark"]) body:has(.kripto-edukacija-inner) {
+  background: var(--kripto-bg) !important;
+}
+
+/* Cards / article blocks */
+html:not([data-theme="dark"]) .kripto-edukacija-inner article,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .platform-description,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .platform-goals,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .mission-statement,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .join-community,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .concept-box,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .disclaimer,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .tutorial-intro,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .animation-container,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .wallet-image,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .image-container {
+  background: var(--kripto-bg-card) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid var(--kripto-border) !important;
+  box-shadow: var(--kripto-card-shadow) !important;
+}
+html:not([data-theme="dark"]) .kripto-edukacija-inner article::before,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .platform-description::before,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .platform-goals::before,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .mission-statement::before,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .join-community::before,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .concept-box::before,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .tutorial-intro::before {
+  background: var(--kripto-accent) !important;
+}
+html:not([data-theme="dark"]) .kripto-edukacija-inner .goals-list li {
+  border-bottom-color: var(--kripto-border) !important;
+}
+html:not([data-theme="dark"]) .kripto-edukacija-inner .goals-list li strong {
+  color: var(--kripto-accent) !important;
+}
+html:not([data-theme="dark"]) .kripto-edukacija-inner .tutorial-navigation {
+  border-top-color: var(--kripto-border) !important;
+}
+
+/* Quiz container */
+html:not([data-theme="dark"]) .kripto-edukacija-inner .quiz-container {
+  background: var(--kripto-bg-card) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid var(--kripto-border) !important;
+  box-shadow: var(--kripto-card-shadow) !important;
+}
+
+/* Start screen */
+html:not([data-theme="dark"]) .kviz-start-icon {
+  background: rgba(96,23,255,0.07) !important;
+  border-color: rgba(96,23,255,0.18) !important;
+  color: var(--kripto-accent) !important;
+}
+html:not([data-theme="dark"]) .kviz-start-stats {
+  background: var(--kripto-bg-stats) !important;
+  border-color: var(--kripto-border) !important;
+}
+html:not([data-theme="dark"]) .kviz-stat-num { color: var(--kripto-heading) !important; }
+html:not([data-theme="dark"]) .kviz-stat-label { color: var(--kripto-text) !important; }
+html:not([data-theme="dark"]) .kviz-stat-divider { background: var(--kripto-border) !important; }
+
+/* Progress bar */
+html:not([data-theme="dark"]) .kviz-progress-bar-bg { background: var(--kripto-bg-stats) !important; }
+html:not([data-theme="dark"]) .kviz-progress-bar-fill { background: var(--kripto-accent) !important; }
+html:not([data-theme="dark"]) .kviz-progress-label { color: var(--kripto-text) !important; }
+html:not([data-theme="dark"]) #restart-quiz-mid-btn { color: var(--kripto-text) !important; }
+
+/* Options */
+html:not([data-theme="dark"]) .kripto-edukacija-inner .option {
+  background: var(--kripto-bg) !important;
+  border-color: var(--kripto-border) !important;
+  color: var(--kripto-text) !important;
+}
+html:not([data-theme="dark"]) .kripto-edukacija-inner .option .kviz-option-letter {
+  background: rgba(96,23,255,0.06) !important;
+  border-color: rgba(96,23,255,0.15) !important;
+  color: var(--kripto-accent) !important;
+}
+html:not([data-theme="dark"]) .kripto-edukacija-inner .option:hover {
+  background: var(--kripto-bg-card-hover) !important;
+  border-color: var(--kripto-accent) !important;
+}
+html:not([data-theme="dark"]) .kripto-edukacija-inner .option:hover .kviz-option-letter {
+  background: var(--kripto-accent) !important;
+  color: #fff !important;
+  border-color: var(--kripto-accent) !important;
+}
+html:not([data-theme="dark"]) .kripto-edukacija-inner .option.selected {
+  background: rgba(96,23,255,0.07) !important;
+  border-color: var(--kripto-accent) !important;
+}
+html:not([data-theme="dark"]) .kripto-edukacija-inner .option.selected .kviz-option-letter {
+  background: var(--kripto-accent) !important;
+  color: #fff !important;
+  border-color: var(--kripto-accent) !important;
+}
+
+/* Results */
+html:not([data-theme="dark"]) .kviz-score-display {
+  background: var(--kripto-bg-stats) !important;
+  border-color: var(--kripto-border) !important;
+}
+html:not([data-theme="dark"]) .kviz-score-main { color: var(--kripto-heading) !important; }
+html:not([data-theme="dark"]) .kviz-score-slash { color: var(--kripto-border) !important; }
+html:not([data-theme="dark"]) .kviz-score-label { color: var(--kripto-text) !important; }
+html:not([data-theme="dark"]) #score-percentage { background: var(--kripto-bg-stats) !important; }
+html:not([data-theme="dark"]) #score-percentage div { background: var(--kripto-accent) !important; }
+
+/* Answers review */
+html:not([data-theme="dark"]) .kripto-edukacija-inner .question-review {
+  background: var(--kripto-bg) !important;
+  border-left-color: var(--kripto-border) !important;
+}
+
+/* Buttons */
+html:not([data-theme="dark"]) .kripto-edukacija-inner .quiz-navigation button,
+html:not([data-theme="dark"]) .kripto-edukacija-inner #start-quiz-btn,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .btn,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .prev-tutorial,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .next-tutorial {
+  background: var(--kripto-accent) !important;
+  color: #fff !important;
+  border-color: var(--kripto-accent) !important;
+}
+html:not([data-theme="dark"]) .kripto-edukacija-inner .quiz-navigation button:hover,
+html:not([data-theme="dark"]) .kripto-edukacija-inner #start-quiz-btn:hover,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .btn:hover,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .prev-tutorial:hover,
+html:not([data-theme="dark"]) .kripto-edukacija-inner .next-tutorial:hover {
+  background: transparent !important;
+  color: var(--kripto-accent) !important;
+  border-color: var(--kripto-accent) !important;
+}

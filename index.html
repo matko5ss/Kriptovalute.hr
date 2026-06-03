@@ -1,782 +1,1309 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>
+      Kriptovalute.hr – Kripto Edukacija, Savjetovanje i Blockchain Rješenja
+    </title>
+    <meta
+      name="description"
+      content="Kriptovalute.hr je hrvatska tvrtka koja pruža usluge edukacije i savjetovanja u području kriptovaluta i blockchaina. Nudimo edukacije i radionice, kripto rješenja za poduzetnike, pravne i porezne savjete prema MiCA regulativi te blockchain rješenja za poduzeća u Hrvatskoj i EU."
+    />
+    <meta
+      name="keywords"
+      content="kriptovalute, blockchain, kripto edukacija, Bitcoin, Ethereum, kripto savjetovanje, kriptovalute Hrvatska, blockchain rješenja, kripto porez, kripto radionice, DeFi, NFT, kripto početnici, kripto za poslovne, MiCA, HANFA, kripto Hrvatska, kripto tečaj, blockchain edukacija, kriptovalute za poduzetnike, pametni ugovori, tokenizacija, kripto radionice Zagreb, kriptovalute početnički tečaj, kako kupiti Bitcoin Hrvatska, kripto savjetovanje Hrvatska"
+    />
+    <meta name="author" content="Kriptovalute.hr" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="theme-color" content="#6017ff" />
+    <meta name="geo.region" content="HR" />
+    <meta name="geo.placename" content="Hrvatska" />
+    <meta name="language" content="hr" />
+    <link rel="canonical" href="https://kriptovalute.hr/" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <!-- Preconnect / DNS prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <!-- Preload LCP elementi -->
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/kriptovalute-logo-blue.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <!-- Open Graph -->
+    <meta property="og:locale" content="hr_HR" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Kriptovalute.hr – Kripto Edukacija, Savjetovanje i Blockchain Rješenja"
+    />
+    <meta
+      property="og:description"
+      content="Kriptovalute.hr je hrvatska tvrtka koja pruža usluge edukacije i savjetovanja u području kriptovaluta i blockchaina. Nudimo edukacije i radionice, kripto rješenja za poduzetnike, pravne i porezne savjete prema MiCA regulativi te blockchain rješenja za poduzeća u Hrvatskoj i EU."
+    />
+    <meta property="og:url" content="https://kriptovalute.hr/" />
+    <meta property="og:site_name" content="Kriptovalute.hr" />
+    <meta
+      property="article:publisher"
+      content="https://www.facebook.com/kriptovalute.hr"
+    />
+    <meta
+      property="og:image"
+      content="https://kriptovalute.hr/assets/img/kriptovalute-logo-blue.png"
+    />
+    <meta property="og:image:width" content="741" />
+    <meta property="og:image:height" content="204" />
+    <meta property="og:image:type" content="image/png" />
+    <meta
+      property="og:image:alt"
+      content="Kriptovalute.hr – Kripto Edukacija i Blockchain Rješenja"
+    />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@kriptovalutehr" />
+    <meta
+      name="twitter:title"
+      content="Kriptovalute.hr – Kripto Edukacija, Savjetovanje i Blockchain Rješenja"
+    />
+    <meta
+      name="twitter:description"
+      content="Kriptovalute.hr je hrvatska tvrtka koja pruža usluge edukacije i savjetovanja u području kriptovaluta i blockchaina. Nudimo edukacije i radionice, kripto rješenja za poduzetnike, pravne i porezne savjete prema MiCA regulativi te blockchain rješenja za poduzeća u Hrvatskoj i EU."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kriptovalute.hr/assets/img/kriptovalute-logo-blue.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Kriptovalute.hr – Kripto Edukacija i Blockchain Rješenja"
+    />
+    <!-- Critical CSS (blocking) -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/style-two.css?v=25" />
+    <!-- Non-critical CSS (async) -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    /></noscript>
+    <link
+      rel="preload"
+      href="assets/css/animate.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript><link rel="stylesheet" href="assets/css/animate.css" /></noscript>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Anti-FOUC: inicijalizacija teme prije renderanja -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("kripto_theme");
+          if (t !== "light")
+            document.documentElement.setAttribute("data-theme", "dark");
+        } catch (e) {}
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://kriptovalute.hr/#webpage",
+            "url": "https://kriptovalute.hr/",
+            "name": "Kriptovalute.hr – Kripto Edukacija, Savjetovanje i Blockchain Rješenja",
+            "description": "Kriptovalute.hr je hrvatska tvrtka koja pruža usluge edukacije i savjetovanja u području kriptovaluta i blockchaina. Nudimo edukacije i radionice, kripto rješenja za poslovne korisnike, pravne i porezne savjete prema MiCA regulativi i HANFA smjernicama, razvoj blockchain rješenja te individualno savjetovanje za korisnike i poduzetnike u Hrvatskoj i EU.",
+            "isPartOf": { "@id": "https://kriptovalute.hr/#website" },
+            "about": { "@id": "https://kriptovalute.hr/#organization" },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://kriptovalute.hr/assets/img/kriptovalute-logo-blue.png",
+              "width": 741,
+              "height": 204
+            },
+            "inLanguage": "hr",
+            "dateModified": "2026-06-03",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": [
+                ".section-title",
+                ".kripto-service-card h3",
+                ".kripto-quiz-cta-section"
+              ]
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://kriptovalute.hr/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Početna",
+                "item": "https://kriptovalute.hr/"
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://kriptovalute.hr/#website",
+            "url": "https://kriptovalute.hr/",
+            "name": "Kriptovalute.hr",
+            "description": "Kripto edukacija, savjetovanje i blockchain rješenja za Hrvatsku",
+            "publisher": { "@id": "https://kriptovalute.hr/#organization" },
+            "inLanguage": "hr"
+          },
+          {
+            "@type": [
+              "Organization",
+              "EducationalOrganization",
+              "ProfessionalService"
+            ],
+            "@id": "https://kriptovalute.hr/#organization",
+            "name": "Kriptovalute.hr",
+            "url": "https://kriptovalute.hr/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://kriptovalute.hr/assets/img/kriptovalute-logo-blue.png",
+              "width": 741,
+              "height": 204
+            },
+            "description": "Kriptovalute.hr je hrvatska tvrtka koja pruža usluge edukacije i savjetovanja u području kriptovaluta i blockchaina.",
+            "slogan": "Pomažemo vam razumjeti kripto svijet i pretvoriti znanje u stvarne prilike.",
+            "email": "info@kriptovalute.hr",
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Hrvatska",
+                "sameAs": "https://www.wikidata.org/wiki/Q224"
+              },
+              { "@type": "Place", "name": "Europska unija" }
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "info@kriptovalute.hr",
+              "contactType": "customer service",
+              "availableLanguage": "Croatian"
+            },
+            "sameAs": [
+              "https://www.facebook.com/kriptovalute.hr",
+              "https://www.linkedin.com/company/kriptovalutehr",
+              "https://www.instagram.com/kriptovalute.hr/",
+              "https://www.tiktok.com/@kriptovalutehr"
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://kriptovalute.hr/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Gdje mogu dobiti kripto edukaciju ili pohađati radionicu o kriptovalutama u Hrvatskoj?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Kriptovalute.hr nudi stručno vođene edukacije i praktične radionice o kriptovalutama i blockchainu za početnike i napredne korisnike u Hrvatskoj i EU. Kontaktirajte nas putem info@kriptovalute.hr ili na kriptovalute.hr."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Kako se oporezuju kriptovalute u Hrvatskoj?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Kriptovalute.hr pruža edukaciju o oporezivanju kriptovaluta u Hrvatskoj prema MiCA regulativi EU i HANFA smjernicama, uključujući kapitalni dobitak, AML/KYC obveze i prijave za fizičke i pravne osobe."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Kako uvesti kriptovalute u poslovanje tvrtke u Hrvatskoj?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Kriptovalute.hr pomaže poduzetnicima i tvrtkama uvesti kriptovalute na siguran, zakonit i praktičan način – od savjetovanja do konkretne implementacije kripto plaćanja, tokenizacije i blockchain rješenja."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Što je MiCA regulativa i kako utječe na korisnike kriptovaluta u Hrvatskoj?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "MiCA (Markets in Crypto-Assets) je EU regulativa koja uređuje tržište kriptoimovine. Kriptovalute.hr educira korisnike i poduzetnike o MiCA usklađenosti, HANFA obvezama i pravnim aspektima kriptovaluta u Hrvatskoj."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Postoji li besplatni kripto kviz za provjeru znanja o kriptovalutama?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Da, Kriptovalute.hr nudi besplatni interaktivni kripto kviz s 20 nasumičnih pitanja o Bitcoinu, Ethereumu, DeFi-ju, NFT-ovima i kripto regulativi. Dostupno na kriptovalute.hr/kviz.html."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Koje kripto usluge nudi Kriptovalute.hr?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Kriptovalute.hr nudi: edukacije i radionice o kriptovalutama, kripto rješenja za poslovanje, edukaciju o alatima i platformama za trgovanje, pravne i porezne savjete (MiCA, HANFA), blockchain rješenja (pametni ugovori, tokenizacija) i individualno savjetovanje i podršku."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <style>
+      .grecaptcha-badge {
+        visibility: hidden !important;
+      }
+    </style>
+  </head>
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>Kriptovalute.hr – Kripto Edukacija, Savjetovanje i Blockchain Rješenja</title>
-		<meta name="description" content="Kriptovalute.hr je hrvatska tvrtka koja pruža usluge edukacije i savjetovanja u području kriptovaluta i blockchaina. Nudimo edukacije i radionice, kripto rješenja za poduzetnike, pravne i porezne savjete prema MiCA regulativi te blockchain rješenja za poduzeća u Hrvatskoj i EU.">
-		<meta name="keywords" content="kriptovalute, blockchain, kripto edukacija, Bitcoin, Ethereum, kripto savjetovanje, kriptovalute Hrvatska, blockchain rješenja, kripto porez, kripto radionice, DeFi, NFT, kripto početnici, kripto za poslovne, MiCA, HANFA, kripto Hrvatska, kripto tečaj, blockchain edukacija, kriptovalute za poduzetnike, pametni ugovori, tokenizacija, kripto radionice Zagreb, kriptovalute početnički tečaj, kako kupiti Bitcoin Hrvatska, kripto savjetovanje Hrvatska">
-		<meta name="author" content="Kriptovalute.hr">
-		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-		<meta name="theme-color" content="#6c5ce7">
-		<meta name="geo.region" content="HR">
-		<meta name="geo.placename" content="Hrvatska">
-		<meta name="language" content="hr">
-		<link rel="canonical" href="https://kriptovalute.hr/">
-		<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-	<!-- Preconnect / DNS prefetch -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="dns-prefetch" href="https://www.googletagmanager.com">
-	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-	<!-- Preload LCP elementi -->
-	<link rel="preload" as="image" href="assets/img/kriptovalute-logo.webp" type="image/webp" fetchpriority="high">
-	<link rel="preload" as="image" href="assets/img/hero-lik.webp" type="image/webp">
-		<!-- Open Graph -->
-		<meta property="og:locale" content="hr_HR">
-		<meta property="og:type" content="website">
-		<meta property="og:title" content="Kriptovalute.hr – Kripto Edukacija, Savjetovanje i Blockchain Rješenja">
-		<meta property="og:description" content="Kriptovalute.hr je hrvatska tvrtka koja pruža usluge edukacije i savjetovanja u području kriptovaluta i blockchaina. Nudimo edukacije i radionice, kripto rješenja za poduzetnike, pravne i porezne savjete prema MiCA regulativi te blockchain rješenja za poduzeća u Hrvatskoj i EU.">
-		<meta property="og:url" content="https://kriptovalute.hr/">
-		<meta property="og:site_name" content="Kriptovalute.hr">
-		<meta property="article:publisher" content="https://www.facebook.com/kriptovalute.hr">
-		<meta property="og:image" content="https://kriptovalute.hr/assets/img/kriptovalute-logo-blue.png">
-		<meta property="og:image:width" content="741">
-		<meta property="og:image:height" content="204">
-		<meta property="og:image:type" content="image/png">
-		<meta property="og:image:alt" content="Kriptovalute.hr – Kripto Edukacija i Blockchain Rješenja">
-		<!-- Twitter Card -->
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@kriptovalutehr">
-		<meta name="twitter:title" content="Kriptovalute.hr – Kripto Edukacija, Savjetovanje i Blockchain Rješenja">
-		<meta name="twitter:description" content="Kriptovalute.hr je hrvatska tvrtka koja pruža usluge edukacije i savjetovanja u području kriptovaluta i blockchaina. Nudimo edukacije i radionice, kripto rješenja za poduzetnike, pravne i porezne savjete prema MiCA regulativi te blockchain rješenja za poduzeća u Hrvatskoj i EU.">
-		<meta name="twitter:image" content="https://kriptovalute.hr/assets/img/kriptovalute-logo-blue.png">
-		<meta name="twitter:image:alt" content="Kriptovalute.hr – Kripto Edukacija i Blockchain Rješenja">
-	<!-- Critical CSS (blocking) -->
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-	<!-- materialdesignicons-min.css uklonjen - MDI icon zamijenjen inline SVG-om -->
-	<link rel="stylesheet" href="assets/css/style-two.css?v=24">
-	<!-- Non-critical CSS (async) -->
-	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-	<link rel="preload" href="assets/css/animate.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="assets/css/animate.css"></noscript>
-		<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@graph": [
-			{
-				"@type": "WebPage",
-				"@id": "https://kriptovalute.hr/#webpage",
-				"url": "https://kriptovalute.hr/",
-				"name": "Kriptovalute.hr – Kripto Edukacija, Savjetovanje i Blockchain Rješenja",
-				"description": "Kriptovalute.hr je hrvatska tvrtka koja pruža usluge edukacije i savjetovanja u području kriptovaluta i blockchaina. Nudimo edukacije i radionice, kripto rješenja za poslovne korisnike, pravne i porezne savjete prema MiCA regulativi i HANFA smjernicama, razvoj blockchain rješenja te individualno savjetovanje za korisnike i poduzetnike u Hrvatskoj i EU.",
-				"isPartOf": {"@id": "https://kriptovalute.hr/#website"},
-				"about": {"@id": "https://kriptovalute.hr/#organization"},
-				"primaryImageOfPage": {
-					"@type": "ImageObject",
-					"url": "https://kriptovalute.hr/assets/img/kriptovalute-logo-blue.png",
-					"width": 741,
-					"height": 204
-				},
-				"inLanguage": "hr",
-				"dateModified": "2026-04-06",
-				"speakable": {
-					"@type": "SpeakableSpecification",
-					"cssSelector": [".section-title", ".kripto-service-card h3", ".kripto-quiz-banner"]
-				}
-			},
-				{
-					"@type": "BreadcrumbList",
-					"@id": "https://kriptovalute.hr/#breadcrumb",
-					"itemListElement": [{"@type": "ListItem", "position": 1, "name": "Početna", "item": "https://kriptovalute.hr/"}]
-				},
-				{
-					"@type": "WebSite",
-					"@id": "https://kriptovalute.hr/#website",
-					"url": "https://kriptovalute.hr/",
-					"name": "Kriptovalute.hr",
-					"description": "Kripto edukacija, savjetovanje i blockchain rješenja za Hrvatsku",
-					"publisher": {"@id": "https://kriptovalute.hr/#organization"},
-					"inLanguage": "hr"
-				},
-			{
-				"@type": ["Organization", "EducationalOrganization", "ProfessionalService"],
-				"@id": "https://kriptovalute.hr/#organization",
-				"name": "Kriptovalute.hr",
-				"url": "https://kriptovalute.hr/",
-				"logo": {
-					"@type": "ImageObject",
-					"url": "https://kriptovalute.hr/assets/img/kriptovalute-logo-blue.png",
-					"width": 741,
-					"height": 204
-				},
-				"description": "Kriptovalute.hr je hrvatska tvrtka koja pruža usluge edukacije i savjetovanja u području kriptovaluta i blockchaina. Pomažemo pojedincima, timovima i poduzetnicima razumjeti kriptovalute i blockchain te ih primijeniti u praksi. Nudimo: edukacije i radionice o kriptovalutama i blockchainu (za početnike i napredne), kripto rješenja za poslovne korisnike i poduzetnike, alate i platforme za sigurno trgovanje, pravne i porezne savjete prema MiCA regulativi EU i HANFA smjernicama, razvoj i implementaciju blockchain rješenja za poduzeća te individualno savjetovanje i podršku. Djelujemo na tržištu Hrvatske i šire regije Europske unije.",
-				"slogan": "Pomažemo vam razumjeti kripto svijet i pretvoriti znanje u stvarne prilike.",
-				"knowsAbout": [
-					"kriptovalute",
-					"Bitcoin",
-					"Ethereum",
-					"blockchain tehnologija",
-					"MiCA regulativa",
-					"kripto porez Hrvatska",
-					"HANFA kriptovalute",
-					"kripto edukacija",
-					"kripto radionice",
-					"DeFi decentralizirane financije",
-					"NFT digitalna imovina",
-					"kripto za poduzetnike",
-					"blockchain rješenja za poslovanje",
-					"CEX centralizirane burze",
-					"DEX decentralizirane platforme",
-					"kripto novčanici",
-					"tokenizacija imovine",
-					"digitalna imovina EU"
-				],
-				"email": "info@kriptovalute.hr",
-				"areaServed": [
-					{
-						"@type": "Country",
-						"name": "Hrvatska",
-						"sameAs": "https://www.wikidata.org/wiki/Q224"
-					},
-					{
-						"@type": "Place",
-						"name": "Europska unija"
-					}
-				],
-				"contactPoint": {
-					"@type": "ContactPoint",
-					"email": "info@kriptovalute.hr",
-					"contactType": "customer service",
-					"availableLanguage": "Croatian"
-				},
-					"hasOfferCatalog": {
-						"@type": "OfferCatalog",
-						"name": "Kripto usluge",
-						"itemListElement": [
-							{
-								"@type": "Offer",
-								"itemOffered": {
-									"@type": "EducationalOccupationalProgram",
-									"name": "Edukacija i radionice",
-									"description": "Stručno vođene edukacije i praktične radionice o kriptovalutama i blockchainu, prilagođene početnicima i naprednim korisnicima."
-								}
-							},
-							{
-								"@type": "Offer",
-								"itemOffered": {
-									"@type": "Service",
-									"name": "Kripto rješenja za poslovanje",
-									"description": "Uvođenje kriptovaluta u poslovanje na siguran, zakonit i praktičan način – od savjetovanja do konkretne implementacije."
-								}
-							},
-							{
-								"@type": "Offer",
-								"itemOffered": {
-									"@type": "Service",
-									"name": "Alati i platforme za trgovanje",
-									"description": "Edukacija o alatima i platformama za trgovanje kriptovalutama uz naglasak na sigurno i odgovorno korištenje."
-								}
-							},
-							{
-								"@type": "Offer",
-								"itemOffered": {
-									"@type": "Service",
-									"name": "Pravni i porezni savjeti",
-									"description": "Stručni pravni i porezni savjeti o kriptovalutama prema hrvatskom zakonodavstvu i MiCA regulativi EU."
-								}
-							},
-							{
-								"@type": "Offer",
-								"itemOffered": {
-									"@type": "Service",
-									"name": "Blockchain rješenja",
-									"description": "Razvoj i implementacija blockchain rješenja uključujući izradu kriptovaluta i tokena uz tehničku podršku."
-								}
-							},
-							{
-								"@type": "Offer",
-								"itemOffered": {
-									"@type": "Service",
-									"name": "Savjetovanje i podrška",
-									"description": "Strukturirani pristup i jasne smjernice za ulazak ili razvoj u kripto svijetu za korisnike i poduzetnike."
-								}
-							}
-						]
-					},
-					"sameAs": [
-						"https://www.facebook.com/kriptovalute.hr",
-						"https://www.linkedin.com/company/kriptovalutehr",
-						"https://www.instagram.com/kriptovalute.hr/",
-						"https://www.tiktok.com/@kriptovalutehr"
-					]
-				},
-				{
-					"@type": "FAQPage",
-					"@id": "https://kriptovalute.hr/#faq",
-					"mainEntity": [
-						{
-							"@type": "Question",
-							"name": "Gdje mogu dobiti kripto edukaciju ili pohađati radionicu o kriptovalutama u Hrvatskoj?",
-							"acceptedAnswer": {
-								"@type": "Answer",
-								"text": "Kriptovalute.hr nudi stručno vođene edukacije i praktične radionice o kriptovalutama i blockchainu za početnike i napredne korisnike u Hrvatskoj i EU. Kontaktirajte nas putem info@kriptovalute.hr ili na kriptovalute.hr."
-							}
-						},
-						{
-							"@type": "Question",
-							"name": "Kako se oporezuju kriptovalute u Hrvatskoj?",
-							"acceptedAnswer": {
-								"@type": "Answer",
-								"text": "Kriptovalute.hr pruža edukaciju o oporezivanju kriptovaluta u Hrvatskoj prema MiCA regulativi EU i HANFA smjernicama, uključujući kapitalni dobitak, AML/KYC obveze i prijave za fizičke i pravne osobe."
-							}
-						},
-						{
-							"@type": "Question",
-							"name": "Kako uvesti kriptovalute u poslovanje tvrtke u Hrvatskoj?",
-							"acceptedAnswer": {
-								"@type": "Answer",
-								"text": "Kriptovalute.hr pomaže poduzetnicima i tvrtkama uvesti kriptovalute na siguran, zakonit i praktičan način – od savjetovanja do konkretne implementacije kripto plaćanja, tokenizacije i blockchain rješenja."
-							}
-						},
-						{
-							"@type": "Question",
-							"name": "Što je MiCA regulativa i kako utječe na korisnike kriptovaluta u Hrvatskoj?",
-							"acceptedAnswer": {
-								"@type": "Answer",
-								"text": "MiCA (Markets in Crypto-Assets) je EU regulativa koja uređuje tržište kriptoimovine. Kriptovalute.hr educira korisnike i poduzetnike o MiCA usklađenosti, HANFA obvezama i pravnim aspektima kriptovaluta u Hrvatskoj."
-							}
-						},
-						{
-							"@type": "Question",
-							"name": "Postoji li besplatni kripto kviz za provjeru znanja o kriptovalutama?",
-							"acceptedAnswer": {
-								"@type": "Answer",
-								"text": "Da, Kriptovalute.hr nudi besplatni interaktivni kripto kviz s 20 nasumičnih pitanja o Bitcoinu, Ethereumu, DeFi-ju, NFT-ovima i kripto regulativi. Dostupno na kriptovalute.hr/kviz.html."
-							}
-						},
-						{
-							"@type": "Question",
-							"name": "Koje kripto usluge nudi Kriptovalute.hr?",
-							"acceptedAnswer": {
-								"@type": "Answer",
-								"text": "Kriptovalute.hr nudi: edukacije i radionice o kriptovalutama, kripto rješenja za poslovanje, edukaciju o alatima i platformama za trgovanje, pravne i porezne savjete (MiCA, HANFA), blockchain rješenja (pametni ugovori, tokenizacija) i individualno savjetovanje i podršku."
-							}
-						}
-					]
-				}
-			]
-		}
-		</script>
-		<style>.grecaptcha-badge{visibility:hidden!important}</style>
-</head>
-	
-    <body data-spy="scroll" data-offset="80">
-	
-		<div class="kripto-cookie-bar" id="kripto-cookie-bar" style="display:none;" role="dialog" aria-live="polite" aria-label="Postavke kolačića">
-			<div class="kripto-cookie-inner">
-				<div class="kripto-cookie-text">
-					<strong>Koristimo kolačiće</strong> za poboljšanje korisničkog iskustva, analitiku posjećenosti i prikaz relevantnog sadržaja. Možete prilagoditi postavke ili prihvatiti sve kolačiće.
-				</div>
-				<div class="kripto-cookie-actions">
-					<button type="button" class="btn_one btn_one-outline kripto-cookie-btn" id="kripto-cookie-reject">Samo nužni</button>
-					<button type="button" class="btn_one kripto-cookie-btn" id="kripto-cookie-accept-all">Prihvaćam sve</button>
-					<button type="button" class="btn_one btn_one-outline kripto-cookie-btn kripto-cookie-btn-icon" id="kripto-cookie-settings-toggle" aria-label="Postavke kolačića"><i class="fa fa-cog"></i></button>
-				</div>
-			</div>
-			<div class="kripto-cookie-panel" id="kripto-cookie-panel">
-				<h3>Postavke kolačića</h3>
-				<p>Poštujemo Vašu privatnost. Nužni kolačići su potrebni za osnovno funkcioniranje stranice i ne mogu se isključiti. Analitički kolačići pomažu nam razumjeti kako se stranica koristi.</p>
-				<div class="kripto-cookie-row">
-					<div class="kripto-cookie-row-text">
-						<strong>Nužni kolačići</strong>
-						<p>Potrebni za ispravan rad stranice (sigurnost, osnovne postavke). Uvijek su aktivni.</p>
-					</div>
-					<div class="kripto-cookie-row-control">
-						<span class="kripto-cookie-badge">Uvijek aktivni</span>
-					</div>
-				</div>
-				<div class="kripto-cookie-row">
-					<div class="kripto-cookie-row-text">
-						<strong>Analitički kolačići</strong>
-						<p>Koristimo Google Analytics (anonimizirano) za mjerenje posjećenosti i poboljšanje sadržaja.</p>
-					</div>
-					<div class="kripto-cookie-row-control">
-						<label class="kripto-switch">
-							<input type="checkbox" id="kripto-cookie-analytics">
-							<span class="kripto-switch-slider"></span>
-						</label>
-					</div>
-				</div>
-				<div class="kripto-cookie-panel-footer">
-					<button type="button" class="btn_one btn_one-outline kripto-cookie-btn" id="kripto-cookie-save">Spremi odabir</button>
-				</div>
-			</div>
-		</div>
+  <body data-spy="scroll" data-offset="80">
+    <!-- Cookie bar -->
+    <div
+      class="kripto-cookie-bar"
+      id="kripto-cookie-bar"
+      style="display: none"
+      role="dialog"
+      aria-live="polite"
+      aria-label="Postavke kolačića"
+    >
+      <div class="kripto-cookie-inner">
+        <div class="kripto-cookie-text">
+          <strong>Koristimo kolačiće</strong> za poboljšanje korisničkog
+          iskustva, analitiku posjećenosti i prikaz relevantnog sadržaja. Možete
+          prilagoditi postavke ili prihvatiti sve kolačiće.
+        </div>
+        <div class="kripto-cookie-actions">
+          <button
+            type="button"
+            class="btn_one btn_one-outline kripto-cookie-btn"
+            id="kripto-cookie-reject"
+          >
+            Samo nužni
+          </button>
+          <button
+            type="button"
+            class="btn_one kripto-cookie-btn"
+            id="kripto-cookie-accept-all"
+          >
+            Prihvaćam sve
+          </button>
+          <button
+            type="button"
+            class="btn_one btn_one-outline kripto-cookie-btn kripto-cookie-btn-icon"
+            id="kripto-cookie-settings-toggle"
+            aria-label="Postavke kolačića"
+          >
+            <i class="fa fa-cog"></i>
+          </button>
+        </div>
+      </div>
+      <div class="kripto-cookie-panel" id="kripto-cookie-panel">
+        <h3>Postavke kolačića</h3>
+        <p>
+          Poštujemo Vašu privatnost. Nužni kolačići su potrebni za osnovno
+          funkcioniranje stranice i ne mogu se isključiti. Analitički kolačići
+          pomažu nam razumjeti kako se stranica koristi.
+        </p>
+        <div class="kripto-cookie-row">
+          <div class="kripto-cookie-row-text">
+            <strong>Nužni kolačići</strong>
+            <p>
+              Potrebni za ispravan rad stranice (sigurnost, osnovne postavke).
+              Uvijek su aktivni.
+            </p>
+          </div>
+          <div class="kripto-cookie-row-control">
+            <span class="kripto-cookie-badge">Uvijek aktivni</span>
+          </div>
+        </div>
+        <div class="kripto-cookie-row">
+          <div class="kripto-cookie-row-text">
+            <strong>Analitički kolačići</strong>
+            <p>
+              Koristimo Google Analytics (anonimizirano) za mjerenje
+              posjećenosti i poboljšanje sadržaja.
+            </p>
+          </div>
+          <div class="kripto-cookie-row-control">
+            <label class="kripto-switch">
+              <input type="checkbox" id="kripto-cookie-analytics" />
+              <span class="kripto-switch-slider"></span>
+            </label>
+          </div>
+        </div>
+        <div class="kripto-cookie-panel-footer">
+          <button
+            type="button"
+            class="btn_one btn_one-outline kripto-cookie-btn"
+            id="kripto-cookie-save"
+          >
+            Spremi odabir
+          </button>
+        </div>
+      </div>
+    </div>
 
-		<div id="particles-js"></div>	
+    <!-- Particles (samo u dark modu, kontrolirano CSS-om) -->
+    <div id="particles-js"></div>
 
-		<div class="preloader">
-			<div class="spinner">
-				<div class="double-bounce1"></div>
-				<div class="double-bounce2"></div>
-			</div>
-		</div>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div>
 
-		<div class="kripto-ticker-wrap" aria-hidden="true">
-			<div class="kripto-ticker">
-				<div class="kripto-ticker-inner">
-					<!-- 4 seta da baner nikad nije prazan i animacija teče neprekidno -->
-					<span>Edukacija i radionice</span><span class="kripto-ticker-sep">•</span>
-					<span>Kripto rješenja za poslovanje</span><span class="kripto-ticker-sep">•</span>
-					<span>Alati i platforme za trgovanje</span><span class="kripto-ticker-sep">•</span>
-					<span>Pravni i porezni savjeti</span><span class="kripto-ticker-sep">•</span>
-					<span>Blockchain rješenja</span><span class="kripto-ticker-sep">•</span>
-					<span>Edukacija i radionice</span><span class="kripto-ticker-sep">•</span>
-					<span>Kripto rješenja za poslovanje</span><span class="kripto-ticker-sep">•</span>
-					<span>Alati i platforme za trgovanje</span><span class="kripto-ticker-sep">•</span>
-					<span>Pravni i porezni savjeti</span><span class="kripto-ticker-sep">•</span>
-					<span>Blockchain rješenja</span><span class="kripto-ticker-sep">•</span>
-					<span>Edukacija i radionice</span><span class="kripto-ticker-sep">•</span>
-					<span>Kripto rješenja za poslovanje</span><span class="kripto-ticker-sep">•</span>
-					<span>Alati i platforme za trgovanje</span><span class="kripto-ticker-sep">•</span>
-					<span>Pravni i porezni savjeti</span><span class="kripto-ticker-sep">•</span>
-					<span>Blockchain rješenja</span><span class="kripto-ticker-sep">•</span>
-					<span>Edukacija i radionice</span><span class="kripto-ticker-sep">•</span>
-					<span>Kripto rješenja za poslovanje</span><span class="kripto-ticker-sep">•</span>
-					<span>Alati i platforme za trgovanje</span><span class="kripto-ticker-sep">•</span>
-					<span>Pravni i porezni savjeti</span><span class="kripto-ticker-sep">•</span>
-					<span>Blockchain rješenja</span><span class="kripto-ticker-sep">•</span>
-				</div>
-			</div>
-		</div>
+    <!-- Ticker -->
+    <div class="kripto-ticker-wrap" aria-hidden="true">
+      <div class="kripto-ticker">
+        <div class="kripto-ticker-inner">
+          <span>Edukacija i radionice</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Kripto rješenja za poslovanje</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Alati i platforme za trgovanje</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Pravni i porezni savjeti</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Blockchain rješenja</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Edukacija i radionice</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Kripto rješenja za poslovanje</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Alati i platforme za trgovanje</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Pravni i porezni savjeti</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Blockchain rješenja</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Edukacija i radionice</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Kripto rješenja za poslovanje</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Alati i platforme za trgovanje</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Pravni i porezni savjeti</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Blockchain rješenja</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Edukacija i radionice</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Kripto rješenja za poslovanje</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Alati i platforme za trgovanje</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Pravni i porezni savjeti</span
+          ><span class="kripto-ticker-sep">•</span>
+          <span>Blockchain rješenja</span
+          ><span class="kripto-ticker-sep">•</span>
+        </div>
+      </div>
+    </div>
 
-        <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
-    		<div class="container">
-			    <a class="navbar-brand" href="index.html"><picture><source srcset="assets/img/kriptovalute-logo.webp" type="image/webp"><img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="kripto-nav-logo" width="182" height="50" fetchpriority="high"></picture></a>
-			    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-			    </button>
-			    <div class="collapse navbar-collapse" id="navbarCollapse">
-			        <ul id="navbar-navlist" class="navbar-nav ms-auto align-items-center">
-			            <li class="nav-item dropdown">
-			            	<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usluge</a>
-			            	<ul class="dropdown-menu dropdown-menu-end kripto-nav-dropdown">
-			            		<li><a class="dropdown-item" href="https://www.kriptovalute.hr/edukacija-i-radionice.html">Edukacija i radionice</a></li>
-			            		<li><a class="dropdown-item" href="https://www.kriptovalute.hr/kripto-rjesenja-za-poslovanje.html">Kripto rješenja za poslovanje</a></li>
-			            		<li><a class="dropdown-item" href="https://www.kriptovalute.hr/alati-i-platforme-za-trgovanje.html">Alati i platforme za trgovanje</a></li>
-			            		<li><a class="dropdown-item" href="https://www.kriptovalute.hr/pravni-i-porezni-savjeti.html">Pravni i porezni savjeti</a></li>
-			            		<li><a class="dropdown-item" href="https://www.kriptovalute.hr/blockchain-rjesenja.html">Blockchain rješenja</a></li>
-			            		<li><a class="dropdown-item" href="https://www.kriptovalute.hr/savjetovanje-i-podrska.html">Savjetovanje i podrška</a></li>
-			            	</ul>
-			            </li>
-			            <li class="nav-item"><a class="nav-link" href="kviz.html">Kviz</a></li>
-			            <li class="nav-item ms-lg-3"><a href="index.html#kontakt" class="btn_one btn-nav">Kontaktirajte nas</a></li>
-			        </ul>
-			    </div>
-		    </div>
-		</nav>
- 	
-		<section class="about_us section-padding kriptovalute-services" id="usluge">
-		   <div class="container">			
-				<div class="kripto-hero-dekor-wrapper">
-					<div class="kripto-hero-title-wrap">
-						<div class="section-title text-center">
-							<h1>Unaprijedite svoju financijsku pismenost i kripto znanje</h1>
-						</div>
-					</div>
-					<div class="kripto-hero-dekor">
-						<div class="kripto-crypto-wheel" id="kripto-crypto-wheel">
-							<div class="kripto-crypto-wheel-orbit">
-								<div class="kripto-crypto-coin" style="--angle: 0deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/polkadot-transparent.png" alt="Polkadot" loading="lazy"></span></div>
-								<div class="kripto-crypto-coin kripto-crypto-coin-ethereum" style="--angle: 60deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/ethereum-transparent.png" alt="Ethereum" loading="lazy"></span></div>
-								<div class="kripto-crypto-coin" style="--angle: 120deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/tether-transparent.png" alt="Tether" loading="lazy"></span></div>
-								<div class="kripto-crypto-coin" style="--angle: 180deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/solana-transparent.png" alt="Solana" loading="lazy"></span></div>
-								<div class="kripto-crypto-coin" style="--angle: 240deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/binance-transparent.png" alt="Binance" loading="lazy"></span></div>
-								<div class="kripto-crypto-coin" style="--angle: 300deg"><span class="kripto-crypto-coin-inner"><img src="assets/img/icon/usdc-transparent.png" alt="USD Coin" loading="lazy"></span></div>
-							</div>
-							<div class="kripto-crypto-wheel-center" id="kripto-bitcoin-center">
-								<img src="assets/img/icon/bitcoin.webp?v=2" alt="Bitcoin" width="45" height="45" loading="lazy">
-							</div>
-						</div>
-						<div class="kripto-hero-content">
-						<div class="kripto-hero-lik">
-							<picture><source srcset="assets/img/hero-lik.webp" type="image/webp"><img src="assets/img/hero-lik.png" alt="" width="768" height="512" fetchpriority="high"></picture>
-						</div>
-						</div>
-					</div>
-				</div>
-				<div class="row kripto-quiz-row wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
-					<div class="col-12">
-						<div class="kripto-quiz-banner">
-							<div class="kripto-quiz-banner-left">
-							<h4>Provjeri koliko znaš o kriptovalutama i blockchainu</h4>
-							<p>20 pitanja, besplatno, bez prijave.</p>
-							</div>
-							<div class="kripto-quiz-banner-right">
-								<a href="https://kriptovalute.hr/kviz.html" class="kripto-quiz-btn">
-									<span>Započni kviz</span>
-									<i class="fa fa-arrow-right"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row kripto-services-row">
-					<div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
-						<a href="edukacija-i-radionice.html" class="kripto-service-card-link">
-						<div class="kripto-service-card">
-							<h3>Edukacija i radionice</h3>
-							<p>Stručno vođene edukacije i praktične radionice o kriptovalutama i blockchainu – za početnike i iskusne korisnike. Od osnova do primjene u stvarnim situacijama.</p>
-							<p class="kripto-service-card-more">Saznaj više.</p>
-						</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
-						<a href="kripto-rjesenja-za-poslovanje.html" class="kripto-service-card-link">
-						<div class="kripto-service-card">
-							<h3>Kripto rješenja za poslovanje</h3>
-							<p>Za poduzetnike koji žele uvesti kriptovalute na siguran, zakonit i praktičan način – od savjetovanja do konkretne implementacije.</p>
-							<p class="kripto-service-card-more">Saznaj više.</p>
-						</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
-						<a href="alati-i-platforme-za-trgovanje.html" class="kripto-service-card-link">
-						<div class="kripto-service-card">
-							<h3>Alati i platforme za trgovanje</h3>
-							<p>Upoznajte CEX i DEX platforme, kripto novčanike i sigurnosne prakse – jasno i praktično, s naglaskom na sigurno i odgovorno korištenje.</p>
-							<p class="kripto-service-card-more">Saznaj više.</p>
-						</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
-						<a href="pravni-i-porezni-savjeti.html" class="kripto-service-card-link">
-						<div class="kripto-service-card">
-							<h3>Pravni i porezni savjeti</h3>
-							<p>Pomažemo vam razumjeti vaše obveze i prava vezana uz kriptovalute – u skladu s hrvatskim propisima i MiCA regulativom EU.</p>
-							<p class="kripto-service-card-more">Saznaj više.</p>
-						</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
-						<a href="blockchain-rjesenja.html" class="kripto-service-card-link">
-						<div class="kripto-service-card">
-							<h3>Blockchain rješenja</h3>
-							<p>Pomažemo tvrtkama razviti i implementirati blockchain sustave – od odabira prave tehnologije do zakonite primjene u poslovanju.</p>
-							<p class="kripto-service-card-more">Saznaj više.</p>
-						</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" data-wow-offset="0">
-						<a href="savjetovanje-i-podrska.html" class="kripto-service-card-link">
-						<div class="kripto-service-card">
-							<h3>Savjetovanje i podrška</h3>
-							<p>Pomažemo vam razumjeti gdje se nalazite i što je sljedeći korak, bio to ulazak u kripto ili daljnji razvoj, uz strukturiran pristup i konkretne smjernice.</p>
-							<p class="kripto-service-card-more">Saznaj više.</p>
-						</div>
-						</a>
-					</div>
-				</div>
-				<div class="row kripto-connect-row">
-					<div class="col-lg-12 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
-						<h2 class="kripto-connect-title">Povežimo se!</h2>
-						<div class="kripto-social-icons">
-							<a href="https://www.linkedin.com/company/111132384" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
-							<a href="https://www.facebook.com/kriptovalute.hr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-							<a href="https://www.instagram.com/kriptovalute.hr/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
-							<a href="https://www.tiktok.com/@kriptovalutehr" target="_blank" rel="noopener" aria-label="TikTok"><svg class="tiktok-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" fill="currentColor"></path></svg></a>
-						</div>
-					</div>
-				</div>
-				<div class="row kripto-contact-row" id="kontakt">
-					<div class="col-12">
-						<div class="kripto-contact-kvhr-style">
-							<div class="kripto-contact-title-col">
-								<h2 class="kripto-contact-title">Kontaktirajte nas</h2>
-							</div>
-							<div class="kripto-contact-image-col wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
-								<div class="kripto-contact-image-wrap"></div>
-							</div>
-							<div class="kripto-contact-form-col wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
-								<div class="kripto-contact-form-wrapper">
-									<h2 class="kripto-contact-title kripto-contact-title-desktop">Kontaktirajte nas</h2>
-									<div id="kripto-form-message" class="kripto-form-message" role="alert" style="display:none;"></div>
-							<form class="kripto-contact-form" method="post" action="send-contact.php" id="kripto-contact-form">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="kripto-name">Ime</label>
-											<input type="text" id="kripto-name" name="name" class="form-control" placeholder="Upišite Vaše ime" required>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="kripto-email">Email</label>
-											<input type="email" id="kripto-email" name="email" class="form-control" placeholder="Upišite Vaš email" required>
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="form-group">
-											<label for="kripto-interest">Što vas zanima?</label>
-											<select id="kripto-interest" name="interest" class="form-control">
-												<option value="Edukacija i radionice">Edukacija i radionice</option>
-												<option value="Kripto rješenja za poslovanje">Kripto rješenja za poslovanje</option>
-												<option value="Alati i platforme za trgovanje">Alati i platforme za trgovanje</option>
-												<option value="Pravni i porezni savjeti">Pravni i porezni savjeti</option>
-												<option value="Blockchain rješenja">Blockchain rješenja</option>
-												<option value="Savjetovanje i podrška">Savjetovanje i podrška</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="form-group">
-											<label for="kripto-message">Poruka</label>
-											<textarea id="kripto-message" name="message" class="form-control" rows="6" placeholder="Upišite Vašu poruku" required></textarea>
-										</div>
-									</div>
-									<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-										<div class="col-12 text-center">
-										<button type="submit" class="btn_one">Pošalji</button>
-								<p class="kripto-recaptcha-notice">Zaštićeno s <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google reCAPTCHA</a>.</p>
-									</div>
-								</div>
-							</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <!-- Navigacija -->
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <!-- Light logo — crni, transparentna pozadina -->
+          <picture class="kripto-logo-light">
+            <source
+              srcset="assets/img/kriptovalute-logo-black.webp"
+              type="image/webp"
+            />
+            <img
+              src="assets/img/kriptovalute-logo-black.png"
+              alt="Kriptovalute.hr"
+              class="kripto-nav-logo"
+              width="182"
+              height="50"
+              fetchpriority="high"
+            />
+          </picture>
+          <!-- Dark logo — bijeli, transparentna pozadina -->
+          <picture class="kripto-logo-dark">
+            <source
+              srcset="assets/img/kriptovalute-logo.webp"
+              type="image/webp"
+            />
+            <img
+              src="assets/img/kriptovalute-logo.png"
+              alt="Kriptovalute.hr"
+              class="kripto-nav-logo"
+              width="182"
+              height="50"
+              loading="lazy"
+            />
+          </picture>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul id="navbar-navlist" class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Usluge</a
+              >
+              <ul class="dropdown-menu dropdown-menu-end kripto-nav-dropdown">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://www.kriptovalute.hr/edukacija-i-radionice.html"
+                    >Edukacija i radionice</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://www.kriptovalute.hr/kripto-rjesenja-za-poslovanje.html"
+                    >Kripto rješenja za poslovanje</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://www.kriptovalute.hr/alati-i-platforme-za-trgovanje.html"
+                    >Alati i platforme za trgovanje</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://www.kriptovalute.hr/pravni-i-porezni-savjeti.html"
+                    >Pravni i porezni savjeti</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://www.kriptovalute.hr/blockchain-rjesenja.html"
+                    >Blockchain rješenja</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://www.kriptovalute.hr/savjetovanje-i-podrska.html"
+                    >Savjetovanje i podrška</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kviz.html">Kviz</a>
+            </li>
+            <!-- Theme toggle -->
+            <li class="nav-item d-flex align-items-center ms-lg-2">
+              <button
+                class="kripto-theme-toggle"
+                id="kripto-theme-toggle"
+                aria-label="Prebaci temu"
+              >
+                <!-- Sun icon (prikaži u dark modu — klik vraća na light) -->
+                <svg
+                  class="kripto-icon-sun"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="5" />
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+                <!-- Moon icon (prikaži u light modu — klik ide na dark) -->
+                <svg
+                  class="kripto-icon-moon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              </button>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a href="index.html#kontakt" class="btn_one btn-nav"
+                >Kontaktirajte nas</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-		<footer class="kripto-footer">
-			<div class="container">
-				<div class="row align-items-start">
-					<div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
-						<a href="index.html" class="kripto-footer-logo">
-							<picture><source srcset="assets/img/kriptovalute-logo.webp" type="image/webp"><img src="assets/img/kriptovalute-logo.png" alt="Kriptovalute.hr" class="img-fluid" width="200" height="55" loading="lazy"></picture>
-						</a>
-						<p class="kripto-footer-desc">Pomažemo vam razumjeti kripto svijet i pretvoriti znanje u stvarne prilike.</p>
-						<div class="kripto-footer-social">
-							<a href="https://www.linkedin.com/company/111132384" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
-							<a href="https://www.facebook.com/kriptovalute.hr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-							<a href="https://www.instagram.com/kriptovalute.hr/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
-							<a href="https://www.tiktok.com/@kriptovalutehr" target="_blank" rel="noopener" aria-label="TikTok"><svg class="tiktok-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" fill="currentColor"></path></svg></a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-						<h6 class="kripto-footer-heading">Poveznice</h6>
-						<ul class="kripto-footer-links">
-							<li><a href="index.html">Početna</a></li>
-							<li><a href="#kontakt">Kontakt</a></li>
-							<li><a href="politika-privatnosti.html">Politika privatnosti</a></li>
-							<li><a href="politika-kolacici.html">Kolačići</a></li>
-							<li><a href="#" id="kripto-footer-cookie-settings">Postavke kolačića</a></li>
-						</ul>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<h6 class="kripto-footer-heading">Kontakt</h6>
-						<ul class="kripto-footer-contact">
-							<li><a href="#" class="ep-link" data-em="aW5mb0BrcmlwdG92YWx1dGUuaHI="><i class="fa fa-envelope"></i> <span class="ep-addr"></span></a></li>
-						</ul>
-						<a href="#kontakt" class="btn_one btn-footer">Kontaktirajte nas</a>
-					</div>
-				</div>
-			</div>
-		</footer>
+    <!-- ================================================
+		     HERO SECTION
+		     ================================================ -->
+    <section class="kripto-hero-new">
+      <div class="container">
+        <div
+          class="kripto-hero-content-new wow fadeInUp"
+          data-wow-duration="0.8s"
+          data-wow-delay="0s"
+          data-wow-offset="0"
+        >
+          <div class="kripto-hero-badge-tag">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            Kripto edukacija &amp; savjetovanje
+          </div>
+          <h1>Unaprijedite svoju financijsku pismenost i kripto znanje</h1>
+          <p class="kripto-hero-subtitle">
+            Edukacija, savjetovanje i blockchain rješenja za pojedince i tvrtke.
+          </p>
+          <div class="kripto-hero-btns">
+            <a href="kviz.html" class="btn_one"
+              >Započni kviz &nbsp;<i class="fa fa-arrow-right"></i
+            ></a>
+            <a href="#usluge" class="btn_one btn_one-outline">Naše usluge</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<script src="assets/js/jquery-1.12.4.min.js" defer></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js" defer></script>
-	<script src="assets/js/particles.min.js" defer></script>
-	<script src="assets/js/app.js" defer></script>
-	<script src="assets/js/wow.min.js" defer></script>
-	<script src="assets/js/scrolltopcontrol.js" defer></script>
-	<script src="assets/js/scripts-index.js" defer></script>
-		<script>
-		(function() {
-			var STORAGE_KEY = 'kripto_cookie_consent_v1';
+    <!-- ================================================
+		     USLUGE
+		     ================================================ -->
+    <section class="kripto-services-new" id="usluge">
+      <div class="container">
+        <div
+          class="kripto-services-header wow fadeInUp"
+          data-wow-duration="0.7s"
+          data-wow-delay="0s"
+          data-wow-offset="50"
+        >
+          <div class="kripto-services-header-left">
+            <span class="kripto-section-label">Naše usluge</span>
+            <h2>Sve što vam treba za siguran ulazak u kripto svijet</h2>
+          </div>
+        </div>
 
-			function loadConsent() {
-				try {
-					var raw = localStorage.getItem(STORAGE_KEY);
-					if (!raw) return { necessary: true, analytics: false };
-					var parsed = JSON.parse(raw);
-					return {
-						necessary: true,
-						analytics: !!parsed.analytics
-					};
-				} catch (e) {
-					return { necessary: true, analytics: false };
-				}
-			}
+        <div class="row kripto-services-row">
+          <div
+            class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.1s"
+            data-wow-offset="0"
+          >
+            <a
+              href="edukacija-i-radionice.html"
+              class="kripto-service-card-link"
+            >
+              <div class="kripto-service-card">
+                <div class="kripto-service-icon-wrap">
+                  <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                </div>
+                <h3>Edukacija i radionice</h3>
+                <p>
+                  Stručno vođene edukacije i praktične radionice o
+                  kriptovalutama i blockchainu – za početnike i iskusne
+                  korisnike. Od osnova do primjene u stvarnim situacijama.
+                </p>
+                <span class="kripto-service-link"
+                  >Saznaj više
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i
+                ></span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.2s"
+            data-wow-offset="0"
+          >
+            <a
+              href="kripto-rjesenja-za-poslovanje.html"
+              class="kripto-service-card-link"
+            >
+              <div class="kripto-service-card">
+                <div class="kripto-service-icon-wrap">
+                  <i class="fa fa-briefcase" aria-hidden="true"></i>
+                </div>
+                <h3>Kripto rješenja za poslovanje</h3>
+                <p>
+                  Za poduzetnike koji žele uvesti kriptovalute na siguran,
+                  zakonit i praktičan način – od savjetovanja do konkretne
+                  implementacije.
+                </p>
+                <span class="kripto-service-link"
+                  >Saznaj više
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i
+                ></span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.3s"
+            data-wow-offset="0"
+          >
+            <a
+              href="alati-i-platforme-za-trgovanje.html"
+              class="kripto-service-card-link"
+            >
+              <div class="kripto-service-card">
+                <div class="kripto-service-icon-wrap">
+                  <i class="fa fa-line-chart" aria-hidden="true"></i>
+                </div>
+                <h3>Alati i platforme za trgovanje</h3>
+                <p>
+                  Upoznajte CEX i DEX platforme, kripto novčanike i sigurnosne
+                  prakse – jasno i praktično, s naglaskom na sigurno i odgovorno
+                  korištenje.
+                </p>
+                <span class="kripto-service-link"
+                  >Saznaj više
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i
+                ></span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.4s"
+            data-wow-offset="0"
+          >
+            <a
+              href="pravni-i-porezni-savjeti.html"
+              class="kripto-service-card-link"
+            >
+              <div class="kripto-service-card">
+                <div class="kripto-service-icon-wrap">
+                  <i class="fa fa-balance-scale" aria-hidden="true"></i>
+                </div>
+                <h3>Pravni i porezni savjeti</h3>
+                <p>
+                  Pomažemo vam razumjeti vaše obveze i prava vezana uz
+                  kriptovalute – u skladu s hrvatskim propisima i MiCA
+                  regulativom EU.
+                </p>
+                <span class="kripto-service-link"
+                  >Saznaj više
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i
+                ></span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.5s"
+            data-wow-offset="0"
+          >
+            <a href="blockchain-rjesenja.html" class="kripto-service-card-link">
+              <div class="kripto-service-card">
+                <div class="kripto-service-icon-wrap">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </div>
+                <h3>Blockchain rješenja</h3>
+                <p>
+                  Pomažemo tvrtkama razviti i implementirati blockchain sustave
+                  – od odabira prave tehnologije do zakonite primjene u
+                  poslovanju.
+                </p>
+                <span class="kripto-service-link"
+                  >Saznaj više
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i
+                ></span>
+              </div>
+            </a>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.6s"
+            data-wow-offset="0"
+          >
+            <a
+              href="savjetovanje-i-podrska.html"
+              class="kripto-service-card-link"
+            >
+              <div class="kripto-service-card">
+                <div class="kripto-service-icon-wrap">
+                  <i class="fa fa-comments" aria-hidden="true"></i>
+                </div>
+                <h3>Savjetovanje i podrška</h3>
+                <p>
+                  Pomažemo vam razumjeti gdje se nalazite i što je sljedeći
+                  korak, bio to ulazak u kripto ili daljnji razvoj, uz
+                  strukturiran pristup i konkretne smjernice.
+                </p>
+                <span class="kripto-service-link"
+                  >Saznaj više
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i
+                ></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-			function saveConsent(consent) {
-				try {
-					localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
-				} catch (e) {}
-			}
+    <!-- ================================================
+		     QUIZ CTA
+		     ================================================ -->
+    <section class="kripto-quiz-cta-section">
+      <div class="container">
+        <div
+          class="kripto-quiz-cta-inner wow fadeInUp"
+          data-wow-duration="0.8s"
+          data-wow-delay="0s"
+          data-wow-offset="50"
+        >
+          <div>
+            <span class="kripto-quiz-cta-label">Besplatan kviz</span>
+            <h2>Provjeri koliko znaš o kriptovalutama i blockchainu</h2>
+            <p>
+              20 pitanja &bull; besplatno &bull; bez prijave &mdash; saznajte
+              gdje ste i koji je sljedeći korak.
+            </p>
+          </div>
+          <a href="kviz.html" class="kripto-quiz-cta-btn">
+            Započni kviz <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
 
-			function loadAnalytics() {
-				if (window.kriptoGaLoaded) return;
-				window.kriptoGaLoaded = true;
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){ dataLayer.push(arguments); }
-				window.gtag = window.gtag || gtag;
+    <!-- ================================================
+		     KONTAKT
+		     ================================================ -->
+    <section class="kripto-contact-section" id="kontakt">
+      <div class="container">
+        <div
+          class="kripto-contact-kvhr-style wow fadeInUp"
+          data-wow-duration="1s"
+          data-wow-delay="0.2s"
+          data-wow-offset="0"
+        >
+          <div class="kripto-contact-title-col">
+            <h2 class="kripto-contact-title">Kontaktirajte nas</h2>
+          </div>
+          <div class="kripto-contact-image-col">
+            <div class="kripto-contact-image-wrap"></div>
+          </div>
+          <div class="kripto-contact-form-col">
+            <div class="kripto-contact-form-wrapper">
+              <h2 class="kripto-contact-title kripto-contact-title-desktop">
+                Kontaktirajte nas
+              </h2>
+              <div
+                id="kripto-form-message"
+                class="kripto-form-message"
+                role="alert"
+                style="display: none"
+              ></div>
+              <form
+                class="kripto-contact-form"
+                method="post"
+                action="send-contact.php"
+                id="kripto-contact-form"
+              >
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="kripto-name">Ime</label>
+                      <input
+                        type="text"
+                        id="kripto-name"
+                        name="name"
+                        class="form-control"
+                        placeholder="Upišite Vaše ime"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="kripto-email">Email</label>
+                      <input
+                        type="email"
+                        id="kripto-email"
+                        name="email"
+                        class="form-control"
+                        placeholder="Upišite Vaš email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="kripto-interest">Što vas zanima?</label>
+                      <select
+                        id="kripto-interest"
+                        name="interest"
+                        class="form-control"
+                      >
+                        <option value="Edukacija i radionice">
+                          Edukacija i radionice
+                        </option>
+                        <option value="Kripto rješenja za poslovanje">
+                          Kripto rješenja za poslovanje
+                        </option>
+                        <option value="Alati i platforme za trgovanje">
+                          Alati i platforme za trgovanje
+                        </option>
+                        <option value="Pravni i porezni savjeti">
+                          Pravni i porezni savjeti
+                        </option>
+                        <option value="Blockchain rješenja">
+                          Blockchain rješenja
+                        </option>
+                        <option value="Savjetovanje i podrška">
+                          Savjetovanje i podrška
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="kripto-message">Poruka</label>
+                      <textarea
+                        id="kripto-message"
+                        name="message"
+                        class="form-control"
+                        rows="6"
+                        placeholder="Upišite Vašu poruku"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                  <input
+                    type="hidden"
+                    name="g-recaptcha-response"
+                    id="g-recaptcha-response"
+                  />
+                  <div class="col-12 text-center">
+                    <button type="submit" class="btn_one">Pošalji</button>
+                    <p class="kripto-recaptcha-notice">
+                      Zaštićeno s
+                      <a
+                        href="https://policies.google.com/privacy"
+                        target="_blank"
+                        rel="noopener"
+                        >Google reCAPTCHA</a
+                      >.
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-				var s = document.createElement('script');
-				s.async = true;
-				s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JLBXS6BRQX';
-				s.onload = function () {
-					gtag('js', new Date());
-					gtag('config', 'G-JLBXS6BRQX', { anonymize_ip: true });
-				};
-				document.head.appendChild(s);
-			}
+    <!-- ================================================
+		     FOOTER
+		     ================================================ -->
+    <footer class="kripto-footer">
+      <div class="container">
+        <div class="row align-items-start">
+          <!-- Logo + opis + social -->
+          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <a href="index.html" class="kripto-footer-logo">
+              <picture>
+                <source
+                  srcset="assets/img/kriptovalute-logo.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="assets/img/kriptovalute-logo.png"
+                  alt="Kriptovalute.hr"
+                  class="img-fluid"
+                  width="200"
+                  height="55"
+                  loading="lazy"
+                />
+              </picture>
+            </a>
+            <p class="kripto-footer-desc">
+              Pomažemo vam razumjeti kripto svijet i pretvoriti znanje u stvarne
+              prilike.
+            </p>
+            <div class="kripto-footer-social">
+              <a
+                href="https://www.linkedin.com/company/111132384"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/kriptovalute.hr"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/kriptovalute.hr/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+                ><i class="fa fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@kriptovalutehr"
+                target="_blank"
+                rel="noopener"
+                aria-label="TikTok"
+                ><svg
+                  class="tiktok-icon"
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"
+                    fill="currentColor"
+                  ></path></svg
+              ></a>
+            </div>
+          </div>
+          <!-- Usluge -->
+          <div class="col-lg-2 col-md-3 col-6 mb-4 mb-lg-0">
+            <h6 class="kripto-footer-heading">Usluge</h6>
+            <ul class="kripto-footer-links" style="grid-template-columns: 1fr">
+              <li>
+                <a href="edukacija-i-radionice.html">Edukacija i radionice</a>
+              </li>
+              <li>
+                <a href="kripto-rjesenja-za-poslovanje.html"
+                  >Kripto za poslovanje</a
+                >
+              </li>
+              <li>
+                <a href="alati-i-platforme-za-trgovanje.html"
+                  >Alati i platforme</a
+                >
+              </li>
+              <li>
+                <a href="blockchain-rjesenja.html">Blockchain rješenja</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Tvrtka -->
+          <div class="col-lg-3 col-md-3 col-6 mb-4 mb-lg-0">
+            <h6 class="kripto-footer-heading">Tvrtka</h6>
+            <ul class="kripto-footer-links" style="grid-template-columns: 1fr">
+              <li><a href="kviz.html">Kviz</a></li>
+              <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+          </div>
+          <!-- Pravno -->
+          <div class="col-lg-3 col-md-6">
+            <h6 class="kripto-footer-heading">Pravno</h6>
+            <ul class="kripto-footer-links" style="grid-template-columns: 1fr">
+              <li>
+                <a href="politika-privatnosti.html">Politika privatnosti</a>
+              </li>
+              <li><a href="politika-kolacici.html">Kolačići</a></li>
+              <li>
+                <a href="#" id="kripto-footer-cookie-settings"
+                  >Postavke kolačića</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="kripto-footer-bottom">
+          <span>&copy; 2026 Kriptovalute.hr &mdash; sva prava pridržana.</span>
+          <span>Made in Hrvatska &#x1F1ED;&#x1F1F7;</span>
+        </div>
+      </div>
+    </footer>
 
-			function revokeAnalytics() {
-				if (window.gtag) {
-					window.gtag('consent', 'update', { analytics_storage: 'denied' });
-				}
-				document.cookie.split(';').forEach(function(c) {
-					var name = c.split('=')[0].trim();
-					if (name.indexOf('_ga') === 0 || name.indexOf('_gid') === 0) {
-						document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.' + location.hostname;
-						document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
-					}
-				});
-			}
+    <!-- Scripts -->
+    <script src="assets/js/jquery-1.12.4.min.js" defer></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js" defer></script>
+    <script src="assets/js/particles.min.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/wow.min.js" defer></script>
+    <script src="assets/js/scrolltopcontrol.js" defer></script>
+    <script src="assets/js/scripts-index.js" defer></script>
 
-			function applyConsent(consent) {
-				if (consent.analytics) {
-					loadAnalytics();
-				} else {
-					revokeAnalytics();
-				}
-			}
+    <!-- Theme Toggle -->
+    <script>
+      (function () {
+        var THEME_KEY = "kripto_theme";
+        var html = document.documentElement;
+        var btn = document.getElementById("kripto-theme-toggle");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var isDark = html.getAttribute("data-theme") === "dark";
+          if (isDark) {
+            html.removeAttribute("data-theme");
+            localStorage.setItem(THEME_KEY, "light");
+          } else {
+            html.setAttribute("data-theme", "dark");
+            localStorage.setItem(THEME_KEY, "dark");
+          }
+        });
+      })();
+    </script>
 
-			try {
-				var bar = document.getElementById('kripto-cookie-bar');
-				if (!bar) return;
-				var panel = document.getElementById('kripto-cookie-panel');
-				var btnAcceptAll = document.getElementById('kripto-cookie-accept-all');
-				var btnReject = document.getElementById('kripto-cookie-reject');
-				var btnToggle = document.getElementById('kripto-cookie-settings-toggle');
-				var chkAnalytics = document.getElementById('kripto-cookie-analytics');
-				var btnSave = document.getElementById('kripto-cookie-save');
+    <!-- Cookie consent -->
+    <script>
+      (function () {
+        var STORAGE_KEY = "kripto_cookie_consent_v1";
 
-				var consent = loadConsent();
-				// Primijeni postojeće postavke (npr. učitaj GA ako je ranije prihvaćen)
-				applyConsent(consent);
+        function loadConsent() {
+          try {
+            var raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return { necessary: true, analytics: false };
+            var parsed = JSON.parse(raw);
+            return { necessary: true, analytics: !!parsed.analytics };
+          } catch (e) {
+            return { necessary: true, analytics: false };
+          }
+        }
 
-				if (!localStorage.getItem(STORAGE_KEY)) {
-					bar.style.display = 'block';
-				}
+        function saveConsent(consent) {
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+          } catch (e) {}
+        }
 
-				function openPanel() {
-					if (!panel) return;
-					panel.style.display = 'block';
-					if (chkAnalytics) chkAnalytics.checked = !!consent.analytics;
-				}
+        function loadAnalytics() {
+          if (window.kriptoGaLoaded) return;
+          window.kriptoGaLoaded = true;
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          window.gtag = window.gtag || gtag;
+          var s = document.createElement("script");
+          s.async = true;
+          s.src = "https://www.googletagmanager.com/gtag/js?id=G-JLBXS6BRQX";
+          s.onload = function () {
+            gtag("js", new Date());
+            gtag("config", "G-JLBXS6BRQX", { anonymize_ip: true });
+          };
+          document.head.appendChild(s);
+        }
 
-				function closePanel() {
-					if (!panel) return;
-					panel.style.display = 'none';
-				}
+        function revokeAnalytics() {
+          if (window.gtag)
+            window.gtag("consent", "update", { analytics_storage: "denied" });
+          document.cookie.split(";").forEach(function (c) {
+            var name = c.split("=")[0].trim();
+            if (name.indexOf("_ga") === 0 || name.indexOf("_gid") === 0) {
+              document.cookie =
+                name +
+                "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=." +
+                location.hostname;
+              document.cookie =
+                name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+            }
+          });
+        }
 
-				if (btnToggle) {
-					btnToggle.addEventListener('click', function () {
-						if (!panel) return;
-						if (panel.style.display === 'block') {
-							closePanel();
-						} else {
-							openPanel();
-						}
-					});
-				}
+        function applyConsent(consent) {
+          if (consent.analytics) loadAnalytics();
+          else revokeAnalytics();
+        }
 
-				if (btnAcceptAll) {
-					btnAcceptAll.addEventListener('click', function () {
-						consent.analytics = true;
-						saveConsent(consent);
-						applyConsent(consent);
-						bar.style.display = 'none';
-					});
-				}
+        try {
+          var bar = document.getElementById("kripto-cookie-bar");
+          if (!bar) return;
+          var panel = document.getElementById("kripto-cookie-panel");
+          var btnAcceptAll = document.getElementById(
+            "kripto-cookie-accept-all",
+          );
+          var btnReject = document.getElementById("kripto-cookie-reject");
+          var btnToggle = document.getElementById(
+            "kripto-cookie-settings-toggle",
+          );
+          var chkAnalytics = document.getElementById("kripto-cookie-analytics");
+          var btnSave = document.getElementById("kripto-cookie-save");
 
-				if (btnReject) {
-					btnReject.addEventListener('click', function () {
-						consent.analytics = false;
-						saveConsent(consent);
-						bar.style.display = 'none';
-					});
-				}
+          var consent = loadConsent();
+          applyConsent(consent);
+          if (!localStorage.getItem(STORAGE_KEY)) bar.style.display = "block";
 
-				if (btnSave && chkAnalytics) {
-					btnSave.addEventListener('click', function () {
-						consent.analytics = !!chkAnalytics.checked;
-						saveConsent(consent);
-						applyConsent(consent);
-						bar.style.display = 'none';
-					});
-				}
+          function openPanel() {
+            if (panel) {
+              panel.style.display = "block";
+              if (chkAnalytics) chkAnalytics.checked = !!consent.analytics;
+            }
+          }
+          function closePanel() {
+            if (panel) panel.style.display = "none";
+          }
 
-				var footerLink = document.getElementById('kripto-footer-cookie-settings');
-				if (footerLink) {
-					footerLink.addEventListener('click', function (e) {
-						e.preventDefault();
-						consent = loadConsent();
-						bar.style.display = 'block';
-						openPanel();
-						bar.scrollIntoView({ behavior: 'smooth' });
-					});
-				}
-			} catch (e) {}
-		})();
-		</script>
-		<script>
-		(function() {
-			var wheel = document.getElementById('kripto-crypto-wheel');
-			var bitcoin = document.getElementById('kripto-bitcoin-center');
-			if (wheel && bitcoin) {
-				bitcoin.addEventListener('mouseenter', function() { wheel.classList.add('bitcoin-hover'); });
-				bitcoin.addEventListener('mouseleave', function() { wheel.classList.remove('bitcoin-hover'); });
-			}
-		})();
-		</script>
-		<script>
-		(function() {
-			var params = new URLSearchParams(window.location.search);
-			var msgEl = document.getElementById('kripto-form-message');
-			if (params.get('sent') === '1') {
-				msgEl.textContent = 'Hvala! Vaša poruka je poslana. Kontaktirat ćemo Vas u najkraćem mogućem roku.';
-				msgEl.className = 'kripto-form-message kripto-form-message-success';
-				msgEl.style.display = 'block';
-				history.replaceState({}, '', window.location.pathname + '#kontakt');
-			} else if (params.get('error')) {
-				msgEl.textContent = decodeURIComponent(params.get('error'));
-				msgEl.className = 'kripto-form-message kripto-form-message-error';
-				msgEl.style.display = 'block';
-				history.replaceState({}, '', window.location.pathname + '#kontakt');
-			}
-		})();
-		</script>
+          if (btnToggle)
+            btnToggle.addEventListener("click", function () {
+              panel && panel.style.display === "block"
+                ? closePanel()
+                : openPanel();
+            });
+          if (btnAcceptAll)
+            btnAcceptAll.addEventListener("click", function () {
+              consent.analytics = true;
+              saveConsent(consent);
+              applyConsent(consent);
+              bar.style.display = "none";
+            });
+          if (btnReject)
+            btnReject.addEventListener("click", function () {
+              consent.analytics = false;
+              saveConsent(consent);
+              bar.style.display = "none";
+            });
+          if (btnSave && chkAnalytics)
+            btnSave.addEventListener("click", function () {
+              consent.analytics = !!chkAnalytics.checked;
+              saveConsent(consent);
+              applyConsent(consent);
+              bar.style.display = "none";
+            });
+
+          var footerLink = document.getElementById(
+            "kripto-footer-cookie-settings",
+          );
+          if (footerLink)
+            footerLink.addEventListener("click", function (e) {
+              e.preventDefault();
+              consent = loadConsent();
+              bar.style.display = "block";
+              openPanel();
+              bar.scrollIntoView({ behavior: "smooth" });
+            });
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Contact form messages -->
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var msgEl = document.getElementById("kripto-form-message");
+        if (params.get("sent") === "1") {
+          msgEl.textContent =
+            "Hvala! Vaša poruka je poslana. Kontaktirat ćemo Vas u najkraćem mogućem roku.";
+          msgEl.className = "kripto-form-message kripto-form-message-success";
+          msgEl.style.display = "block";
+          history.replaceState({}, "", window.location.pathname + "#kontakt");
+        } else if (params.get("error")) {
+          msgEl.textContent = decodeURIComponent(params.get("error"));
+          msgEl.className = "kripto-form-message kripto-form-message-error";
+          msgEl.style.display = "block";
+          history.replaceState({}, "", window.location.pathname + "#kontakt");
+        }
+      })();
+    </script>
+
     <script src="assets/js/email-protect.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LdBZLksAAAAACLqFJacvdpviwKv7gVNTosWxZnc" async defer></script>
-	<script>
-	(function() {
-		var form = document.getElementById('kripto-contact-form');
-		if (!form) return;
-		form.addEventListener('submit', function(e) {
-			e.preventDefault();
-			grecaptcha.ready(function() {
-				grecaptcha.execute('6LdBZLksAAAAACLqFJacvdpviwKv7gVNTosWxZnc', {action: 'contact'}).then(function(token) {
-					document.getElementById('g-recaptcha-response').value = token;
-					form.submit();
-				});
-			});
-		});
-	})();
-	</script>
-</body>
+    <script
+      src="https://www.google.com/recaptcha/api.js?render=6LdBZLksAAAAACLqFJacvdpviwKv7gVNTosWxZnc"
+      async
+      defer
+    ></script>
+    <script>
+      (function () {
+        var form = document.getElementById("kripto-contact-form");
+        if (!form) return;
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          grecaptcha.ready(function () {
+            grecaptcha
+              .execute("6LdBZLksAAAAACLqFJacvdpviwKv7gVNTosWxZnc", {
+                action: "contact",
+              })
+              .then(function (token) {
+                document.getElementById("g-recaptcha-response").value = token;
+                form.submit();
+              });
+          });
+        });
+      })();
+    </script>
+  </body>
 </html>
