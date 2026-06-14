@@ -5,10 +5,16 @@
 	jQuery(document).on('ready', function(){
 	
 		/*PRELOADER JS*/
-		$(window).on('load', function() { 
+		function hidePreloader() {
 			$('.status').fadeOut();
-			$('.preloader').delay(350).fadeOut('slow'); 
-		}); 
+			$('.preloader').delay(350).fadeOut('slow');
+		}
+		if (document.readyState === 'complete') {
+			hidePreloader();
+		} else {
+			$(window).on('load', hidePreloader);
+		}
+		setTimeout(function() { $('.preloader').fadeOut('slow'); }, 5000);
 		/*END PRELOADER JS*/		
 			
 		/*START MENU JS*/		

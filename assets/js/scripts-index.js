@@ -4,11 +4,17 @@
 	
 	jQuery(document).on('ready', function(){
 		/*PRELOADER JS*/
-		$(window).on('load', function() { 
+		function hidePreloader() {
 			$('.status').fadeOut();
-			$('.preloader').delay(350).fadeOut('slow'); 
-		}); 
-		/* Fallback timeout to hide preloader after 5 seconds */
+			$('.preloader').delay(350).fadeOut('slow');
+		}
+		/* If window already loaded (e.g. from cache), hide immediately */
+		if (document.readyState === 'complete') {
+			hidePreloader();
+		} else {
+			$(window).on('load', hidePreloader);
+		}
+		/* Fallback: hide after 5 seconds no matter what */
 		setTimeout(function() {
 			$('.preloader').fadeOut('slow');
 		}, 5000);
