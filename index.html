@@ -288,6 +288,9 @@
   </head>
 
   <body data-spy="scroll" data-offset="80">
+    <!-- Skip link (WCAG 2.4.1) -->
+    <a class="skip-link" href="#main-content">Preskoči na sadržaj</a>
+
     <!-- Cookie bar -->
     <div
       class="kripto-cookie-bar"
@@ -437,6 +440,7 @@
     <nav
       id="navbar"
       class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky"
+      aria-label="Glavna navigacija"
     >
       <div class="container">
         <a class="navbar-brand" href="index.html">
@@ -608,6 +612,9 @@
         </div>
       </div>
     </nav>
+
+    <!-- Glavni sadržaj (WCAG 4.1.2) -->
+    <main id="main-content">
 
     <!-- ================================================
 		     HERO SECTION
@@ -984,6 +991,8 @@
       </div>
     </section>
 
+    </main><!-- /main -->
+
     <!-- ================================================
 		     FOOTER
 		     ================================================ -->
@@ -1053,7 +1062,7 @@
           </div>
           <!-- Usluge -->
           <div class="col-lg-2 col-md-3 col-6 mb-4 mb-lg-0">
-            <h6 class="kripto-footer-heading">Usluge</h6>
+            <h2 class="kripto-footer-heading">Usluge</h2>
             <ul class="kripto-footer-links" style="grid-template-columns: 1fr">
               <li>
                 <a href="edukacija-i-radionice.html">Edukacija i radionice</a>
@@ -1075,7 +1084,7 @@
           </div>
           <!-- Tvrtka -->
           <div class="col-lg-3 col-md-3 col-6 mb-4 mb-lg-0">
-            <h6 class="kripto-footer-heading">Tvrtka</h6>
+            <h2 class="kripto-footer-heading">Tvrtka</h2>
             <ul class="kripto-footer-links" style="grid-template-columns: 1fr">
               <li><a href="kviz.html">Kviz</a></li>
               <li><a href="#kontakt">Kontakt</a></li>
@@ -1083,7 +1092,7 @@
           </div>
           <!-- Pravno -->
           <div class="col-lg-3 col-md-6">
-            <h6 class="kripto-footer-heading">Pravno</h6>
+            <h2 class="kripto-footer-heading">Pravno</h2>
             <ul class="kripto-footer-links" style="grid-template-columns: 1fr">
               <li>
                 <a href="politika-privatnosti.html">Politika privatnosti</a>

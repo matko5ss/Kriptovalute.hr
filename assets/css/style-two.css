@@ -79,9 +79,36 @@ a:hover {
   color: var(--kripto-accent);
   text-decoration: none;
 }
-a:focus {
+a:focus-visible {
+  outline: 2px solid var(--kripto-accent);
+  outline-offset: 3px;
+  text-decoration: none;
+  border-radius: 2px;
+}
+a:focus:not(:focus-visible) {
   outline: none;
   text-decoration: none;
+}
+
+/* Skip link — vidljiv samo pri fokusu (WCAG 2.4.1) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 999999;
+  background: var(--kripto-accent);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 0 0 6px 0;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
 }
 p {
   margin-bottom: 0;
@@ -308,6 +335,10 @@ p.section-title-white {
   background: none;
   color: var(--kripto-accent);
   border: 2px solid var(--kripto-accent);
+}
+.btn_one:focus-visible {
+  outline: 3px solid var(--kripto-accent);
+  outline-offset: 3px;
 }
 .btn_one-outline {
   background: none;
@@ -1611,13 +1642,15 @@ html[data-theme="dark"] .kripto-contact-form .form-control::placeholder {
   background: var(--kripto-bg-card);
   border-color: var(--kripto-accent);
   color: var(--kripto-heading);
-  outline: none;
+  outline: 2px solid var(--kripto-accent);
+  outline-offset: 1px;
   box-shadow: 0 0 0 3px rgba(96, 23, 255, 0.1);
 }
 html[data-theme="dark"] .kripto-contact-form .form-control:focus {
   background: transparent;
   color: #ffffff;
-  box-shadow: none;
+  outline: 2px solid var(--kripto-accent);
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.15);
 }
 .kripto-contact-form select.form-control {
   cursor: pointer;
@@ -2641,15 +2674,17 @@ html[data-theme="dark"] .kripto-contact-form .form-control:focus {
   border: 1px solid var(--kripto-accent);
   background: var(--kripto-bg-card);
   color: #fff;
-  box-shadow: none;
-  outline: 0 none;
+  box-shadow: 0 0 0 2px var(--kripto-accent);
+  outline: 2px solid var(--kripto-accent);
+  outline-offset: 1px;
 }
 .contact textarea:focus {
   border: 1px solid var(--kripto-accent);
   background: var(--kripto-bg-card);
   color: #fff;
-  box-shadow: none;
-  outline: 0 none;
+  box-shadow: 0 0 0 2px var(--kripto-accent);
+  outline: 2px solid var(--kripto-accent);
+  outline-offset: 1px;
 }
 .contact button {
   width: 100%;

@@ -124,6 +124,8 @@
 		</script>
 	</head>
 	<body>
+	<!-- Skip link (WCAG 2.4.1) -->
+	<a class="skip-link" href="#main-content">Preskoči na sadržaj</a>
 		<div class="kripto-cookie-bar" id="kripto-cookie-bar" style="display:none;" role="dialog" aria-live="polite" aria-label="Postavke kolačića">
 			<div class="kripto-cookie-inner">
 				<div class="kripto-cookie-text">
@@ -165,7 +167,8 @@
 			</div>
 		</div>
 		<div id="particles-js"></div>
-		<nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+		<nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky"
+				aria-label="Glavna navigacija">
 			<div class="container">
 				<a class="navbar-brand" href="index.html">
 					<!-- Light logo -->
@@ -225,6 +228,7 @@
 		</div>
 	</div>
 
+	<main id="main-content">
 	<section class="about_us section-padding kriptovalute-services kripto-edukacija-inner kviz-page" style="padding-top: 120px;">
 			<div class="container">
 
@@ -261,7 +265,7 @@
 				<div id="quiz-questions" class="quiz-step" style="display: none;">
 					<div class="kviz-restart-above-progress" id="restart-quiz-mid-wrap" style="display: none;">
 						<span style="position: relative; display: inline-block;">
-							<button id="restart-quiz-mid-btn" style="background: transparent; border: none; cursor: pointer; color: rgba(255,255,255,0.4); font-size: 18px; line-height: 1; padding: 4px; transition: color 0.2s ease;" onmouseover="this.style.color='rgba(255,255,255,0.9)';document.getElementById('restart-tooltip').style.opacity='1'" onmouseout="this.style.color='rgba(255,255,255,0.4)';document.getElementById('restart-tooltip').style.opacity='0'"><i class="fa fa-refresh"></i></button>
+							<button id="restart-quiz-mid-btn" style="background: transparent; border: none; cursor: pointer; color: rgba(255,255,255,0.4); font-size: 18px; line-height: 1; padding: 4px; transition: color 0.2s ease;" onmouseover="this.style.color='rgba(255,255,255,0.9)';document.getElementById('restart-tooltip').style.opacity='1'" onmouseout="this.style.color='rgba(255,255,255,0.4)';document.getElementById('restart-tooltip').style.opacity='0'" aria-label="Pokreni kviz ponovo"><i class="fa fa-refresh" aria-hidden="true"></i></button>
 							<span id="restart-tooltip" style="position: absolute; right: 0; top: 32px; background: rgba(20,20,40,0.95); color: #fff; font-size: 12px; white-space: nowrap; padding: 5px 10px; border-radius: 6px; pointer-events: none; opacity: 0; transition: opacity 0.2s ease; border: 1px solid rgba(255,255,255,0.15); z-index: 10;">Pokreni ponovo</span>
 						</span>
 					</div>
@@ -296,6 +300,7 @@
 				</div>
 			</div>
 		</section>
+	</main><!-- /main -->
 		<footer class="kripto-footer">
 			<div class="container">
 				<div class="row align-items-start">
@@ -312,7 +317,7 @@
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-						<h6 class="kripto-footer-heading">Poveznice</h6>
+						<h2 class="kripto-footer-heading">Poveznice</h2>
 						<ul class="kripto-footer-links">
 							<li><a href="index.html">Početna</a></li>
 							<li><a href="index.html#kontakt">Kontakt</a></li>
@@ -322,9 +327,9 @@
 						</ul>
 					</div>
 					<div class="col-lg-3 col-md-6">
-						<h6 class="kripto-footer-heading">Kontakt</h6>
+						<h2 class="kripto-footer-heading">Kontakt</h2>
 						<ul class="kripto-footer-contact">
-							<li><a href="#" class="ep-link" data-em="aW5mb0BrcmlwdG92YWx1dGUuaHI="><i class="fa fa-envelope"></i> <span class="ep-addr"></span></a></li>
+							<li><a href="#" class="ep-link" data-em="aW5mb0BrcmlwdG92YWx1dGUuaHI=" aria-label="Pošalji email na info@kriptovalute.hr"><i class="fa fa-envelope" aria-hidden="true"></i> <span class="ep-addr"></span></a></li>
 						</ul>
 						<a href="index.html#kontakt" class="btn_one btn-footer">Kontaktirajte nas</a>
 					</div>
