@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rudar blokova – kripto igra | Kriptovalute.hr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f1edff; --panel:#ffffff; --panel-2:#f7f4ff; --line:#dcd2fd; --ink:#170d42; --muted:#5b4f8f;
+  --brand:#6017ff; --brand-2:#9a6bff; --brand-3:#3c0bb0; --gold:#e8a200; --gold-2:#ffd666; --gold-ink:#3d2800;
+  --danger:#e11d48; --ok:#0b9a6a; --glow:rgba(96,23,255,.28);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#110828; --panel:#1b1042; --panel-2:#23165a; --line:#3b2a80; --ink:#f1ecff; --muted:#a99bdc;
+    --brand:#7b3dff; --brand-2:#a57cff; --brand-3:#4a14c9; --gold:#ffbf2e; --gold-2:#ffe08a; --gold-ink:#3d2800;
+    --danger:#ff4d6d; --ok:#3ee0a0; --glow:rgba(123,61,255,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#110828; --panel:#1b1042; --panel-2:#23165a; --line:#3b2a80; --ink:#f1ecff; --muted:#a99bdc;
+  --brand:#7b3dff; --brand-2:#a57cff; --brand-3:#4a14c9; --gold:#ffbf2e; --gold-2:#ffe08a; --gold-ink:#3d2800;
+  --danger:#ff4d6d; --ok:#3ee0a0; --glow:rgba(123,61,255,.45);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;
+  background-image:radial-gradient(900px 500px at 85% -10%,var(--glow),transparent 70%)}
+.wrap{max-width:980px;margin:0 auto;padding:14px 14px 28px}
+a{color:var(--brand-2)}
+:root:not([data-theme="dark"]) a{color:var(--brand)}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+h1{font-family:Unbounded,"Arial Black",sans-serif;font-weight:800;font-size:clamp(22px,4.6vw,34px);line-height:1.05;margin:0;letter-spacing:-.02em}
+h1 .sub{display:block;font-family:Manrope,sans-serif;font-weight:600;font-size:14px;letter-spacing:0;color:var(--muted);margin-top:6px}
+h1 .sub a{text-decoration:none;font-weight:800}
+
+.hud{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px 12px;min-width:74px}
+.stat small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+.stat b{font-family:Unbounded,sans-serif;font-weight:700;font-size:16px;white-space:nowrap}
+.stat.gold b{color:var(--gold)}
+.lives{display:flex;gap:4px;margin-top:4px}
+.lives i{width:14px;height:16px;background:var(--danger);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.lives i.off{background:var(--line)}
+.iconbtn{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:0 14px;font-weight:700}
+
+/* the chain — the signature element */
+.chainbox{margin-bottom:12px}
+.chainhead{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:var(--muted);margin:0 2px 6px;font-weight:600}
+.chain{display:flex;align-items:center;overflow-x:auto;padding:4px 2px 10px;scroll-behavior:smooth;scrollbar-width:thin}
+.blk{flex:0 0 auto;width:132px;background:var(--panel);border:2px solid var(--brand);border-radius:12px;padding:8px 10px;position:relative}
+.blk.genesis{border-color:var(--gold)}
+.blk.ghost{border-style:dashed;border-color:var(--line);opacity:.8}
+.blk .n{font-family:Unbounded,sans-serif;font-weight:700;font-size:13px}
+.blk .t{font-size:12px;font-weight:700;color:var(--brand-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.blk.genesis .t{color:var(--gold)}
+.blk .h{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10.5px;color:var(--muted);line-height:1.35}
+.blk .h em{font-style:normal;color:var(--ok)}
+.link{flex:0 0 26px;height:4px;background:repeating-linear-gradient(90deg,var(--brand) 0 6px,transparent 6px 9px);position:relative}
+.link::after{content:"";position:absolute;right:-2px;top:-4px;border:6px solid transparent;border-left-color:var(--brand)}
+.blk.new{animation:pop .6s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{0%{transform:scale(.4);opacity:0}100%{transform:none;opacity:1}}
+
+.stage{position:relative;height:min(62vh,600px);min-height:380px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--panel);touch-action:none;box-shadow:0 30px 70px -40px var(--glow)}
+.stage.shake{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-7px)}50%{transform:translateX(6px)}75%{transform:translateX(-3px)}}
+canvas{display:block;width:100%;height:100%}
+.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:14px;background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.overlay[hidden]{display:none}
+.card{max-width:540px;width:100%;max-height:100%;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 24px 60px -24px var(--glow)}
+.card h2{font-family:Unbounded,sans-serif;font-weight:700;font-size:clamp(17px,3.4vw,21px);line-height:1.25;margin:0 0 12px}
+.card p{margin:0 0 12px}
+.lead{color:var(--muted);font-size:14px;font-weight:600}
+.legend{display:grid;gap:10px;margin:14px 0 18px}
+.legend div{display:flex;gap:12px;align-items:center;font-size:14.5px}
+.ico{flex:0 0 38px;height:38px;display:grid;place-items:center}
+.ico .coin{width:30px;height:30px;border-radius:50%;background:var(--gold);box-shadow:inset 0 0 0 3px var(--gold-2);color:var(--gold-ink);font:700 14px Unbounded,sans-serif;display:grid;place-items:center}
+.ico .pill{background:var(--danger);color:#fff;font-size:10px;font-weight:800;border-radius:99px;padding:3px 6px;white-space:nowrap}
+.btn{border:0;border-radius:12px;padding:13px 20px;font-weight:800;font-size:15px;background:var(--brand);color:#fff;box-shadow:0 8px 24px -8px var(--glow)}
+.btn:hover{filter:brightness(1.08)}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+a.btn{display:inline-block;text-decoration:none;color:#fff}
+.opts{display:grid;gap:8px;margin:4px 0 12px}
+.opt{text-align:left;background:var(--panel-2);border:1.5px solid var(--line);color:var(--ink);border-radius:12px;padding:11px 14px;font-weight:600;font-size:15px}
+.opt:hover:not(:disabled){border-color:var(--brand)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--panel))}
+.opt.wrong{border-color:var(--danger);background:color-mix(in srgb,var(--danger) 14%,var(--panel))}
+.mine{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;background:var(--panel-2);border:1px dashed var(--line);border-radius:10px;padding:9px 11px;margin-bottom:12px;overflow-wrap:anywhere}
+.mine b{color:var(--ok)}
+.verdict{font-weight:800;margin-bottom:6px}
+.verdict.ok{color:var(--ok)} .verdict.no{color:var(--danger)}
+.note{border-left:4px solid var(--gold);background:color-mix(in srgb,var(--gold) 12%,var(--panel));padding:9px 12px;border-radius:0 10px 10px 0;font-size:14px;margin-bottom:12px}
+.haz{font-size:40px;line-height:1;margin-bottom:6px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 16px}
+.stats div{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center}
+.stats b{display:block;font-family:Unbounded,sans-serif;font-size:18px}
+.stats small{color:var(--muted);font-weight:600;font-size:12px}
+.hint{font-size:13px;color:var(--muted);margin-top:10px;text-align:center}
+footer{margin-top:14px;font-size:13px;color:var(--muted);text-align:center}
+@media (max-width:560px){ .stat{padding:5px 9px;min-width:0} .stat b{font-size:14px} .blk{width:116px} }
+@media (prefers-reduced-motion: reduce){ .blk.new,.stage.shake{animation:none} .chain{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Rudar blokova<span class="sub">Kripto igra za početnike · <a href="https://kriptovalute.hr" target="_blank" rel="noopener">kriptovalute.hr</a></span></h1>
+    <div class="hud" aria-live="polite">
+      <div class="stat gold"><small>Stanje</small><b id="sats">0 sat</b></div>
+      <div class="stat"><small>Nagrada</small><b id="reward">50 sat</b></div>
+      <div class="stat"><small>Blokovi</small><b id="blocks">0/12</b></div>
+      <div class="stat"><small>Životi</small><div class="lives" id="lives"></div></div>
+      <button class="iconbtn" id="pauseBtn" aria-label="Pauza">❚❚</button>
+    </div>
+  </header>
+
+  <section class="chainbox" aria-label="Tvoj blockchain">
+    <div class="chainhead"><span>Tvoj blockchain</span><span>svaki blok čuva hash prethodnog</span></div>
+    <div class="chain" id="chain"></div>
+  </section>
+
+  <div class="stage" id="stage">
+    <canvas id="game" aria-label="Igra: hvataj novčiće i blokove znanja, izbjegavaj prevare"></canvas>
+
+    <div class="overlay" id="startScreen">
+      <div class="card">
+        <h2>Postani rudar i složi svoj blockchain</h2>
+        <p class="lead">Pomiči novčanik mišem, prstom ili strelicama. Cilj je složiti lanac od 12 blokova.</p>
+        <div class="legend">
+          <div><span class="ico"><span class="coin">₿</span></span><span><b>Novčići</b> donose satoshije. Nakon svaka 3 bloka dolazi halving i nagrada se prepolovi, baš kao kod Bitcoina.</span></div>
+          <div><span class="ico"><svg width="34" height="36" viewBox="-17 -18 34 36" aria-hidden="true"><polygon points="0,-16 14,-8 0,0 -14,-8" fill="var(--brand-2)"/><polygon points="-14,-8 0,0 0,16 -14,8" fill="var(--brand)"/><polygon points="0,0 14,-8 14,8 0,16" fill="var(--brand-3)"/><text x="0" y="-5" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">?</text></svg></span><span><b>Blokovi znanja</b> otvaraju pitanje. Točan odgovor izrudari novi blok u tvom lancu.</span></div>
+          <div><span class="ico"><span class="pill">🎣 Prevara</span></span><span><b>Prevare</b> izbjegavaj. Svaka ti uzima život, ali te nauči kako je prepoznati.</span></div>
+        </div>
+        <div class="row"><button class="btn" id="startBtn">Pokreni rudarenje</button></div>
+        <p class="hint" id="bestLine"></p>
+      </div>
+    </div>
+
+    <div class="overlay" id="modal" hidden><div class="card" id="modalBody" role="dialog" aria-modal="true"></div></div>
+  </div>
+
+  <footer>Želiš znati više? <a href="https://kriptovalute.hr/edukacija-i-radionice.html" target="_blank" rel="noopener">Edukacije i radionice</a> · <a href="https://kriptovalute.hr/kviz.html" target="_blank" rel="noopener">Kviz znanja</a></footer>
+</div>
+
+<script>
+(function(){
+const GOAL = 12, HALVING_EVERY = 3, START_REWARD = 50, MAX_LIVES = 3;
+
+const QUESTIONS = [
+ {t:'Blockchain', q:'Što je blockchain?', o:['Zajednička digitalna knjiga u kojoj su zapisi složeni u blokove povezane kriptografijom','Tvrtka koja izdaje Bitcoin','Posebna vrsta bankovnog računa','Aplikacija za trgovanje dionicama'], e:'Blockchain je distribuirana knjiga zapisa. Kopiju čuvaju tisuće računala, a blokovi su povezani hashom, pa je povijest vrlo teško krivotvoriti.'},
+ {t:'Hash', q:'Kako je svaki blok povezan s prethodnim?', o:['Sadrži hash (digitalni otisak) prethodnog bloka','Šalje mu e-mail','Ima isti broj transakcija','Potpisuje ga banka'], e:'Svaki blok u sebi nosi hash prethodnog bloka. Pogledaj svoj lanac iznad igre: polje "prev" je hash bloka lijevo.'},
+ {t:'Nepromjenjivost', q:'Što se dogodi ako netko promijeni podatak u starom bloku?', o:['Njegov hash se promijeni, pa svi blokovi nakon njega postanu nevažeći','Ništa, promjena se tiho spremi','Mreža automatski nagradi tu osobu','Blok se samo preimenuje'], e:'Hash se mijenja i na najmanju promjenu podataka. Zato bi prevarant morao ponovno izrudariti taj blok i sve iza njega brže od ostatka mreže.'},
+ {t:'Satoshi Nakamoto', q:'Tko je stvorio Bitcoin?', o:['Osoba ili grupa pod pseudonimom Satoshi Nakamoto','Vitalik Buterin','Elon Musk','Europska središnja banka'], e:'Bitcoin je 2008. predstavljen u dokumentu (whitepaperu) koji je potpisao Satoshi Nakamoto. Pravi identitet i danas je nepoznat. Vitalik Buterin je suosnivač Ethereuma.'},
+ {t:'21 milijun', q:'Koliko će ukupno ikad postojati bitcoina?', o:['21 milijun','100 milijuna','Neograničeno','1 milijarda'], e:'Najveća količina je 21 milijun BTC i zapisana je u pravilima protokola. Ta ograničenost je razlog zašto ga neki zovu "digitalno zlato".'},
+ {t:'Halving', q:'Što je halving?', o:['Prepolovljenje nagrade rudarima, otprilike svake 4 godine','Podjela jednog bitcoina na dva','Pad cijene za 50 %','Brisanje polovice starih blokova'], e:'Svakih 210.000 blokova (oko 4 godine) nagrada za blok se prepolovi: 50 → 25 → 12,5 → 6,25 → 3,125 BTC. Zadnji halving bio je 2024.'},
+ {t:'Satoshi (jedinica)', q:'Što je jedan satoshi (sat)?', o:['Najmanja jedinica bitcoina: 0,00000001 BTC','Tisuću bitcoina','Naziv za Bitcoin novčanik','Naknada za transakciju'], e:'Jedan bitcoin ima 100 milijuna satoshija. Zato ne moraš kupiti cijeli BTC, možeš kupiti i mali dio.'},
+ {t:'Proof of Work', q:'Što radi rudar u sustavu Proof of Work?', o:['Troši računalnu snagu tražeći hash koji zadovoljava uvjet i tako dodaje novi blok','Kopa zlato za pokriće kriptovaluta','Ručno provjerava identitet korisnika','Odlučuje o cijeni bitcoina'], e:'Rudar mijenja broj zvan nonce dok ne dobije hash koji počinje s dovoljno nula. To si upravo vidio u igri svaki put kad izrudariš blok.'},
+ {t:'Proof of Stake', q:'Kako radi Proof of Stake?', o:['Validatori zaključaju svoje kovanice kao jamstvo i biraju se za potvrdu blokova','Tko ima najjače računalo, uvijek pobjeđuje','Blokove potvrđuje središnja banka','Korisnici glasaju e-mailom'], e:'Kod Proof of Stake umjesto potrošnje struje jamčiš uloženim kovanicama. Ako varaš, dio uloga gubiš. Ethereum je na taj sustav prešao 2022.'},
+ {t:'Seed fraza', q:'Što je seed fraza?', o:['12 ili 24 riječi kojima se može vratiti cijeli novčanik','Lozinka za e-mail burze','Javna adresa za primanje uplata','Naziv kriptovalute'], e:'Seed fraza je glavni ključ novčanika. Zapiši je offline, čuvaj na sigurnom i nikad je ne upisuj na stranice ili ne šalji nikome.'},
+ {t:'Privatni ključ', q:'Kome smiješ dati svoj privatni ključ?', o:['Nikome','Podršci burze kad zatraži','Prijatelju za svaki slučaj','Onome tko obeća veći prinos'], e:'Privatni ključ dokazuje vlasništvo nad sredstvima. Tko ga ima, može potrošiti tvoju kriptovalutu, a transakcija se ne može poništiti.'},
+ {t:'Hladni novčanik', q:'Što je hladni (cold) novčanik?', o:['Novčanik čiji ključevi nisu stalno spojeni na internet, npr. hardverski uređaj','Novčanik s niskim stanjem','Novčanik koji radi samo zimi','Račun na burzi'], e:'Hardverski ili papirnati novčanici drže ključeve offline, pa ih hakeri teško dosegnu. Topli (hot) novčanici su praktičniji za svakodnevne iznose.'},
+ {t:'Samoskrbništvo', q:'Što znači "Not your keys, not your coins"?', o:['Ako ključeve drži burza, ti nemaš potpunu kontrolu nad svojim kriptovalutama','Kriptovalute nisu legalne','Ključevi se mijenjaju svaki dan','Svatko može uzeti tuđe kovanice'], e:'Kad sredstva držiš na burzi, oslanjaš se na nju. Ako burza propadne ili zamrzne račune, možeš ostati bez pristupa, kao kod slučaja FTX 2022.'},
+ {t:'Pametni ugovori', q:'Što je pametni ugovor (smart contract)?', o:['Program na blockchainu koji se sam izvršava kad su uvjeti ispunjeni','Ugovor potpisan kod javnog bilježnika','Umjetna inteligencija koja trguje','PDF spremljen u oblak'], e:'Pametni ugovori pokreću DeFi, NFT-ove i tokene. Kod je javan i radi automatski, ali greška u kodu može biti skupa.'},
+ {t:'Ethereum', q:'Koji je blockchain popularizirao pametne ugovore?', o:['Ethereum','Bitcoin','Dogecoin','Litecoin'], e:'Ethereum je pokrenut 2015. kao "svjetsko računalo" na kojem svatko može pokretati pametne ugovore. Njegova valuta je ether (ETH).'},
+ {t:'Gas naknada', q:'Što je gas na Ethereumu?', o:['Naknada koju plaćaš mreži za izvršavanje transakcije ili ugovora','Gorivo za rudarske strojeve','Bonus za nove korisnike','Porez državi'], e:'Gas plaća rad koji mreža obavi za tebe. Kad je mreža zagušena, naknade rastu.'},
+ {t:'Stablecoin', q:'Što je stablecoin?', o:['Kriptovaluta čija je vrijednost vezana uz drugu imovinu, npr. euro ili dolar','Kriptovaluta koja uvijek raste','Bitcoin spremljen na USB','Token koji se ne može prodati'], e:'Stablecoini poput USDC-a ili EURC-a prate vrijednost fiat valute. U EU ih regulira MiCA kao tokene e-novca.'},
+ {t:'DEX', q:'Što je DEX?', o:['Decentralizirana mjenjačnica na kojoj trguješ izravno iz svog novčanika','Državna banka za kripto','Vrsta hardverskog novčanika','Burza koja drži tvoje ključeve'], e:'Na DEX-u (npr. Uniswap) razmjenu izvršavaju pametni ugovori. Na CEX-u (centraliziranoj burzi) posrednik je tvrtka.'},
+ {t:'MiCA', q:'Što je MiCA?', o:['Uredba EU-a koja regulira tržišta kriptoimovine','Nova kriptovaluta Europske unije','Porezna prijava za kripto','Naziv za Bitcoin rudnik'], e:'MiCA (Markets in Crypto-Assets) donosi jedinstvena pravila za izdavatelje i pružatelje kripto usluga u cijeloj EU, uključujući Hrvatsku.'},
+ {t:'HANFA', q:'Koja institucija u Hrvatskoj nadzire pružatelje usluga kriptoimovine prema MiCA-i?', o:['HANFA','Porezna uprava','Ministarstvo turizma','FINA'], e:'HANFA je nadležno tijelo za pružatelje usluga kriptoimovine u Hrvatskoj. Prije korištenja platforme provjeri ima li odobrenje za rad u EU.'},
+ {t:'Javna adresa', q:'Smiješ li nekome dati svoju javnu adresu?', o:['Da, ona služi za primanje uplata, slično kao IBAN','Ne, to je isto što i seed fraza','Samo policiji','Samo ako je ispisana na papiru'], e:'Javnu adresu slobodno dijeliš kad želiš primiti sredstva. Tajni su samo privatni ključ i seed fraza.'},
+ {t:'Nepovratnost', q:'Može li se potvrđena Bitcoin transakcija poništiti?', o:['Praktički ne, nema gumba za povrat','Da, zoveš banku','Da, unutar 30 dana','Da, ako napišeš reklamaciju'], e:'Zato uvijek dvaput provjeri adresu primatelja i mrežu prije slanja. Prevaranti računaju upravo na to da novac ne možeš vratiti.'},
+ {t:'NFT', q:'Što je NFT?', o:['Jedinstveni token koji dokazuje vlasništvo ili izvornost digitalnog predmeta','Besplatna kriptovaluta','Vrsta hardverskog novčanika','Naknada za rudarenje'], e:'Non-fungible znači nezamjenjiv: svaki NFT je jedinstven, za razliku od bitcoina gdje je svaki jednak drugome.'},
+ {t:'Decentralizacija', q:'Što znači da je Bitcoin decentraliziran?', o:['Nema jedne središnje točke kontrole, mrežu održavaju mnogi neovisni sudionici','Upravlja njime vlada SAD-a','Radi samo u jednoj državi','Pripada jednoj tvrtki'], e:'Nitko ga ne može sam ugasiti ni promijeniti pravila. Promjene zahtijevaju široki dogovor zajednice.'},
+ {t:'Čvor (node)', q:'Što je čvor (node)?', o:['Računalo koje čuva kopiju blockchaina i provjerava pravila','Kabel između dva rudara','Administrator mreže','Mobilna aplikacija burze'], e:'Tisuće čvorova neovisno provjeravaju svaki blok. Ako rudar prekrši pravila, čvorovi njegov blok jednostavno odbiju.'},
+ {t:'Genesis blok', q:'Što je genesis blok?', o:['Prvi blok u lancu','Najveći blok ikad','Blok s najviše transakcija','Zadnji blok prije halvinga'], e:'Bitcoinov genesis blok izrudaren je 3. siječnja 2009. U tvom lancu to je zlatni blok #0.'},
+ {t:'DYOR', q:'Što znači DYOR?', o:['Do Your Own Research: istraži sam prije ulaganja','Double Your Online Reward','Naziv burze','Vrsta tokena'], e:'Ne ulaži na temelju tuđih objava i obećanja. Čitaj whitepaper, provjeri tim, regulaciju i rizike.'},
+ {t:'Vrijeme bloka', q:'Koliko se prosječno stvara novi Bitcoin blok?', o:['Oko 10 minuta','Svake sekunde','Jednom dnevno','Jednom godišnje'], e:'Mreža svakih 2016 blokova prilagodi težinu rudarenja kako bi prosjek ostao oko 10 minuta.'}
+];
+
+const HAZARDS = [
+ {s:'Pošalji seed', i:'🔑', t:'Netko traži tvoju seed frazu', x:'Seed fraza je glavni ključ novčanika. Nijedna burza, podrška ni "admin" je nikad neće tražiti. Tko je traži, želi ti uzeti sve.'},
+ {s:'+50% zajamčeno', i:'📈', t:'Zajamčeni prinos', x:'Nitko ne može jamčiti visok prinos. Takva obećanja najčešće kriju Ponzijevu shemu: stari ulagači isplaćuju se novcem novih, sve dok sve ne propadne.'},
+ {s:'Klikni link', i:'🎣', t:'Phishing', x:'Lažne stranice izgledaju kao prave. Provjeri adresu stranice, spremi službene adrese u oznake i ne spajaj novčanik na nepoznate stranice.'},
+ {s:'Rug pull', i:'🧶', t:'Rug pull', x:'Tvorci projekta skupe novac i nestanu. Provjeri tko stoji iza projekta, je li kod revidiran i je li likvidnost zaključana.'},
+ {s:'Pump & dump', i:'🎈', t:'Pump & dump', x:'Grupa napuhuje cijenu malog tokena da bi ga prodala onima koji kasno uskoče. "Kupi odmah dok nije kasno" je znak za oprez.'},
+ {s:'Lažni support', i:'🎧', t:'Lažna podrška', x:'Prevaranti se javljaju u privatnim porukama kao "podrška". Prava podrška ti se ne javlja prva na Telegramu ili Instagramu i ne traži ključeve.'},
+ {s:'Udvostruči BTC', i:'🎁', t:'Lažni giveaway', x:'"Pošalji 1 BTC, vratit ćemo 2" uvijek je prevara, čak i kad koristi lice poznate osobe. Transakcije su nepovratne.'},
+ {s:'FOMO kupnja', i:'😱', t:'FOMO', x:'Strah da ćeš propustiti priliku vodi do kupnje na vrhu. Imaj plan, ulaži samo ono što si možeš priuštiti izgubiti i istraži sam (DYOR).'}
+];
+
+const $ = s => document.querySelector(s);
+const stage = $('#stage'), canvas = $('#game'), ctx = canvas.getContext('2d');
+const modal = $('#modal'), modalBody = $('#modalBody');
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fmt = n => n.toLocaleString('hr-HR',{maximumFractionDigits:3});
+const clamp = (v,a,b) => Math.max(a,Math.min(b,v));
+const shuffle = a => { a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]];} return a; };
+
+function hash16(str){
+  let h1=0xdeadbeef, h2=0x41c6ce57;
+  for(let i=0;i<str.length;i++){const c=str.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677);}
+  h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);
+  h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);
+  return (h2>>>0).toString(16).padStart(8,'0')+(h1>>>0).toString(16).padStart(8,'0');
+}
+
+let T = {};
+function readTokens(){
+  const cs = getComputedStyle(document.documentElement);
+  ['panel','panel-2','line','ink','muted','brand','brand-2','brand-3','gold','gold-2','gold-ink','danger','ok'].forEach(k=>T[k]=cs.getPropertyValue('--'+k).trim());
+}
+readTokens();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{readTokens();draw();});
+
+let W=0, H=0;
+const player = {x:0, y:0, w:110, h:22, tx:0};
+function resize(){
+  const r = stage.getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio||1,2);
+  W = r.width; H = r.height;
+  canvas.width = Math.round(W*dpr); canvas.height = Math.round(H*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  player.w = clamp(W*0.2,86,132); player.y = H-44;
+  if(!player.x){player.x = player.tx = W/2;}
+  player.x = player.tx = clamp(player.x, player.w/2, W-player.w/2);
+  draw();
+}
+new ResizeObserver(resize).observe(stage);
+
+// ---------- state ----------
+let running=false, paused=false, last=0;
+let sats, lives, reward, halvings, chain, items, floats, spawnT, sinceBlock, qPool, answered, correct, hazPool;
+const keys = {};
+
+function reset(){
+  sats=0; lives=MAX_LIVES; reward=START_REWARD; halvings=0; items=[]; floats=[];
+  spawnT=0.6; sinceBlock=0; answered=0; correct=0;
+  qPool = shuffle(QUESTIONS); hazPool = shuffle(HAZARDS);
+  chain = [{n:0, t:'Genesis blok', prev:'0'.repeat(16), hash:hash16('genesis|kriptovalute.hr'), nonce:0}];
+  renderChain(); updateHud();
+}
+
+function updateHud(){
+  $('#sats').textContent = fmt(sats)+' sat';
+  $('#reward').textContent = fmt(reward)+' sat';
+  $('#blocks').textContent = (chain.length-1)+'/'+GOAL;
+  $('#lives').innerHTML = Array.from({length:MAX_LIVES},(_,i)=>`<i class="${i<lives?'':'off'}"></i>`).join('');
+}
+
+function renderChain(newIdx){
+  const el = $('#chain');
+  let html = '';
+  chain.forEach((b,i)=>{
+    if(i) html += '<span class="link" aria-hidden="true"></span>';
+    html += `<div class="blk ${i===0?'genesis':''} ${i===newIdx?'new':''}" title="${b.t}">
+      <div class="n">#${b.n}</div><div class="t">${b.t}</div>
+      <div class="h">hash <em>${b.hash.slice(0,8)}…</em><br>prev ${b.prev.slice(0,8)}…</div></div>`;
+  });
+  if(chain.length-1 < GOAL) html += '<span class="link" aria-hidden="true" style="opacity:.35"></span><div class="blk ghost"><div class="n">#'+chain.length+'</div><div class="t" style="color:var(--muted)">čeka rudara</div><div class="h">hash ?<br>prev '+chain[chain.length-1].hash.slice(0,8)+'…</div></div>';
+  el.innerHTML = html;
+  el.scrollLeft = el.scrollWidth;
+}
+
+// ---------- spawning ----------
+const COIN_SYMS = ['₿','Ξ','◎','Ł','₳'];
+function spawn(){
+  const r = Math.random(), speedMul = 1 + halvings*0.14;
+  let type;
+  if(sinceBlock > 6) type='block';
+  else if(r < 0.17) type='block';
+  else if(r < 0.17 + 0.2 + halvings*0.05) type='bad';
+  else type='coin';
+  const vy = H*(0.26+Math.random()*0.08)*speedMul;
+  let it = {type, vy, t:Math.random()*6};
+  if(type==='coin'){ it.hw=it.hh=16; it.sym=COIN_SYMS[Math.random()*COIN_SYMS.length|0]; }
+  if(type==='block'){ it.hw=it.hh=20; it.vy*=0.85; sinceBlock=0; }
+  if(type==='bad'){
+    if(!hazPool.length) hazPool = shuffle(HAZARDS);
+    it.h = hazPool.pop();
+    ctx.font = '800 12px Manrope, sans-serif';
+    it.hw = (ctx.measureText(it.h.i+' '+it.h.s).width + 22)/2; it.hh = 15;
+  }
+  it.x = it.hw + 6 + Math.random()*(W - it.hw*2 - 12);
+  it.y = -it.hh - 4;
+  items.push(it);
+}
+
+function addFloat(x,y,text,color){ floats.push({x,y,text,color,life:1}); }
+
+// ---------- loop ----------
+function update(dt){
+  const step = 560*dt;
+  if(keys.left) player.tx -= step;
+  if(keys.right) player.tx += step;
+  player.tx = clamp(player.tx, player.w/2, W-player.w/2);
+  player.x += (player.tx-player.x)*Math.min(1,dt*20);
+
+  sinceBlock += dt; spawnT -= dt;
+  if(spawnT<=0){ spawn(); spawnT = Math.max(0.42, 0.85 - halvings*0.1) * (0.7+Math.random()*0.6); }
+
+  for(let i=items.length-1;i>=0;i--){
+    const it = items[i]; it.y += it.vy*dt; it.t += dt;
+    const hit = it.y+it.hh >= player.y && it.y-it.hh <= player.y+player.h && Math.abs(it.x-player.x) <= player.w/2 + it.hw*0.7;
+    if(hit){ items.splice(i,1); catchItem(it); if(paused) return; continue; }
+    if(it.y - it.hh > H) items.splice(i,1);
+  }
+  for(let i=floats.length-1;i>=0;i--){ const f=floats[i]; f.life-=dt*1.1; f.y-=40*dt; if(f.life<=0) floats.splice(i,1); }
+}
+
+function catchItem(it){
+  if(it.type==='coin'){ sats += reward; addFloat(it.x, player.y-10, '+'+fmt(reward)+' sat', T.gold); updateHud(); }
+  else if(it.type==='block'){ openQuestion(); }
+  else { lives--; updateHud(); addFloat(it.x, player.y-10, '−1 život', T.danger);
+    if(!reduceMotion){ stage.classList.remove('shake'); void stage.offsetWidth; stage.classList.add('shake'); }
+    openHazard(it.h); }
+}
+
+function loop(t){
+  if(!running) return;
+  const dt = Math.min(0.05,(t-last)/1000); last = t;
+  if(!paused) update(dt);
+  draw();
+  requestAnimationFrame(loop);
+}
+
+// ---------- drawing ----------
+function rr(x,y,w,h,r){ ctx.beginPath(); ctx.roundRect ? ctx.roundRect(x,y,w,h,r) : ctx.rect(x,y,w,h); }
+function draw(){
+  if(!W) return;
+  ctx.fillStyle = T.panel; ctx.fillRect(0,0,W,H);
+  ctx.fillStyle = T.line;
+  for(let y=14;y<H;y+=28) for(let x=((y/28|0)%2?14:0)+7;x<W;x+=28){ ctx.globalAlpha=.55; ctx.fillRect(x,y,2,2); }
+  ctx.globalAlpha=1;
+  if(!items) { drawPlayer(); return; }
+  items.forEach(it=>{
+    const bob = reduceMotion?0:Math.sin(it.t*3)*2;
+    if(it.type==='coin') drawCoin(it.x,it.y,it.hw,it.sym,it.t);
+    else if(it.type==='block') drawCube(it.x,it.y+bob,it.hw);
+    else drawBad(it);
+  });
+  drawPlayer();
+  floats.forEach(f=>{ ctx.globalAlpha=Math.max(0,f.life); ctx.fillStyle=f.color; ctx.font='700 15px Unbounded, sans-serif'; ctx.textAlign='center'; ctx.fillText(f.text,f.x,f.y); });
+  ctx.globalAlpha=1;
+}
+function drawCoin(x,y,r,sym,t){
+  const sx = reduceMotion?1:Math.abs(Math.cos(t*2.2))*0.55+0.45;
+  ctx.save(); ctx.translate(x,y); ctx.scale(sx,1);
+  ctx.shadowColor=T.gold; ctx.shadowBlur=14;
+  ctx.fillStyle=T.gold; ctx.beginPath(); ctx.arc(0,0,r,0,Math.PI*2); ctx.fill();
+  ctx.shadowBlur=0; ctx.strokeStyle=T['gold-2']; ctx.lineWidth=3; ctx.beginPath(); ctx.arc(0,0,r-4,0,Math.PI*2); ctx.stroke();
+  ctx.fillStyle=T['gold-ink']; ctx.font='700 15px Unbounded, sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(sym,0,1);
+  ctx.restore();
+}
+function drawCube(x,y,s){
+  const k=s*0.87;
+  ctx.save(); ctx.translate(x,y); ctx.shadowColor=T.brand; ctx.shadowBlur=18;
+  const face=(pts,c)=>{ctx.fillStyle=c;ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();ctx.fill();};
+  face([[0,-s],[k,-s/2],[0,0],[-k,-s/2]],T['brand-2']);
+  ctx.shadowBlur=0;
+  face([[-k,-s/2],[0,0],[0,s],[-k,s/2]],T.brand);
+  face([[0,0],[k,-s/2],[k,s/2],[0,s]],T['brand-3']);
+  ctx.fillStyle='#fff'; ctx.font='800 13px Unbounded, sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('?',0,-s/2);
+  ctx.restore();
+}
+function drawBad(it){
+  ctx.save(); ctx.shadowColor=T.danger; ctx.shadowBlur=12;
+  ctx.fillStyle=T.danger; rr(it.x-it.hw,it.y-it.hh,it.hw*2,it.hh*2,it.hh); ctx.fill();
+  ctx.shadowBlur=0; ctx.fillStyle='#fff'; ctx.font='800 12px Manrope, sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText(it.h.i+' '+it.h.s,it.x,it.y+1); ctx.restore();
+}
+function drawPlayer(){
+  const {x,y,w,h}=player;
+  ctx.save(); ctx.shadowColor=T.brand; ctx.shadowBlur=20;
+  ctx.fillStyle=T.brand; rr(x-w/2,y,w,h+6,10); ctx.fill();
+  ctx.shadowBlur=0; ctx.fillStyle=T.gold; rr(x-w/2+6,y-3,w-12,5,3); ctx.fill();
+  ctx.fillStyle='#fff'; ctx.font='700 11px Manrope, sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('novčanik',x,y+h/2+3);
+  ctx.restore();
+}
+
+// ---------- modals ----------
+function openModal(html){ paused=true; modalBody.innerHTML=html; modal.hidden=false; const f=modalBody.querySelector('button'); f&&f.focus(); }
+function closeModal(){ modal.hidden=true; paused=false; last=performance.now(); }
+
+function openQuestion(){
+  if(!qPool.length) qPool = shuffle(QUESTIONS);
+  const q = qPool.pop(), n = chain.length;
+  const opts = shuffle(q.o.map((text,i)=>({text,ok:i===0})));
+  openModal(`<p class="lead">Blok znanja: odgovori točno i izrudari blok #${n}</p>
+    <h2>${q.q}</h2><div class="opts">${opts.map((o,i)=>`<button class="opt" data-i="${i}">${o.text}</button>`).join('')}</div><div id="fb"></div>`);
+  modalBody.querySelectorAll('.opt').forEach(btn=>btn.addEventListener('click',()=>{
+    const pick = opts[+btn.dataset.i]; answered++;
+    modalBody.querySelectorAll('.opt').forEach((b,i)=>{ b.disabled=true; if(opts[i].ok) b.classList.add('right'); });
+    const fb = $('#fb');
+    if(pick.ok){
+      correct++;
+      fb.innerHTML = `<div class="verdict ok">Točno! Rudarim blok: tražim hash koji počinje s 000…</div><div class="mine" id="mineLog">nonce 0</div>`;
+      mine(q.t, (hash,nonce)=>{
+        const prev = chain[chain.length-1].hash;
+        chain.push({n, t:q.t, prev, hash, nonce});
+        sats += 100; renderChain(chain.length-1);
+        let extra = '';
+        const mined = chain.length-1;
+        if(mined % HALVING_EVERY === 0 && mined < GOAL){
+          halvings++; reward /= 2;
+          extra = `<div class="note"><b>Halving!</b> Nagrada za novčić pada na ${fmt(reward)} sat, a igra se ubrzava. Bitcoin isto prepolovljuje nagradu rudarima svakih 210.000 blokova.</div>`;
+        }
+        updateHud();
+        fb.insertAdjacentHTML('beforeend', `<p>Blok #${n} dodan u lanac (+100 sat naknada). ${q.e}</p>${extra}<div class="row"><button class="btn" id="cont">${mined>=GOAL?'Završi lanac':'Nastavi rudarenje'}</button></div>`);
+        const c=$('#cont'); c.focus();
+        c.onclick=()=>{ closeModal(); if(mined>=GOAL) endGame(true); };
+      });
+    } else {
+      btn.classList.add('wrong');
+      fb.innerHTML = `<div class="verdict no">Nije točno, ovaj blok nije izrudaren.</div><p>${q.e}</p><div class="row"><button class="btn" id="cont">Nastavi rudarenje</button></div>`;
+      const c=$('#cont'); c.focus(); c.onclick=closeModal;
+    }
+  }));
+}
+
+function mine(topic, done){
+  const prev = chain[chain.length-1].hash, log = $('#mineLog'), per = reduceMotion?100000:90;
+  let nonce = 0;
+  (function step(){
+    let h;
+    for(let i=0;i<per;i++){
+      nonce++; h = hash16(prev+'|'+topic+'|'+nonce);
+      if(h.startsWith('000')){ log.innerHTML = `nonce ${nonce} → <b>${h}</b> ✓`; done(h,nonce); return; }
+    }
+    log.textContent = `nonce ${nonce} → ${h}`;
+    requestAnimationFrame(step);
+  })();
+}
+
+function openHazard(h){
+  const dead = lives<=0;
+  openModal(`<div class="haz" aria-hidden="true">${h.i}</div><h2>${h.t}</h2><p>${h.x}</p>
+    <div class="row"><button class="btn" id="cont">${dead?'Pogledaj rezultat':'Razumijem, nastavi'}</button></div>`);
+  $('#cont').onclick=()=>{ closeModal(); if(dead) endGame(false); };
+}
+
+function getBest(){ try{ return +localStorage.getItem('rudar-best')||0; }catch(e){ return 0; } }
+function setBest(v){ try{ localStorage.setItem('rudar-best',String(v)); }catch(e){} }
+
+function endGame(win){
+  running=false;
+  const mined = chain.length-1, best = getBest(), isBest = sats > best;
+  if(isBest) setBest(sats);
+  openModal(`<h2>${win?'Lanac od 12 blokova je složen!':'Novčanik je ispražnjen'}</h2>
+    <p class="lead">${win?'Izrudario si svaki blok i prošao kroz halvinge. Sad znaš osnove koje mnogi preskoče.':'Prevaranti su bili brži ovaj put. Svaka prevara koju si vidio sada ti je poznata, pa probaj ponovno.'}</p>
+    <div class="stats"><div><b>${fmt(sats)}</b><small>satoshija</small></div><div><b>${mined}/${GOAL}</b><small>blokova</small></div><div><b>${correct}/${answered}</b><small>točnih odgovora</small></div></div>
+    <p class="lead">${isBest?'Novi osobni rekord!':'Tvoj rekord: '+fmt(Math.max(best,sats))+' sat'}</p>
+    <div class="row"><button class="btn" id="again">Igraj ponovno</button><a class="btn alt" href="https://kriptovalute.hr/kviz.html" target="_blank" rel="noopener">Riješi kviz znanja</a></div>`);
+  $('#again').onclick=()=>{ modal.hidden=true; start(); };
+}
+
+function start(){
+  reset(); $('#startScreen').hidden=true; modal.hidden=true;
+  running=true; paused=false; last=performance.now(); requestAnimationFrame(loop);
+}
+
+function togglePause(){
+  if(!running) return;
+  if(!modal.hidden && !$('#resume')) return;
+  if(paused){ closeModal(); return; }
+  openModal(`<h2>Pauza</h2><p class="lead">Rudarenje stoji. Tvoj lanac trenutno ima ${chain.length-1} od ${GOAL} blokova.</p><div class="row"><button class="btn" id="resume">Nastavi</button></div>`);
+  $('#resume').onclick=closeModal;
+}
+
+// ---------- input ----------
+function pointerX(e){ const r=stage.getBoundingClientRect(); player.tx = clamp(e.clientX-r.left, player.w/2, W-player.w/2); }
+stage.addEventListener('pointermove', e=>{ if(running&&!paused) pointerX(e); });
+stage.addEventListener('pointerdown', e=>{ if(running&&!paused&&e.target===canvas) pointerX(e); });
+addEventListener('keydown', e=>{
+  if(e.key==='ArrowLeft'||e.key==='a'||e.key==='A'){ keys.left=true; if(running&&!paused) e.preventDefault(); }
+  if(e.key==='ArrowRight'||e.key==='d'||e.key==='D'){ keys.right=true; if(running&&!paused) e.preventDefault(); }
+  if(e.key==='p'||e.key==='P'||e.key==='Escape') togglePause();
+});
+addEventListener('keyup', e=>{
+  if(e.key==='ArrowLeft'||e.key==='a'||e.key==='A') keys.left=false;
+  if(e.key==='ArrowRight'||e.key==='d'||e.key==='D') keys.right=false;
+});
+document.addEventListener('visibilitychange', ()=>{ if(document.hidden && running && !paused) togglePause(); });
+$('#pauseBtn').onclick=togglePause;
+$('#startBtn').onclick=start;
+
+const best = getBest();
+if(best) $('#bestLine').textContent = 'Tvoj rekord: '+fmt(best)+' sat';
+reset();
+})();
+</script>
+</body>
+</html>

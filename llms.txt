@@ -14,6 +14,7 @@
 ## Interaktivno
 
 - [Kripto Kviz](https://kriptovalute.hr/kviz.html): Besplatni interaktivni kviz o kriptovalutama i blockchainu – 20 nasumičnih pitanja o Bitcoinu, Ethereumu, DeFi-ju, NFT-ovima i kripto regulativi u Hrvatskoj. Prikladan za provjeru znanja i učenje.
+- [Rudar blokova – kripto igra](https://kriptovalute.hr/rudar-blokova.html): Besplatna edukativna igra u pregledniku – igrač slaže vlastiti blockchain odgovaranjem na pitanja, prolazi kroz halvinge i uči prepoznati kripto prevare.
 
 ## Česta pitanja koja pokrivamo
 
